@@ -1,0 +1,50 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../utils");
+exports.default = (0, utils_1.createRule)('no-reactive-literals', {
+    meta: {
+        docs: {
+            description: "don't assign literal values in reactive statements",
+            category: 'Best Practices',
+            recommended: false
+        },
+        hasSuggestions: true,
+        schema: [],
+        messages: {
+            noReactiveLiterals: `Do not assign literal values inside reactive statements unless absolutely necessary.`,
+            fixReactiveLiteral: `Move the literal out of the reactive statement into an assignment`
+        },
+        type: 'suggestion'
+    },
+    create(context) {
+        return {
+            [`SvelteReactiveStatement > ExpressionStatement > AssignmentExpression:matches(${[
+                `[right.type="Literal"]`,
+                `[right.type="ArrayExpression"][right.elements.length=0]`,
+                `[right.type="ObjectExpression"][right.properties.length=0]`
+            ].join(',')})`](node) {
+                const parent = node.parent?.parent;
+                if (!parent) {
+                    return false;
+                }
+                const source = context.getSourceCode();
+                return context.report({
+                    node: parent,
+                    loc: parent.loc,
+                    messageId: 'noReactiveLiterals',
+                    suggest: [
+                        {
+                            messageId: 'fixReactiveLiteral',
+                            fix(fixer) {
+                                return [
+                                    fixer.insertTextBefore(parent, `let ${source.getText(node)}`),
+                                    fixer.remove(parent)
+                                ];
+                            }
+                        }
+                    ]
+                });
+            }
+        };
+    }
+});

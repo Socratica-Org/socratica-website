@@ -29,8 +29,6 @@
 
 <div class="app">
 
-	<Header />
-
 	<main>
 		<slot />
 	</main>
@@ -99,7 +97,7 @@
 		min-height: 100vh;
 	}
 
-	main {
+	/* main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -108,7 +106,8 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
+	} */
+
 
 	/* footer {
 		background: 

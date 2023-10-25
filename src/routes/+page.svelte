@@ -1,6 +1,6 @@
 <script lang="ts">
-	import logo from '$lib/images/socratica-logo.png';
-	import altLogo from '$lib/images/socratica-logo-alt.png';
+	import doodle1 from '$lib/images/socratica-doodle.png';
+	import doodle2 from '$lib/images/socratica-doodle-alt.png';
 	import people from '$lib/images/socratica-people.png';
 	import UsersThree from '$lib/images/UsersThree.png';
 	import MapTrifold from '$lib/images/MapTrifold.png';
@@ -14,13 +14,24 @@
 	import Scroll from '$lib/images/Scroll.png';
 	import JoinUs from '$lib/images/JoinUs.png';
 
-	let logoSrc = logo;
-	let artworkTitle = '"Little Guys", by Aileen Luo';
+	const doodles = [
+    {
+        src: doodle1,
+        title: '"Little Guys", by Aileen Luo'
+    },
+    {
+        src: doodle2,
+        title: '"Project Block", by Someone'
+    },
+	];
 
-    function switchLogo() {
-        logoSrc = (logoSrc === logo) ? altLogo : logo;
-		artworkTitle = (logoSrc === altLogo) ? '"Project Block", by Someone' : '"Little Guys", by Aileen Luo';
-    }
+	let randomIndex = Math.floor(Math.random() * doodles.length);
+	let currentDoodle = doodles[randomIndex];
+
+	function switchDoodle() {
+		randomIndex = (randomIndex + 1) % doodles.length;
+		currentDoodle = doodles[randomIndex];
+	}
 
 </script>
 
@@ -34,12 +45,12 @@
 	<div class="flex flex-col h-screen justify-center bg-primary">
 		<div class="absolute top-5 left-10 w-10 h-10 bg-black rounded-full"></div>
 
-		<div class="absolute top-5 right-5 flex flex-col space-y-2">
-			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2">
+		<div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
+			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2 w-[105px]">
 				<img src={UsersThree} alt="Users" class="w-6 h-6" />
 				<span>ABOUT</span>
 			</button>
-			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2">
+			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2 w-[85px]">
 				<img src={MapTrifold} alt="Map" class="w-6 h-6" />
 				<span>MAP</span>
 			</button>
@@ -56,14 +67,19 @@
 		
 		
 		<div class="container mx-auto max-w-screen-xl px-8">
-			<div class="flex flex-col items-center mb-8">
-				<button on:click={switchLogo} style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;"></button>
-				<img id="socraticaLogo" src={logoSrc} alt="Socratica Logo" />
+
+			<div class="flex flex-col items-center mb-8 relative h-[250px]">
+				<button on:click={switchDoodle} class="absolute inset-0 opacity-0 cursor-pointer"></button>
+				<img id="socraticaLogo" src={currentDoodle.src} alt="Socratica Logo" class="h-full w-auto"/>
 			</div>
+			
 			
 			<div class="flex space-x-4 mt-8">
 				<div class="w-1/2">
-					<p class="text-3xl font-tiempos-headline">We host weekly co-working sessions so that you can work on your passion projects with likeminded people.</p>
+					<p class="text-3xl font-tiempos-headline text-[#41403F]">
+						We host weekly <span class="border-dashed border-b-2" style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round">co-working sessions</span>
+						so that you can work on your <span class="italic">passion projects</span> with likeminded people.
+					</p>
 					<div class="mt-4">
 						<button class="bg-black px-6 py-3 rounded-full border border-gray-300 text-sm text-white font-mono hover:bg-gray-400">
 							<img src={ArrowDownRight} alt="Arrow Down Right" class="w-6 h-6 inline-block" />
@@ -75,11 +91,11 @@
 						</button>
 					</div>
 				</div>
+				
 			
-				<!-- Text aligned to the right -->
 				<div class="flex-1 flex flex-col items-end justify-end">
 					<p class="font-mono text-sm text-[#706F6B]">CURRENT ART</p>
-					<p class="font-graphik">{artworkTitle}</p>
+					<p class="font-graphik">{currentDoodle.title}</p>
 				</div>
 				
 			</div>

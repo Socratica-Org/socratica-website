@@ -7,6 +7,12 @@
 	import Eye from '$lib/images/Eye.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
+	import RedCircle from '$lib/images/red-circle.png';
+	import GreenCircle from '$lib/images/green-circle.png';
+	import YellowCircle from '$lib/images/yellow-circle.png';
+	import HandWaving from '$lib/images/HandWaving.png'
+	import Scroll from '$lib/images/Scroll.png';
+	import JoinUs from '$lib/images/JoinUs.png';
 
 	let logoSrc = logo;
 	let artworkTitle = '"Little Guys", by Aileen Luo';
@@ -85,3 +91,68 @@
 
 </section>
 
+
+<section>
+	<div class="bg-primary">
+		<div class="flex justify-center items-center pt-40 pb-10">
+			<button class="px-6 py-3 rounded-full text-sm font-mono border-2 border-orange-700 hover:bg-gray-400 text-orange-700">
+				<img src={HandWaving} alt="Hand waving" class="w-6 h-6 inline-block" />
+				WHAT WE ARE
+			</button>
+		</div>
+		<div class="flex flex-col justify-center items-center pt-10">
+			<div class="text-3xl font-tiempos-headline flex items-center">
+			  <img src={RedCircle} alt="red circle" class="w-6 h-6 mr-4">
+			  <div class="inline-block">A open celebration of makers, artists,</div>
+			</div>
+			<div class="text-3xl font-tiempos-headline flex items-center">
+			  <div class="inline-block">engineers, designers, writers, poets,</div>
+			  <img src={GreenCircle} alt="green circle" class="w-6 h-6 ml-4">
+			</div>
+			<div class="text-3xl font-tiempos-headline flex items-center">
+			  <div class="inline-block">and everything</div>
+			  <img src={YellowCircle} alt="yellow circle" class="w-6 h-6 mr-4 ml-4">
+			  <div class="inline-block">in-between.</div>
+			</div>
+		</div>
+		<div class="flex items-center justify-center pt-10 pb-40">
+			<div class="text-center">
+			  <div>Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
+			  <div class="mx-auto">make stuff, and you're invited</div>
+			</div>
+		</div>
+	</div>  
+  </section>
+  
+  <section>
+    <div class="flex bg-primary pb-40">
+        <div class="pl-40 flex flex-col justify-start">
+            <img src={JoinUs} alt="JoinUs">
+        </div>
+        <div class="flex-grow">
+			<div class="pl-4 pt-14">
+				<button class="px-6 py-3 rounded-full text-sm font-mono border-2 border-lime-700 hover:bg-gray-400 text-lime-700">
+					<img src={Scroll} alt="Scroll" class="w-6 h-6 inline-block" />
+					HOW IT WORKS
+				</button>
+			</div>
+            <div class="p-5 pr-40">
+                <div class="text-3xl font-tiempos-headline pt-2"> 
+                    Introductions 👋,
+                    <div>two 50-min work blocks 🖋️️💻🎨,</div>
+                    <div>ending with casual open demos 🤝</div>
+                    <div>+ snacks along the way.</div>
+                </div>
+                <div class="pt-5">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
+                <div>make stuff, and you're invited</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <div class="w-[1131.80px]"><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to </span>
+	<div><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">
+	make <span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]"> stuff, and </span><span style="text-stone-500 text-[32px] font-normal font-['Graphik'] underline leading-[44.80px]">you’re invited</span><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">. </span></div> -->

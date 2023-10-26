@@ -119,16 +119,16 @@
 		<div class="flex flex-col justify-center items-center pt-10">
 			<div class="text-3xl font-tiempos-headline flex items-center">
 			  <img src={RedCircle} alt="red circle" class="w-6 h-6 mr-4">
-			  <div class="inline-block">A open celebration of makers, artists,</div>
+			  <div class="inline-block">A open celebration  <span class="italic">of</span> makers, artists,</div>
 			</div>
 			<div class="text-3xl font-tiempos-headline flex items-center">
 			  <div class="inline-block">engineers, designers, writers, poets,</div>
 			  <img src={GreenCircle} alt="green circle" class="w-6 h-6 ml-4">
 			</div>
 			<div class="text-3xl font-tiempos-headline flex items-center">
-			  <div class="inline-block">and everything</div>
+			  <div class="inline-block">and <span class="italic relative underline text-stone">everything</span></div>
 			  <img src={YellowCircle} alt="yellow circle" class="w-6 h-6 mr-4 ml-4">
-			  <div class="inline-block">in-between.</div>
+			  <div class="inline-block"><span class="italic">in</span><span class="bg-gradient-to-r from-olive-400 to-black">-between</span>.</div>
 			</div>
 		</div>
 		<div class="flex items-center justify-center pt-10 pb-40">
@@ -143,9 +143,9 @@
   <section>
     <div class="flex bg-primary pb-40">
         <div class="pl-40 flex flex-col justify-start">
-            <img src={JoinUs} alt="JoinUs">
+			<img src={JoinUs} alt="JoinUs" class="w-79 h-67">
         </div>
-        <div class="flex-grow">
+        <div class="flex-grow pl-20">
 			<div class="pl-4 pt-14">
 				<button class="px-6 py-3 rounded-full text-sm font-mono border-2 border-lime-700 hover:bg-gray-400 text-lime-700">
 					<img src={Scroll} alt="Scroll" class="w-6 h-6 inline-block" />
@@ -156,10 +156,10 @@
                 <div class="text-3xl font-tiempos-headline pt-2"> 
                     Introductions 👋,
                     <div>two 50-min work blocks 🖋️️💻🎨,</div>
-                    <div>ending with casual open demos 🤝</div>
-                    <div>+ snacks along the way.</div>
+                    <div>ending with casual open <span class="italic">demos</span> 🤝</div>
+                    <div class="italic text-gray-400"> + snacks along the way.</div>
                 </div>
-                <div class="pt-5">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
+                <div class="pt-5 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
                 <div>make stuff, and you're invited</div>
             </div>
         </div>

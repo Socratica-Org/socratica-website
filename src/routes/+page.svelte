@@ -13,6 +13,7 @@
 	import HandWaving from '$lib/images/HandWaving.png'
 	import Scroll from '$lib/images/Scroll.png';
 	import JoinUs from '$lib/images/JoinUs.png';
+	import Smiley from '$lib/images/Smiley.png';
 
 	const doodles = [
     {
@@ -111,30 +112,31 @@
 <section>
 	<div class="bg-primary">
 		<div class="flex justify-center items-center pt-40 pb-10">
-			<button class="px-6 py-3 rounded-full text-sm font-mono border-2 border-orange-700 hover:bg-gray-400 text-orange-700">
+			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono border-orange-700 text-orange-700 inline-block p-2">
 				<img src={HandWaving} alt="Hand waving" class="w-6 h-6 inline-block" />
 				WHAT WE ARE
-			</button>
+			</span>
 		</div>
-		<div class="flex flex-col justify-center items-center pt-10">
-			<div class="text-3xl font-tiempos-headline flex items-center">
-			  <img src={RedCircle} alt="red circle" class="w-6 h-6 mr-4">
-			  <div class="inline-block">A open celebration  <span class="italic">of</span> makers, artists,</div>
+		<div class="flex flex-col justify-center items-center text-5xl font-tiempos-headline pt-10">
+			<div class="flex items-center">
+			  <img src={RedCircle} alt="red circle" class="w-12 h-12 mr-4">
+			  <div class="inline-block">A open <span class="border-b-2 border-dashed border-yellow-400">celebration <span class="italic">of</span> makers</span>, artists,</div>
+
 			</div>
-			<div class="text-3xl font-tiempos-headline flex items-center">
-			  <div class="inline-block">engineers, designers, writers, poets,</div>
-			  <img src={GreenCircle} alt="green circle" class="w-6 h-6 ml-4">
+			<div class="flex items-center">
+			  <div class="inline-block"> <span class="font-glyphWorld">e</span>ngineers, <span class="font-glyphWorld">d</span>esigners, writers, <span class="font-glyphWorld">p</span>oets,</div>
+			  <img src={GreenCircle} alt="green circle" class="w-12 h-12 ml-4">
 			</div>
-			<div class="text-3xl font-tiempos-headline flex items-center">
-			  <div class="inline-block">and <span class="italic relative underline text-stone">everything</span></div>
-			  <img src={YellowCircle} alt="yellow circle" class="w-6 h-6 mr-4 ml-4">
-			  <div class="inline-block"><span class="italic">in</span><span class="bg-gradient-to-r from-olive-400 to-black">-between</span>.</div>
+			<div class="flex items-center">
+			  <div class="inline-block">and <span class="italic relative text-stone bottom-0 left-0 border-b-2 border-yellow-300">everything</span></div>
+			  <img src={YellowCircle} alt="yellow circle" class="w-12 h-12 mr-4 ml-4">
+			  <div class="inline-block"><span class="italic text-amber-200 text-opacity-50">in</span><span class="text-amber-200 text-opacity-50 to-black">-between</span>.</div>
 			</div>
 		</div>
-		<div class="flex items-center justify-center pt-10 pb-40">
+		<div class="flex items-center justify-center font-graphik text-zinc-800 text-2xl pt-8 pb-40">
 			<div class="text-center">
 			  <div>Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
-			  <div class="mx-auto">make stuff, and you're invited</div>
+			  <div class="mx-auto"><span class="italic">make</span> stuff, and <span class=" text-stone-500 bottom-0 left-0 border-b-2 border-stone-500 leading-13">you're invited</span>.</div>
 			</div>
 		</div>
 	</div>  
@@ -147,24 +149,44 @@
         </div>
         <div class="flex-grow pl-20">
 			<div class="pl-4 pt-14">
-				<button class="px-6 py-3 rounded-full text-sm font-mono border-2 border-lime-700 hover:bg-gray-400 text-lime-700">
+				<span class="px-6 py-3 border-2 rounded-full text-sm font-mono border-lime-700 text-lime-700 inline-block p-2">
 					<img src={Scroll} alt="Scroll" class="w-6 h-6 inline-block" />
 					HOW IT WORKS
-				</button>
+				</span>
 			</div>
-            <div class="p-5 pr-40">
-                <div class="text-3xl font-tiempos-headline pt-2"> 
+            <div class="p-5 pr-40 text-zinc-800">
+                <div class="text-5xl font-tiempos-headline pt-2"> 
                     Introductions 👋,
-                    <div>two 50-min work blocks 🖋️️💻🎨,</div>
-                    <div>ending with casual open <span class="italic">demos</span> 🤝</div>
-                    <div class="italic text-gray-400"> + snacks along the way.</div>
+                    <br/>two 50-min work blocks 🖋️️💻🎨,
+                    <br/>ending with casual open <span class="italic">demos</span> 🤝
+                    <br/><span class="italic text-stone-300"> + snacks along the way.</span>
                 </div>
-                <div class="pt-5 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
-                <div>make stuff, and you're invited</div>
+                <div class="pt-5 text-2xl text-zinc-800 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to <br/>make stuff, and you're invited</div>
             </div>
         </div>
     </div>
 </section>
+
+<section>
+    <div class="flex bg-primary pb-40">
+        <div class="flex-grow pl-20">
+            <div class="pl-4 pt-14">
+                <span class="px-6 py-3 border-2 rounded-full text-sm font-mono border-blue-800 text-blue-800 inline-block p-2">
+                    <img src={Smiley} alt="Smiley" class="w-6 h-6 inline-block mr-2" />
+                    WHY WE DO WHAT WE DO
+                </span>
+            </div>
+            <div class="p-5 pr-40">
+                <div class="text-5xl text-zinc-800 font-light font-tiempos-headline pt-2"> 
+                    We like helping good people do great things.
+                    <div>Got an extra minute? <span class="text-stone-500 underline"> We have more to say</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 

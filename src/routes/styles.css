@@ -6,6 +6,35 @@
 	font-style: normal;
 	font-display: swap;
   }
+
+@font-face {
+	font-family: 'Tiempos Headline Light';
+	src: url('/fonts/TiemposHeadline-Light.woff2') format('woff2'),
+		 url('/fonts/TiemposHeadline-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GlyphWorld';
+	src: url('/fonts/GlyphWorld.woff2') format('woff2'),
+		 url('/fonts/GlyphWorld.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+.font-GlyphWorld {
+	font-family: 'GlyphWorld', sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/path/to/inter/Inter-Regular.woff2') format('woff2'),
+		 url('/path/to/inter/Inter-Regular.woff') format('woff'); /* Add the correct path to your font files */
+  }
   
 @font-face {
     font-family: 'Graphik';

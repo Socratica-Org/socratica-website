@@ -100,8 +100,8 @@
 	</div>
 </section>
 
-<section class="flex flex-col items-center justify-center h-screen bg-gray-100 relative">
-  <div class="text-left absolute top-[15%] mx-36">
+<section class="flex flex-col items-center justify-center h-screen relative">
+  <div class="text-left absolute top-[15%] mx-28">
 	  <button class="bg-white px-6 py-3 rounded-full mb-6 text-sm uppercase font-mono border border-gray-300 hover:bg-gray-400">
 		<img src={Spiral} alt="Spiral" class="w-6 h-6 inline-block" />
 		who can come

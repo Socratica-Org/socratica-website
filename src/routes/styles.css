@@ -1,13 +1,24 @@
 @font-face {
 	font-family: 'Tiempos Headline';
-	src: url('/fonts/TiemposHeadline-Regular.woff2') format('woff2'),
-		 url('/fonts/TiemposHeadline-Regular.woff') format('woff');
-	font-weight: normal;
+	src: url('/fonts/tiempos-headline/tiempos-headline-light.woff2') format('woff2');
+	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
-  }
-  
+}
+
 @font-face {
+	font-family: 'Untitled Sans';
+	src: url('/fonts/untitled-sans/untitled-sans-regular.woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: 'Untitled Sans', sans-serif;
+}
+  
+/* @font-face {
     font-family: 'Graphik';
     src: url('/path-to-your-fonts/Graphik-Regular.woff2') format('woff2'),
          url('/path-to-your-fonts/Graphik-Regular.woff') format('woff');
@@ -16,7 +27,7 @@
 }
 .font-graphik {
     font-family: 'Graphik', sans-serif;
-}
+} */
 
 /* @import '@fontsource/fira-mono';
 

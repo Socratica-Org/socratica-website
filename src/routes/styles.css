@@ -1,3 +1,5 @@
+@import 'leaflet/dist/leaflet.css';
+
 @font-face {
 	font-family: 'Tiempos Headline';
 	src: url('/fonts/TiemposHeadline-Regular.woff2') format('woff2'),
@@ -9,8 +11,8 @@
   
 @font-face {
     font-family: 'Graphik';
-    src: url('/path-to-your-fonts/Graphik-Regular.woff2') format('woff2'),
-         url('/path-to-your-fonts/Graphik-Regular.woff') format('woff');
+    src: url('/fonts/Graphik-Regular.woff2') format('woff2'),
+         url('/fonts/Graphik-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

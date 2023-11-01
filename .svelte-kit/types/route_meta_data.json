@@ -5,6 +5,7 @@
 	"/about": [
 		"src/routes/about/+page.ts"
 	],
+	"/map": [],
 	"/sverdle": [
 		"src/routes/sverdle/+page.server.ts"
 	],

@@ -7,7 +7,7 @@
 	import Eye from '$lib/images/Eye.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
-
+	
 	const doodles = [
     {
         src: doodle1,
@@ -46,7 +46,7 @@
 			</button>
 			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2 w-[85px]">
 				<img src={MapTrifold} alt="Map" class="w-6 h-6" />
-				<span>MAP</span>
+				<a href="/map">MAP</a>
 			</button>
 			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2">
 				<img src={Eye} alt="Eye" class="w-6 h-6" />

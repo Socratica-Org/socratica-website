@@ -133,7 +133,6 @@
 			<div class="flex items-center">
 			  <img src={RedCircle} alt="red circle" class="w-12 h-12 mr-4">
 			  <div class="inline-block pb-2">A open <span class="border-dashed border-b-2" style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"> celebration <span class="italic">of</span> makers</span>, artists,</div>
-
 			</div>
 			<div class="flex items-center">
 			  <div class="inline-block pb-1"> <span class="font-glyphworld">e</span>ngineers, <span class="font-glyphworld">d</span>esigners, writers, <span class="font-glyphworld">p</span>oets,</div>
@@ -142,7 +141,9 @@
 			<div class="flex items-center">
 			  <div class="inline-block">and <span class="italic relative text-stone bottom-0 left-0 border-b-4" style="border-color: #CDC19F">everything</span></div>
 			  <img src={YellowCircle} alt="yellow circle" class="w-12 h-12 mr-4 ml-4">
-			  <div class="inline-block"><span class="italic text-amber-200 text-opacity-50">in</span><span class="text-amber-200 text-opacity-50 to-black">-between</span>.</div>
+			  <div class="inline-block text-4xl font-tiempos-headline">
+				<span style="background: linear-gradient(to right, #899248, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><span class="italic">in</span>-between</span>
+			  </div>	  
 			</div>
 		</div>
 		<div class="flex items-center justify-center font-Graphik text-zinc-800 pt-8 pb-40" >

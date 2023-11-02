@@ -152,7 +152,7 @@
 			  <div class="mx-auto"><span class="italic">make</span> stuff, and 
 				<a href="https://lu.ma/socratica" target="_blank" class="bottom-0 left-0 border-b-2 leading-13" style="border-color: #706F6B; color: #706F6B">
 					you're invited
-			 	 </a>
+			 	</a>
 			  .</div>
 			</div>
 		</div>

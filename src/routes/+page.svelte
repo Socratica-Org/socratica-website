@@ -8,6 +8,13 @@
 	import Eye from '$lib/images/Eye.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
+	import RedCircle from '$lib/images/red-circle.png';
+	import GreenCircle from '$lib/images/green-circle.png';
+	import YellowCircle from '$lib/images/yellow-circle.png';
+	import HandWaving from '$lib/images/HandWaving.png'
+	import Scroll from '$lib/images/Scroll.png';
+	import JoinUs from '$lib/images/JoinUs.png';
+	import Smiley from '$lib/images/Smiley.png';
 
 	const doodles = [
     {
@@ -113,3 +120,90 @@
   <img src={sessionPano} alt="Your Description" class="absolute bottom-0 h-1/2 w-full object-cover">
 </section>
 
+
+<section>
+	<div class="bg-primary">
+		<div class="flex justify-center items-center pt-40 pb-10">
+			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono inline-block p-2" style="border-color: #C6482C; color: #C6482C">
+				<img src={HandWaving} alt="Hand waving" class="w-6 h-6 inline-block" />
+				WHAT WE ARE
+			</span>
+		</div>
+		<div class="flex flex-col justify-center items-center text-4xl font-tiempos-headline pt-8" style="font-weight: 300;">
+			<div class="flex items-center">
+			  <img src={RedCircle} alt="red circle" class="w-12 h-12 mr-4">
+			  <div class="inline-block pb-2">A open <span class="border-dashed border-b-2" style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"> celebration <span class="italic">of</span> makers</span>, artists,</div>
+			</div>
+			<div class="flex items-center">
+			  <div class="inline-block pb-1"> <span class="font-glyphworld">e</span>ngineers, <span class="font-glyphworld">d</span>esigners, writers, <span class="font-glyphworld">p</span>oets,</div>
+			  <img src={GreenCircle} alt="green circle" class="w-12 h-12 ml-4">
+			</div>
+			<div class="flex items-center">
+			  <div class="inline-block">and <span class="italic relative text-stone bottom-0 left-0 border-b-4" style="border-color: #CDC19F">everything</span></div>
+			  <img src={YellowCircle} alt="yellow circle" class="w-12 h-12 mr-4 ml-4">
+			  <div class="inline-block text-4xl font-tiempos-headline">
+				<span style="background: linear-gradient(to right, #899248, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><span class="italic">in</span>-between</span>
+			  </div>	  
+			</div>
+		</div>
+		<div class="flex items-center justify-center font-Graphik text-zinc-800 pt-8 pb-40" >
+			<div class="text-center">
+			  <div>Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
+			  <div class="mx-auto"><span class="italic">make</span> stuff, and <span class="  bottom-0 left-0 border-b-2 leading-13" style="border-color: #706F6B; color: #706F6B">you're invited</span>.</div>
+			</div>
+		</div>
+	</div>  
+  </section>
+  
+  <section>
+    <div class="flex bg-primary pb-40">
+        <div class="pl-40 flex flex-col justify-start">
+			<img src={JoinUs} alt="JoinUs" style="width: 792px; height: 476px;">
+        </div>
+        <div class="flex-grow pl-20">
+			<div class="pl-4 pt-12">
+				<span class="px-6 py-3 border-2 rounded-full text-sm font-mono inline-block p-2" style="border-color: #758F2A; color: #758F2A;">
+					<img src={Scroll} alt="Scroll" class="w-6 h-6 inline-block" />
+					HOW IT WORKS
+				</span>
+			</div>
+            <div class="p-5 pr-40 text-zinc-800">
+                <div class="text-4xl font-tiempos-headline pt-12" style="font-weight: 300;"> 
+                    Introductions 👋,
+                    <br/>two 50-min work blocks 🖋️️💻🎨,
+                    <br/>ending with casual open <span class="italic">demos</span> 🤝
+                    <br/><span class="italic " style="color: #CFCCC4"> + snacks along the way.</span>
+                </div>
+                <div class="pt-5 text-zinc-800 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to make stuff, and you're invited</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="flex bg-primary pb-40 pl-20">
+        <div class="flex-grow pl-20">
+            <div class="pl-4 pt-14">
+                <span class="px-6 py-3 border-2 rounded-full text-sm font-mono inline-block p-2" style="border-color: #2C64B7; color: #2C64B7;">
+                    <img src={Smiley} alt="Smiley" class="w-6 h-6 inline-block mr-2" />
+                    WHY WE DO WHAT WE DO
+                </span>
+            </div>
+            <div class="p-5 pr-40">
+                <div class="text-4xl text-zinc-800 font-light font-tiempos-headline pt-4 " style="font-weight: 300;"> 
+                    We like helping good people do great things.
+                    <div>Got an extra minute? <span class=" border-b-2" style="border-color: #706F6B; color: #706F6B;"> We have more to say</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- <div class="w-[1131.80px]"><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to </span>
+	<div><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">
+	make <span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]"> stuff, and </span><span style="text-stone-500 text-[32px] font-normal font-['Graphik'] underline leading-[44.80px]">you’re invited</span><span style="text-zinc-800 text-[32px] font-normal font-['Graphik'] leading-[44.80px]">. </span></div> -->

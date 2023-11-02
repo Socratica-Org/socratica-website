@@ -112,31 +112,31 @@
 <section>
 	<div class="bg-primary">
 		<div class="flex justify-center items-center pt-40 pb-10">
-			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono border-orange-700 text-orange-700 inline-block p-2">
+			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono inline-block p-2" style="border-color: #C6482C; color: #C6482C">
 				<img src={HandWaving} alt="Hand waving" class="w-6 h-6 inline-block" />
 				WHAT WE ARE
 			</span>
 		</div>
-		<div class="flex flex-col justify-center items-center text-5xl font-tiempos-headline pt-10">
+		<div class="flex flex-col justify-center items-center text-4xl font-tiempos-headline pt-8" style="font-weight: 300;">
 			<div class="flex items-center">
 			  <img src={RedCircle} alt="red circle" class="w-12 h-12 mr-4">
-			  <div class="inline-block">A open <span class="border-b-2 border-dashed border-yellow-400">celebration <span class="italic">of</span> makers</span>, artists,</div>
+			  <div class="inline-block pb-2">A open <span class="border-dashed border-b-2" style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"> celebration <span class="italic">of</span> makers</span>, artists,</div>
 
 			</div>
 			<div class="flex items-center">
-			  <div class="inline-block"> <span class="font-glyphWorld">e</span>ngineers, <span class="font-glyphWorld">d</span>esigners, writers, <span class="font-glyphWorld">p</span>oets,</div>
+			  <div class="inline-block pb-1"> <span class="font-glyphworld">e</span>ngineers, <span class="font-glyphworld">d</span>esigners, writers, <span class="font-glyphworld">p</span>oets,</div>
 			  <img src={GreenCircle} alt="green circle" class="w-12 h-12 ml-4">
 			</div>
 			<div class="flex items-center">
-			  <div class="inline-block">and <span class="italic relative text-stone bottom-0 left-0 border-b-2 border-yellow-300">everything</span></div>
+			  <div class="inline-block">and <span class="italic relative text-stone bottom-0 left-0 border-b-4" style="border-color: #CDC19F">everything</span></div>
 			  <img src={YellowCircle} alt="yellow circle" class="w-12 h-12 mr-4 ml-4">
 			  <div class="inline-block"><span class="italic text-amber-200 text-opacity-50">in</span><span class="text-amber-200 text-opacity-50 to-black">-between</span>.</div>
 			</div>
 		</div>
-		<div class="flex items-center justify-center font-graphik text-zinc-800 text-2xl pt-8 pb-40">
+		<div class="flex items-center justify-center font-Graphik text-zinc-800 pt-8 pb-40" >
 			<div class="text-center">
 			  <div>Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
-			  <div class="mx-auto"><span class="italic">make</span> stuff, and <span class=" text-stone-500 bottom-0 left-0 border-b-2 border-stone-500 leading-13">you're invited</span>.</div>
+			  <div class="mx-auto"><span class="italic">make</span> stuff, and <span class="  bottom-0 left-0 border-b-2 leading-13" style="border-color: #706F6B; color: #706F6B">you're invited</span>.</div>
 			</div>
 		</div>
 	</div>  
@@ -145,41 +145,41 @@
   <section>
     <div class="flex bg-primary pb-40">
         <div class="pl-40 flex flex-col justify-start">
-			<img src={JoinUs} alt="JoinUs" class="w-79 h-67">
+			<img src={JoinUs} alt="JoinUs" style="width: 792px; height: 476px;">
         </div>
         <div class="flex-grow pl-20">
-			<div class="pl-4 pt-14">
-				<span class="px-6 py-3 border-2 rounded-full text-sm font-mono border-lime-700 text-lime-700 inline-block p-2">
+			<div class="pl-4 pt-12">
+				<span class="px-6 py-3 border-2 rounded-full text-sm font-mono inline-block p-2" style="border-color: #758F2A; color: #758F2A;">
 					<img src={Scroll} alt="Scroll" class="w-6 h-6 inline-block" />
 					HOW IT WORKS
 				</span>
 			</div>
             <div class="p-5 pr-40 text-zinc-800">
-                <div class="text-5xl font-tiempos-headline pt-2"> 
+                <div class="text-4xl font-tiempos-headline pt-12" style="font-weight: 300;"> 
                     Introductions 👋,
                     <br/>two 50-min work blocks 🖋️️💻🎨,
                     <br/>ending with casual open <span class="italic">demos</span> 🤝
-                    <br/><span class="italic text-stone-300"> + snacks along the way.</span>
+                    <br/><span class="italic " style="color: #CFCCC4"> + snacks along the way.</span>
                 </div>
-                <div class="pt-5 text-2xl text-zinc-800 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to <br/>make stuff, and you're invited</div>
+                <div class="pt-5 text-zinc-800 font-inter">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to make stuff, and you're invited</div>
             </div>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="flex bg-primary pb-40">
+    <div class="flex bg-primary pb-40 pl-20">
         <div class="flex-grow pl-20">
             <div class="pl-4 pt-14">
-                <span class="px-6 py-3 border-2 rounded-full text-sm font-mono border-blue-800 text-blue-800 inline-block p-2">
+                <span class="px-6 py-3 border-2 rounded-full text-sm font-mono inline-block p-2" style="border-color: #2C64B7; color: #2C64B7;">
                     <img src={Smiley} alt="Smiley" class="w-6 h-6 inline-block mr-2" />
                     WHY WE DO WHAT WE DO
                 </span>
             </div>
             <div class="p-5 pr-40">
-                <div class="text-5xl text-zinc-800 font-light font-tiempos-headline pt-2"> 
+                <div class="text-4xl text-zinc-800 font-light font-tiempos-headline pt-4 " style="font-weight: 300;"> 
                     We like helping good people do great things.
-                    <div>Got an extra minute? <span class="text-stone-500 underline"> We have more to say</span></div>
+                    <div>Got an extra minute? <span class=" border-b-2" style="border-color: #706F6B; color: #706F6B;"> We have more to say</span></div>
                 </div>
             </div>
         </div>

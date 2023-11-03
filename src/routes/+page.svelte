@@ -149,12 +149,15 @@
 		<div class="flex items-center justify-center font-Graphik text-zinc-800 pt-8 pb-40" >
 			<div class="text-center">
 			  <div>Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
-			  <div class="mx-auto"><span class="italic">make</span> stuff, and <span class="  bottom-0 left-0 border-b-2 leading-13" style="border-color: #706F6B; color: #706F6B">you're invited</span>.</div>
+			  <div class="mx-auto"><span class="italic">make</span> stuff, and 
+				<a href="https://lu.ma/socratica" target="_blank" class="bottom-0 left-0 border-b-2 leading-13" style="border-color: #706F6B; color: #706F6B">
+					you're invited
+			 	</a>
+			  .</div>
 			</div>
 		</div>
 	</div>  
   </section>
-  
   <section>
     <div class="flex bg-primary pb-40">
         <div class="pl-40 flex flex-col justify-start">

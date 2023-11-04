@@ -8,6 +8,8 @@
 	import Eye from '$lib/images/Eye.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
+	import BackgroundLines from '$lib/images/BackgroundLines.png';
+	import BackgroundLines2 from '$lib/images/BackgroundLines2.png';
 	import RedCircle from '$lib/images/red-circle.png';
 	import GreenCircle from '$lib/images/green-circle.png';
 	import YellowCircle from '$lib/images/yellow-circle.png';
@@ -122,7 +124,7 @@
 
 
 <section>
-	<div class="bg-primary">
+	<div class="bg-primary bg-cover bg-center bg-no-repeat" style="background-image: url({BackgroundLines})">
 		<div class="flex justify-center items-center pt-40 pb-10">
 			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono inline-block p-2" style="border-color: #C6482C; color: #C6482C">
 				<img src={HandWaving} alt="Hand waving" class="w-6 h-6 inline-block" />
@@ -184,7 +186,7 @@
 </section>
 
 <section>
-    <div class="flex bg-primary pb-40 pl-20">
+	<div class="flex bg-primary pb-40 pl-20 bg-cover bg-center bg-no-repeat" style="background-image: url({BackgroundLines2})">
         <div class="flex-grow pl-20">
             <div class="pl-4 pt-14">
                 <span class="px-6 py-3 border-2 rounded-full text-sm font-mono inline-block p-2" style="border-color: #2C64B7; color: #2C64B7;">

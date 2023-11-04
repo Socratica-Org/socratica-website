@@ -50,18 +50,18 @@
 	<div class="flex flex-col h-screen justify-center bg-primary">
 		<div class="absolute top-5 left-10 w-10 h-10 bg-black rounded-full" />
 		<div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2 w-[105px]">
+			<a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[105px]">
 				<img src={UsersThree} alt="Users" class="w-6 h-6" />
 				<span>ABOUT</span>
-			</button>
-			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2 w-[85px]">
+			</a>
+			<a href="/map" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[85px]">
 				<img src={MapTrifold} alt="Map" class="w-6 h-6" />
 				<span>MAP</span>
-			</button>
-			<button class="bg-white py-2 px-2.5 rounded-full border border-gray-300 hover:bg-gray-400 font-mono inline-flex items-center space-x-2">
+			</a>
+			<a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
 				<img src={Eye} alt="Eye" class="w-6 h-6" />
 				<span>GET INVOLVED</span>
-			</button>
+			</a>
 		</div>
 		
 		
@@ -213,9 +213,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 
 

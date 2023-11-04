@@ -1,3 +1,5 @@
+@import 'leaflet/dist/leaflet.css';
+
 @font-face {
 	font-family: 'Tiempos Headline';
 	src: url('/fonts/tiempos-headline/tiempos-headline-light.woff2') format('woff2');
@@ -16,6 +18,10 @@
 
 body {
 	font-family: 'Untitled Sans', sans-serif;
+}
+
+html {
+	overflow-y: scroll;
 }
   
 /* @font-face {

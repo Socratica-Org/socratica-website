@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import PopupWaterloo from './popups/popupWaterloo.svelte'
+    import UsersThree from '$lib/images/UsersThree.png';
+	import MapTrifold from '$lib/images/MapTrifold.png';
+	import Eye from '$lib/images/Eye.png';
+  
+    let map;
+    const centerPoint = [51.557152, -62.146388]
+    const nodeWaterloo = [43.477305, -80.549252];
+  
+    onMount(() => {
+      // Dynamically import Leaflet only on the client-side
+      import('leaflet').then(L => {
+        let mapOptions: {
+            center: [number, number],
+            zoom: number
+        } = {
+            center: centerPoint as [number, number],
+            zoom: 4
+        }
+  
+        map = L.map('map', mapOptions);
+  
+        // const layer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+        //     attribution: ''
+        // });
+
+        const layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: ''
+        });
+
+        map.addLayer(layer);
+        var defaultIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'http://cdn.leafletjs.com/leaflet-0.7.3/images/marker-shadow.png',
+            iconSize: [25, 41], 
+            shadowSize: [41, 41],
+            iconAnchor: [12, 41], 
+            shadowAnchor: [13, 41], 
+            popupAnchor: [1, -34]
+        });
+        const popupOptions: L.PopupOptions = {
+            minWidth: Math.round(window.innerWidth / 4),
+        };
+  
+        const waterlooMarker = L.marker(nodeWaterloo as [number, number], { icon: defaultIcon });
+        waterlooMarker.addTo(map);
+        const popupContent = document.getElementById('waterloo-popup')!.innerHTML;
+        waterlooMarker.bindPopup(popupContent, popupOptions);
+      });
+    });
+  </script>
+
+  <div id="map" class="w-screen h-screen">
+    <PopupWaterloo />
+  </div>
+
+  <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
+    <a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[105px]">
+        <img src={UsersThree} alt="Users" class="w-6 h-6" />
+        <span>ABOUT</span>
+    </a>
+    <a href="/map" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[85px]">
+        <img src={MapTrifold} alt="Map" class="w-6 h-6" />
+        <span>MAP</span>
+    </a>
+    <a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <img src={Eye} alt="Eye" class="w-6 h-6" />
+        <span>GET INVOLVED</span>
+    </a>
+  </div>
+
+
+  <style>
+    #map {
+        width: 100%;
+        filter: sepia(0.4) brightness(1) contrast(0.9) saturate(1.2);
+    }
+</style>

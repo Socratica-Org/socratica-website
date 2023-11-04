@@ -2,7 +2,6 @@
 	import doodle1 from '$lib/images/socratica-doodle.png';
 	import doodle2 from '$lib/images/socratica-doodle-alt.png';
 	import people from '$lib/images/socratica-people.png';
-	import sessionPano from '$lib/images/session-pano.png';
 	import UsersThree from '$lib/images/UsersThree.png';
 	import MapTrifold from '$lib/images/MapTrifold.png';
 	import Eye from '$lib/images/Eye.png';
@@ -13,6 +12,8 @@
 	import RedCircle from '$lib/images/red-circle.png';
 	import GreenCircle from '$lib/images/green-circle.png';
 	import YellowCircle from '$lib/images/yellow-circle.png';
+	import Alien from '$lib/images/Alien.png'
+	import WhoCanCome from '$lib/images/WhoCanCome.png';
 	import HandWaving from '$lib/images/HandWaving.png'
 	import Scroll from '$lib/images/Scroll.png';
 	import JoinUs from '$lib/images/JoinUs.png';
@@ -109,20 +110,6 @@
 	</div>
 </section>
 
-<section class="flex flex-col items-center justify-center h-screen relative">
-  <div class="text-left absolute top-[15%] mx-28">
-	  <button class="bg-white px-6 py-3 rounded-full mb-6 text-sm uppercase font-mono border border-gray-300 hover:bg-gray-400">
-		<img src={Spiral} alt="Spiral" class="w-6 h-6 inline-block" />
-		who can come
-	</button>
-    <h1 class="text-4xl font-bold mb-4">Whether you're just starting out or far along, this is a place for <i>you</i>.</h1>
-    <p class="text-lg text-gray-700">We know it can be intimidating to start</p>
-	  <p class="text-lg text-gray-700 mb-8">(we've been there).</p>
-  </div>
-  <img src={sessionPano} alt="Your Description" class="absolute bottom-0 h-1/2 w-full object-cover">
-</section>
-
-
 <section>
 	<div class="bg-primary bg-cover bg-center bg-no-repeat" style="background-image: url({BackgroundLines})">
 		<div class="flex justify-center items-center pt-40 pb-10">
@@ -160,8 +147,31 @@
 		</div>
 	</div>  
   </section>
+
   <section>
-    <div class="flex bg-primary pb-40">
+	<div class="bg-primary pt-40">
+		<div class="pl-44"> 
+			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono inline-block p-2" style="border-color: #854F6F; color: #854F6F">
+				<img src={Alien} alt="Alien" class="w-6 h-6 inline-block" />
+			  WHO CAN COME
+			</span>
+		</div>
+		
+		<div class="pt-6 pl-44"> 
+			<div class="text-4xl font-tiempos-headline">Whether you're just starting out or far along, 
+				<br/>this is a place for <i>you</i>
+			</div> 
+			<div class="font-Graphik pt-6">
+				We know it can be intimidating to start
+				<br/>(we've been there).
+			</div>
+		</div>
+		<img src={WhoCanCome} alt="Who Can Come" class="-mt-80">
+	</div>
+  </section>
+
+  <section>
+    <div class="flex bg-primary pt-40 pb-40">
         <div class="pl-40 flex flex-col justify-start">
 			<img src={JoinUs} alt="JoinUs" style="width: 792px; height: 476px;">
         </div>

@@ -3,6 +3,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import PopupWaterloo from './popups/popupWaterloo.svelte'
+    import PopupVancouver from './popups/popupVancouver.svelte'
     import UsersThree from '$lib/images/UsersThree.png';
 	import MapTrifold from '$lib/images/MapTrifold.png';
 	import Eye from '$lib/images/Eye.png';
@@ -10,6 +11,7 @@
     let map;
     const centerPoint = [51.557152, -62.146388]
     const nodeWaterloo = [43.477305, -80.549252];
+    const nodeVancouver = [49.282729, -123.120738];
   
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -50,12 +52,18 @@
         waterlooMarker.addTo(map);
         const popupContent = document.getElementById('waterloo-popup')!.innerHTML;
         waterlooMarker.bindPopup(popupContent, popupOptions);
+
+        const vancouverMarker = L.marker(nodeVancouver as [number, number], { icon: defaultIcon });
+        vancouverMarker.addTo(map);
+        const popupContent2 = document.getElementById('vancouver-popup')!.innerHTML;
+        vancouverMarker.bindPopup(popupContent2, popupOptions);
       });
     });
   </script>
 
   <div id="map" class="w-screen h-screen">
     <PopupWaterloo />
+    <PopupVancouver />
   </div>
 
   <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">

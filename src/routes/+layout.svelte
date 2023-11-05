@@ -86,7 +86,10 @@
 					{#if emailValidationMessage}
 						<p class="text-red-500 mt-2 ">{emailValidationMessage}</p>
 					{/if}
-					<img src="/sponser_logos.svg" alt="Sponsor Logos" class="h-32 w-32 -mt-[18px]">
+					<a href="https://www.instagram.com/uwstartups/" target="_blank" >
+						<img src="/sponser_logos.svg" alt="Sponsor Logos" class="h-32 w-32 -mt-[18px]">
+					</a>
+
 				</div>
 
 			</div>

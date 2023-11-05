@@ -43,7 +43,7 @@
             popupAnchor: [1, -34]
         });
         const popupOptions: L.PopupOptions = {
-            minWidth: Math.round(window.innerWidth / 4),
+            minWidth: 500,
         };
   
         const waterlooMarker = L.marker(nodeWaterloo as [number, number], { icon: defaultIcon });

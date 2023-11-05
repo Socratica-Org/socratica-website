@@ -2,11 +2,27 @@
 	import './styles.css';
 	import "../app.css";
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
+	import { initializeApp } from "firebase/app";
+	import { getAnalytics } from "firebase/analytics";
 	
 	import { onMount } from 'svelte';
 	let currentPath = '';
 	onMount(() => {
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyAOFynVtpSZDhFjas7r6VyGOJAQv8iZ-zA",
+			authDomain: "socratica-website.firebaseapp.com",
+			projectId: "socratica-website",
+			storageBucket: "socratica-website.appspot.com",
+			messagingSenderId: "416041679757",
+			appId: "1:416041679757:web:9ad61c604c1188a59a9bc4",
+			measurementId: "G-QQ3CWQBT5K"
+		};
+		const app = initializeApp(firebaseConfig);
+    	const analytics = getAnalytics(app);
+
 		currentPath = window.location.pathname;
+
 	});
   
 	let email = '';

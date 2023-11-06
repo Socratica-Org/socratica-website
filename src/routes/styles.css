@@ -32,6 +32,13 @@ body {
 html {
 	overflow-y: scroll;
 }
+
+.leaflet-popup-content {
+    background: transparent;
+	background-color: #FBF8EF;
+    padding: 0 !important;
+}
+
   
 /* @font-face {
     font-family: 'Graphik';

@@ -105,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="-mt-40">
+	<div class="-mt-32">
 		<img src={people} alt="People at Socratica" class="w-full h-auto" />
 	</div>
 </section>

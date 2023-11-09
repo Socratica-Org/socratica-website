@@ -8,12 +8,12 @@
         </div>
     </div>
     <iframe
+        title="Atelier Vancouver"
         src="https://lu.ma/embed/calendar/atelier.calendar/events?lt=light"
         width="500"
         height="450"
         frameborder="0"
         style="border: 1px solid #bfcbda88; border-radius: 4px;"
         aria-hidden="false"
-        tabindex="0"
     ></iframe>
 </div>

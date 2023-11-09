@@ -12,7 +12,7 @@
     const centerPoint = [51.557152, -62.146388]
     const nodeWaterloo = [43.477305, -80.549252];
     const nodeVancouver = [49.282729, -123.120738];
-  
+   
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
       import('leaflet').then(L => {

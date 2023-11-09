@@ -39,6 +39,27 @@ html {
     padding: 0 !important;
 }
 
+.leaflet-popup-close-button {
+    width: 24px; /* or the size you want */
+    height: 24px; /* or the size you want */
+    line-height: 24px; /* this should be the same as height for vertical alignment */
+    font-size: 18px; /* or the size you want */
+  }
+
+  /* Add circle around the close button */
+  .leaflet-popup-close-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px; /* this should be the same as the button's width */
+    height: 24px; /* this should be the same as the button's height */
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
   
 /* @font-face {
     font-family: 'Graphik';

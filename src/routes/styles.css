@@ -33,46 +33,23 @@ html {
 	overflow-y: scroll;
 }
 
-.leaflet-popup-content {
-    background: transparent !important;
-	background-color: #FFFCF3 !important;
-    padding: 0 !important;
-}
 
-.leaflet-popup-tip-container {
-    background-color: #FFFCF3 !important;
-}
-
-.leaflet-popup-tip {
-    background-color: #FFFCF3 !important;
-}
-
-
-/* Specific to the map container if necessary */
 #map .leaflet-popup-close-button {
-	font-size: 32px !important;
-	font-weight: lighter !important;
-	line-height: 24px !important;
-	border-radius: 50% !important;
-	width: 40px !important;
-	height: 40px !important;
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	padding: 4px !important;
-	top: 10px !important;
-	right: 10px !important;
-	color: black !important;
-  }
-
-
-/* Additional specificity for the button background and no border */
-#map .leaflet-popup-close-button {
-	background-color: #EBE4D0 !important;
-	border: none !important;
+	font-size: 32px;
+	font-weight: lighter;
+	border-radius: 50%;
+	color: black;
+	background-color: #EBE4D0;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 8px;
+	padding-left: 6px;
+	top: 10px;
+	right: 10px;
 }
-  
-  
 
 
   

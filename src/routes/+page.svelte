@@ -18,6 +18,7 @@
 	import Scroll from '$lib/images/Scroll.png';
 	import JoinUs from '$lib/images/JoinUs.png';
 	import Smiley from '$lib/images/Smiley.png';
+	import Polaroid from '$lib/images/Polaroid.png';
 
 	const doodles = [
     {
@@ -170,8 +171,8 @@
 	</div>
   </section>
 
-  <section>
-    <div class="flex bg-primary pt-40 pb-40">
+  <section class="bg-primary">
+    <div class="flex pt-40 pb-40">
         <div class="pl-40 flex flex-col justify-start">
 			<img src={JoinUs} alt="JoinUs" style="width: 792px; height: 476px;">
         </div>
@@ -193,6 +194,7 @@
             </div>
         </div>
     </div>
+	<img src={Polaroid} alt="Polaroid" class="mx-auto" style="width: 1200px; height: 1000;">
 </section>
 
 <section>

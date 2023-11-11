@@ -1,19 +1,16 @@
-<div id="waterloo-popup" class="hidden flex items-center justify-center px-4 py-8 flex-col">
-    <h1 class="text-4xl font-bold text-gray-900 text-center -mb-4">Socratica Waterloo</h1>
-    <p class="text-gray-600 text-center mb-4" style="font-size: 14px;">Since May 2022</p>
-    <div class="tailwind-container">
-        <div class="mb-4">
-            <h2 class="text-xl font-medium text-gray-800">Photo Gallery</h2>
-            <a href="google.com" class="text-gray-700 underline">Check It Out!</a>
-        </div>
+<div id="waterloo-popup" class="hidden px-4 py-8 flex flex-col items-center justify-center">
+    <div class="w-full text-left mt-8">
+        <h1 class="text-4xl text-black font-tiempos-headline">Socratica Waterloo</h1>
+        <p class="text-#A09D98 font-bold font-graphik" style="font-size: 20px; color: #A09D98;">Since May 2022</p>
     </div>
     <iframe
+        title="Socratica Waterloo"
         src="https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light"
         width="500"
         height="450"
         frameborder="0"
-        style="border: 1px solid #bfcbda88; border-radius: 4px;"
+        style="border: 1.5px solid #EBE4D0; border-radius: 8px; margin: 0 auto;"
         aria-hidden="false"
-        tabindex="0"
     ></iframe>
 </div>
+

@@ -33,11 +33,24 @@ html {
 	overflow-y: scroll;
 }
 
-.leaflet-popup-content {
-    background: transparent;
-	background-color: #FBF8EF;
-    padding: 0 !important;
+
+#map .leaflet-popup-close-button {
+	font-size: 32px;
+	font-weight: lighter;
+	border-radius: 50%;
+	color: black;
+	background-color: #EBE4D0;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 8px;
+	padding-left: 6px;
+	top: 10px;
+	right: 10px;
 }
+
 
   
 /* @font-face {

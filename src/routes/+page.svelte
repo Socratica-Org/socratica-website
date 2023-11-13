@@ -51,7 +51,7 @@
 	<div class="flex flex-col h-screen justify-center bg-primary">
 		<div class="absolute top-5 left-10 w-10 h-10 bg-black rounded-full" />
 		<div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-			<a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[105px]">
+			<a href="/about" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[105px]">
 				<img src={UsersThree} alt="Users" class="w-6 h-6" />
 				<span>ABOUT</span>
 			</a>

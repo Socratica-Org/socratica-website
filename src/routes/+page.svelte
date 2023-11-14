@@ -59,7 +59,7 @@
 				<img src={MapTrifold} alt="Map" class="w-6 h-6" />
 				<span>MAP</span>
 			</a>
-			<a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+			<a href="/get-involved" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
 				<img src={Eye} alt="Eye" class="w-6 h-6" />
 				<span>GET INVOLVED</span>
 			</a>

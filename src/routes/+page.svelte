@@ -209,7 +209,11 @@
             <div class="p-5 pr-40">
                 <div class="text-4xl text-zinc-800 font-light font-tiempos-headline pt-4 " style="font-weight: 300;"> 
                     We like helping good people do great things.
-                    <div>Got an extra minute? <span class=" border-b-2" style="border-color: #706F6B; color: #706F6B;"> We have more to say</span></div>
+                    <div>Got an extra minute? 
+						<a href="/about" class="border-b-2" style="border-color: #706F6B; color: #706F6B; text-decoration: none;">
+							We have more to say
+					  	</a>
+					</div>
                 </div>
             </div>
         </div>

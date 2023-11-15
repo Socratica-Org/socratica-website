@@ -37,7 +37,7 @@
     <div class="flex flex-col items-center absolute w-full" style="top: 40%;">
         <h2 class="text-5xl font-tiempos-headline">Stiiiiill building this. (maybe)</h2>
         <p class="text-xl font-tiempos-headline mt-8">The page you’re looking for doesn’t exist.</p>
-        <a href="/" class="bg-[#2A2928] mt-16 py-4 px-8 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 min-w-[150px] text-white" style="font-family: 'SF Mono', monospace;">
+        <a href="/" class="bg-[#2A2928] mt-16 py-4 px-8 rounded-full border border-cool-grey hover:bg-[#706F6B] font-mono inline-flex items-center space-x-2 min-w-[150px] text-white" style="font-family: 'SF Mono', monospace;">
             <img src={House} alt="Home" class="w-6 h-6" />
             <span>BACK TO HOME</span>
         </a>

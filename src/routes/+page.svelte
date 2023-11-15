@@ -39,6 +39,15 @@
 		currentDoodle = doodles[randomIndex];
 	}
 
+	const socraticaURL = "https://lu.ma/socratica";
+
+	function scrollToSection() {
+		const section = document.getElementById('what-we-are');
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
 </script>
 
 <svelte:head>
@@ -86,11 +95,13 @@
 						so that you can work on your <span class="italic">passion projects</span> with likeminded people.
 					</p>
 					<div class="mt-4">
-						<button class="bg-black px-6 py-3 rounded-full border border-gray-300 text-sm text-white font-mono hover:bg-gray-400">
-							<img src={ArrowDownRight} alt="Arrow Down Right" class="w-6 h-6 inline-block" />
-							ATTEND A SESSION
-						</button>
-						<button class="bg-white px-6 py-3 rounded-full text-sm font-mono border border-gray-300 hover:bg-gray-400">
+						<a href={socraticaURL} target="_blank" rel="noopener noreferrer">
+							<button class="bg-black px-6 py-3 rounded-full border border-gray-300 text-sm text-white font-mono hover:bg-[#706F6B]">
+							  <img src={ArrowDownRight} alt="Arrow Down Right" class="w-6 h-6 inline-block" />
+							  ATTEND A SESSION
+							</button>
+						</a>
+						<button class="bg-white px-6 py-3 rounded-full text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
 							<img src={Spiral} alt="Spiral" class="w-6 h-6 inline-block" />
 							DIVE DEEPER
 						</button>
@@ -111,7 +122,7 @@
 	</div>
 </section>
 
-<section>
+<section id="what-we-are">
 	<div class="bg-primary bg-cover bg-center bg-no-repeat" style="background-image: url({BackgroundLines})">
 		<div class="flex justify-center items-center pt-40 pb-10">
 			<span class="px-6 py-3 rounded-full border-2 text-sm font-mono inline-block p-2" style="border-color: #C6482C; color: #C6482C">

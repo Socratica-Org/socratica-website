@@ -67,16 +67,16 @@
   </div>
 
   <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-    <a href="/" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[95px]">
-        <img src={DarkHouse} alt="Users" class="w-6 h-6" />
+    <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 md:w-[105px]">
+        <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
         <span>HOME</span>
     </a>
-    <a href="/about" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 w-[105px]">
-        <img src={UsersThree} alt="Users" class="w-6 h-6" />
+    <a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 md:w-[105px]">
+        <img src={UsersThree} alt="about" class="w-4 h-4 md:w-6 md:h-6" />
         <span>ABOUT</span>
     </a>
-    <a href="/get-involved" class="bg-primary py-2 px-2.5 rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
-        <img src={Eye} alt="Eye" class="w-6 h-6" />
+    <a href="/get-involved" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <img src={Eye} alt="get involved" class="w-4 h-4 md:w-6 md:h-6" />
         <span>GET INVOLVED</span>
     </a>
   </div>

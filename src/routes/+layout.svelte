@@ -10,13 +10,13 @@
 	onMount(() => {
 
 		const firebaseConfig = {
-			apiKey: "AIzaSyAOFynVtpSZDhFjas7r6VyGOJAQv8iZ-zA",
-			authDomain: "socratica-website.firebaseapp.com",
-			projectId: "socratica-website",
-			storageBucket: "socratica-website.appspot.com",
-			messagingSenderId: "416041679757",
-			appId: "1:416041679757:web:9ad61c604c1188a59a9bc4",
-			measurementId: "G-QQ3CWQBT5K"
+			apiKey: import.meta.env.VITE_API_KEY,
+			authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+			projectId: import.meta.env.VITE_PROJECT_ID,
+			storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+			messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+			appId: import.meta.env.VITE_APP_ID,
+			measurementId: import.meta.env.VITE_MEASUREMENT_ID
 		};
 		const app = initializeApp(firebaseConfig);
     	const analytics = getAnalytics(app);

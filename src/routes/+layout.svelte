@@ -84,10 +84,10 @@
 					<h3 class="text-[#FBF8EF] font-base text-sm  -tracking-[0.48px] leading-[20px] pb-4 font-mono">MORE LINKS</h3>
 					<div class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] leading-[33px] text-xs sm:text-xs md:text-xs lg:text-sm font-graphik">
 						<p class="leading-[26px]"><a  href="/">Back to Top</a></p>
-						<p class="leading-[26px]"><a  href="/">About</a></p>
-						<p class="leading-[26px]"><a  href="/">Map</a></p>
-						<p class="leading-[26px]"><a  href="/">Get Involved</a></p>
-						<p class="leading-[26px]"><a  href="/">Easter Egg</a></p>
+						<p class="leading-[26px]"><a  href="/about">About</a></p>
+						<p class="leading-[26px]"><a  href="/map">Map</a></p>
+						<p class="leading-[26px]"><a  href="/get-involved">Get Involved</a></p>
+						<p class="leading-[26px]"><a  href="/easter-egg">Easter Egg</a></p>
 					</div>
 				</div>
 

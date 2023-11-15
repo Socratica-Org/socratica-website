@@ -16,15 +16,15 @@
 <div class="flex flex-col h-screen justify-center bg-primary">
     <div class="absolute top-5 left-10 w-10 h-10 bg-black rounded-full" />
     <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-        <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 md:w-[105px]">
+        <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
             <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
             <span>HOME</span>
         </a>
-        <a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 md:w-[105px]">
+        <a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
             <img src={UsersThree} alt="about" class="w-4 h-4 md:w-6 md:h-6" />
             <span>ABOUT</span>
         </a>
-        <a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 md:w-[85px]">
+        <a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
             <img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
             <span>MAP</span>
         </a>

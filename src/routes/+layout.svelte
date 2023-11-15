@@ -2,6 +2,8 @@
 	import './styles.css';
 	import "../app.css";
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
+	import uwstartups_logo from '$lib/images/uwstartups_logo.svg';
+	import eigenspace_logo from '$lib/images/eigenspace_logo.svg';
 	import { initializeApp } from "firebase/app";
 	import { getAnalytics } from "firebase/analytics";
 	
@@ -68,15 +70,16 @@
 				<div class="px-14 pt-16">
 					<h3 class="text-[#FBF8EF] font-base text-sm -tracking-[0.48px] leading-[20px] pb-4 font-mono">FRIENDS OF SOCRATICA</h3>
 					<div class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] text-xs sm:text-xs md:text-xs lg:text-sm font-graphik">
-						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Toronto, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/soto" target="_blank">Toronto, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">London, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
-						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Vancouver, BC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
-						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/atelier.ubc" target="_blank">Vancouver, BC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/ijsn65sl" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Ottawa, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Kingston, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Seattle, WA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
-						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Berkeley, CA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/berkeleydemoday" target="_blank">Berkeley, CA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">New York, NY <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/scaledown" target="_blank">Cambridge, ENG <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 					</div>
 				</div>
 
@@ -102,12 +105,19 @@
 					{#if emailValidationMessage}
 						<p class="text-red-500 mt-2 ">{emailValidationMessage}</p>
 					{/if}
-					<img src="/sponser_logos.svg" alt="Sponsor Logos" class="h-32 w-32 -mt-[18px]">
+					<div class="mt-[6px] flex gap-3">
+						<a data-sveltekit-reload href="https://eigenspace.com/" target="_blank"> 
+							<img src={eigenspace_logo} alt="Sponsor Logos: eigenspace" class="h-14 w-14">
+						</a>
+						<a data-sveltekit-reload href="https://www.instagram.com/uwstartups/" target="_blank"> 
+							<img src={uwstartups_logo} alt="Sponsor Logos: uwstartups" class="h-14 w-14">
+						</a>
+					</div>
+
 				</div>
-
+					
 			</div>
-			<img src="/socratica_logo_footer.svg" alt="Sponsor Logos" class="px-8 pt-[23px] pb-5">
-
+				<img src="/socratica_logo_footer.svg" alt="Sponsor Logos" class="px-8 pt-[23px] pb-5">
 		</footer>
 	{/if}
 </div>

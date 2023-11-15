@@ -1,12 +1,13 @@
 <div id="waterloo-popup" class="hidden px-4 py-8 flex flex-col items-center justify-center">
-    <div class="w-full text-left mt-8">
+    <div class="w-full md:w-1/2 text-left mt-8">
         <h1 class="text-4xl text-black font-tiempos-headline">Socratica Waterloo</h1>
         <p class="text-#A09D98 font-bold font-graphik" style="font-size: 20px; color: #A09D98;">Since May 2022</p>
     </div>
+
     <iframe
         title="Socratica Waterloo"
         src="https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light"
-        width="500"
+        width="fill"
         height="450"
         frameborder="0"
         style="border: 1.5px solid #EBE4D0; border-radius: 8px; margin: 0 auto;"

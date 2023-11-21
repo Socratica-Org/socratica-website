@@ -69,11 +69,11 @@
 				<img src={UsersThree} alt="Users" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>ABOUT</span>
 			</a>
-			<a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
+			<a href="/map" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 ">
 				<img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>MAP</span>
 			</a>
-			<a href="/get-involved" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
+			<a href="/get-involved" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
 				<img src={Eye} alt="Eye" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>GET INVOLVED</span>
 			</a>

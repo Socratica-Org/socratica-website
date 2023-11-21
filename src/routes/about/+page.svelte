@@ -2,22 +2,27 @@
     import MapTrifold from '$lib/images/MapTrifold.png';
     import Eye from '$lib/images/Eye.png';
     import DarkHouse from '$lib/images/DarkHouse.png';
+    import UsersThree from '$lib/images/UsersThree.png';
 </script>
 
 <div class="block">
 <div class="flex flex-col h-[820px] justify-center bg-primary">
     <div class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full" />
     <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-        <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <a href="/" class="transition bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
             <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
             <span>HOME</span>
         </a>
-        <a href="/map" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <a href="/about" class="cursor-not-allowed opacity-50 transition bg-cool-grey py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+            <img src={UsersThree} alt="Users" class="w-4 h-4 md:w-6 md:h-6" />
+            <span>ABOUT</span>
+        </a>
+        <a href="/map" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 ">
             <img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
             <span>MAP</span>
         </a>
-        <a href="/get-involved" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
-            <img src={MapTrifold} alt="get involved" class="w-4 h-4 md:w-6 md:h-6" />
+        <a href="/get-involved" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+            <img src={Eye} alt="Eye" class="w-4 h-4 md:w-6 md:h-6" />
             <span>GET INVOLVED</span>
         </a>
     </div>

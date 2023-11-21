@@ -6,14 +6,17 @@
 	import eigenspace_logo from '$lib/images/eigenspace_logo.svg';
 	import { initializeApp } from "firebase/app";
 	import { getAnalytics } from "firebase/analytics";
-	
+	import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 	import { onMount } from 'svelte';
 	let currentPath = '';
+	
+	let db;
 	onMount(() => {
 
 		const firebaseConfig = {
 			apiKey: import.meta.env.VITE_API_KEY,
 			authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+			databaseURL: "https://socratica-website-default-rtdb.firebaseio.com", ///CHANGE TO ENV!!!
 			projectId: import.meta.env.VITE_PROJECT_ID,
 			storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
 			messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
@@ -22,6 +25,7 @@
 		};
 		const app = initializeApp(firebaseConfig);
     	const analytics = getAnalytics(app);
+		db = getFirestore(app); //////
 
 		currentPath = window.location.pathname;
 
@@ -29,7 +33,8 @@
   
 	let email = '';
 	let emailValidationMessage = ''; // Feedback message
-  
+
+
 	/**
      * @param {string} email
      */
@@ -41,16 +46,41 @@
 	/**
      * @param {{ preventDefault: () => void; }} event
      */
-	function handleOnSubmit(event: any) {
-		event.preventDefault(); // prevent the form from submitting
-		if (isValidEmail(email)) {
-			console.log("Valid Email:", email);
-			emailValidationMessage = ''; // Clear any previous error messages
-		} else {
-			console.log("Invalid Email:", email);
-			emailValidationMessage = 'Please enter a valid email';
+	// function handleOnSubmit(event: any) {
+	// 	event.preventDefault(); // prevent the form from submitting
+	// 	if (isValidEmail(email)) {
+	// 		console.log("Valid Email:", email);
+	// 		emailValidationMessage = ''; // Clear any previous error messages
+	// 	} else {
+	// 		console.log("Invalid Email:", email);
+	// 		emailValidationMessage = 'Please enter a valid email';
+	// 	}
+	// }
+	async function handleOnSubmit(event: any) {
+	event.preventDefault(); // prevent the form from submitting
+	if (isValidEmail(email)) {
+		console.log("Valid Email:", email);
+		emailValidationMessage = ''; // Clear any previous error messages
+
+		// Add email to Firestore
+		try {
+			const docRef = await addDoc(collection(db, "emails"), {
+				email: email
+			});
+			console.log("Document written with ID: ", docRef.id);
+		} catch (e) {
+			console.error("Error adding document: ", e);
 		}
+	} else {
+		console.log("Invalid Email:", email);
+		emailValidationMessage = 'Please enter a valid email';
 	}
+}
+
+
+
+
+
   </script>
   
   

@@ -26,6 +26,14 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const VITE_API_KEY: string;
+	export const VITE_AUTH_DOMAIN: string;
+	export const VITE_DATABASE_URL: string;
+	export const VITE_PROJECT_ID: string;
+	export const VITE_STORAGE_BUCKET: string;
+	export const VITE_MESSAGING_SENDER_ID: string;
+	export const VITE_APP_ID: string;
+	export const VITE_MEASUREMENT_ID: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
@@ -111,6 +119,14 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		VITE_API_KEY: string;
+		VITE_AUTH_DOMAIN: string;
+		VITE_DATABASE_URL: string;
+		VITE_PROJECT_ID: string;
+		VITE_STORAGE_BUCKET: string;
+		VITE_MESSAGING_SENDER_ID: string;
+		VITE_APP_ID: string;
+		VITE_MEASUREMENT_ID: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;

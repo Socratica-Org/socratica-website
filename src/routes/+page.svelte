@@ -103,12 +103,12 @@
 					</p>
 					<div class="mt-4">
 						<a href="/map" target="_blank" rel="noopener noreferrer">
-							<button class="bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[10px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B] transition-colors duration-500 ease-in-out">
+							<button class="transition bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[10px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B]">
 							  <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 md:w-6 md:h-6 inline-block" />
 							  ATTEND A SESSION
 							</button>
 						</a>
-						<button class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey transition-colors duration-500 ease-in-out" on:click={scrollToSection}>
+						<button class="transition bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
 							<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
 							DIVE DEEPER
 						</button>

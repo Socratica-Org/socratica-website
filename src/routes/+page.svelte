@@ -100,7 +100,7 @@
 						so that you can work on your <span class="italic">passion projects</span> with likeminded people.
 					</p>
 					<div class="mt-4">
-						<a href={socraticaURL} target="_blank" rel="noopener noreferrer">
+						<a href="/map" target="_blank" rel="noopener noreferrer">
 							<button class="bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[10px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B]">
 							  <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 md:w-6 md:h-6 inline-block" />
 							  ATTEND A SESSION

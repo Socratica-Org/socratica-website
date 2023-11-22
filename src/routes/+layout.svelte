@@ -28,6 +28,7 @@
 		db = getFirestore(app); //////
 
 		currentPath = window.location.pathname;
+		console.log("Current Path:", currentPath);
 
 	});
   

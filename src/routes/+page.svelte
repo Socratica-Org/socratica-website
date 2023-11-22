@@ -202,14 +202,14 @@
 
   <section class="block">
 		<div class="bg-primary pt-24 md:pt-40">
-			<div class=" pl-8 md:pl-20 lg:pl-40"> 
+			<div class=" pl-8 md:pl-20 lg:pl-44"> 
 				<span class="px-4 py-2 md:px-6 md:py-3 rounded-full border-2 text-[10px] text-xs md:text-sm font-mono inline-block p-2" style="border-color: #854F6F; color: #854F6F">
 					<img src={Alien} alt="Alien" class="w-4 h-4 md:w-6 md:h-6 inline-block" />
 				WHO CAN COME
 				</span>
 			</div>
 			
-			<div class="pt-6 pl-8 md:pl-20 lg:pl-44  w-11/12 md:w-full"> 
+			<div class="pt-6 pl-8 md:pl-20 lg:pl-44 w-11/12 md:w-full"> 
 				<div class="text-[20px] text-xl xs:text-3xl sm:text-3xl md:text-4xl  font-tiempos-headline">Whether you're just starting out or far along, 
 					<br class="hidden md:block"/>this is a place for <i>you</i>
 				</div> 

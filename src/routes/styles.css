@@ -35,21 +35,26 @@ html {
 
 
 #map .leaflet-popup-close-button {
-	font-size: 32px;
-	font-weight: lighter;
-	border-radius: 50%;
-	color: black;
-	background-color: #EBE4D0;
-	width: 40px;
-	height: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 8px;
-	padding-left: 6px;
-	top: 10px;
-	right: 10px;
+    font-size: 32px;
+    font-weight: 100;
+    color: black;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+    padding-left: 6px;
+    top: 10px;
+    right: 10px;
 }
+
+
+.leaflet-popup-tip-container .leaflet-popup-tip {
+    margin-left: -175px;
+}
+
 
 
   

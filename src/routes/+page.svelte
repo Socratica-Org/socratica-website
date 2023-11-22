@@ -53,7 +53,7 @@
 
 <svelte:head>
 	<title>Socratica</title>
-	<meta name="description" content="We host weekly co-working sessions so that you can work on your passion projects with likeminded people." />
+	<meta name="description" content="We host weekly co-working sessions for you to work on your passion projects with likeminded people." />
 </svelte:head>
 
 
@@ -97,7 +97,7 @@
 				<div class="w-4/6 md:w-1/2">
 					<p class="text-md sm:text-xl lg:text-3xl font-tiempos-headline text-[#41403F]">
 						We host weekly <span class="border-dashed border-b-2" style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round">co-working sessions</span>
-						so that you can work on your <span class="italic">passion projects</span> with likeminded people.
+						for you to work on your <span class="italic">passion projects</span> with likeminded people.
 					</p>
 					<div class="mt-4">
 						<a href="/map" target="_blank" rel="noopener noreferrer">

@@ -61,19 +61,19 @@
 	<div class="flex flex-col h-[670px] sm:h-[800px] justify-center bg-primary">
 		<div class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full" />
 		<div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-			<a href="/" class="cursor-not-allowed opacity-50 transition bg-cool-grey py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+			<a href="/" class="cursor-not-allowed opacity-50 bg-cool-grey py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
 				<img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>HOME</span>
 			</a>
-			<a href="/about" class="transition bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+			<a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
 				<img src={UsersThree} alt="Users" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>ABOUT</span>
 			</a>
-			<a href="/map" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 ">
+			<a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
 				<img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>MAP</span>
 			</a>
-			<a href="/get-involved" class="transition bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+			<a href="/get-involved" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
 				<img src={Eye} alt="Eye" class="w-4 h-4 md:w-6 md:h-6" />
 				<span>GET INVOLVED</span>
 			</a>
@@ -101,17 +101,15 @@
 					</p>
 					<div class="mt-4">
 						<a href="/map" target="_blank" rel="noopener noreferrer">
-							<button class="transition bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[10px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B]">
+							<button class="bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[10px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B] transition-colors duration-500 ease-in-out">
 							  <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 md:w-6 md:h-6 inline-block" />
 							  ATTEND A SESSION
 							</button>
 						</a>
-						<a href="/about">
-							<button class="transition bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
-								<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
-								DIVE DEEPER
-							</button>
-						</a>
+						<button class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey transition-colors duration-500 ease-in-out" on:click={scrollToSection}>
+							<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
+							DIVE DEEPER
+						</button>
 					</div>
 				</div>
 				

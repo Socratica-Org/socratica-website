@@ -135,14 +135,14 @@
 					{#if emailValidationMessage}
 						<p class="text-red-500 mt-2 ">{emailValidationMessage}</p>
 					{/if}
-					<div class="mt-[6px] flex gap-3">
+					<!-- <div class="mt-[6px] flex gap-3">
 						<a data-sveltekit-reload href="https://eigenspace.com/" target="_blank"> 
 							<img src={eigenspace_logo} alt="Sponsor Logos: eigenspace" class="h-14 w-14">
 						</a>
 						<a data-sveltekit-reload href="https://www.instagram.com/uwstartups/" target="_blank"> 
 							<img src={uwstartups_logo} alt="Sponsor Logos: uwstartups" class="h-14 w-14">
 						</a>
-					</div>
+					</div> -->
 
 				</div>
 					

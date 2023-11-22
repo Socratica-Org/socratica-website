@@ -81,7 +81,7 @@
 		
 		
 		<div class="absolute top-5 left-1/2 transform -translate-x-1/2">
-        	<h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+      <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
 		</div>
 		
 		

@@ -4,13 +4,14 @@
     import DarkHouse from '$lib/images/DarkHouse.png';
     import UsersThree from '$lib/images/UsersThree.png';
 
-    import { initializeApp } from "firebase/app";
+
+  import { initializeApp } from "firebase/app";
 	import { getAnalytics } from "firebase/analytics";
 	import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 	import { onMount } from 'svelte';
 
     let currentPath = '';
-	let db;
+	  let db;
     let email = '';
     let sessionType = 'run'; // Variable to hold the session type
     let emailValidationMessage = ''; // Feedback message
@@ -95,7 +96,6 @@
 <div class="block">
 <div class="flex flex-col h-[820px] justify-center bg-primary">
     <div class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full" />
-
     <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
         <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
             <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />

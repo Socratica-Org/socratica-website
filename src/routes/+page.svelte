@@ -106,10 +106,12 @@
 							  ATTEND A SESSION
 							</button>
 						</a>
-						<button class="transition bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
-							<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
-							DIVE DEEPER
-						</button>
+						<a href="/about">
+							<button class="transition bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
+								<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
+								DIVE DEEPER
+							</button>
+						</a>
 					</div>
 				</div>
 				
@@ -184,7 +186,7 @@
 			<div class="text-center text-[12px] md:text-sm">
 				<span class="block md:hidden">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to <span class="italic">make</span> stuff, and <a href="https://lu.ma/socratica" target="_blank" class="border-b-2" style="border-color: #706F6B; color: #706F6B;">you're invited</a>.</span>
 				<div class="hidden md:block">Socratica is a live IRL co-working session hosted every Sunday bringing together people who want to</div>
-				<div class="hidden md:block mx-auto"><span class="italic">make</span> stuff, and <a href="https://lu.ma/socratica" target="_blank" class="border-b-2" style="border-color: #706F6B; color: #706F6B;">you're invited</a>.</div>
+				<div class="hidden md:block mx-auto"><span class="italic">make</span> stuff, and <a href="/map" class="border-b-2" style="border-color: #706F6B; color: #706F6B;">you're invited</a>.</div>
 			</div>
 		</div>
 		

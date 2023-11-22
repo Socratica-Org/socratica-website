@@ -2,8 +2,10 @@
 
 <script lang="ts">
     import { onMount } from 'svelte';
-    import PopupWaterloo from './popups/popupWaterloo.svelte'
-    import PopupVancouver from './popups/popupVancouver.svelte'
+    import PopupWaterloo from './popups/popupWaterloo.svelte';
+    import PopupVancouver from './popups/popupVancouver.svelte';
+    import PopupCambridge from './popups/popupCambridge.svelte';
+    import PopupOttawa from './popups/popupOttawa.svelte';
     import UsersThree from '$lib/images/UsersThree.png';
 	import Eye from '$lib/images/Eye.png';
     import DarkHouse from '$lib/images/DarkHouse.png';
@@ -13,6 +15,8 @@
     const centerPoint = [51.557152, -62.146388]
     const nodeWaterloo = [43.477305, -80.549252];
     const nodeVancouver = [49.282729, -123.120738];
+    const nodeCambridge = [52.205338, 0.121817];
+    const nodeOttawa = [45.421530, -75.697193];
    
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -20,9 +24,20 @@
         let mapOptions: {
             center: [number, number],
             zoom: number
+            minZoom: number,
+            maxZoom: number,
+            maxBounds: L.LatLngBounds,
+            maxBoundsViscosity: number
         } = {
             center: centerPoint as [number, number],
-            zoom: 4
+            zoom: 4,
+            minZoom: 3,
+            maxZoom: 18,
+            maxBounds: L.latLngBounds(
+                L.latLng(-90, -180),
+                L.latLng(90, 180)
+            ),
+            maxBoundsViscosity: 1.0 
         }
   
         map = L.map('map', mapOptions);
@@ -46,8 +61,10 @@
             popupAnchor: [1, -34]
         });
         const popupOptions: L.PopupOptions = {
-            minWidth: 285,
-            maxWidth: 285,
+            minWidth: 350,
+            maxWidth: 350,
+            // minWidth: 285,
+            // maxWidth: 285,
         };
   
         const waterlooMarker = L.marker(nodeWaterloo as [number, number], { icon: defaultIcon });
@@ -59,6 +76,16 @@
         vancouverMarker.addTo(map);
         const popupContent2 = document.getElementById('vancouver-popup')!.innerHTML;
         vancouverMarker.bindPopup(popupContent2, popupOptions);
+
+        const cambridgeMarker = L.marker(nodeCambridge as [number, number], { icon: defaultIcon });
+        cambridgeMarker.addTo(map);
+        const popupContent3 = document.getElementById('cambridge-uk-popup')!.innerHTML;
+        cambridgeMarker.bindPopup(popupContent3, popupOptions);
+
+        const ottawaMarker = L.marker(nodeOttawa as [number, number], { icon: defaultIcon });
+        ottawaMarker.addTo(map);
+        const popupContent4 = document.getElementById('ottawa-popup')!.innerHTML;
+        ottawaMarker.bindPopup(popupContent4, popupOptions);
       });
     });
   </script>
@@ -66,6 +93,8 @@
   <div id="map" class="w-screen h-screen">
     <PopupWaterloo />
     <PopupVancouver />
+    <PopupCambridge />
+    <PopupOttawa />
   </div>
 
   <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">

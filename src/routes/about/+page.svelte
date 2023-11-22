@@ -28,7 +28,9 @@
     </div>
 
     <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
-        <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+        <a href="/">
+            <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+        </a>
     </div>
 
     <div class="absolute w-9/10 md:w-9/10 lg:w-3/5 mt-96  sm:mt-96 md:mt-32 pb-60 md:pb-0" style="left: 10%;">

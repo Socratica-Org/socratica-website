@@ -46,77 +46,45 @@
 	/**
      * @param {{ preventDefault: () => void; }} event
      */
-	// function handleOnSubmit(event: any) {
-	// 	event.preventDefault(); // prevent the form from submitting
-	// 	if (isValidEmail(email)) {
-	// 		console.log("Valid Email:", email);
-	// 		emailValidationMessage = ''; // Clear any previous error messages
-	// 	} else {
-	// 		console.log("Invalid Email:", email);
-	// 		emailValidationMessage = 'Please enter a valid email';
-	// 	}
-	// }
-// 	async function handleOnSubmit(event: any) {
-// 	event.preventDefault(); // prevent the form from submitting
-// 	if (isValidEmail(email)) {
-// 		console.log("Valid Email:", email);
-// 		emailValidationMessage = ''; // Clear any previous error messages
+	async function handleOnSubmit(event: any) {
+		event.preventDefault(); // prevent the form from submitting
+		if (isValidEmail(email)) {
+			console.log("Valid Email:", email);
+			emailValidationMessage = ''; // Clear any previous error messages
 
-// 		// Add email to Firestore
-// 		try {
-// 			const docRef = await addDoc(collection(db, "emails"), {
-// 				email: email
-// 			});
-// 			console.log("Document written with ID: ", docRef.id);
-// 		} catch (e) {
-// 			console.error("Error adding document: ", e);
-// 		}
-// 	} else {
-// 		console.log("Invalid Email:", email);
-// 		emailValidationMessage = 'Please enter a valid email';
-// 	}
-// }
+			// Check if the email already exists in Firestore
+			const emailsRef = collection(db, "emails");
+			const querySnapshot = await getDocs(emailsRef);
+			let emailExists = false;
 
+			querySnapshot.forEach((doc) => {
+				if (doc.data().email === email) {
+					emailExists = true;
+				}
+			});
 
-async function handleOnSubmit(event: any) {
-    event.preventDefault(); // prevent the form from submitting
-    if (isValidEmail(email)) {
-        console.log("Valid Email:", email);
-        emailValidationMessage = ''; // Clear any previous error messages
-
-        // Check if the email already exists in Firestore
-        const emailsRef = collection(db, "emails");
-        const querySnapshot = await getDocs(emailsRef);
-        let emailExists = false;
-
-        querySnapshot.forEach((doc) => {
-            if (doc.data().email === email) {
-                emailExists = true;
-            }
-        });
-
-        // Add email to Firestore if it doesn't exist
-        if (!emailExists) {
-            try {
-                const docRef = await addDoc(emailsRef, {
-                    email: email
-                });
-                console.log("Document written with ID: ", docRef.id);
-                emailValidationMessage = 'Email successfully added!';
-				email = '';
-            } catch (e) {
-                console.error("Error adding document: ", e);
-                emailValidationMessage = 'Error adding email. Please try again.';
-            }
-        } else {
-            console.log("Email already exists: ", email);
-            emailValidationMessage = 'This email already exists in our records.';
-        }
-    } else {
-        console.log("Invalid Email:", email);
-        emailValidationMessage = 'Please enter a valid email';
-    }
-}
+			// Add email to Firestore if it doesn't exist
+			if (!emailExists) {
+				try {
+					const docRef = await addDoc(emailsRef, {
+						email: email
+					});
+					console.log("Document written with ID: ", docRef.id);
+					emailValidationMessage = 'Email successfully added!';
+					email = '';
+				} catch (e) {
+					console.error("Error adding document: ", e);
+					emailValidationMessage = 'Error adding email. Please try again.';
+				}
+			} else {
+				console.log("Email already exists: ", email);
+				emailValidationMessage = 'This email already exists in our records.';
+			}
+		} else {
+			console.log("Invalid Email:", email);
+			emailValidationMessage = 'Please enter a valid email';
+		}
+	}
 
 
 

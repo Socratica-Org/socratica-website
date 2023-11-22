@@ -106,7 +106,7 @@
 							  ATTEND A SESSION
 							</button>
 						</a>
-						<button class="transition bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey" on:click={scrollToSection}>
+						<button class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-[10px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey transition-colors duration-500 ease-in-out" on:click={scrollToSection}>
 							<img src={Spiral} alt="Spiral" class="w-3 h-3 md:w-6 md:h-6  inline-block" />
 							DIVE DEEPER
 						</button>

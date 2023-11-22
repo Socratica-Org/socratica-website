@@ -46,77 +46,45 @@
 	/**
      * @param {{ preventDefault: () => void; }} event
      */
-	// function handleOnSubmit(event: any) {
-	// 	event.preventDefault(); // prevent the form from submitting
-	// 	if (isValidEmail(email)) {
-	// 		console.log("Valid Email:", email);
-	// 		emailValidationMessage = ''; // Clear any previous error messages
-	// 	} else {
-	// 		console.log("Invalid Email:", email);
-	// 		emailValidationMessage = 'Please enter a valid email';
-	// 	}
-	// }
-// 	async function handleOnSubmit(event: any) {
-// 	event.preventDefault(); // prevent the form from submitting
-// 	if (isValidEmail(email)) {
-// 		console.log("Valid Email:", email);
-// 		emailValidationMessage = ''; // Clear any previous error messages
+	async function handleOnSubmit(event: any) {
+		event.preventDefault(); // prevent the form from submitting
+		if (isValidEmail(email)) {
+			console.log("Valid Email:", email);
+			emailValidationMessage = ''; // Clear any previous error messages
 
-// 		// Add email to Firestore
-// 		try {
-// 			const docRef = await addDoc(collection(db, "emails"), {
-// 				email: email
-// 			});
-// 			console.log("Document written with ID: ", docRef.id);
-// 		} catch (e) {
-// 			console.error("Error adding document: ", e);
-// 		}
-// 	} else {
-// 		console.log("Invalid Email:", email);
-// 		emailValidationMessage = 'Please enter a valid email';
-// 	}
-// }
+			// Check if the email already exists in Firestore
+			const emailsRef = collection(db, "emails");
+			const querySnapshot = await getDocs(emailsRef);
+			let emailExists = false;
 
+			querySnapshot.forEach((doc) => {
+				if (doc.data().email === email) {
+					emailExists = true;
+				}
+			});
 
-async function handleOnSubmit(event: any) {
-    event.preventDefault(); // prevent the form from submitting
-    if (isValidEmail(email)) {
-        console.log("Valid Email:", email);
-        emailValidationMessage = ''; // Clear any previous error messages
-
-        // Check if the email already exists in Firestore
-        const emailsRef = collection(db, "emails");
-        const querySnapshot = await getDocs(emailsRef);
-        let emailExists = false;
-
-        querySnapshot.forEach((doc) => {
-            if (doc.data().email === email) {
-                emailExists = true;
-            }
-        });
-
-        // Add email to Firestore if it doesn't exist
-        if (!emailExists) {
-            try {
-                const docRef = await addDoc(emailsRef, {
-                    email: email
-                });
-                console.log("Document written with ID: ", docRef.id);
-                emailValidationMessage = 'Email successfully added!';
-				email = '';
-            } catch (e) {
-                console.error("Error adding document: ", e);
-                emailValidationMessage = 'Error adding email. Please try again.';
-            }
-        } else {
-            console.log("Email already exists: ", email);
-            emailValidationMessage = 'This email already exists in our records.';
-        }
-    } else {
-        console.log("Invalid Email:", email);
-        emailValidationMessage = 'Please enter a valid email';
-    }
-}
+			// Add email to Firestore if it doesn't exist
+			if (!emailExists) {
+				try {
+					const docRef = await addDoc(emailsRef, {
+						email: email
+					});
+					console.log("Document written with ID: ", docRef.id);
+					emailValidationMessage = 'Email successfully added!';
+					email = '';
+				} catch (e) {
+					console.error("Error adding document: ", e);
+					emailValidationMessage = 'Error adding email. Please try again.';
+				}
+			} else {
+				console.log("Email already exists: ", email);
+				emailValidationMessage = 'This email already exists in our records.';
+			}
+		} else {
+			console.log("Invalid Email:", email);
+			emailValidationMessage = 'Please enter a valid email';
+		}
+	}
 
 
 
@@ -168,7 +136,7 @@ async function handleOnSubmit(event: any) {
 					<h3 class="text-[#FBF8EF] font-base text-sm  -tracking-[0.48px] leading-[20px] pb-4 font-mono">NEWSLETTER</h3>
 					<div class=" min-w-4/5 max-w-[400px] bg-[#2A2928] py-[8px] px-[10px] rounded-full flex justify-between">
 						<input bind:value={email} placeholder="email@gmail.com" class="bg-[#2A2928] text-[12px] md:text-base -tracking-[0.48px] w-full outline-none pl-4 rounded-full text-[#FFFFFF] font-graphik"/>
-						<button type="submit" on:click={handleOnSubmit} class=" text-black py-[7px] px-[20px] bg-[#FBF8EF] rounded-[100px] text-[12px] md:text-base font-semibold font-normal hover:opacity-95">
+						<button type="submit" on:click={handleOnSubmit} class=" text-black py-[7px] px-[20px] bg-[#FBF8EF] rounded-[100px] text-[12px] md:text-base font-semibold font-normal hover:opacity-95 transition-colors duration-500 ease-in-out">
 							Submit
 						</button>
 					</div>

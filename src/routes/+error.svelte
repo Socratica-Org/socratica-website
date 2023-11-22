@@ -16,15 +16,15 @@
 <div class="flex flex-col h-screen justify-center bg-primary">
     <div class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full" />
     <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
-        <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <a href="/" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
             <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
             <span>HOME</span>
         </a>
-        <a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <a href="/about" class="bg-white md:bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
             <img src={UsersThree} alt="about" class="w-4 h-4 md:w-6 md:h-6" />
             <span>ABOUT</span>
         </a>
-        <a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2">
+        <a href="/map" class="bg-white md:bg-primary py-2 px-2.5  text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
             <img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
             <span>MAP</span>
         </a>
@@ -37,7 +37,7 @@
     <div class="flex flex-col items-center absolute w-full" style="top: 40%;">
         <h2 class="text-[23px] mt-5 sm:text-4xl md:text-5xl font-tiempos-headline z-10">Stiiiiill building this. (maybe)</h2>
         <p class="text-md md:text-xl font-tiempos-headline mt-4 md:mt-8">The page you’re looking for doesn’t exist.</p>
-        <a href="/" class="text-xs md:text-base bg-[#2A2928] mt-12 md:mt-16 py-4 px-8 rounded-full border border-cool-grey hover:bg-[#706F6B] font-mono inline-flex items-center space-x-2 min-w-[150px] text-white" style="font-family: 'SF Mono', monospace;">
+        <a href="/" class="text-xs md:text-base bg-[#2A2928] mt-12 md:mt-16 py-4 px-8 rounded-full border border-cool-grey hover:bg-[#706F6B] font-mono inline-flex items-center space-x-2 min-w-[150px] text-white transition-colors duration-500 ease-in-out" style="font-family: 'SF Mono', monospace;">
             <img src={House} alt="Home" class="w-4 h-4 md:w-6 md:h-6" />
             <span>BACK TO HOME</span>
         </a>

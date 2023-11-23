@@ -21,9 +21,9 @@
                 Great creative work is historically done together, across backgrounds and disciplines, in small, high trust groups. This is the foundation of boundary pushing work - in engineering, science, art, and more.
             </p>
             <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-               There are increasingly few, low stakes ways for people to make interest, values aligned friends IRL. This is made worse by an endless stream of catered consumption.
+               On top of that....there are increasingly few, low stakes ways for people to make interest, values aligned friends IRL. This is made worse by an endless stream of catered consumption.
             </p>
-            <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
+            <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4 font-bold">
               It becomes pretty clear that we should do two things: gather and create. Socratica aims to help people do both.
             </p>
         </div>

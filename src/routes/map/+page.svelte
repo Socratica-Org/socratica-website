@@ -6,6 +6,8 @@
     import PopupVancouver from './popups/popupVancouver.svelte';
     import PopupCambridge from './popups/popupCambridge.svelte';
     import PopupOttawa from './popups/popupOttawa.svelte';
+    import PopupKingston from './popups/popupKingston.svelte';
+    import PopupBerkeley from './popups/popupBerkeley.svelte';
     import UsersThree from '$lib/images/UsersThree.png';
 	import Eye from '$lib/images/Eye.png';
     import DarkHouse from '$lib/images/DarkHouse.png';
@@ -17,6 +19,8 @@
     const nodeVancouver = [49.282729, -123.120738];
     const nodeCambridge = [52.205338, 0.121817];
     const nodeOttawa = [45.421530, -75.697193];
+    const nodeKingston = [44.231172, -76.485954];
+    const nodeBerkeley = [37.871593, -122.272747];
    
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -30,7 +34,7 @@
             maxBoundsViscosity: number
         } = {
             center: centerPoint as [number, number],
-            zoom: 4,
+            zoom: 3,
             minZoom: 3,
             maxZoom: 18,
             maxBounds: L.latLngBounds(
@@ -86,6 +90,16 @@
         ottawaMarker.addTo(map);
         const popupContent4 = document.getElementById('ottawa-popup')!.innerHTML;
         ottawaMarker.bindPopup(popupContent4, popupOptions);
+
+        const kingstonMarker = L.marker(nodeKingston as [number, number], { icon: defaultIcon });
+        kingstonMarker.addTo(map);
+        const popupContent5 = document.getElementById('kingston-popup')!.innerHTML;
+        kingstonMarker.bindPopup(popupContent5, popupOptions);
+
+        const berkeleyMarker = L.marker(nodeBerkeley as [number, number], { icon: defaultIcon });
+        berkeleyMarker.addTo(map);
+        const popupContent6 = document.getElementById('berkeley-popup')!.innerHTML;
+        berkeleyMarker.bindPopup(popupContent6, popupOptions);
       });
     });
   </script>
@@ -95,6 +109,8 @@
     <PopupVancouver />
     <PopupCambridge />
     <PopupOttawa />
+    <PopupKingston />
+    <PopupBerkeley />
   </div>
 
   <div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">

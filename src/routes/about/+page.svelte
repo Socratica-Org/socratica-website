@@ -38,10 +38,13 @@
         
         <div class="mt-8 md:mt-16 italic" style="font-family: 'Untitled Sans', sans-serif; width: 80%;">
             <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-                Ah, dear Seekers of Productivity and Pursuers of Passion! Gather 'round, for I present to you a grandiloquent proclamation, an opus of eloquence, a magnum opus if you will, extolling the virtues of a hallowed sanctuary for the enlightened minds of our time - none other than the illustrious "Socratica"!
+                Great creative work is historically done together, across backgrounds and disciplines, in small, high trust groups. This is the foundation of boundary pushing work - in engineering, science, art, and more.
             </p>
             <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-                In this hallowed hall of collaboration, where fervent flames of creativity dance merrily with the cool waters of contemplation, we offer unto you a resplendent oasis of productivity. Fear not, dear reader, for you are not alone in your quest to tame the unruly beasts of your passions! For here, amidst the congeniality of fellow enthusiasts, you shall find solace in the collective endeavour.
+               There are increasingly few, low stakes ways for people to make interest, values aligned friends IRL. This is made worse by an endless stream of catered consumption.
+            </p>
+            <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
+              It becomes pretty clear that we should do two things: gather and create. Socratica aims to help people do both.
             </p>
         </div>
     </div>

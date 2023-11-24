@@ -101,10 +101,10 @@
 
     <div>
         <div>
-            <div class="flex flex-col items-center absolute w-full" style="top: 40%;">
+            <div class="flex flex-col items-center w-full">
                 <h2 class="text-[45px] mt-5 sm:text-5xl md:text-5xl font-tiempos-headline z-10">Get Involved</h2>
             </div>
-            <form class="flex flex-col items-center mt-40" on:submit={handleOnSubmit}>
+            <form class="flex flex-col items-center mt-12" on:submit={handleOnSubmit}>
                 <input type="email" bind:value={email} name="email" placeholder="Your Email" required class="p-2 mb-4 border rounded outline-none" />
                 <select bind:value={sessionType} name="sessionType" class="p-2 mb-4 border rounded outline-none">
                     <option value="run">Run a session</option>

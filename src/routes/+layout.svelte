@@ -129,6 +129,7 @@
 						<p class="leading-[26px]"><a  href="/map">Map</a></p>
 						<p class="leading-[26px]"><a  href="/get-involved">Get Involved</a></p>
 						<p class="leading-[26px]"><a  href="/easter-egg">Easter Egg</a></p>
+						<p class="leading-[26px]"><a  href="https://donate.stripe.com/5kA6qZcondXE8Te008">Donate</a></p>
 					</div>
 				</div>
 

@@ -4,6 +4,7 @@
     import UsersThree from '$lib/images/UsersThree.png';
     import MapTrifold from '$lib/images/MapTrifold.png';
     import Eye from '$lib/images/Eye.png';
+    import Heart from '$lib/images/Heart.png';
 
     let currentPath = '';
 
@@ -12,13 +13,13 @@
     });
 </script>
 
-<div class="absolute top-5 right-5 flex flex-col space-y-2 items-end">
+<div class="absolute top-5 right-5 flex flex-col space-y-1 md:space-y-2 items-end">
     <a href="/" 
        class:opacity-50={currentPath === '/'} 
        class:cursor-not-allowed={currentPath === '/'} 
        class:bg-cool-grey={currentPath === '/'} 
        class="z-50 bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
-        <img src={DarkHouse} alt="home" class="w-4 h-4 md:w-6 md:h-6" />
+        <img src={DarkHouse} alt="Home" class="w-4 h-4 md:w-6 md:h-6" />
         <span>HOME</span>
     </a>
     <a href="/about" 
@@ -26,7 +27,7 @@
        class:cursor-not-allowed={currentPath === '/about'} 
        class:bg-cool-grey={currentPath === '/about'} 
        class="z-50 bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
-        <img src={UsersThree} alt="Users" class="w-4 h-4 md:w-6 md:h-6" />
+        <img src={UsersThree} alt="About" class="w-4 h-4 md:w-6 md:h-6" />
         <span>ABOUT</span>
     </a>
     <a href="/map" 
@@ -42,7 +43,12 @@
        class:cursor-not-allowed={currentPath === '/get-involved'} 
        class:bg-cool-grey={currentPath === '/get-involved'} 
        class="z-50 bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
-        <img src={Eye} alt="Eye" class="w-4 h-4 md:w-6 md:h-6" />
+        <img src={Eye} alt="Get Involved" class="w-4 h-4 md:w-6 md:h-6" />
         <span>GET INVOLVED</span>
+    </a>
+    <a href="https://donate.stripe.com/5kA6qZcondXE8Te008" target="_blank"
+       class="z-50 bg-primary py-2 px-2.5 text-[10px] text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
+        <img src={Heart} alt="Donate" class="w-4 h-4 md:w-6 md:h-6" />
+        <span>DONATE</span>
     </a>
 </div>

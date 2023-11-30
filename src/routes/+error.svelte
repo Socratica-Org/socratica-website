@@ -30,18 +30,9 @@
     </div>
     
 
-    <!-- <img src={GreenGuy} alt="Green Character" class="absolute" style="top: 5%; left: 15%; transform: scale(0.6);" />
-    <img src={OrangeGuy} alt="Orange Character" class="absolute" style="top: 5%; left: 43%; transform: scale(0.6);" />
-    <img src={YellowGuy} alt="Yellow Character" class="absolute" style="top: 14%; left: 66%; transform: scale(0.5);" /> -->
-
     <img src={GreenGuy} alt="Green Character" class="absolute      top-[5%] right-[50%] transform scale-[0.27]      md:top-[5%] lg:left-[15%] md:transform-scale-[0.6]" />
     <img src={OrangeGuy} alt="Orange Character" class="absolute   top-[5%] left-[10%] transform scale-[0.4]        md:top-[5%] lg:left-[43%] md:transform-scale-[0.6]" />
-    <img src={YellowGuy} alt="Yellow Character" class="absolute     top-[12%] left-[60%] transform scale-[0.4]   md:top-[14%] lg:left-[66%] md:transform-scale-50" />
-
-    <!-- <img src={BlueGuy} alt="Blue Character" class="absolute" style="top: 45%; left: 15%; transform: scale(0.5);" />
-    <img src={PurpleGuy} alt="Purple Character" class="absolute" style="top: 52%; left: 23%; transform: scale(0.55);" />
-    <img src={PinkGuy} alt="Pink Character" class="absolute" style="top: 61%; left: 54%; transform: scale(0.55);" />
-    <img src={BeigeGuy} alt="Beige Character" class="absolute" style="top: 41.5%; left: 67.5%; transform: scale(0.55);" /> -->
+    <img src={YellowGuy} alt="Yellow Character" class="absolute     top-[16%] left-[60%] transform scale-[0.4]   md:top-[14%] lg:left-[66%] md:transform-scale-50" />
     
     <img src={BlueGuy} alt="Blue Character" class="absolute   top-[47%] right-[63%] transform scale-[0.4]        md:top-[45%] md:left-[15%] md:transform-scale-50" />
     <img src={PurpleGuy} alt="Purple Character" class="absolute   top-[60%] right-[40%] transform scale-[0.27]           md:top-[52%] md:left-[23%] md:transform-scale-55" />

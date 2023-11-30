@@ -9,6 +9,7 @@
     import PopupKingston from './popups/popupKingston.svelte';
     import PopupBerkeley from './popups/popupBerkeley.svelte';
     import PopupWestern from './popups/popupWestern.svelte';
+    import PopupMIT from './popups/popupMIT.svelte';
     import Navbar from '$lib/components/navbar.svelte';
   
     let map;
@@ -20,6 +21,7 @@
     const nodeKingston = [44.231172, -76.485954];
     const nodeBerkeley = [37.871593, -122.272747];
     const nodeWestern = [43.009561, -81.275471];
+    const nodeMIT = [42.3629, -71.0839];
    
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -104,6 +106,11 @@
         westernMarker.addTo(map);
         const popupContent7 = document.getElementById('western-popup')!.innerHTML;
         westernMarker.bindPopup(popupContent7, popupOptions);
+
+        const mitMarker = L.marker(nodeMIT as [number, number], { icon: defaultIcon });
+        mitMarker.addTo(map);
+        const popupContent8 = document.getElementById('mit-popup')!.innerHTML;
+        mitMarker.bindPopup(popupContent8, popupOptions);
       });
     });
   </script>
@@ -116,6 +123,7 @@
     <PopupKingston />
     <PopupBerkeley />
     <PopupWestern />
+    <PopupMIT />
   </div>
 
   <Navbar />

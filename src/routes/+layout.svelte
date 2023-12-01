@@ -108,7 +108,7 @@
 				<div class="pt-16">
 					<h3 class="text-[#FBF8EF] font-base text-sm -tracking-[0.48px] leading-[20px] pb-4 font-mono">FRIENDS OF SOCRATICA</h3>
 					<div class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] text-xs sm:text-xs md:text-xs lg:text-sm font-graphik">
-						<p class="leading-[26px]"><a  href="https://lu.ma/soto" target="_blank">Toronto, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://lu.ma/socraticaTO" target="_blank">Toronto, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">London, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://lu.ma/atelier.ubc" target="_blank">Vancouver, BC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://lu.ma/ijsn65sl" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>

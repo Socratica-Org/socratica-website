@@ -2,6 +2,7 @@
 
 <script lang="ts">
     import { onMount } from 'svelte';
+    import Navbar from '$lib/components/navbar.svelte';
     import PopupWaterloo from './popups/popupWaterloo.svelte';
     import PopupVancouver from './popups/popupVancouver.svelte';
     import PopupCambridge from './popups/popupCambridge.svelte';
@@ -10,7 +11,7 @@
     import PopupBerkeley from './popups/popupBerkeley.svelte';
     import PopupWestern from './popups/popupWestern.svelte';
     import PopupMIT from './popups/popupMIT.svelte';
-    import Navbar from '$lib/components/navbar.svelte';
+    import PopupToronto from './popups/popupToronto.svelte';
   
     let map;
     const centerPoint = [51.557152, -62.146388]
@@ -22,6 +23,7 @@
     const nodeBerkeley = [37.871593, -122.272747];
     const nodeWestern = [43.009561, -81.275471];
     const nodeMIT = [42.3629, -71.0839];
+    const nodeToronto = [43.664714, -79.385477];
    
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -111,6 +113,11 @@
         mitMarker.addTo(map);
         const popupContent8 = document.getElementById('mit-popup')!.innerHTML;
         mitMarker.bindPopup(popupContent8, popupOptions);
+
+        const torontoMarker = L.marker(nodeToronto as [number, number], { icon: defaultIcon });
+        torontoMarker.addTo(map);
+        const popupContent9 = document.getElementById('toronto-popup')!.innerHTML;
+        torontoMarker.bindPopup(popupContent9, popupOptions); 
       });
     });
   </script>
@@ -124,6 +131,7 @@
     <PopupBerkeley />
     <PopupWestern />
     <PopupMIT />
+    <PopupToronto />
   </div>
 
   <Navbar />

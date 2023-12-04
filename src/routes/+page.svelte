@@ -3,6 +3,7 @@
 	import doodle2 from '$lib/images/socratica-doodle-alt.png';
 	import doodle3 from '$lib/images/socratica-doodle-3.png';
 	import doodle4 from '$lib/images/socratica-doodle-4.png';
+	import doodle5 from '$lib/images/socratica-doodle-5.png';
 	import people from '$lib/images/socratica-people.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
@@ -32,6 +33,10 @@
 	{
 		src: doodle4,
 		title: '"Socratica", by Someone'
+	},
+	{
+		src: doodle5,
+		title: '"MS Paint", by HudZah'
 	}
 	];
 

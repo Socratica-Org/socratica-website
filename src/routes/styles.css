@@ -38,7 +38,8 @@ html {
     font-size: 32px;
     font-weight: 100;
     color: black;
-    background-color: transparent;
+    background-color: #F5F1E2;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
@@ -48,7 +49,9 @@ html {
     padding-left: 6px;
     top: 10px;
     right: 10px;
+    box-sizing: border-box;
 }
+
 
 
 .leaflet-popup-tip-container .leaflet-popup-tip {

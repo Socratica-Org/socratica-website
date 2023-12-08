@@ -8,6 +8,7 @@ export default {
         },
         colors: {
           'cool-grey': '#CFCCC4',
+          'soft-grey': '#706F6B'
         },
         fontFamily: {
           'tiempos-headline': ['Tiempos Headline', 'serif'],

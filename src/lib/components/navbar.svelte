@@ -13,7 +13,7 @@
     });
 </script>
 
-<div class="absolute top-5 right-5 flex flex-col space-y-1 md:space-y-2 items-end">
+<div class="absolute top-5 right-5 flex flex-col space-y-1 md:space-y-2 items-end z-50">
     <a href="/" 
        class:opacity-50={currentPath === '/'} 
        class:cursor-not-allowed={currentPath === '/'} 

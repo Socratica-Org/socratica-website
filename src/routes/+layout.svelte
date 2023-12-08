@@ -114,7 +114,7 @@
 						<p class="leading-[26px]"><a  href="https://lu.ma/ijsn65sl" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Ottawa, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://lu.ma/o659plym" target="_blank">Kingston, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
-						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">Seattle, WA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
+						<p class="leading-[26px]"><a  href="https://saturdays.rsvp/" target="_blank">Seattle, WA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://lu.ma/berkeleydemoday" target="_blank">Berkeley, CA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">New York, NY <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://lu.ma/bean" target="_blank">Cambridge, MA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>

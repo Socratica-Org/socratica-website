@@ -3,15 +3,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import Navbar from '$lib/components/navbar.svelte';
-    // import PopupWaterloo from './popups/popupWaterloo.svelte';
-    import PopupVancouver from './popups/popupVancouver.svelte';
-    import PopupCambridge from './popups/popupCambridge.svelte';
-    import PopupOttawa from './popups/popupOttawa.svelte';
-    import PopupKingston from './popups/popupKingston.svelte';
-    import PopupBerkeley from './popups/popupBerkeley.svelte';
-    import PopupWestern from './popups/popupWestern.svelte';
-    import PopupMIT from './popups/popupMIT.svelte';
-    import PopupToronto from './popups/popupToronto.svelte';
 
     import Node from './Node.svelte';
   
@@ -57,6 +48,7 @@
         date: 'OCT 2023',
         location: 'OTTAWA, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events',
+        instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [45.421530, -75.697193],
       },
       {
@@ -136,11 +128,11 @@
             shadowAnchor: [13, 41], 
             popupAnchor: [1, -34]
         });
+
+        const isMobile = window.innerWidth < 768;
         const popupOptions: L.PopupOptions = {
-            minWidth: 350,
-            maxWidth: 400,
-            // minWidth: 285,
-            // maxWidth: 285,
+            minWidth: isMobile ? 285 : 400,
+            maxWidth: isMobile ? 285 : 400
         };
 
         function createMarkerAndBindPopup(location: any, map: any, popupOptions: any) {
@@ -155,7 +147,9 @@
     });
   </script>
 
-<div id="map" class="w-screen h-screen">
+<Navbar />
+
+<div id="map" class="w-screen h-screen z-10">
   {#each locations as location}
     <Node 
       id={location.id}
@@ -166,8 +160,6 @@
     />
   {/each}
 </div>
-
-<Navbar />
 
 
 <style>

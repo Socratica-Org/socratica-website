@@ -1,10 +1,10 @@
 <script lang="ts">
     import LocationButton from './components/LocationButton.svelte';
     import DateButton from './components/DateButton.svelte';
-    import Globe from '$lib/images/Globe.png';
-    import InstagramLogo from '$lib/images/InstagramLogo.png';
-    import TwitterLogo from '$lib/images/TwitterLogo.png';
-    import YoutubeLogo from '$lib/images/YoutubeLogo.png';
+    import Globe from '$lib/images/Globe.svg';
+    import InstagramLogo from '$lib/images/InstagramLogo.svg';
+    import TwitterLogo from '$lib/images/TwitterLogo.svg';
+    import YoutubeLogo from '$lib/images/YoutubeLogo.svg';
 
     export let id: string;
     export let name: string;

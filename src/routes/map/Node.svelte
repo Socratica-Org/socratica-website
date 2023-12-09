@@ -13,14 +13,14 @@
     export let lumaLink: string;
 </script>
   
-<div id={id} class="hidden p-4 md:p-8 flex flex-col items-center justify-center" style="border: 1px solid gray;">
-    <div class="w-full text-left mt-2 md:mt-4">
+<div id={id} class="hidden flex flex-col items-center justify-center" style="border: 1px solid gray;">
+    <div class="w-full text-left">
         <h1 class="text-3xl md:text-5xl text-black font-normal font-tiempos-headline">{name}</h1>
-        <div class="flex flex-wrap items-center gap-2 -ml-1 mt-2 mb-2">
+        <div class="flex flex-wrap items-center gap-2 -ml-1 mt-4 mb-2">
             <LocationButton location={location} />
             <DateButton date={date} />
         </div>
-        <div class="flex items-center gap-2 mb-2">
+        <div class="flex items-center gap-2 mb-8">
             <a href="https://www.socratica.info/" target="_blank" class="icon-container" style="border-color: #000000;">
                 <img src={Globe} alt="Website" class="icon" />
             </a>
@@ -40,7 +40,7 @@
         title={name}
         src={lumaLink}
         class="w-full md:w-400"
-        height="450"
+        height="375"
         frameborder="0"
         style="border: 1.5px solid #EBE4D0; border-radius: 8px; margin: 0 auto; margin-bottom: 20px;"
         aria-hidden="false"
@@ -48,18 +48,16 @@
 </div>
 
 <style>
-    /* Responsive styling for smaller devices */
     @media (max-width: 768px) {
         .icon-container {
-            width: 30px; /* Smaller size on mobile */
-            height: 30px; /* Smaller size on mobile */
+            width: 30px;
+            height: 30px;
         }
         .icon {
-            width: 60%; /* Larger relative size within the smaller button on mobile */
+            width: 60%;
         }
     }
 
-    /* Existing styles for larger screens */
     .icon-container {
         display: inline-flex;
         justify-content: center;

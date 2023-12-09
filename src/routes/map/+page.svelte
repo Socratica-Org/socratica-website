@@ -132,7 +132,7 @@
         const isMobile = window.innerWidth < 768;
         const popupOptions: L.PopupOptions = {
             minWidth: isMobile ? 285 : 400,
-            maxWidth: isMobile ? 285 : 400
+            maxWidth: isMobile ? 285 : 400,
         };
 
         function createMarkerAndBindPopup(location: any, map: any, popupOptions: any) {

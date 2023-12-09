@@ -35,8 +35,9 @@ html {
 
 
 #map .leaflet-popup-close-button {
+	font-family: 'Arial Rounded MT', sans-serif !important;
     font-size: 32px;
-    font-weight: 100;
+    font-weight: 200;
     color: black;
     background-color: #F5F1E2;
     border-radius: 50%;
@@ -52,10 +53,20 @@ html {
     box-sizing: border-box;
 }
 
+.leaflet-popup-close-button:hover {
+    color: #F5F1E2 !important;
+    background-color: black !important;
+}
+
 
 
 .leaflet-popup-tip-container .leaflet-popup-tip {
     margin-left: -175px;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: #FFFCF3 !important;
+	padding: 10px !important;
 }
 
 

@@ -15,7 +15,7 @@
   
 <div id={id} class="hidden p-4 md:p-8 flex flex-col items-center justify-center" style="border: 1px solid gray;">
     <div class="w-full text-left mt-2 md:mt-4">
-        <h1 class="text-3xl md:text-5xl text-black font-semibold font-tiempos-headline">{name}</h1>
+        <h1 class="text-3xl md:text-5xl text-black font-normal font-tiempos-headline">{name}</h1>
         <div class="flex flex-wrap items-center gap-2 -ml-1 mt-2 mb-2">
             <LocationButton location={location} />
             <DateButton date={date} />

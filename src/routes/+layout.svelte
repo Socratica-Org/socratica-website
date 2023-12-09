@@ -8,9 +8,14 @@
 	import { getAnalytics } from "firebase/analytics";
 	import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 	import { onMount } from 'svelte';
-	let currentPath = '';
+	import { page } from '$app/stores';
+	
+	let currentPath = $page.url.pathname;
+	$: {
+        currentPath = $page.url.pathname;
+    }
 
-	let db;
+	let db: any;
 	onMount(() => {
 
 		const firebaseConfig = {
@@ -26,8 +31,6 @@
 		const app = initializeApp(firebaseConfig);
     	const analytics = getAnalytics(app);
 		db = getFirestore(app); //////
-
-		currentPath = window.location.pathname;
 
 	});
   

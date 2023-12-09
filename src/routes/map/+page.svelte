@@ -15,7 +15,7 @@
         name: 'Socratica',
         date: 'JAN 2022',
         location: 'WATERLOO, ON',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light',
         coordinates: [43.477305, -80.549252],
       },
       { 
@@ -23,7 +23,7 @@
         name: 'Socratica',
         date: 'JAN 2023',
         location: 'TORONTO, ON',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light',
         coordinates: [43.664714, -79.385477],
       },
       {
@@ -31,7 +31,7 @@
         name: 'Atelier',
         date: 'SEPT 2023',
         location: 'VANCOUVER, BC',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light',
         coordinates: [49.282729, -123.120738],
       },
       {
@@ -39,7 +39,7 @@
         name: 'Scale Down',
         date: 'OCT 2023',
         location: 'CAMBRIDGE, UK',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light',
         coordinates: [52.205338, 0.121817],
       },
       {
@@ -47,7 +47,7 @@
         name: 'Agora',
         date: 'OCT 2023',
         location: 'OTTAWA, ON',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light',
         instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [45.421530, -75.697193],
       },
@@ -56,7 +56,7 @@
         name: 'id8.blankcanvas',
         date: 'OCT 2023',
         location: 'KINGSTON, ON',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light',
         coordinates: [44.231172, -76.485954],
       },
       {
@@ -64,7 +64,7 @@
         name: 'Side Project Sundays',
         date: 'SEPT 2023',
         location: 'BERKELEY, CA',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-CRtUehgIQHLEB3o/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-CRtUehgIQHLEB3o/events?lt=light',
         coordinates: [37.871593, -122.272747],
       },
       {
@@ -72,7 +72,7 @@
         name: 'Momentum',
         date: 'SEPT 2023',
         location: 'LONDON, ON',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light',
         coordinates: [43.009561, -81.275471],
       },
       {
@@ -80,7 +80,7 @@
         name: 'Friendly Beans',
         date: 'DEC 2023',
         location: 'CAMBRIDGE, MA',
-        lumaLink: 'https://lu.ma/embed/calendar/cal-2Z2ZQZQZQZQZQZQ/events',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-2Z2ZQZQZQZQZQZQ/events?lt=light',
         coordinates: [42.3629, -71.0839],
       }
     ];

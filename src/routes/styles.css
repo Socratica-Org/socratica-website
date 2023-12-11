@@ -48,7 +48,7 @@ html {
     justify-content: center;
     padding-bottom: 8px;
     padding-left: 6px;
-    top: 10px;
+    top: 15px;
     right: 10px;
     box-sizing: border-box;
 }
@@ -58,8 +58,6 @@ html {
     background-color: black !important;
 }
 
-
-
 .leaflet-popup-tip-container .leaflet-popup-tip {
     margin-left: -175px;
 }
@@ -68,7 +66,6 @@ html {
     background-color: #FFFCF3 !important;
 	padding: 10px !important;
 }
-
 
 
   

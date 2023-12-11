@@ -40,7 +40,7 @@
         title={name}
         src={lumaLink}
         class="w-full md:w-400"
-        height="375"
+        height={window.innerWidth <= 768 ? '325' : '375'}
         frameborder="0"
         style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6;"
         aria-hidden="false"

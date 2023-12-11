@@ -3,27 +3,88 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import Navbar from '$lib/components/navbar.svelte';
-    import PopupWaterloo from './popups/popupWaterloo.svelte';
-    import PopupVancouver from './popups/popupVancouver.svelte';
-    import PopupCambridge from './popups/popupCambridge.svelte';
-    import PopupOttawa from './popups/popupOttawa.svelte';
-    import PopupKingston from './popups/popupKingston.svelte';
-    import PopupBerkeley from './popups/popupBerkeley.svelte';
-    import PopupWestern from './popups/popupWestern.svelte';
-    import PopupMIT from './popups/popupMIT.svelte';
-    import PopupToronto from './popups/popupToronto.svelte';
+
+    import Node from './Node.svelte';
   
-    let map;
+    let map: any;
     const centerPoint = [51.557152, -62.146388]
-    const nodeWaterloo = [43.477305, -80.549252];
-    const nodeVancouver = [49.282729, -123.120738];
-    const nodeCambridge = [52.205338, 0.121817];
-    const nodeOttawa = [45.421530, -75.697193];
-    const nodeKingston = [44.231172, -76.485954];
-    const nodeBerkeley = [37.871593, -122.272747];
-    const nodeWestern = [43.009561, -81.275471];
-    const nodeMIT = [42.3629, -71.0839];
-    const nodeToronto = [43.664714, -79.385477];
+
+    const locations = [
+      { 
+        id: 'waterloo',
+        name: 'Socratica',
+        date: 'JAN 2022',
+        location: 'WATERLOO, ON',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light',
+        coordinates: [43.477305, -80.549252],
+      },
+      { 
+        id: 'toronto',
+        name: 'Socratica',
+        date: 'JAN 2023',
+        location: 'TORONTO, ON',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light',
+        coordinates: [43.664714, -79.385477],
+      },
+      {
+        id: 'vancouver',
+        name: 'Atelier',
+        date: 'SEPT 2023',
+        location: 'VANCOUVER, BC',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light',
+        coordinates: [49.282729, -123.120738],
+      },
+      {
+        id: 'cambridge-uk',
+        name: 'Scale Down',
+        date: 'OCT 2023',
+        location: 'CAMBRIDGE, UK',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light',
+        coordinates: [52.205338, 0.121817],
+      },
+      {
+        id: 'ottawa',
+        name: 'Agora',
+        date: 'OCT 2023',
+        location: 'OTTAWA, ON',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light',
+        instagramLink: 'https://www.instagram.com/socratica.info',
+        coordinates: [45.421530, -75.697193],
+      },
+      {
+        id: 'kingston',
+        name: 'id8.blankcanvas',
+        date: 'OCT 2023',
+        location: 'KINGSTON, ON',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light',
+        coordinates: [44.231172, -76.485954],
+      },
+      {
+        id: 'berkeley',
+        name: 'Side Project Sundays',
+        date: 'SEPT 2023',
+        location: 'BERKELEY, CA',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-CRtUehgIQHLEB3o/events?lt=light',
+        coordinates: [37.871593, -122.272747],
+      },
+      {
+        id: 'western',
+        name: 'Momentum',
+        date: 'SEPT 2023',
+        location: 'LONDON, ON',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light',
+        coordinates: [43.009561, -81.275471],
+      },
+      {
+        id: 'mit',
+        name: 'Friendly Beans',
+        date: 'DEC 2023',
+        location: 'CAMBRIDGE, MA',
+        lumaLink: 'https://lu.ma/embed/calendar/cal-2Z2ZQZQZQZQZQZQ/events?lt=light',
+        coordinates: [42.3629, -71.0839],
+      }
+    ];
+
    
     onMount(() => {
       // Dynamically import Leaflet only on the client-side
@@ -67,79 +128,42 @@
             shadowAnchor: [13, 41], 
             popupAnchor: [1, -34]
         });
+
+        const isMobile = window.innerWidth < 768;
         const popupOptions: L.PopupOptions = {
-            minWidth: 350,
-            maxWidth: 350,
-            // minWidth: 285,
-            // maxWidth: 285,
+            minWidth: isMobile ? 285 : 400,
+            maxWidth: isMobile ? 285 : 400,
         };
-  
-        const waterlooMarker = L.marker(nodeWaterloo as [number, number], { icon: defaultIcon });
-        waterlooMarker.addTo(map);
-        const popupContent = document.getElementById('waterloo-popup')!.innerHTML;
-        waterlooMarker.bindPopup(popupContent, popupOptions);
 
-        const vancouverMarker = L.marker(nodeVancouver as [number, number], { icon: defaultIcon });
-        vancouverMarker.addTo(map);
-        const popupContent2 = document.getElementById('vancouver-popup')!.innerHTML;
-        vancouverMarker.bindPopup(popupContent2, popupOptions);
+        function createMarkerAndBindPopup(location: any, map: any, popupOptions: any) {
+          const marker = L.marker(location.coordinates, { icon: defaultIcon });
+          marker.addTo(map);
+          const popupContent = document.getElementById(location.id)!.innerHTML;
+          marker.bindPopup(popupContent, popupOptions);
+        }
 
-        const cambridgeMarker = L.marker(nodeCambridge as [number, number], { icon: defaultIcon });
-        cambridgeMarker.addTo(map);
-        const popupContent3 = document.getElementById('cambridge-uk-popup')!.innerHTML;
-        cambridgeMarker.bindPopup(popupContent3, popupOptions);
-
-        const ottawaMarker = L.marker(nodeOttawa as [number, number], { icon: defaultIcon });
-        ottawaMarker.addTo(map);
-        const popupContent4 = document.getElementById('ottawa-popup')!.innerHTML;
-        ottawaMarker.bindPopup(popupContent4, popupOptions);
-
-        const kingstonMarker = L.marker(nodeKingston as [number, number], { icon: defaultIcon });
-        kingstonMarker.addTo(map);
-        const popupContent5 = document.getElementById('kingston-popup')!.innerHTML;
-        kingstonMarker.bindPopup(popupContent5, popupOptions);
-
-        const berkeleyMarker = L.marker(nodeBerkeley as [number, number], { icon: defaultIcon });
-        berkeleyMarker.addTo(map);
-        const popupContent6 = document.getElementById('berkeley-popup')!.innerHTML;
-        berkeleyMarker.bindPopup(popupContent6, popupOptions);
-
-        const westernMarker = L.marker(nodeWestern as [number, number], { icon: defaultIcon });
-        westernMarker.addTo(map);
-        const popupContent7 = document.getElementById('western-popup')!.innerHTML;
-        westernMarker.bindPopup(popupContent7, popupOptions);
-
-        const mitMarker = L.marker(nodeMIT as [number, number], { icon: defaultIcon });
-        mitMarker.addTo(map);
-        const popupContent8 = document.getElementById('mit-popup')!.innerHTML;
-        mitMarker.bindPopup(popupContent8, popupOptions);
-
-        const torontoMarker = L.marker(nodeToronto as [number, number], { icon: defaultIcon });
-        torontoMarker.addTo(map);
-        const popupContent9 = document.getElementById('toronto-popup')!.innerHTML;
-        torontoMarker.bindPopup(popupContent9, popupOptions); 
+        locations.forEach(location => createMarkerAndBindPopup(location, map, popupOptions));
       });
     });
   </script>
 
-  <div id="map" class="w-screen h-screen">
-    <PopupWaterloo />
-    <PopupVancouver />
-    <PopupCambridge />
-    <PopupOttawa />
-    <PopupKingston />
-    <PopupBerkeley />
-    <PopupWestern />
-    <PopupMIT />
-    <PopupToronto />
-  </div>
+<Navbar />
 
-  <Navbar />
+<div id="map" class="w-screen h-screen z-10">
+  {#each locations as location}
+    <Node 
+      id={location.id}
+      name={location.name}
+      date={location.date}
+      location={location.location}
+      lumaLink={location.lumaLink} 
+    />
+  {/each}
+</div>
 
 
-  <style>
-    #map {
-        width: 100%;
-        filter: sepia(0.4) brightness(1) contrast(0.9) saturate(1.2);
-    }
+<style>
+  #map {
+    width: 100%;
+  }
 </style>

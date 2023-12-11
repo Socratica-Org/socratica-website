@@ -51,6 +51,7 @@ html {
     top: 15px;
     right: 10px;
     box-sizing: border-box;
+	padding: 1px 1px 6px 1px;
 }
 
 .leaflet-popup-close-button:hover {

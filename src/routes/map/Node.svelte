@@ -40,11 +40,10 @@
         title={name}
         src={lumaLink}
         class="w-full md:w-400"
-        height={window.innerWidth <= 768 ? '325' : '375'}
+        height="325"
         frameborder="0"
         style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6;"
         aria-hidden="false"
-        scrolling="no"
     ></iframe>
 </div>
 

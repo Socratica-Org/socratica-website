@@ -132,7 +132,8 @@
 						<p class="leading-[26px]"><a  href="/about">About</a></p>
 						<p class="leading-[26px]"><a  href="/map">Map</a></p>
 						<p class="leading-[26px]"><a  href="/get-involved">Get Involved</a></p>
-						<p class="leading-[26px]"><a  href="/easter-egg">Easter Egg</a></p>
+						<p class="leading-[26px]"><a  href="https://www.garysu.ca/">Easter Egg</a></p>
+						<p class="leading-[26px]"><a  href="https://socratica.notion.site/Code-of-Conduct-52fb005f7e3a452096e235995a2f92e5" target="_blank">Code of Conduct</a></p>
 						<p class="leading-[26px]"><a  href="https://donate.stripe.com/5kA6qZcondXE8Te008" target="_blank">Donate</a></p>
 					</div>
 				</div>

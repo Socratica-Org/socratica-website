@@ -3,7 +3,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import Navbar from '$lib/components/navbar.svelte';
-
+    import MarkerShadow from '$lib/images/marker-shadow.png';
     import Node from './Node.svelte';
   
     let map: any;
@@ -121,7 +121,7 @@
         map.addLayer(layer);
         var defaultIcon = L.icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-            shadowUrl: 'http://cdn.leafletjs.com/leaflet-0.7.3/images/marker-shadow.png',
+            shadowUrl: MarkerShadow,
             iconSize: [25, 41], 
             shadowSize: [41, 41],
             iconAnchor: [12, 41], 

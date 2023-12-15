@@ -1,10 +1,11 @@
 <script>
     import { onMount } from 'svelte';
     import DarkHouse from '$lib/images/DarkHouse.png';
-    import UsersThree from '$lib/images/UsersThree.png';
-    import MapTrifold from '$lib/images/MapTrifold.png';
-    import Eye from '$lib/images/Eye.png';
-    import Heart from '$lib/images/Heart.png';
+    import UsersThree from '$lib/images/users-three.svg';
+    import MapTrifold from '$lib/images/map-trifold.svg';
+    import Eye from '$lib/images/eye.svg';
+    import Heart from '$lib/images/heart-straight.svg';
+    import Toolbox from '$lib/images/toolbox.svg';
 
     let currentPath = '';
 
@@ -38,6 +39,11 @@
         <img src={MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
         <span>MAP</span>
     </a>
+    <a href="https://toolbox.socratica.info/" target="_blank"
+       class="z-40 bg-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
+        <img src={Toolbox} alt="Toolbox" class="w-4 h-4 md:w-6 md:h-6" />
+        <span>TOOLBOX</span>
+    </a>
     <a href="/get-involved" 
        class:opacity-50={currentPath === '/get-involved'} 
        class:cursor-not-allowed={currentPath === '/get-involved'} 
@@ -46,6 +52,7 @@
         <img src={Eye} alt="Get Involved" class="w-4 h-4 md:w-6 md:h-6" />
         <span>GET INVOLVED</span>
     </a>
+    
     <a href="https://donate.stripe.com/5kA6qZcondXE8Te008" target="_blank"
        class="z-40 bg-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-cool-grey hover:bg-cool-grey font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out">
         <img src={Heart} alt="Donate" class="w-4 h-4 md:w-6 md:h-6" />

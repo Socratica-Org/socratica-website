@@ -73,7 +73,8 @@
                 try {
                     const docRef = await addDoc(emailsRef, {
                         email: email,
-                        type: sessionType // Add session type
+                        type: sessionType, // Add session type
+                        dateCreated: new Date() // Include the date created
                     });
                     console.log("Document written with ID: ", docRef.id);
                     emailValidationMessage = 'Email successfully added!';

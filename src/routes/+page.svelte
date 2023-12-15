@@ -4,6 +4,7 @@
 	import doodle3 from '$lib/images/socratica-doodle-3.png';
 	import doodle4 from '$lib/images/socratica-doodle-4.png';
 	import doodle5 from '$lib/images/socratica-doodle-5.png';
+	import doodle6 from '$lib/images/socratica-doodle-6.png';
 	import people from '$lib/images/socratica-people.png';
 	import ArrowDownRight from '$lib/images/ArrowDownRight.png';
 	import Spiral from '$lib/images/Spiral.png';
@@ -22,22 +23,26 @@
 	import Navbar from '$lib/components/navbar.svelte';
 
 	const doodles = [
-    {
-        src: doodle1,
-        title: '"Little Guys", by Aileen Luo'
-    },
-    {
-        src: doodle2,
-        title: '"Project Block", by Someone'
-    },
-	{
-		src: doodle4,
-		title: '"Socratica", by Someone'
-	},
-	{
-		src: doodle5,
-		title: '"MS Paint", by HudZah'
-	}
+		{
+			src: doodle1,
+			title: '"Little Guys", by Aileen Luo'
+		},
+		{
+			src: doodle2,
+			title: '"Project Block", by Someone'
+		},
+		{
+			src: doodle4,
+			title: '"Socratica", by Someone'
+		},
+		{
+			src: doodle5,
+			title: '"MS Paint", by HudZah'
+		},
+		{
+			src: doodle6,
+			title: `"Aileen's Worst Nightmare", by Jake Rudolph`
+		},
 	];
 
 	let randomIndex = Math.floor(Math.random() * doodles.length);
@@ -79,7 +84,9 @@
 
 			<div class="flex flex-col items-center relative lg:h-[250px] mt-0 md:mt-16">
 				<button on:click={switchDoodle} class="absolute inset-0 opacity-0 cursor-pointer"></button>
-				<img id="socraticaLogo" src={currentDoodle.src} alt="Socratica Logo" class="h-[200px] w-auto object-contain"/>
+				<img id="socraticaLogo" src={currentDoodle.src} alt="Socratica Logo" 
+					 class="h-[200px] w-auto object-contain 
+					{currentDoodle.title == `"Aileen's Worst Nightmare", by Jake Rudolph` ? 'h-[450px] -mt-14' : ''}"/>
 			</div>			
 			
 			

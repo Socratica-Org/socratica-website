@@ -82,15 +82,15 @@
 		
 		<div class="container mx-auto max-w-screen-xl px-6 md:px-8">
 
-			<div class="flex flex-col items-center relative lg:h-[250px] mt-0 md:mt-16">
+			<div class="flex flex-col items-center relative lg:h-[250px] mt-16 -mb-8 md:mb-0">
 				<button on:click={switchDoodle} class="absolute inset-0 opacity-0 cursor-pointer"></button>
 				<img id="socraticaLogo" src={currentDoodle.src} alt="Socratica Logo" 
 					 class="h-[200px] w-auto object-contain 
-					{currentDoodle.title == `"Aileen's Worst Nightmare", by Jake Rudolph` ? 'h-[450px] -mt-14' : ''}"/>
+					{currentDoodle.title == `"Aileen's Worst Nightmare", by Jake Rudolph` ? 'md:h-[450px] md:-mt-14' : ''}"/>
 			</div>			
 			
 			
-			<div class="flex space-x-4 mt-0 md:mb-12">
+			<div class="flex space-x-4 mb-8 md:mb-12">
 				<div class="w-4/6 md:w-1/2">
 					<p class="text-md sm:text-xl lg:text-3xl font-tiempos-headline text-[#41403F]">
 						We host weekly <span class="border-dashed border-b-2" style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round">co-working sessions</span>

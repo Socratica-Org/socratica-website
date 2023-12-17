@@ -2,7 +2,7 @@
     import Navbar from '$lib/components/navbar.svelte';
     import { initializeApp } from "firebase/app";
 	import { getAnalytics } from "firebase/analytics";
-	import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+	import { getFirestore, collection, query, where, getDocs, addDoc } from "firebase/firestore";
 	import { onMount } from 'svelte';
 
     import GreenGuy from '$lib/images/GreenGuy.png';
@@ -53,42 +53,38 @@
      * @param {{ preventDefault: () => void; }} event
      */
      async function handleOnSubmit(event: any) {
-        event.preventDefault();
+     event.preventDefault();
         if (isValidEmail(email) && city) {
-            const emailsRef = collection(db, "emails");
-            const querySnapshot = await getDocs(emailsRef);
-            let emailExists = false;
+        const emailsRef = collection(db, "emails");
+        const emailQuery = query(emailsRef, where("email", "==", email));
+        const querySnapshot = await getDocs(emailQuery);
 
-            querySnapshot.forEach((doc) => {
-                if (doc.data().email === email) {
-                    emailExists = true;
-                }
-            });
-
-            if (!emailExists) {
-                const newDoc = {
-                    email: email,
-                    city: city, // Include city in the document
-                    type: sessionType,
-                    dateCreated: new Date()
-                };
-                try {
-                    const docRef = await addDoc(emailsRef, newDoc);
-                    console.log("Document written with ID: ", docRef.id);
-                    emailValidationMessage = 'Email successfully added!';
-                    email = '';
-                    city = '';
-                } catch (e) {
-                    console.error("Error adding document: ", e);
-                    emailValidationMessage = 'Error adding email. Please try again.';
-                }
-            } else {
-                emailValidationMessage = 'This email already exists in our records.';
+        if (querySnapshot.empty) {
+            // Email does not exist, proceed to add it
+            const newDoc = {
+                email: email,
+                city: city,
+                type: sessionType,
+                dateCreated: new Date()
+            };
+            try {
+                const docRef = await addDoc(emailsRef, newDoc);
+                console.log("Document written with ID: ", docRef.id);
+                emailValidationMessage = 'Email successfully added!';
+                email = '';
+                city = '';
+            } catch (e) {
+                console.error("Error adding document: ", e);
+                emailValidationMessage = 'Error adding email. Please try again.';
             }
         } else {
-            emailValidationMessage = 'Please enter a valid email and city';
+            // Email exists
+            emailValidationMessage = 'This email already exists in our records.';
         }
+    } else {
+        emailValidationMessage = 'Please enter a valid email and city';
     }
+}
 </script>
   
 

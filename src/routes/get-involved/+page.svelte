@@ -16,6 +16,7 @@
     let currentPath = '';
 	let db;
     let email = '';
+    let city = '';
     let sessionType = 'run'; // Variable to hold the session type
     let emailValidationMessage = ''; // Feedback message
 
@@ -51,45 +52,41 @@
 	/**
      * @param {{ preventDefault: () => void; }} event
      */
-	async function handleOnSubmit(event: any) {
-		event.preventDefault(); // prevent the form from submitting
-		if (isValidEmail(email)) {
-			console.log("Valid Email:", email);
-			emailValidationMessage = ''; // Clear any previous error messages
+     async function handleOnSubmit(event: any) {
+        event.preventDefault();
+        if (isValidEmail(email) && city) {
+            const emailsRef = collection(db, "emails");
+            const querySnapshot = await getDocs(emailsRef);
+            let emailExists = false;
 
-			// Check if the email already exists in Firestore
-			const emailsRef = collection(db, "emails");
-			const querySnapshot = await getDocs(emailsRef);
-			let emailExists = false;
+            querySnapshot.forEach((doc) => {
+                if (doc.data().email === email) {
+                    emailExists = true;
+                }
+            });
 
-			querySnapshot.forEach((doc) => {
-				if (doc.data().email === email) {
-					emailExists = true;
-				}
-			});
-
-			// Add email to Firestore if it doesn't exist
             if (!emailExists) {
+                const newDoc = {
+                    email: email,
+                    city: city, // Include city in the document
+                    type: sessionType,
+                    dateCreated: new Date()
+                };
                 try {
-                    const docRef = await addDoc(emailsRef, {
-                        email: email,
-                        type: sessionType, // Add session type
-                        dateCreated: new Date() // Include the date created
-                    });
+                    const docRef = await addDoc(emailsRef, newDoc);
                     console.log("Document written with ID: ", docRef.id);
                     emailValidationMessage = 'Email successfully added!';
                     email = '';
+                    city = '';
                 } catch (e) {
                     console.error("Error adding document: ", e);
                     emailValidationMessage = 'Error adding email. Please try again.';
                 }
             } else {
-                console.log("Email already exists: ", email);
                 emailValidationMessage = 'This email already exists in our records.';
             }
         } else {
-            console.log("Invalid Email:", email);
-            emailValidationMessage = 'Please enter a valid email';
+            emailValidationMessage = 'Please enter a valid email and city';
         }
     }
 </script>
@@ -115,11 +112,12 @@
                 </div>
                 <form class="flex flex-col items-center mt-12" on:submit={handleOnSubmit}>
                     <input type="email" bind:value={email} name="email" placeholder="Your Email" required class="p-2 mb-4 border rounded outline-none" />
+                    <input type="text" bind:value={city} name="city" placeholder="Your City" required class="p-2 mb-4 border rounded outline-none" />
                     <select bind:value={sessionType} name="sessionType" class="p-2 mb-4 border rounded outline-none">
                         <option value="run">Run a session</option>
                         <option value="join">Join a session</option>
                     </select>
-                    <button type="submit" class="bg-black text-white p-2 rounded border border-cool-grey hover:bg-[#706F6B]  transition-colors duration-500 ease-in-out ">Submit</button>
+                    <button type="submit" class="bg-black text-white p-2 rounded border border-cool-grey hover:bg-[#706F6B] transition-colors duration-500 ease-in-out">Submit</button>
                     <p>{emailValidationMessage}</p>
                 </form>
             </div>

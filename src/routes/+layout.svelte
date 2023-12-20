@@ -6,7 +6,7 @@
 	import eigenspace_logo from '$lib/images/eigenspace_logo.svg';
 	import { initializeApp } from "firebase/app";
 	import { getAnalytics } from "firebase/analytics";
-	import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+	import { getFirestore, collection, getDocs, addDoc, query, where } from "firebase/firestore";
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	
@@ -55,23 +55,19 @@
 			console.log("Valid Email:", email);
 			emailValidationMessage = ''; // Clear any previous error messages
 
-			// Check if the email already exists in Firestore
+			// Check if the email already exists in Firestore using a query
 			const emailsRef = collection(db, "emails");
-			const querySnapshot = await getDocs(emailsRef);
-			let emailExists = false;
+			const q = query(emailsRef, where("email", "==", email));
+			const querySnapshot = await getDocs(q);
 
-			querySnapshot.forEach((doc) => {
-				if (doc.data().email === email) {
-					emailExists = true;
-				}
-			});
-
-			// Add email to Firestore if it doesn't exist
-			if (!emailExists) {
+			if (querySnapshot.empty) {
+				// Email does not exist, add it to Firestore
 				try {
-					const docRef = await addDoc(emailsRef, {
-						email: email
-					});
+					const newDoc = {
+						email: email,
+						dateCreated: new Date() // Add the current date and time
+					};
+					const docRef = await addDoc(emailsRef, newDoc);
 					console.log("Document written with ID: ", docRef.id);
 					emailValidationMessage = 'Email successfully added!';
 					email = '';
@@ -80,6 +76,7 @@
 					emailValidationMessage = 'Error adding email. Please try again.';
 				}
 			} else {
+				// Email exists
 				console.log("Email already exists: ", email);
 				emailValidationMessage = 'This email already exists in our records.';
 			}
@@ -88,10 +85,6 @@
 			emailValidationMessage = 'Please enter a valid email';
 		}
 	}
-
-
-
-
   </script>
   
   

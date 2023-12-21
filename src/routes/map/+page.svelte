@@ -18,6 +18,7 @@
         lumaLink: 'https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light',
         coordinates: [43.477305, -80.549252],
       },
+      
       { 
         id: 'toronto',
         name: 'Socratica',

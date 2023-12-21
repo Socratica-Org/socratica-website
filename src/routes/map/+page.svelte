@@ -37,7 +37,7 @@
         location: 'VANCOUVER, BC',
         lumaLink: 'https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light',
         joinLink: 'https://lu.ma/atelier.ubc',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        instagramLink: 'https://www.instagram.com/atelier.ubc',
         coordinates: [49.282729, -123.120738],
       },
       {
@@ -57,7 +57,7 @@
         location: 'OTTAWA, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light',
         joinLink: 'https://lu.ma/agora',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        instagramLink: 'https://www.instagram.com/agora.cu',
         coordinates: [45.421530, -75.697193],
       },
       {
@@ -67,7 +67,7 @@
         location: 'KINGSTON, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light',
         joinLink: 'https://lu.ma/id8id8id8',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        instagramLink: 'https://www.instagram.com/id8id8id8',
         coordinates: [44.231172, -76.485954],
       },
       {
@@ -77,7 +77,7 @@
         location: 'BERKELEY, CA',
         lumaLink: 'https://lu.ma/embed/calendar/cal-CRtUehgIQHLEB3o/events?lt=light',
         joinLink: 'https://lu.ma/commonroom',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        instagramLink: 'https://www.instagram.com/berkeleycommonroom',
         coordinates: [37.871593, -122.272747],
       },
       {
@@ -87,7 +87,7 @@
         location: 'LONDON, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light',
         joinLink: 'https://lu.ma/moment.um',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        instagramLink: 'https://www.instagram.com/momentum_uwo',
         coordinates: [43.009561, -81.275471],
       },
       {

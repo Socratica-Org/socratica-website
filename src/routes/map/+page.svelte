@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import Navbar from '$lib/components/navbar.svelte';
     import MarkerShadow from '$lib/images/marker-shadow.png';
-    import Node from './Node.svelte';
+    import Node from './node.svelte';
   
     let map: any;
     const centerPoint = [51.557152, -62.146388]

@@ -12,7 +12,8 @@ export default {
         },
         fontFamily: {
           'tiempos-headline': ['Tiempos Headline', 'serif'],
-          'glyphworld': ['GlyphWorld']
+          'glyphworld': ['GlyphWorld'],
+          'sf-mono': ['SF Mono', 'Menlo', 'monospace'],
         },
       }
     },

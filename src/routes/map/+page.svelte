@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import Navbar from '$lib/components/navbar.svelte';
     import MarkerShadow from '$lib/images/marker-shadow.png';
-    import Node from './Node.svelte';
+    import Node from './node.svelte';
   
     let map: any;
     const centerPoint = [51.557152, -62.146388]
@@ -13,74 +13,91 @@
       { 
         id: 'waterloo',
         name: 'Socratica',
-        date: 'JAN 2022',
+        date: 'JANUARY 2022',
         location: 'WATERLOO, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light',
+        joinLink: 'https://lu.ma/socratica-f23',
+        instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [43.477305, -80.549252],
       },
       { 
         id: 'toronto',
         name: 'Socratica',
-        date: 'JAN 2023',
+        date: 'JANUARY 2023',
         location: 'TORONTO, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light',
+        joinLink: 'https://lu.ma/socraticaTO',
+        instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [43.664714, -79.385477],
       },
       {
         id: 'vancouver',
         name: 'Atelier',
-        date: 'SEPT 2023',
+        date: 'SEPTEMBER 2023',
         location: 'VANCOUVER, BC',
         lumaLink: 'https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light',
+        joinLink: 'https://lu.ma/atelier.ubc',
+        instagramLink: 'https://www.instagram.com/atelier.ubc',
         coordinates: [49.282729, -123.120738],
       },
       {
         id: 'cambridge-uk',
         name: 'Scale Down',
-        date: 'OCT 2023',
+        date: 'OCTOBER 2023',
         location: 'CAMBRIDGE, UK',
         lumaLink: 'https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light',
+        joinLink: 'https://lu.ma/scaledown',
+        instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [52.205338, 0.121817],
       },
       {
         id: 'ottawa',
         name: 'Agora',
-        date: 'OCT 2023',
+        date: 'OCTOBER 2023',
         location: 'OTTAWA, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light',
-        instagramLink: 'https://www.instagram.com/socratica.info',
+        joinLink: 'https://lu.ma/agora',
+        instagramLink: 'https://www.instagram.com/agora.cu',
         coordinates: [45.421530, -75.697193],
       },
       {
         id: 'kingston',
         name: 'id8.blankcanvas',
-        date: 'OCT 2023',
+        date: 'OCTOBER 2023',
         location: 'KINGSTON, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light',
+        joinLink: 'https://lu.ma/id8id8id8',
+        instagramLink: 'https://www.instagram.com/id8id8id8',
         coordinates: [44.231172, -76.485954],
       },
       {
         id: 'berkeley',
         name: 'Side Project Sundays',
-        date: 'SEPT 2023',
+        date: 'SEPTEMBER 2023',
         location: 'BERKELEY, CA',
         lumaLink: 'https://lu.ma/embed/calendar/cal-CRtUehgIQHLEB3o/events?lt=light',
+        joinLink: 'https://lu.ma/commonroom',
+        instagramLink: 'https://www.instagram.com/berkeleycommonroom',
         coordinates: [37.871593, -122.272747],
       },
       {
         id: 'western',
         name: 'Momentum',
-        date: 'SEPT 2023',
+        date: 'SEPTEMBER 2023',
         location: 'LONDON, ON',
         lumaLink: 'https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light',
+        joinLink: 'https://lu.ma/moment.um',
+        instagramLink: 'https://www.instagram.com/momentum_uwo',
         coordinates: [43.009561, -81.275471],
       },
       {
         id: 'mit',
         name: 'Friendly Beans',
-        date: 'DEC 2023',
+        date: 'DECEMBER 2023',
         location: 'CAMBRIDGE, MA',
         lumaLink: 'https://lu.ma/embed/calendar/cal-2Z2ZQZQZQZQZQZQ/events?lt=light',
+        joinLink: 'https://lu.ma/beans',
+        instagramLink: 'https://www.instagram.com/socratica.info',
         coordinates: [42.3629, -71.0839],
       }
     ];
@@ -135,14 +152,31 @@
             maxWidth: isMobile ? 285 : 400,
         };
 
-        function createMarkerAndBindPopup(location: any, map: any, popupOptions: any) {
+        function createMarkerAndBindPopup(location: any, map: any, popupOptions: any, locationId: string) {
           const marker = L.marker(location.coordinates, { icon: defaultIcon });
           marker.addTo(map);
           const popupContent = document.getElementById(location.id)!.innerHTML;
           marker.bindPopup(popupContent, popupOptions);
+          marker.on('popupopen', () => {
+            window.history.pushState({}, '', `/map?location=${location.id}`);
+          });
+
+          if (locationId === location.id) {
+              setTimeout(() => {
+                  map.panTo(marker.getLatLng(), { animate: true, duration: 1 });
+                  setTimeout(() => {
+                      marker.openPopup();
+                  }, 1000); // Adjust delay as needed
+              }, 500); // Adjust initial delay as needed
+          }
         }
 
-        locations.forEach(location => createMarkerAndBindPopup(location, map, popupOptions));
+        const urlParams = new URLSearchParams(window.location.search);
+        const locationId = urlParams.get('location') ?? "";
+
+        locations.forEach(location => createMarkerAndBindPopup(location, map, popupOptions, locationId));
+
+
       });
     });
   </script>
@@ -157,6 +191,8 @@
       date={location.date}
       location={location.location}
       lumaLink={location.lumaLink} 
+      joinLink={location.joinLink}
+      instagramLink={location.instagramLink}
     />
   {/each}
 </div>

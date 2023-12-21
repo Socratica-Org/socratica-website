@@ -107,7 +107,7 @@
 						<p class="leading-[26px]"><a  href="/map?location=toronto" target="_blank">Toronto, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="/map?location=western" target="_blank">London, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="/map?location=vancouver" target="_blank">Vancouver, BC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
-						<!-- <p class="leading-[26px]"><a  href="https://www.instagram.com/douzeadeux" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p> -->
+						<p class="leading-[26px]"><a  href="https://www.instagram.com/douzeadeux" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="/map?location=ottawa" target="_blank">Ottawa, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="/map?location=kingston" target="_blank">Kingston, ON <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>
 						<p class="leading-[26px]"><a  href="https://saturdays.rsvp/" target="_blank">Seattle, WA <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p>

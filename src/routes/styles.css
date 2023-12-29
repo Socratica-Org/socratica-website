@@ -1,75 +1,74 @@
-@import 'leaflet/dist/leaflet.css';
+@import "leaflet/dist/leaflet.css";
 
 @font-face {
-	font-family: 'Tiempos Headline';
-	src: url('/fonts/tiempos-headline/tiempos-headline-light.woff2') format('woff2');
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Tiempos Headline";
+  src: url("/fonts/tiempos-headline/tiempos-headline-light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: 'Tiempos Headline';
-	src: url('/fonts/tiempos-headline/tiempos-headline-light-italic.woff2') format('woff2');
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
+  font-family: "Tiempos Headline";
+  src: url("/fonts/tiempos-headline/tiempos-headline-light-italic.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: 'Untitled Sans';
-	src: url('/fonts/untitled-sans/untitled-sans-regular.woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-	letter-spacing: -3%;
+  font-family: "Untitled Sans";
+  src: url("/fonts/untitled-sans/untitled-sans-regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  letter-spacing: -3%;
 }
 
 body {
-	font-family: 'Untitled Sans', sans-serif;
+  font-family: "Untitled Sans", sans-serif;
 }
 
 html {
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
 
-
 #map .leaflet-popup-close-button {
-	font-family: 'Arial Rounded MT', sans-serif !important;
-    font-size: 32px;
-    font-weight: 200;
-    color: black;
-    background-color: #F5F1E2;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 8px;
-    padding-left: 6px;
-    top: 15px;
-    right: 10px;
-    box-sizing: border-box;
-	padding: 1px 1px 6px 1px;
+  font-family: "Arial Rounded MT", sans-serif !important;
+  font-size: 32px;
+  font-weight: 200;
+  color: black;
+  background-color: #f5f1e2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+  padding-left: 6px;
+  top: 15px;
+  right: 10px;
+  box-sizing: border-box;
+  padding: 1px 1px 6px 1px;
 }
 
 .leaflet-popup-close-button:hover {
-    color: #F5F1E2 !important;
-    background-color: black !important;
+  color: #f5f1e2 !important;
+  background-color: black !important;
 }
 
 .leaflet-popup-tip-container .leaflet-popup-tip {
-    margin-left: -175px;
+  margin-left: -175px;
 }
 
 .leaflet-popup-content-wrapper {
-    background-color: #FFFCF3 !important;
-	padding: 10px !important;
+  background-color: #fffcf3 !important;
+  padding: 10px !important;
 }
 
-
-  
 /* @font-face {
     font-family: 'Graphik';
     src: url('/path-to-your-fonts/Graphik-Regular.woff2') format('woff2'),

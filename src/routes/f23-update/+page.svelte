@@ -34,7 +34,6 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   });
-
 </script>
 
 <div class="block">
@@ -62,15 +61,22 @@
         <div class="mt-5 text-lg">
           <p>Hi!</p>
           <p>
-            It has been a fun and wild 4 months. There are inevitably things we fail to capture in these updates - it’s hard to measure the confidence built or friendships made - but here’s what we’ve been up to!
+            It has been a fun and wild 4 months. There are inevitably things we
+            fail to capture in these updates - it’s hard to measure the
+            confidence built or friendships made - but here’s what we’ve been up
+            to!
           </p>
           <h2 class="mt-5 text-xl font-bold">Sessions</h2>
           <ul class="list-disc ml-5">
             <li>
-              There was too much demand. For the first time, we experimented with 2 weekly sessions. In total, we had 763 unique attendees across all events!
+              There was too much demand. For the first time, we experimented
+              with 2 weekly sessions. In total, we had 763 unique attendees
+              across all events!
             </li>
             <li>
-              It was our most diverse term yet, in many ways. We’ve had the most balanced ratio of technical to non-technical projects, and also our best gender ratio yet.
+              It was our most diverse term yet, in many ways. We’ve had the most
+              balanced ratio of technical to non-technical projects, and also
+              our best gender ratio yet.
             </li>
           </ul>
         </div>
@@ -115,4 +121,3 @@
   alt="Beige Character"
   class="absolute top-[40.5%] left-[63%] transform scale-[0.27] md:top-[41.5%] md:left-[67.5%] md:transform-scale-55"
 />
-

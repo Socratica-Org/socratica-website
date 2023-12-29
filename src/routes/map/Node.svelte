@@ -33,7 +33,7 @@
     <div class="flex items-center gap-2.5 mb-8">
       <a href={joinLink} target="_blank">
         <button
-          class="bg-[#2A2928] py-1 px-3 rounded-full text-white text-xs md:text-sm font-mono border-2 border-[#2A2928] flex items-center justify-center"
+          class="bg-[#2A2928] py-1 px-3 rounded-full text-white text-sm font-mono border-2 border-[#2A2928] flex items-center justify-center"
         >
           <img
             src={ArrowUpRight}
@@ -82,7 +82,7 @@
     title={name}
     src={lumaLink}
     class="w-full md:w-400"
-    height="325"
+    height="350"
     frameborder="0"
     style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6; border: 2px solid #CFCCC4;"
     aria-hidden="false"

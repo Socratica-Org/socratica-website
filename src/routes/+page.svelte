@@ -73,9 +73,9 @@
 
 <section class="block">
   <div class="flex flex-col h-[670px] sm:h-[800px] justify-center bg-primary">
-    <div
-      class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full"
-    />
+    <!-- <div
+      class="absolute top-5 left-3 sm:left-10 w-10 h-10 bg-black rounded-full"
+    /> -->
     <Navbar />
 
     <div class="absolute top-5 left-1/2 transform -translate-x-1/2">

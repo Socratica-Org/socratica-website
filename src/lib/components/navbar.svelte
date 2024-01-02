@@ -40,7 +40,7 @@
       duration: 500,
       x: window.innerWidth * 0.93,
       y: -window.innerHeight * 0.89,
-      opacity: 0.1,
+      opacity: 0,
       easing: quintInOut,
     }}
   >
@@ -64,7 +64,7 @@
       <img src={SocraticaWhite} alt="Socratica" />
     </div>
     <div
-      class="absolute top-40 left-3 md:left-10 flex flex-col space-y-3 md:space-y-4 items-start z-40"
+      class="absolute top-40 left-5 md:left-10 flex flex-col space-y-4 items-start z-40"
       transition:fade={{ delay: 0, duration: 1000 }}
     >
       <a

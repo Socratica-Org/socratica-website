@@ -15,7 +15,7 @@
       location: "WATERLOO, ON",
       lumaLink:
         "https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light",
-      joinLink: "https://lu.ma/socratica-f23",
+      joinLink: "https://lu.ma/socratica",
       instagramLink: "https://www.instagram.com/socratica.info",
       coordinates: [43.477305, -80.549252],
     },

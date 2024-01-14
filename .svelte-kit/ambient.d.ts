@@ -26,6 +26,13 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const FIREBASE_API_KEY: string;
+	export const FIREBASE_AUTH_DOMAIN: string;
+	export const FIREBASE_PROJECT_ID: string;
+	export const FIREBASE_STORAGE_BUCKET: string;
+	export const FIREBASE_MESSAGING_SENDER_ID: string;
+	export const FIREBASE_APP_ID: string;
+	export const FIREBASE_MEASUREMENT_ID: string;
 	export const NVM_INC: string;
 	export const MANPATH: string;
 	export const TERM_PROGRAM: string;
@@ -34,7 +41,6 @@ declare module '$env/static/private' {
 	export const NVM_CD_FLAGS: string;
 	export const TERM: string;
 	export const SHELL: string;
-	export const npm_config_metrics_registry: string;
 	export const HOMEBREW_REPOSITORY: string;
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
@@ -47,6 +53,7 @@ declare module '$env/static/private' {
 	export const npm_config_local_prefix: string;
 	export const NVM_DIR: string;
 	export const USER: string;
+	export const OPENAI_API_KEY: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const SSH_AUTH_SOCK: string;
@@ -55,6 +62,7 @@ declare module '$env/static/private' {
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const USER_ZDOTDIR: string;
@@ -65,8 +73,10 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const npm_package_name: string;
 	export const LANG: string;
+	export const npm_config_npm_version: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
+	export const OPENPIPE_API_KEY: string;
 	export const npm_config_node_gyp: string;
 	export const npm_package_version: string;
 	export const XPC_SERVICE_NAME: string;
@@ -85,6 +95,7 @@ declare module '$env/static/private' {
 	export const GIT_ASKPASS: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const SECURITYSESSIONID: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -118,6 +129,13 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		FIREBASE_API_KEY: string;
+		FIREBASE_AUTH_DOMAIN: string;
+		FIREBASE_PROJECT_ID: string;
+		FIREBASE_STORAGE_BUCKET: string;
+		FIREBASE_MESSAGING_SENDER_ID: string;
+		FIREBASE_APP_ID: string;
+		FIREBASE_MEASUREMENT_ID: string;
 		NVM_INC: string;
 		MANPATH: string;
 		TERM_PROGRAM: string;
@@ -126,7 +144,6 @@ declare module '$env/dynamic/private' {
 		NVM_CD_FLAGS: string;
 		TERM: string;
 		SHELL: string;
-		npm_config_metrics_registry: string;
 		HOMEBREW_REPOSITORY: string;
 		TMPDIR: string;
 		npm_config_global_prefix: string;
@@ -139,6 +156,7 @@ declare module '$env/dynamic/private' {
 		npm_config_local_prefix: string;
 		NVM_DIR: string;
 		USER: string;
+		OPENAI_API_KEY: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		SSH_AUTH_SOCK: string;
@@ -147,6 +165,7 @@ declare module '$env/dynamic/private' {
 		PATH: string;
 		npm_package_json: string;
 		_: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		USER_ZDOTDIR: string;
@@ -157,8 +176,10 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		npm_package_name: string;
 		LANG: string;
+		npm_config_npm_version: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
+		OPENPIPE_API_KEY: string;
 		npm_config_node_gyp: string;
 		npm_package_version: string;
 		XPC_SERVICE_NAME: string;
@@ -177,6 +198,7 @@ declare module '$env/dynamic/private' {
 		GIT_ASKPASS: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		SECURITYSESSIONID: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

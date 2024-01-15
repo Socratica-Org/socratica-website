@@ -7,6 +7,7 @@
   let map: any;
   const centerPoint = [51.557152, -62.146388];
 
+  // move this to a seperate file, and import it also map on Footer
   const locations = [
     {
       id: "waterloo",
@@ -116,7 +117,7 @@
         "https://lu.ma/embed/calendar/cal-WrTTBMGBVUcTaij/events?lt=light",
       joinLink: "https://lu.ma/playspace",
       instagramLink: "https://www.instagram.com/socratica.info",
-      coordinates: [37.782810, -122.396652],
+      coordinates: [37.7937, -122.3965],
     },
   ];
 

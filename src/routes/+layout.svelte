@@ -16,6 +16,7 @@
   } from "firebase/firestore";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
+  import { locations } from "../routes/map/locations";
 
   let currentPath = $page.url.pathname;
   $: {
@@ -111,98 +112,17 @@
           <div
             class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] text-xs sm:text-xs md:text-xs lg:text-sm font-graphik"
           >
+            {#each locations as location}
             <p class="leading-[26px]">
-              <a href="/map?location=toronto" target="_blank"
-                >Toronto, ON <img
+              <a href={`/map?location=${location.id}`} target="_blank">
+                {location.location} <img
                   src={ArrowDownRight}
                   alt="Arrow Down Right"
                   class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
+                />
+              </a>
             </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=western" target="_blank"
-                >London, ON <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=vancouver" target="_blank"
-                >Vancouver, BC <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <!-- <p class="leading-[26px]"><a  href="https://www.instagram.com/douzeadeux" target="_blank">Montreal, QC <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p> -->
-            <p class="leading-[26px]">
-              <a href="/map?location=ottawa" target="_blank"
-                >Ottawa, ON <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=kingston" target="_blank"
-                >Kingston, ON <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="https://saturdays.rsvp/" target="_blank"
-                >Seattle, WA <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=berkeley" target="_blank"
-                >Berkeley, CA <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <!-- <p class="leading-[26px]"><a  href="https://www.instagram.com/socratica.info/" target="_blank">New York, NY <img src={ArrowDownRight} alt="Arrow Down Right" class="w-3 h-3 inline-block opacity-80"/></a></p> -->
-            <p class="leading-[26px]">
-              <a href="/map?location=mit" target="_blank"
-                >Cambridge, MA <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=cambridge-uk" target="_blank"
-                >Cambridge, ENG <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
-            <p class="leading-[26px]">
-              <a href="/map?location=san-fransisco" target="_blank"
-                >San Fransisco, CA <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                /></a
-              >
-            </p>
+            {/each}
           </div>
         </div>
 

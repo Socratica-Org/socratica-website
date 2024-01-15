@@ -107,6 +107,17 @@
       instagramLink: "https://www.instagram.com/socratica.info",
       coordinates: [42.3629, -71.0839],
     },
+    {
+      id: "san-francisco",
+      name: "Playspace",
+      date: "JANUARY 2024",
+      location: "SAN FRANCISCO, CA",
+      lumaLink:
+        "https://lu.ma/embed/calendar/cal-WrTTBMGBVUcTaij/events?lt=light",
+      joinLink: "https://lu.ma/playspace",
+      instagramLink: "https://www.instagram.com/socratica.info",
+      coordinates: [37.782810, -122.396652],
+    },
   ];
 
   onMount(() => {

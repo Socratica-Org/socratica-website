@@ -194,6 +194,15 @@
                 /></a
               >
             </p>
+            <p class="leading-[26px]">
+              <a href="/map?location=san-fransisco" target="_blank"
+                >San Fransisco, CA <img
+                  src={ArrowDownRight}
+                  alt="Arrow Down Right"
+                  class="w-3 h-3 inline-block opacity-80"
+                /></a
+              >
+            </p>
           </div>
         </div>
 

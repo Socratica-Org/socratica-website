@@ -27,7 +27,6 @@
     donate: false,
   };
 
-
   onMount(() => {
     currentPath = window.location.pathname;
   });
@@ -91,7 +90,15 @@
         on:mouseenter={() => (hoverState.home = true)}
         on:mouseleave={() => (hoverState.home = false)}
       >
-        <img src={currentPath === "/" ? DarkHouse : hoverState.home ? DarkHouse : House}  alt="Home" class="svg-icon w-4 h-4 md:w-6 md:h-6"/>
+        <img
+          src={currentPath === "/"
+            ? DarkHouse
+            : hoverState.home
+            ? DarkHouse
+            : House}
+          alt="Home"
+          class="svg-icon w-4 h-4 md:w-6 md:h-6"
+        />
         <span class:text-black={currentPath === "/"}>HOME</span>
       </a>
       <a
@@ -103,7 +110,15 @@
         on:mouseenter={() => (hoverState.about = true)}
         on:mouseleave={() => (hoverState.about = false)}
       >
-        <img src={currentPath === "/about" ? DarkUsersThree : hoverState.about ? DarkUsersThree : UsersThree} alt="About" class="w-4 h-4 md:w-6 md:h-6" />
+        <img
+          src={currentPath === "/about"
+            ? DarkUsersThree
+            : hoverState.about
+            ? DarkUsersThree
+            : UsersThree}
+          alt="About"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
         <span class:text-black={currentPath === "/about"}>ABOUT</span>
       </a>
       <a
@@ -115,7 +130,15 @@
         on:mouseenter={() => (hoverState.map = true)}
         on:mouseleave={() => (hoverState.map = false)}
       >
-        <img src={currentPath === "/map" ? DarkMapTrifold : hoverState.map ? DarkMapTrifold : MapTrifold} alt="Map" class="w-4 h-4 md:w-6 md:h-6" />
+        <img
+          src={currentPath === "/map"
+            ? DarkMapTrifold
+            : hoverState.map
+            ? DarkMapTrifold
+            : MapTrifold}
+          alt="Map"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
         <span class:text-black={currentPath === "/map"}>MAP</span>
       </a>
       <a
@@ -124,8 +147,12 @@
         class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.toolbox = true)}
         on:mouseleave={() => (hoverState.toolbox = false)}
-        >
-        <img src={hoverState.toolbox ? DarkToolbox : Toolbox} alt="Toolbox" class="w-4 h-4 md:w-6 md:h-6" />
+      >
+        <img
+          src={hoverState.toolbox ? DarkToolbox : Toolbox}
+          alt="Toolbox"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
         <span>TOOLBOX</span>
       </a>
       <a
@@ -133,12 +160,22 @@
         class:opacity-50={currentPath === "/get-involved"}
         class:cursor-not-allowed={currentPath === "/get-involved"}
         class:bg-primary={currentPath === "/get-involved"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black  font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.getInvolved = true)}
         on:mouseleave={() => (hoverState.getInvolved = false)}
+      >
+        <img
+          src={currentPath === "/get-involved"
+            ? DarkEye
+            : hoverState.getInvolved
+            ? DarkEye
+            : Eye}
+          alt="Get Involved"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
+        <span class:text-black={currentPath === "/get-involved"}
+          >GET INVOLVED</span
         >
-        <img src={currentPath === "/get-involved" ? DarkEye : hoverState.getInvolved ? DarkEye : Eye} alt="Get Involved" class="w-4 h-4 md:w-6 md:h-6" />
-        <span class:text-black={currentPath === "/get-involved"}>GET INVOLVED</span>
       </a>
 
       <a
@@ -147,8 +184,12 @@
         class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.donate = true)}
         on:mouseleave={() => (hoverState.donate = false)}
-        >
-        <img src={hoverState.donate ? DarkHeart : Heart} alt="Donate" class="w-4 h-4 md:w-6 md:h-6" />
+      >
+        <img
+          src={hoverState.donate ? DarkHeart : Heart}
+          alt="Donate"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
         <span>DONATE</span>
       </a>
     </div>

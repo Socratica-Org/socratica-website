@@ -113,15 +113,16 @@
             class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] text-xs sm:text-xs md:text-xs lg:text-sm font-graphik"
           >
             {#each locations as location}
-            <p class="leading-[26px]">
-              <a href={`/map?location=${location.id}`} target="_blank">
-                {location.location} <img
-                  src={ArrowDownRight}
-                  alt="Arrow Down Right"
-                  class="w-3 h-3 inline-block opacity-80"
-                />
-              </a>
-            </p>
+              <p class="leading-[26px]">
+                <a href={`/map?location=${location.id}`} target="_blank">
+                  {location.location}
+                  <img
+                    src={ArrowDownRight}
+                    alt="Arrow Down Right"
+                    class="w-3 h-3 inline-block opacity-80"
+                  />
+                </a>
+              </p>
             {/each}
           </div>
         </div>

@@ -102,7 +102,7 @@ export const locations = [
     id: "san-francisco",
     name: "Playspace",
     date: "JANUARY 2024",
-    location: "San Fransisco, CA",
+    location: "San Francisco, CA",
     lumaLink:
       "https://lu.ma/embed/calendar/cal-WrTTBMGBVUcTaij/events?lt=light",
     joinLink: "https://lu.ma/playspace",

@@ -109,4 +109,15 @@ export const locations = [
     instagramLink: "https://www.instagram.com/socratica.info",
     coordinates: [37.7937, -122.3965],
   },
+  {
+    id: "stanford",
+    name: "untitled",
+    date: "JANUARY 2024",
+    location: "Stanford, CA",
+    lumaLink:
+      "https://lu.ma/embed/calendar/cal-bBCpTcywZinszKP/events?lt=light",
+    joinLink: "https://lu.ma/untitled",
+    instagramLink: "https://www.instagram.com/socratica.info",
+    coordinates: [37.4277, -122.1701],
+  },
 ];

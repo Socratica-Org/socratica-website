@@ -43,17 +43,17 @@ export const locations = [
         instagramLink: "https://www.instagram.com/socratica.info",
         coordinates: [52.205338, 0.121817],
     },
-    {
-        id: "ottawa",
-        name: "Agora",
-        date: "OCTOBER 2023",
-        location: "Ottawa, ON",
-        lumaLink:
-            "https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light",
-        joinLink: "https://lu.ma/agora",
-        instagramLink: "https://www.instagram.com/agora.cu",
-        coordinates: [45.42153, -75.697193],
-    },
+    // {
+    //     id: "ottawa",
+    //     name: "Agora",
+    //     date: "OCTOBER 2023",
+    //     location: "Ottawa, ON",
+    //     lumaLink:
+    //         "https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light",
+    //     joinLink: "https://lu.ma/agora",
+    //     instagramLink: "https://www.instagram.com/agora.cu",
+    //     coordinates: [45.42153, -75.697193],
+    // },
     {
         id: "kingston",
         name: "id8.blankcanvas",

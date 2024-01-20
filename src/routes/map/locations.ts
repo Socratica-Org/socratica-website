@@ -43,17 +43,17 @@ export const locations = [
         instagramLink: "https://www.instagram.com/socratica.info",
         coordinates: [52.205338, 0.121817],
     },
-    // {
+    //   {
     //     id: "ottawa",
     //     name: "Agora",
     //     date: "OCTOBER 2023",
     //     location: "Ottawa, ON",
     //     lumaLink:
-    //         "https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light",
+    //       "https://lu.ma/embed/calendar/cal-xPDTKP81aHIflKD/events?lt=light",
     //     joinLink: "https://lu.ma/agora",
     //     instagramLink: "https://www.instagram.com/agora.cu",
     //     coordinates: [45.42153, -75.697193],
-    // },
+    //   },
     {
         id: "kingston",
         name: "id8.blankcanvas",
@@ -93,7 +93,7 @@ export const locations = [
         date: "DECEMBER 2023",
         location: "Cambridge, MA",
         lumaLink:
-            "https://lu.ma/embed/calendar/cal-2Z2ZQZQZQZQZQZQ/events?lt=light",
+            "https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?lt=light",
         joinLink: "https://lu.ma/beans",
         instagramLink: "https://www.instagram.com/socratica.info",
         coordinates: [42.3629, -71.0839],
@@ -102,11 +102,22 @@ export const locations = [
         id: "san-francisco",
         name: "Playspace",
         date: "JANUARY 2024",
-        location: "San Fransisco, CA",
+        location: "San Francisco, CA",
         lumaLink:
             "https://lu.ma/embed/calendar/cal-WrTTBMGBVUcTaij/events?lt=light",
         joinLink: "https://lu.ma/playspace",
         instagramLink: "https://www.instagram.com/socratica.info",
         coordinates: [37.7937, -122.3965],
+    },
+    {
+        id: "stanford",
+        name: "untitled",
+        date: "JANUARY 2024",
+        location: "Stanford, CA",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-bBCpTcywZinszKP/events?lt=light",
+        joinLink: "https://lu.ma/untitled",
+        instagramLink: "https://www.instagram.com/socratica.info",
+        coordinates: [37.4277, -122.1701],
     },
 ];

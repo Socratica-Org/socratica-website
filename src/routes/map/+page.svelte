@@ -108,7 +108,10 @@
       location={location.location.toUpperCase()}
       lumaLink={location.lumaLink}
       joinLink={location.joinLink}
+      websiteLink={location.websiteLink}
       instagramLink={location.instagramLink}
+      twitterLink={location.twitterLink}
+      youtubeLink={location.youtubeLink}
     />
   {/each}
 </div>

@@ -13,7 +13,10 @@
   export let location: string;
   export let lumaLink: string;
   export let joinLink: string;
+  export let websiteLink: string;
   export let instagramLink: string;
+  export let twitterLink: string;
+  export let youtubeLink: string;
 </script>
 
 <div
@@ -44,7 +47,7 @@
         </button>
       </a>
       <a
-        href="https://www.socratica.info/"
+        href={websiteLink}
         target="_blank"
         class="icon-container"
         style="border-color: #000000;"
@@ -60,7 +63,7 @@
         <img src={InstagramLogo} alt="Instagram" class="icon" />
       </a>
       <a
-        href="https://twitter.com/socraticainfo"
+        href={twitterLink}
         target="_blank"
         class="icon-container"
         style="border-color: #649AEA;"
@@ -68,7 +71,7 @@
         <img src={TwitterLogo} alt="Twitter" class="icon" />
       </a>
       <a
-        href="https://www.youtube.com/@socraticainfo"
+        href={youtubeLink}
         target="_blank"
         class="icon-container"
         style="border-color: #C6482C;"

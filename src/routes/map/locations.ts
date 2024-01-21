@@ -120,4 +120,15 @@ export const locations = [
         instagramLink: "https://www.instagram.com/socratica.info",
         coordinates: [37.4277, -122.1701],
     },
+    {
+        id: "usc",
+        name: "Sundays",
+        date: "JANUARY 2024",
+        location: "Los Angeles, CA",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-81AnmgiInWOKNmv/events?lt=light",
+        joinLink: "https://lu.ma/calendar/cal-81AnmgiInWOKNmv",
+        instagramLink: "https://www.instagram.com/sundaysatusc",
+        coordinates: [34.0224, -118.2851],
+    },
 ];

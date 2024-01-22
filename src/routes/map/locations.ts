@@ -172,7 +172,8 @@ export const locations = [
         name: "DouzeaDeux",
         date: "SEPTEMBER 2023",
         location: "Montreal, QC",
-        lumaLink: "https://lu.ma/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
         joinLink: "https://lu.ma/douzeadeuxMontreal",
         instagramLink: "https://www.instagram.com/socratica.info",
         twitterLink: "https://twitter.com/socraticainfo",

@@ -167,4 +167,17 @@ export const locations = [
         websiteLink: "https://www.sundays.rsvp/",
         coordinates: [34.0224, -118.2851],
     },
+    {
+        id: "montreal",
+        name: "DouzeaDeux",
+        date: "SEPTEMBER 2023",
+        location: "Montreal, QC",
+        lumaLink: "https://lu.ma/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
+        joinLink: "https://lu.ma/douzeadeuxMontreal",
+        instagramLink: "https://www.instagram.com/socratica.info",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.socratica.info/",
+        coordinates: [45.5017, -73.5673],
+    },
 ];

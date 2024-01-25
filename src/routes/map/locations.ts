@@ -2,7 +2,7 @@ export const locations = [
     {
         id: "waterloo",
         name: "Socratica",
-        date: "JANUARY 2022",
+        date: "MARCH 2022",
         location: "Waterloo, ON",
         lumaLink:
             "https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light",
@@ -180,5 +180,19 @@ export const locations = [
         youtubeLink: "https://www.youtube.com/@socraticainfo",
         websiteLink: "https://www.socratica.info/",
         coordinates: [45.5017, -73.5673],
+    },
+    {
+        id: "unc",
+        name: "Socratica",
+        date: "JANUARY 2024",
+        location: "Chapel Hill, NC",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-p0CcDhZn6Z5elyX/events?lt=light",
+        joinLink: "https://lu.ma/unc-socratica",
+        instagramLink: "https://www.instagram.com/socratica.info",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.socratica.info/",
+        coordinates: [35.9049, -79.0469],
     },
 ];

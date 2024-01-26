@@ -39,7 +39,7 @@ export const locations = [
         twitterLink: "https://twitter.com/socraticainfo",
         youtubeLink: "https://www.youtube.com/@socraticainfo",
         websiteLink: "https://www.socratica.info/",
-        coordinates: [49.282729, -123.120738],
+        coordinates: [49.2600924, -123.2509564],
     },
     {
         id: "cambridge-uk",

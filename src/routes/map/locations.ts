@@ -181,4 +181,18 @@ export const locations = [
         websiteLink: "https://www.socratica.info/",
         coordinates: [45.5017, -73.5673],
     },
+    {
+        id: "washington",
+        name: "Saturdays",
+        date: "NOVEMEBER 2023",
+        location: "Washington, DC",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-SD9FoHuZW6pQn6D/events?lt=light",
+        joinLink: "https://lu.ma/uwsaturdays",
+        instagramLink: "https://www.instagram.com/socratica.info",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://saturdays.rsvp/",
+        coordinates: [38.9072, -77.0369],
+    },
 ];

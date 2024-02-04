@@ -185,7 +185,7 @@ export const locations = [
         id: "washington",
         name: "Saturdays",
         date: "NOVEMEBER 2023",
-        location: "Washington, DC",
+        location: "Seattle, WA",
         lumaLink:
             "https://lu.ma/embed/calendar/cal-SD9FoHuZW6pQn6D/events?lt=light",
         joinLink: "https://lu.ma/uwsaturdays",
@@ -193,7 +193,7 @@ export const locations = [
         twitterLink: "https://twitter.com/socraticainfo",
         youtubeLink: "https://www.youtube.com/@socraticainfo",
         websiteLink: "https://saturdays.rsvp/",
-        coordinates: [38.9072, -77.0369],
+        coordinates: [47.6062, -122.3321],
     },
     {
         id: "unc",

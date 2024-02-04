@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+<<<<<<< HEAD
 	export const FIREBASE_API_KEY: string;
 	export const FIREBASE_AUTH_DOMAIN: string;
 	export const FIREBASE_PROJECT_ID: string;
@@ -33,8 +34,18 @@ declare module '$env/static/private' {
 	export const FIREBASE_MESSAGING_SENDER_ID: string;
 	export const FIREBASE_APP_ID: string;
 	export const FIREBASE_MEASUREMENT_ID: string;
+=======
+	export const VITE_API_KEY: string;
+	export const VITE_AUTH_DOMAIN: string;
+	export const VITE_PROJECT_ID: string;
+	export const VITE_STORAGE_BUCKET: string;
+	export const VITE_MESSAGING_SENDER_ID: string;
+	export const VITE_APP_ID: string;
+	export const VITE_MEASUREMENT_ID: string;
+>>>>>>> fd9f83f8f9232dcbf96da3d326ef88a1bb61cf9f
 	export const MANPATH: string;
 	export const TERM_PROGRAM: string;
+	export const rvm_bin_path: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
 	export const TERM: string;
@@ -50,12 +61,13 @@ declare module '$env/static/private' {
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
 	export const USER: string;
-	export const OPENAI_API_KEY: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
+	export const rvm_path: string;
 	export const SSH_AUTH_SOCK: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
+	export const rvm_prefix: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
@@ -72,11 +84,11 @@ declare module '$env/static/private' {
 	export const npm_config_npm_version: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
-	export const OPENPIPE_API_KEY: string;
 	export const npm_config_node_gyp: string;
 	export const npm_package_version: string;
 	export const XPC_SERVICE_NAME: string;
 	export const VSCODE_INJECTION: string;
+	export const rvm_version: string;
 	export const SHLVL: string;
 	export const HOME: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
@@ -90,6 +102,10 @@ declare module '$env/static/private' {
 	export const GIT_ASKPASS: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+<<<<<<< HEAD
+=======
+	export const DISPLAY: string;
+>>>>>>> fd9f83f8f9232dcbf96da3d326ef88a1bb61cf9f
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -123,6 +139,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+<<<<<<< HEAD
 		FIREBASE_API_KEY: string;
 		FIREBASE_AUTH_DOMAIN: string;
 		FIREBASE_PROJECT_ID: string;
@@ -130,8 +147,18 @@ declare module '$env/dynamic/private' {
 		FIREBASE_MESSAGING_SENDER_ID: string;
 		FIREBASE_APP_ID: string;
 		FIREBASE_MEASUREMENT_ID: string;
+=======
+		VITE_API_KEY: string;
+		VITE_AUTH_DOMAIN: string;
+		VITE_PROJECT_ID: string;
+		VITE_STORAGE_BUCKET: string;
+		VITE_MESSAGING_SENDER_ID: string;
+		VITE_APP_ID: string;
+		VITE_MEASUREMENT_ID: string;
+>>>>>>> fd9f83f8f9232dcbf96da3d326ef88a1bb61cf9f
 		MANPATH: string;
 		TERM_PROGRAM: string;
+		rvm_bin_path: string;
 		NODE: string;
 		INIT_CWD: string;
 		TERM: string;
@@ -147,12 +174,13 @@ declare module '$env/dynamic/private' {
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
 		USER: string;
-		OPENAI_API_KEY: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
+		rvm_path: string;
 		SSH_AUTH_SOCK: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
+		rvm_prefix: string;
 		PATH: string;
 		npm_package_json: string;
 		_: string;
@@ -169,11 +197,11 @@ declare module '$env/dynamic/private' {
 		npm_config_npm_version: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
-		OPENPIPE_API_KEY: string;
 		npm_config_node_gyp: string;
 		npm_package_version: string;
 		XPC_SERVICE_NAME: string;
 		VSCODE_INJECTION: string;
+		rvm_version: string;
 		SHLVL: string;
 		HOME: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
@@ -187,6 +215,10 @@ declare module '$env/dynamic/private' {
 		GIT_ASKPASS: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+<<<<<<< HEAD
+=======
+		DISPLAY: string;
+>>>>>>> fd9f83f8f9232dcbf96da3d326ef88a1bb61cf9f
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

@@ -223,4 +223,18 @@ export const locations = [
         websiteLink: "https://www.socratica.info/",
         coordinates: [51.4988, -0.1749],
     },
+    {
+        id: "tokyo",
+        name: "ichinichiippo",
+        date: "JANUARY 2024",
+        location: "Tokyo, Japan",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-vyilWokPjL5xHKF/events?lt=light",
+        joinLink: "https://lu.ma/ichinichi-ippo",
+        instagramLink: "https://www.instagram.com/_ichinichiippo/",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.socratica.info/",
+        coordinates: [35.6895, 139.6917],
+    },
 ];

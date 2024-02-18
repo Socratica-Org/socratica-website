@@ -211,7 +211,7 @@ export const locations = [
     },
     {
         id: "imperial",
-        name: "Imperial College London",
+        name: "Craft",
         date: "JANUARY 2024",
         location: "London, UK",
         lumaLink:

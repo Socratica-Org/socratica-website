@@ -209,4 +209,18 @@ export const locations = [
         websiteLink: "https://www.socratica.info/",
         coordinates: [35.9049, -79.0469],
     },
+    {
+        id: "imperial",
+        name: "Imperial College London",
+        date: "JANUARY 2024",
+        location: "London, UK",
+        lumaLink:
+            "https://lu.ma/embed/calendar/cal-qFfyVkBdmPJ7yBv/events?lt=light",
+        joinLink: "https://lu.ma/craft_",
+        instagramLink: "https://www.instagram.com/socratica.info",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.socratica.info/",
+        coordinates: [51.4988, -0.1749],
+    },
 ];

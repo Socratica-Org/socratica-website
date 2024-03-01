@@ -197,12 +197,12 @@ export const locations = [
     },
     {
         id: "unc",
-        name: "Socratica",
+        name: "Hatch",
         date: "JANUARY 2024",
         location: "Chapel Hill, NC",
         lumaLink:
             "https://lu.ma/embed/calendar/cal-p0CcDhZn6Z5elyX/events?lt=light",
-        joinLink: "https://lu.ma/unc-socratica",
+        joinLink: "https://lu.ma/unc-hatch",
         instagramLink: "https://www.instagram.com/socratica.info",
         twitterLink: "https://twitter.com/socraticainfo",
         youtubeLink: "https://www.youtube.com/@socraticainfo",

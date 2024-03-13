@@ -22,11 +22,11 @@
       <h2
         class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
       >
-        We’re in the business of helping good people do great things.
+        For the love of <i>making</i>.
       </h2>
 
       <div
-        class="mt-8 md:mt-16 italic"
+        class="mt-8 md:mt-16"
         style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
       >
         <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
@@ -35,7 +35,7 @@
           of boundary pushing work - in engineering, science, art, and more.
         </p>
         <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-          On top of that....there are increasingly few, low stakes ways for
+          On top of that... there are increasingly few, low stakes ways for
           people to make interest, values aligned friends IRL. This is made
           worse by an endless stream of catered consumption.
         </p>

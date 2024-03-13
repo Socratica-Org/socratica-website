@@ -111,8 +111,7 @@
               style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round"
               >co-working sessions</span
             >
-            for you to work on your <span class="italic">passion projects</span>
-            with likeminded people.
+            for you to work on your <span class="italic">passion projects</span>with likeminded people.
           </p>
           <div class="mt-4">
             <a href="/map" target="_blank" rel="noopener noreferrer">
@@ -204,19 +203,17 @@
           class="w-10 md:w-16 pr-2 pl-2 md:pr-4 md:pl-4"
         />
         <div class="inline-block pb-2">
-          A open <span
+          An open <span
             class="border-dashed border-b-2"
             style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"
           >
-            celebration <span class="italic">of</span> makers</span
+            collective <span class="italic">of</span> makers</span
           >, artists,
         </div>
       </div>
       <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
         <div class="inline-block pb-1">
-          <span class="font-glyphworld">e</span>ngineers,
-          <span class="font-glyphworld">d</span>esigners, writers,
-          <span class="font-glyphworld">p</span>oets,
+          engineers, designers, writers, poets,
         </div>
         <img
           src={GreenCircle}
@@ -239,7 +236,7 @@
         <div class="inline-block font-tiempos-headline">
           <span
             style="background: linear-gradient(to right, #899248, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
-            ><span class="italic">in</span>-between</span
+            ><span class="italic">in</span>-between.</span
           >
         </div>
       </div>
@@ -250,7 +247,7 @@
     >
       <div class="text-center text-[12px] md:text-sm">
         <span class="block md:hidden"
-          >Socratica is a live IRL co-working session hosted every Sunday
+          >Socratica is a live, IRL co-working session hosted every Sunday in Waterloo
           bringing together people who want to <span class="italic">make</span>
           stuff, and
           <a
@@ -261,8 +258,8 @@
           >.</span
         >
         <div class="hidden md:block">
-          Socratica is a live IRL co-working session hosted every Sunday
-          bringing together people who want to
+          Socratica is a live, IRL co-working session hosted every Sunday in Waterloo
+          bringing together people who want to 
         </div>
         <div class="hidden md:block mx-auto">
           <span class="italic">make</span> stuff, and
@@ -298,13 +295,13 @@
         class="text-[20px] text-xl xs:text-3xl sm:text-3xl md:text-4xl font-tiempos-headline"
       >
         Whether you're just starting out or far along,
-        <br class="hidden md:block" />this is a place for <i>you</i>
+        <br class="hidden md:block" />this is a place for <i>you</i> to make things.
       </div>
       <div
         class="font-Graphik pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md"
       >
-        We know it can be intimidating to start
-        <br />(we've been there).
+        We know it can be intimidating to start (we've been there),
+        <br> but you'll be surrounded by others doing the same.
       </div>
     </div>
     <img
@@ -371,8 +368,8 @@
           >
         </div>
         <div class="pt-5 text-[11px] md:text-[14px] text-zinc-800 font-inter">
-          Socratica is a live IRL co-working session hosted every Sunday
-          bringing together people who want to make stuff, and you're invited
+          The real magic is in the demos - whether you've got 3 bullet points on a Google Docs or a full-blown prototype, we want to see it.
+          It's a chance to share your work, get feedback, and celebrate your progress. And of course, make new friends.
         </div>
       </div>
     </div>
@@ -419,10 +416,22 @@
               class="border-b-2"
               style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
             >
-              We have more to say
+              We have more to say.
             </a>
           </div>
         </div>
+          <div
+          class="font-Graphik pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md"
+          >
+          We're united by the love of making things, and we want to help you make your thing.
+          <br> Not in Waterloo? There's a good chance
+            <a
+              href="/map"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+              >
+              a node exists near you
+            </a>.
       </div>
     </div>
   </div>

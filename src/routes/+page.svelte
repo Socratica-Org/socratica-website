@@ -100,22 +100,32 @@
     transform: translateX(-25%);
   }
 }
+.rainbow-text span:nth-child(1) { color: #FF6666; } /* Lighter Red */
+.rainbow-text span:nth-child(2) { color: #FFB266; } /* Lighter Orange */
+.rainbow-text span:nth-child(3) { color: #FFFF66; } /* Lighter Yellow */
+.rainbow-text span:nth-child(4) { color: #66FF66; } /* Lighter Green */
+.rainbow-text span:nth-child(5) { color: #6666FF; } /* Lighter Blue */
+.rainbow-text span:nth-child(6) { color: #8A2BE2; } /* Lighter Indigo */
+.rainbow-text span:nth-child(7) { color: #EE82EE; } /* Lighter Violet */
+.rainbow-text span:nth-child(8) { color: #FF6666; } /* Lighter Red */
+.rainbow-text span:nth-child(9) { color: #FFB266; } /* Lighter Orange */
+.rainbow-text span:nth-child(10) { color: #FFFF66; } /* Lighter Yellow */
+.rainbow-text span:nth-child(11) { color: #66FF66; } /* Lighter Green */
+.rainbow-text span:nth-child(12) { color: #6666FF; } /* Lighter Blue */
+.rainbow-text span:nth-child(13) { color: #8A2BE2; } /* Lighter Indigo */
+.rainbow-text span:nth-child(14) { color: #EE82EE; } /* Lighter Violet */
 </style>
+
 
 
 <section class="block">
   
   <div class="flex flex-col h-[670px] sm:h-[800px] justify-center bg-primary">
-    <!-- <div
-      class="absolute top-5 left-3 sm:left-10 w-10 h-10 bg-black rounded-full"
-    /> -->
-    <div class="marquee font-mono absolute top-0">
+
+    <div class="marquee font-mono absolute top-0 cursor-pointer">
       <a href="https://lu.ma/waterloo?utm_source=website" style="cursor: pointer;">
       <p>
-        come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario
-      </p>
-    </a>
-    </div>
+come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • <span class="rainbow-text"> <span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span> • come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • <span class="rainbow-text"> <span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span> •    </div>
     
     <Navbar />
     <div class="absolute top-[50px] left-1/2 transform -translate-x-1/2">

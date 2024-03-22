@@ -85,35 +85,36 @@
 .marquee p {
   color: white;
   font-weight: 700;
-  animation: loopText 15s infinite linear;
+  animation: loopText 12s infinite linear;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
+
 @keyframes loopText {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 
-  to {
-    transform: translateX(-25%);
-  }
 }
-.rainbow-text span:nth-child(1) { color: #FF6666; } /* Lighter Red */
-.rainbow-text span:nth-child(2) { color: #FFB266; } /* Lighter Orange */
-.rainbow-text span:nth-child(3) { color: #FFFF66; } /* Lighter Yellow */
-.rainbow-text span:nth-child(4) { color: #66FF66; } /* Lighter Green */
-.rainbow-text span:nth-child(5) { color: #6666FF; } /* Lighter Blue */
-.rainbow-text span:nth-child(6) { color: #8A2BE2; } /* Lighter Indigo */
-.rainbow-text span:nth-child(7) { color: #EE82EE; } /* Lighter Violet */
-.rainbow-text span:nth-child(8) { color: #FF6666; } /* Lighter Red */
-.rainbow-text span:nth-child(9) { color: #FFB266; } /* Lighter Orange */
-.rainbow-text span:nth-child(10) { color: #FFFF66; } /* Lighter Yellow */
-.rainbow-text span:nth-child(11) { color: #66FF66; } /* Lighter Green */
-.rainbow-text span:nth-child(12) { color: #6666FF; } /* Lighter Blue */
-.rainbow-text span:nth-child(13) { color: #8A2BE2; } /* Lighter Indigo */
-.rainbow-text span:nth-child(14) { color: #EE82EE; } /* Lighter Violet */
+.rainbow-text span:nth-child(1) { color: #FF9999; } /* Even Lighter Red */
+.rainbow-text span:nth-child(2) { color: #FFCC99; } /* Even Lighter Orange */
+.rainbow-text span:nth-child(3) { color: #FFFF99; } /* Even Lighter Yellow */
+.rainbow-text span:nth-child(4) { color: #99FF99; } /* Even Lighter Green */
+.rainbow-text span:nth-child(5) { color: #9999FF; } /* Even Lighter Blue */
+.rainbow-text span:nth-child(6) { color: #B19CD9; } /* Even Lighter Indigo */
+.rainbow-text span:nth-child(7) { color: #F4B6F4; } /* Even Lighter Violet */
+.rainbow-text span:nth-child(8) { color: #FF9999; } /* Even Lighter Red */
+.rainbow-text span:nth-child(9) { color: #FFCC99; } /* Even Lighter Orange */
+.rainbow-text span:nth-child(10) { color: #FFFF99; } /* Even Lighter Yellow */
+.rainbow-text span:nth-child(11) { color: #99FF99; } /* Even Lighter Green */
+.rainbow-text span:nth-child(12) { color: #9999FF; } /* Even Lighter Blue */
+.rainbow-text span:nth-child(13) { color: #B19CD9; } /* Even Lighter Indigo */
+.rainbow-text span:nth-child(14) { color: #F4B6F4; } /* Even Lighter Violet */
 </style>
 
 
@@ -125,7 +126,8 @@
     <div class="marquee font-mono absolute top-0 cursor-pointer">
       <a href="https://lu.ma/waterloo?utm_source=website" style="cursor: pointer;">
       <p>
-come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • <span class="rainbow-text"> <span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span> • come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • <span class="rainbow-text"> <span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span> •    </div>
+come to our waterloo symposium&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• explore 25+ stage and booth projects&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• eat free gourmet pizza&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• and meet like-minded people&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• and more!&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• april 2nd 2024&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;• waterloo, ontario&nbsp;<span class="rainbow-text"><span>l</span><span>u</span><span>.</span><span>m</span><span>a</span><span>/</span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>l</span><span>o</span><span>o </span></span>&nbsp;•
+</div>
     
     <Navbar />
     <div class="absolute top-[50px] left-1/2 transform -translate-x-1/2">

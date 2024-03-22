@@ -71,16 +71,57 @@
   />
 </svelte:head>
 
+<style>
+.marquee {
+  background-color: black;
+  overflow: hidden;
+  width: 100%;
+  /* font-family: font-mono; */
+  white-space: nowrap;
+  height: 40px;
+  
+}
+
+.marquee p {
+  color: white;
+  font-weight: 700;
+  animation: loopText 15s infinite linear;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@keyframes loopText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-25%);
+  }
+}
+</style>
+
+
 <section class="block">
+  
   <div class="flex flex-col h-[670px] sm:h-[800px] justify-center bg-primary">
     <!-- <div
       class="absolute top-5 left-3 sm:left-10 w-10 h-10 bg-black rounded-full"
     /> -->
+    <div class="marquee font-mono absolute top-0">
+      <a href="https://lu.ma/waterloo?utm_source=website" style="cursor: pointer;">
+      <p>
+        come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario • come to our waterloo symposium! • explore 25+ stage and booth projects • eat free gourmet pizza • and meet like-minded people • learn from each other • and more! • april 2nd 2024 • waterloo, ontario
+      </p>
+    </a>
+    </div>
+    
     <Navbar />
-
-    <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
+    <div class="absolute top-[50px] left-1/2 transform -translate-x-1/2">
       <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
     </div>
+
 
     <div class="container mx-auto max-w-screen-xl px-6 md:px-8">
       <div

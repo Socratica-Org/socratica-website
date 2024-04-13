@@ -111,7 +111,7 @@
               style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round"
               >co-working sessions</span
             >
-            for you to work on your <span class="italic">passion projects</span>with likeminded people.
+            for you to work on your <span class="italic">passion projects</span> with likeminded people.
           </p>
           <div class="mt-4">
             <a href="/map" target="_blank" rel="noopener noreferrer">
@@ -191,6 +191,7 @@
 			  </div>	  
 			</div>
 		</div> -->
+    
     <div
       class="flex flex-col justify-center items-center text-[16px] sm:text-[20px] md:text-4xl font-tiempos-headline md:pt-8"
       style="font-weight: 300;"
@@ -203,12 +204,7 @@
           class="w-10 md:w-16 pr-2 pl-2 md:pr-4 md:pl-4"
         />
         <div class="inline-block pb-2">
-          An open <span
-            class="border-dashed border-b-2"
-            style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"
-          >
-            collective <span class="italic">of</span> makers</span
-          >, artists,
+          An open collective <span class="italic">of</span> makers, artists,
         </div>
       </div>
       <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
@@ -224,8 +220,9 @@
       <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
         <div class="inline-block">
           and <span
-            class="italic relative text-stone bottom-0 left-0 border-b-4"
-            style="border-color: #CDC19F">everything</span
+            class="border-dashed border-b-2"
+            style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"
+          >everything</span
           >
         </div>
         <img
@@ -351,16 +348,16 @@
           class="text-xl sm:text-3xl lg:text-4xl font-tiempos-headline lg:pt-9"
           style="font-weight: 300;"
         >
-          Introductions 👋,
+          Introductions,
           <br />
           <span class="md:hidden"
-            >two 50-min work blocks 🖋️️💻🎨, ending with casual open <span
+            >two 50-min work blocks, ending with casual open <span
               class="italic">demos</span
-            > 🤝</span
+            ></span
           >
-          <span class="hidden md:inline">two 50-min work blocks 🖋️️💻🎨,</span>
+          <span class="hidden md:inline">two 50-min work blocks,</span>
           <span class="hidden md:inline"
-            >ending with casual open <span class="italic">demos</span> 🤝</span
+            >ending with casual open <span class="italic">demos</span></span
           >
           <br class="" />
           <span class="italic" style="color: #CFCCC4"
@@ -407,7 +404,7 @@
           class="text-xl xs:text-3xl sm:text-3xl md:text-4xl text-zinc-800 font-light font-tiempos-headline pt-4"
           style="font-weight: 300;"
         >
-          We like helping good people <br class="sm:hidden" /> do great things.
+          We like helping great people <br class="sm:hidden" /> do great things.
           <div>
             Got an extra minute?
             <br class="sm:hidden md:hidden" />
@@ -430,8 +427,14 @@
               class="border-b-2"
               style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
               >
-              a node exists near you
-            </a>.
+              a node exists near you.
+            </a> If not, <a
+              href="/get-involved"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+              >
+              you can start a new one.
+            </a>
       </div>
     </div>
   </div>

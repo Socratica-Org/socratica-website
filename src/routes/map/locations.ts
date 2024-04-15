@@ -244,7 +244,7 @@ export const locations = [
         location: "New York, NY",
         lumaLink:
             "",
-        joinLink: "https://lu.ma/ichinichi-ippo",
+        joinLink: "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
         instagramLink: "https://www.instagram.com/_ichinichiippo/",
         twitterLink: "https://twitter.com/socraticainfo",
         youtubeLink: "https://www.youtube.com/@socraticainfo",

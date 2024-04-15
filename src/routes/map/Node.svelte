@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Globe from "$lib/images/Globe.svg";
   import InstagramLogo from "$lib/images/InstagramLogo.svg";
   import TwitterLogo from "$lib/images/TwitterLogo.svg";
@@ -17,6 +16,7 @@
   export let instagramLink: string;
   export let twitterLink: string;
   export let youtubeLink: string;
+  export let imageSrc: string | undefined;
 </script>
 
 <div
@@ -81,15 +81,27 @@
     </div>
   </div>
 
+{#if lumaLink}
   <iframe
-    title={name}
-    src={lumaLink}
+      title={name}
+      src={lumaLink}
+      class="w-full md:w-400"
+      height="350"
+      frameborder="0"
+      style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6; border: 2px solid #CFCCC4;"
+      aria-hidden="false"
+    />
+  {:else if imageSrc}
+    <img src={imageSrc}
+    alt="socratica node preview"
     class="w-full md:w-400"
-    height="350"
-    frameborder="0"
     style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6; border: 2px solid #CFCCC4;"
     aria-hidden="false"
-  />
+    height="350"
+    >
+  {:else}
+  <div></div>
+{/if}
 
   <button
     class="bg-[#FFFCF3] py-1 px-3 rounded-full text-xs md:text-sm text-[#2A2928] font-mono border-2 border-dashed border-soft-grey flex items-center justify-center"

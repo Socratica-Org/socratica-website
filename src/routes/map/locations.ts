@@ -237,4 +237,18 @@ export const locations = [
         websiteLink: "https://www.socratica.info/",
         coordinates: [35.6895, 139.6917],
     },
+    {
+        id: "ny",
+        name: "New York Nodes",
+        date: "APRIL 2024",
+        location: "New York, NY",
+        lumaLink:
+            "",
+        joinLink: "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
+        instagramLink: "https://www.instagram.com/_ichinichiippo/",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
+        coordinates: [40.7128, -74.0060],
+    },
 ];

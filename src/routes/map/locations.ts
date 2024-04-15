@@ -249,6 +249,6 @@ export const locations = [
         twitterLink: "https://twitter.com/socraticainfo",
         youtubeLink: "https://www.youtube.com/@socraticainfo",
         websiteLink: "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
-        coordinates: [40.7128, 74.0060],
+        coordinates: [40.7128, -74.0060],
     },
 ];

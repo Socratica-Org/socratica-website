@@ -107,6 +107,7 @@
       date={location.date}
       location={location.location.toUpperCase()}
       lumaLink={location.lumaLink}
+      imageSrc={location.imageSrc}
       joinLink={location.joinLink}
       websiteLink={location.websiteLink}
       instagramLink={location.instagramLink}

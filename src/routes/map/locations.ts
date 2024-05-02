@@ -240,17 +240,17 @@ export const locations = [
   {
     id: "ny",
     name: "New York Nodes",
-    date: "APRIL 2024",
+    date: "MARCH 2024",
     location: "New York, NY",
     lumaLink: "",
     imageSrc: "http://straightupjac.xyz/socratica-nyc-cozy-sundays.png",
     joinLink:
-      "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
+      "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
     instagramLink: "https://www.instagram.com/_ichinichiippo/",
     twitterLink: "https://twitter.com/socraticainfo",
     youtubeLink: "https://www.youtube.com/@socraticainfo",
     websiteLink:
-      "https://www.notion.so/straightupjac/Socratica-NYC-public-5e1198e16be24eacae4d97f764717f21",
+      "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
     coordinates: [40.7128, -74.006],
   },
 ];

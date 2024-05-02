@@ -253,4 +253,18 @@ export const locations = [
       "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
     coordinates: [40.7128, -74.006],
   },
+  {
+    id: "umn",
+    name: "making@umn",
+    date: "MARCH 2024",
+    location: "Minneapolis, MN",
+    lumaLink: "https://lu.ma/embed/calendar/cal-0U8g6FXtpy0P1ih/events?lt=light",
+    joinLink: "https://lu.ma/making-umn",
+    instagramLink: "https://www.instagram.com/makingatumn/",
+    twitterLink: "https://twitter.com/socraticainfo",
+    youtubeLink: "https://www.youtube.com/@socraticainfo",
+    websiteLink: "https://www.socratica.info/",
+    coordinates: [44.9753, -93.2362],
+    
+  },
 ];

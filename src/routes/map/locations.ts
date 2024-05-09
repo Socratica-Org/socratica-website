@@ -20,7 +20,7 @@ export const locations = [
     location: "Toronto, ON",
     lumaLink:
       "https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light",
-    joinLink: "https://lu.ma/socraticaTO",
+    joinLink: "https://lu.ma/soto",
     instagramLink: "https://www.instagram.com/socratica.info",
     twitterLink: "https://twitter.com/socraticainfo",
     youtubeLink: "https://www.youtube.com/@socraticainfo",

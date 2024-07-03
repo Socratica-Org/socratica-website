@@ -36,9 +36,9 @@ export const locations = [
       "https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light",
     joinLink: "https://lu.ma/atelier.ubc",
     instagramLink: "https://www.instagram.com/atelier.ubc",
-    twitterLink: "https://twitter.com/socraticainfo",
+    twitterLink: "https://twitter.com/atelier_ubc",
     youtubeLink: "https://www.youtube.com/@socraticainfo",
-    websiteLink: "https://www.socratica.info/",
+    websiteLink: "https://www.atelier.ac/",
     coordinates: [49.2600924, -123.2509564],
   },
   {
@@ -265,6 +265,20 @@ export const locations = [
     youtubeLink: "https://www.youtube.com/@socraticainfo",
     websiteLink: "https://www.socratica.info/",
     coordinates: [44.9753, -93.2362],
+    
+  },
+  {
+    id: "singapore",
+    name: "Owl Space",
+    date: "JUNE 2024",
+    location: "Singapore",
+    lumaLink: "https://lu.ma/embed/calendar/cal-Wv97MpIiMgbkofM/events?lt=light",
+    joinLink: "https://lu.ma/owlspace",
+    instagramLink: "https://www.instagram.com/socratica.info/",
+    twitterLink: "https://twitter.com/owlspaceorg",
+    youtubeLink: "https://www.youtube.com/@socraticainfo",
+    websiteLink: "https://tinyurl.com/Owlspaceorg",
+    coordinates: [1.3521, 103.8198],
     
   },
 ];

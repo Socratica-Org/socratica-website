@@ -277,7 +277,7 @@ export const locations = [
     instagramLink: "https://www.instagram.com/socratica.info/",
     twitterLink: "https://twitter.com/owlspaceorg",
     youtubeLink: "https://www.youtube.com/@socraticainfo",
-    websiteLink: "https://www.socratica.info/",
+    websiteLink: "https://tinyurl.com/Owlspaceorg",
     coordinates: [1.3521, 103.8198],
     
   },

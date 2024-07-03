@@ -269,11 +269,10 @@ export const locations = [
   },
   {
     id: "singapore",
-    name: "Owlspace",
+    name: "Owl Space",
     date: "JUNE 2024",
     location: "Singapore",
-    // TODO: update luma embed link
-    lumaLink: "https://lu.ma/embed/calendar/cal-0U8g6FXtpy0P1ih/events?lt=light",
+    lumaLink: "https://lu.ma/embed/calendar/cal-Wv97MpIiMgbkofM/events?lt=light",
     joinLink: "https://lu.ma/owlspace",
     instagramLink: "https://www.instagram.com/socratica.info/",
     twitterLink: "https://twitter.com/owlspaceorg",

@@ -1,4 +1,18 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+
+  onMount(() => {
+    // Redirect users to the specified URL upon reaching this page
+    goto('https://3hlyworopge.typeform.com/to/zunBx8UO');
+  });
+</script>
+
+<!-- 
+  The previous content has been commented out as per instructions.
+  Users will be redirected to the specified URL upon reaching this page.
+
+<script lang="ts">
   import Navbar from "$lib/components/navbar.svelte";
   import { initializeApp } from "firebase/app";
   import { getAnalytics } from "firebase/analytics";
@@ -189,3 +203,4 @@
   alt="Beige Character"
   class="absolute top-[40.5%] left-[58%] transform scale-[0.27] md:top-[41.5%] md:left-[67.5%] md:transform-scale-55"
 />
+-->

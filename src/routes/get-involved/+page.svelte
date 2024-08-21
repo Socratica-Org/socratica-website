@@ -3,14 +3,14 @@
   import { goto } from '$app/navigation';
 
   onMount(() => {
-    // Redirect users to the specified URL upon reaching this page
-    goto('https://3hlyworopge.typeform.com/to/zunBx8UO');
+    // Redirect users to the new Tally form URL upon reaching this page
+    goto('https://tally.so/r/31Mp2M');
   });
 </script>
 
 <!-- 
-  The previous content has been commented out as per instructions.
-  Users will be redirected to the specified URL upon reaching this page.
+  The previous content has been commented out.
+  Users will be redirected to the specified Tally form URL upon reaching this page.
 
 <script lang="ts">
   import Navbar from "$lib/components/navbar.svelte";

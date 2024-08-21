@@ -2,6 +2,10 @@
   import Navbar from "$lib/components/navbar.svelte";
 </script>
 
+<svelte:head>
+  <title>Just Start | Socratica</title>
+</svelte:head>
+
 <div class="block">
   <div class="flex flex-col min-h-screen bg-primary">
     <Navbar />

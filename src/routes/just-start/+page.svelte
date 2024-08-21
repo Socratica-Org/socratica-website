@@ -2,27 +2,24 @@
   import Navbar from "$lib/components/navbar.svelte";
 </script>
 
-<div class="block mb-20">
-  <div class="flex flex-col min-h-screen justify-center bg-primary">
+<div class="block">
+  <div class="flex flex-col min-h-screen bg-primary">
     <Navbar />
 
-    <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
+    <div class="text-center mt-5 mb-10 md:mb-0 md:absolute md:top-5 md:left-1/2 md:transform md:-translate-x-1/2">
       <a href="/">
         <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
       </a>
     </div>
-    <div
-      class="w-9/10 md:w-9/10 lg:w-3/5 mx-auto mt-20 mb-20 md:mt-32 md:mb-32"
-    >
-      <h2
-        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
-      >
+
+    <div class="w-full px-6 sm:px-10 md:px-0 md:w-9/10 lg:w-3/5 mx-auto mt-32 md:mt-32 pb-20 md:pb-32">
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline">
         Just <i>Start</i>.
       </h2>
 
       <div
         class="mt-8 md:mt-16"
-        style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
+        style="font-family: 'Untitled Sans', sans-serif;"
       >
         <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
           You've read through the Toolbox, soaking up the collective wisdom of Socratica nodes worldwide. The stories of thriving communities and creative breakthroughs have sparked your imagination. You're buzzing with the possibility of fostering a space where consistent creativity and meaningful connections flourish.

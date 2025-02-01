@@ -9,7 +9,7 @@
     /> -->
     <Navbar />
 
-    <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
+    <div class="absolute top-20 left-10 sm:left-20 transform ">
       <a href="/">
         <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
       </a>

@@ -36,7 +36,7 @@
   }
 </script>
 
-<div class="absolute top-4 md:top-5 right-3 z-30">
+<div class="absolute top-24 md:top-20 right-3 z-30">
   <button
     class="w-10 h-10 bg-black rounded-full flex flex-col justify-center items-center"
     on:click={toggleOverlay}

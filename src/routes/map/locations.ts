@@ -103,7 +103,7 @@ export const locations = [
         date: "SEPTEMBER 2023",
         location: "London, ON",
         lumaLink:
-            "https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light",
+            "https://www.instagram.com/momentum_uwo/",
         joinLink: "https://lu.ma/moment.um",
         instagramLink: "https://www.instagram.com/momentum_uwo",
         twitterLink: "https://twitter.com/socraticainfo",

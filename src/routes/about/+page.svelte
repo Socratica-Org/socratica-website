@@ -5,13 +5,13 @@
   import AboutImage2 from "$lib/images/about-1.2.png";
   import AboutImage3 from "$lib/images/about-1.3.png";
 
-  // Add state for accordion
-  let expandedSection = "winter-2022";
+  // Change to selectedTerm instead of expandedSection
+  let selectedTerm = "winter-2022";
 
   const timelineData = [
     {
       id: "winter-2022",
-      term: "Winter 2022",
+      term: "W22",
       leaders: "Adi Sharma, Aman Mathur",
       content: `In January 2022, amid Waterloo's post-pandemic return to campus, Adi Sharma and Aman Mathur identified a gap that students deeply felt—the lack of a dedicated environment for consistent exploration beyond academic and traditional career-oriented pursuits.
 
@@ -21,62 +21,62 @@ With this vision as Aman and Adi's compass, they kicked off the first Socratica 
     },
     {
       id: "summer-2022",
-      term: "Summer 2022",
+      term: "S22",
       leaders: "Jonathan Xu, Mathurah Ravigulan, Adriana Ceric",
       content: "TBD"
     },
     {
       id: "fall-2022",
-      term: "Fall 2022",
+      term: "F22",
       leaders: "Joss Murphy, Anson Yu, Ananya Anupam, Daekun Kim, Krish Shah, Dhruv Patel, Dhvani Patel",
       content: "TBD"
     },
     {
       id: "winter-2023",
-      term: "Winter 2023",
+      term: "W23",
       leaders: "Jonathan Xu, Ananya Anupam, Jaclyn Chan, Maryam Rezakarimi, Daekun Kim",
       content: "TBD"
     },
     {
       id: "summer-2023",
-      term: "Summer 2023",
+      term: "S23",
       leaders: "Aava Sapkota, Brayden Petersen, Jake Rudolph, Binalpreet Kalra, Christopher Oka",
       content: "TBD"
     },
     {
       id: "fall-2023",
-      term: "Fall 2023",
+      term: "F23",
       leaders: "Hudhayfa Nazoordeen, Anthea Tawiah, Bruce Wang, Aileen Luo, Jennifer Tsai, Eesah Ulhaq",
       content: "TBD"
     },
     {
       id: "winter-2024",
-      term: "Winter 2024",
+      term: "W24",
       leaders: "Dhriti Gabani, Soham Basu, Pavitar Saini, Lagan Bansal, Freeman Jiang, Shivam Sharma, Joseph Bagheri, Brooke Joseph, Jenn Dryden",
       content: "TBD"
     },
     {
       id: "summer-2024",
-      term: "Summer 2024",
+      term: "S24",
       leaders: "Jaryd Diamond, Rachel Scott, Eric Gao, Santiago Del Solar, Julia Fedorin, Nevedhaa Ayyappan, Gaurav Shah, Tiffany Trinh, Keyan Virani",
       content: "TBD"
     },
     {
       id: "fall-2024",
-      term: "Fall 2024",
+      term: "F24",
       leaders: "Shahan Neda, Akira Yoshiyama, Suhani Trivedi, Victoria Feng, Nefise Akcakir, Giang Tran, Rishi Kothari",
       content: "TBD"
     },
     {
       id: "winter-2025",
-      term: "Winter 2025",
+      term: "W25",
       leaders: "Brennan Windsor, Cheryl Chong, Cindy Qiu, Faisal Sayed, Yash Karthik, Maisha Tahsin, Kenson Hui, Kaifee Haque, Angela Li",
       content: "TBD"
     }
   ];
 
-  function toggleSection(id) {
-    expandedSection = expandedSection === id ? "" : id;
+  function selectTerm(id) {
+    selectedTerm = id;
   }
 
   // Add a function to wrap each name in a span
@@ -140,80 +140,92 @@ With this vision as Aman and Adi's compass, they kicked off the first Socratica 
 
 <!-- Replace the timeline section -->
 <div class="block bg-primary py-20">
-  <div 
-    class="w-[85%] md:w-9/10 lg:w-3/5 ml-[7.5%] md:ml-[10%]"
-  >
+  <div class="w-[85%] md:w-9/10 lg:w-3/5 ml-[7.5%] md:ml-[10%]">
     <h2 class="text-2xl md:text-3xl font-tiempos-headline mb-10">Our story</h2>
     
-    <div class="space-y-4">
+    <!-- Pills navigation -->
+    <div class="flex flex-wrap gap-2 mb-8">
       {#each timelineData as item}
-        <div class="border-b border-gray-200">
-          <button
-            class="w-full py-4 flex justify-between items-center text-left"
-            on:click={() => toggleSection(item.id)}
-          >
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xl font-tiempos-headline">{item.term}</h3>
-              <div class="names-container max-w-[700px]" style="font-family: 'Untitled Sans', sans-serif;">
-                <p class="text-gray-600 text-[11px] md:text-[17px] lg:text-lg">
-                  {@html formatLeaders(item.leaders)}
-                </p>
-              </div>
-            </div>
-            <svg
-              class="w-6 h-6 transform transition-transform duration-200 flex-shrink-0 ml-4 {expandedSection === item.id ? 'rotate-180' : ''}"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
-          
-          {#if expandedSection === item.id}
-            <div 
-              transition:slide={{ duration: 300 }}
-              class="pb-6 prose max-w-none" 
-              style="font-family: 'Untitled Sans', sans-serif;"
-            >
-              <p class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed">
-                {item.content}
-              </p>
-              
-              {#if item.id === "winter-2022"}
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                  <img 
-                    src={AboutImage3} 
-                    alt="Socratica Winter 2022" 
-                    class="w-full h-auto rounded-lg"
-                  />
-                  <img 
-                    src={AboutImage1} 
-                    alt="Socratica Winter 2022" 
-                    class="w-full h-auto rounded-lg"
-                  />
-                  <img 
-                    src={AboutImage2} 
-                    alt="Socratica Winter 2022" 
-                    class="w-full h-auto rounded-lg"
-                  />
-                </div>
-              {/if}
-            </div>
-          {/if}
-        </div>
+        <button
+          class="pill-button {selectedTerm === item.id ? 'active' : ''}"
+          on:click={() => selectTerm(item.id)}
+        >
+          {item.term}
+        </button>
       {/each}
     </div>
+
+    <!-- Content section -->
+    {#each timelineData as item}
+      {#if selectedTerm === item.id}
+        <div 
+          transition:slide={{ duration: 300 }}
+          class="content-section"
+        >
+          <!-- Leaders -->
+          <div class="names-container max-w-[700px] mb-6" style="font-family: 'Untitled Sans', sans-serif;">
+            <p class="text-gray-600 text-[11px] md:text-[17px] lg:text-lg">
+              {@html formatLeaders(item.leaders)}
+            </p>
+          </div>
+
+          <!-- Content -->
+          <div class="prose max-w-none" style="font-family: 'Untitled Sans', sans-serif;">
+            <p class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed">
+              {item.content}
+            </p>
+            
+            {#if item.id === "winter-2022"}
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <img 
+                  src={AboutImage3} 
+                  alt="Socratica Winter 2022" 
+                  class="w-full h-auto rounded-lg"
+                />
+                <img 
+                  src={AboutImage1} 
+                  alt="Socratica Winter 2022" 
+                  class="w-full h-auto rounded-lg"
+                />
+                <img 
+                  src={AboutImage2} 
+                  alt="Socratica Winter 2022" 
+                  class="w-full h-auto rounded-lg"
+                />
+              </div>
+            {/if}
+          </div>
+        </div>
+      {/if}
+    {/each}
   </div>
 </div>
 
 <style>
-  /* Add any additional styles needed */
+  .pill-button {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-family: 'Untitled Sans', sans-serif;
+    font-size: 14px;
+    transition: all 0.2s;
+    border: 1px solid #000;
+    background: transparent;
+  }
+
+  .pill-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .pill-button.active {
+    background: #000;
+    color: #fff;
+  }
+
+  .content-section {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
   .prose {
     font-family: 'Untitled Sans', sans-serif;
   }

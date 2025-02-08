@@ -281,4 +281,17 @@ export const locations = [
         websiteLink: "https://tinyurl.com/Owlspaceorg",
         coordinates: [1.3521, 103.8198],
     },
+    {
+        id: "mcmaster",
+        name: "agora",
+        date: "OCTOBER 2024",
+        location: "Hamilton, ON",
+        lumaLink: "https://lu.ma/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
+        joinLink: "https://lu.ma/theagora",
+        instagramLink: "https://www.instagram.com/agora.meet/",
+        twitterLink: "https://twitter.com/socraticainfo",
+        youtubeLink: "https://www.youtube.com/@socraticainfo",
+        websiteLink: "https://www.socratica.info/",
+        coordinates: [43.26211519287825, -79.91705655784756],
+    }
 ];

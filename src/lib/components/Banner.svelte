@@ -13,7 +13,7 @@
       <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[14px] md:h-[14px] inline-block mx-2">
         <circle cx="10" cy="10" r="10" fill="#899248"/>
       </svg>
-      <span class="font-[300]">by the way... you're invited to our symposium!</span>
+      <span class="font-[300]">by the way... you're invited to our symposium! limited tickets only.</span>
     </div>
    
     <span class="text-[#CDC19F] font-[500] mt-1 md:mt-0 md:ml-2 inline-flex items-center">

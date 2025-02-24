@@ -1,5 +1,5 @@
 <script>
-  const BANNER_URL = "https://lu.ma/waterloo?utm_source=website";
+  const BANNER_URL = "http://symposium.socratica.info/?utm_source=website";
 </script>
 
 <div class="w-full bg-[#2A2928] text-[#FBF8EF] text-center py-3.5 font-['Tiempos_Text'] flex items-center justify-center">

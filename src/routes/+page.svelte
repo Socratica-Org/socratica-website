@@ -5,7 +5,7 @@
   import doodle4 from "$lib/images/socratica-doodle-4.png";
   import doodle5 from "$lib/images/socratica-doodle-5.png";
   import doodle6 from "$lib/images/socratica-doodle-6.png";
-  import people from "$lib/images/socratica-people.png";
+  import people from "$lib/images/socratica-people.webp";
   import ArrowDownRight from "$lib/images/ArrowDownRight.png";
   import Spiral from "$lib/images/Spiral.png";
   import BackgroundLines from "$lib/images/BackgroundLines.png";
@@ -14,12 +14,12 @@
   import GreenCircle from "$lib/images/green-circle.png";
   import YellowCircle from "$lib/images/yellow-circle.png";
   import Alien from "$lib/images/Alien.png";
-  import WhoCanCome from "$lib/images/WhoCanCome.png";
+  import WhoCanCome from "$lib/images/WhoCanCome.webp";
   import HandWaving from "$lib/images/HandWaving.png";
   import Scroll from "$lib/images/Scroll.png";
   import JoinUs from "$lib/images/JoinUs.png";
   import Smiley from "$lib/images/Smiley.png";
-  import Polaroid from "$lib/images/Polaroid.png";
+  import Polaroid from "$lib/images/Polaroid.webp";
   import Navbar from "$lib/components/navbar.svelte";
 
   const doodles = [

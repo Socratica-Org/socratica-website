@@ -102,7 +102,7 @@
 
     {#if currentPath !== "/map"}
       <footer
-        class="bg-[#4A4948] min-h-fit w-full bg-[url('/noise.png')]"
+        class="bg-[#4A4948] min-h-fit w-full bg-[url('/noise.webp')]"
         data-sveltekit-preload-data="hover"
       >
         <div class="w-full grid xs:grid-cols-3 md:grid-cols-4 px-10 sm:px-14">
@@ -228,7 +228,7 @@
   }
 
   footer {
-    background-image: url("/noise.png"),
+    background-image: url("/noise.webp"),
       linear-gradient(to top, #2a2928, #2a2928 50%, #2a2928);
     background-size: cover, cover; /* Apply cover for both gradient and image */
     background-repeat: no-repeat;

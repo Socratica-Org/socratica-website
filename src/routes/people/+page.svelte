@@ -149,115 +149,953 @@
     A2: letterA2
   };
   
-  // Updated people data to match actual dot positions
+  // Updated people data with actual Socratica members
   const people = [
-    // S letter people - positions updated to match letter pattern
+    // S letter people
     {
       id: 1,
-      name: "Brandon Leung",
-      role: "Co-Founder",
-      photo: "https://via.placeholder.com/150",
+      name: "Adi Sharma",
+      role: "W22",
+      photo: "/img-ppl/Adi_Sharma.jpg",
       description: [
-        "Founded the initial concept.",
-        "Established partnerships with local spaces.",
-        "Built the community foundations."
+        "Founding cohort (Winter 2022).",
+        "Helped establish Socratica's foundation.",
+        "Contributed to early community development."
       ],
       letter: "S", 
-      position: 0 // Top of S (first dot)
+      position: 0
     },
     {
       id: 2,
-      name: "Alex Johnson",
-      role: "Community Lead",
-      photo: "https://via.placeholder.com/150",
+      name: "Aman Mathur",
+      role: "W22",
+      photo: "/img-ppl/Aman_Mathur.jpg",
       description: [
-        "Organizes local meetups.",
-        "Manages member engagement.",
-        "Facilitates cross-team collaboration."
+        "Founding cohort (Winter 2022).",
+        "Early contributor to Socratica.",
+        "Helped shape the initial community vision."
       ],
       letter: "S",
-      position: 5 // Middle of S (center dot)
+      position: 1
+    },
+    {
+      id: 3,
+      name: "Jonathan Xu",
+      role: "S22 & W23",
+      photo: "/img-ppl/Jonathan.jpg",
+      description: [
+        "Multi-cohort member (S22, W23).",
+        "Contributed across multiple terms.",
+        "Helped with community continuity."
+      ],
+      letter: "S",
+      position: 2
+    },
+    {
+      id: 4,
+      name: "Mathurah Ravigulan",
+      role: "S22",
+      photo: "/img-ppl/Mathurah_Ravigulan.jpg",
+      description: [
+        "Spring 2022 cohort.",
+        "Early community builder.",
+        "Helped expand Socratica's reach."
+      ],
+      letter: "S",
+      position: 3
+    },
+    {
+      id: 5,
+      name: "Adriana Ceric",
+      role: "S22",
+      photo: "/img-ppl/Adriana_Ceric.jpg",
+      description: [
+        "Spring 2022 cohort.",
+        "Early contributor to Socratica.",
+        "Helped establish community practices."
+      ],
+      letter: "S",
+      position: 4
+    },
+    {
+      id: 6,
+      name: "Aadil Ali",
+      role: "S22",
+      photo: "/img-ppl/Aadil.jpg",
+      description: [
+        "Spring 2022 cohort.",
+        "Early team member.",
+        "Contributed to Socratica's foundation."
+      ],
+      letter: "S",
+      position: 5
     },
     // O letter people
     {
-      id: 9,
-      name: "Sarah Chen",
-      role: "UX/UI Designer",
-      photo: "https://via.placeholder.com/150",
+      id: 7,
+      name: "Joss Murphy",
+      role: "F22",
+      photo: "/img-ppl/Joss.jpg",
       description: [
-        "Designed the website.",
-        "Created the Socratica brand identity.",
-        "Developed the user experience."
+        "Fall 2022 cohort.",
+        "Helped grow the community.",
+        "Contributed to expanding Socratica's impact."
       ],
       letter: "O",
-      position: 0 // Top of O
+      position: 0
+    },
+    {
+      id: 8,
+      name: "Anson Yu",
+      role: "F22",
+      photo: "/img-ppl/Anson.jpg",
+      description: [
+        "Fall 2022 cohort.",
+        "Contributed to community initiatives.",
+        "Helped establish Fall 2022 projects."
+      ],
+      letter: "O",
+      position: 1
+    },
+    {
+      id: 9,
+      name: "Ananya Anupam",
+      role: "F22 & W23",
+      photo: "/img-ppl/Ananya.jpg",
+      description: [
+        "Multi-cohort member (F22, W23).",
+        "Consistent contributor across terms.",
+        "Helped maintain community continuity."
+      ],
+      letter: "O",
+      position: 2
     },
     {
       id: 10,
-      name: "David Park",
-      role: "Content Creator",
-      photo: "https://via.placeholder.com/150",
+      name: "Daekun Kim",
+      role: "F22 & W23",
+      photo: "/img-ppl/Daekun_Kim.jpg",
       description: [
-        "Produces educational content.",
-        "Manages the content library.",
-        "Leads writing workshops."
+        "Multi-cohort member (F22, W23).",
+        "Extended participation across terms.",
+        "Contributed to multiple Socratica projects."
       ],
       letter: "O",
-      position: 6 // Bottom-right of O
+      position: 3
+    },
+    {
+      id: 11,
+      name: "Krish Shah",
+      role: "F22",
+      photo: "/img-ppl/Krish_Shah.jpg",
+      description: [
+        "Fall 2022 cohort.",
+        "Contributed to community growth.",
+        "Participated in Socratica initiatives."
+      ],
+      letter: "O",
+      position: 4
     },
     // C letter people
     {
-      id: 17,
-      name: "Jamie Wong",
-      role: "Tech Lead",
-      photo: "https://via.placeholder.com/150",
+      id: 12,
+      name: "Dhruv Patel",
+      role: "F22",
+      photo: "/img-ppl/Dhruv_Patel.jpg",
       description: [
-        "Manages technical infrastructure.",
-        "Developed collaborative tools.",
-        "Supports community events."
+        "Fall 2022 cohort.",
+        "Helped develop Socratica projects.",
+        "Contributed to community initiatives."
       ],
       letter: "C",
-      position: 0 // Top of C
+      position: 0
+    },
+    {
+      id: 13,
+      name: "Dhvani Patel",
+      role: "F22",
+      photo: "/img-ppl/Dhvani_Patel.jpg",
+      description: [
+        "Fall 2022 cohort.",
+        "Participated in Socratica's development.",
+        "Contributed to Fall 2022 projects."
+      ],
+      letter: "C",
+      position: 1
+    },
+    {
+      id: 14,
+      name: "Jaclyn Chan",
+      role: "W23",
+      photo: "/img-ppl/Jaclyn.jpg",
+      description: [
+        "Winter 2023 cohort.",
+        "Helped extend Socratica's reach.",
+        "Contributed to community projects."
+      ],
+      letter: "C",
+      position: 2
+    },
+    {
+      id: 15,
+      name: "Maryam Rezakarimi",
+      role: "W23",
+      photo: "/img-ppl/Maryam_Rezakarimi.jpg",
+      description: [
+        "Winter 2023 cohort.",
+        "Active community participant.",
+        "Contributed to Winter 2023 initiatives."
+      ],
+      letter: "C",
+      position: 3
+    },
+    // R letter people
+    {
+      id: 16,
+      name: "Emil",
+      role: "W23",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Winter 2023 cohort.",
+        "Contributed to community development.",
+        "Participated in Socratica projects."
+      ],
+      letter: "R",
+      position: 0
+    },
+    {
+      id: 17,
+      name: "Aava Sapkota",
+      role: "S23",
+      photo: "/img-ppl/Aava_Sapkota.jpg",
+      description: [
+        "Spring 2023 cohort.",
+        "Helped advance Socratica's mission.",
+        "Contributed to community growth."
+      ],
+      letter: "R",
+      position: 1
     },
     {
       id: 18,
-      name: "Maya Rodriguez",
-      role: "Artist-in-Residence",
-      photo: "https://via.placeholder.com/150",
+      name: "Brayden Petersen",
+      role: "S23",
+      photo: "/img-ppl/Brayden_Petersen.jpg",
       description: [
-        "Leads creative workshops.",
-        "Produces community artwork.",
-        "Mentors emerging artists."
-      ],
-      letter: "C",
-      position: 8 // Bottom of C
-    },
-    // Add a few people for R letter
-    {
-      id: 20,
-      name: "Michael Torres",
-      role: "Education Director",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Develops learning curriculum.",
-        "Leads educational workshops.",
-        "Mentors new teachers."
+        "Spring 2023 cohort.",
+        "Active community member.",
+        "Supported Socratica initiatives."
       ],
       letter: "R",
-      position: 0 // Top of R
+      position: 2
+    },
+    {
+      id: 19,
+      name: "Jake Rudolph",
+      role: "S23",
+      photo: "/img-ppl/Jake_Rudolph.jpg",
+      description: [
+        "Spring 2023 cohort.",
+        "Contributed to Spring 2023 projects.",
+        "Helped expand Socratica's impact."
+      ],
+      letter: "R",
+      position: 3
+    },
+    // A letter people
+    {
+      id: 20,
+      name: "Binalpreet Kalra",
+      role: "S23",
+      photo: "/img-ppl/Binalpreet_Kalra.jpg",
+      description: [
+        "Spring 2023 cohort.",
+        "Contributed to community initiatives.",
+        "Helped strengthen Socratica's presence."
+      ],
+      letter: "A",
+      position: 0
     },
     {
       id: 21,
-      name: "Emma Wilson",
-      role: "Project Manager",
-      photo: "https://via.placeholder.com/150",
+      name: "Christopher Oka",
+      role: "S23",
+      photo: "/img-ppl/Christopher_Oka.jpg",
       description: [
-        "Coordinates team projects.",
-        "Manages community initiatives.",
-        "Develops strategic plans."
+        "Spring 2023 cohort.",
+        "Active participant in community projects.",
+        "Helped develop Socratica initiatives."
+      ],
+      letter: "A",
+      position: 1
+    },
+    {
+      id: 22,
+      name: "Hudhayfa Nazoordeen",
+      role: "F23",
+      photo: "/img-ppl/Hudhayfa_Nazoordeen.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Contributed to community growth.",
+        "Participated in Socratica projects."
+      ],
+      letter: "A",
+      position: 2
+    },
+    {
+      id: 23,
+      name: "Anthea Tawiah",
+      role: "F23",
+      photo: "/img-ppl/Anthea_Tawiah.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Helped expand Socratica's impact.",
+        "Contributed to Fall 2023 initiatives."
+      ],
+      letter: "A",
+      position: 3
+    },
+    // T letter people
+    {
+      id: 24,
+      name: "Bruce Wang",
+      role: "F23",
+      photo: "/img-ppl/Bruce_Wang.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Active community member.",
+        "Contributed to Socratica projects."
+      ],
+      letter: "T",
+      position: 0
+    },
+    {
+      id: 25,
+      name: "Aileen Luo",
+      role: "F23",
+      photo: "/img-ppl/Aileen_Luo.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Helped develop community initiatives.",
+        "Contributed to Socratica's growth."
+      ],
+      letter: "T",
+      position: 1
+    },
+    {
+      id: 26,
+      name: "Jennifer Tsai",
+      role: "F23",
+      photo: "/img-ppl/Jennifer_Tsai.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Participated in Fall 2023 projects.",
+        "Helped strengthen the community."
+      ],
+      letter: "T",
+      position: 2
+    },
+    // I letter people
+    {
+      id: 27,
+      name: "Eesah Ulhaq",
+      role: "F23",
+      photo: "/img-ppl/Eesah_Ulhaq.jpg",
+      description: [
+        "Fall 2023 cohort.",
+        "Contributed to Socratica initiatives.",
+        "Helped expand community impact."
+      ],
+      letter: "I",
+      position: 0
+    },
+    {
+      id: 28,
+      name: "Dhriti Gabani",
+      role: "W24",
+      photo: "/img-ppl/Dhriti_Gabani.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Recent community member.",
+        "Contributing to current projects."
+      ],
+      letter: "I",
+      position: 1
+    },
+    {
+      id: 29,
+      name: "Soham Basu",
+      role: "W24",
+      photo: "/img-ppl/Soham_Basu.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Active in recent initiatives.",
+        "Helping to shape Socratica's future."
+      ],
+      letter: "I",
+      position: 2
+    },
+    // C2 letter people (second C in SOCRATICA)
+    {
+      id: 30,
+      name: "Pavitar Saini",
+      role: "W24",
+      photo: "/img-ppl/Pavitar_Saini.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Currently active member.",
+        "Contributing to ongoing projects."
+      ],
+      letter: "C",
+      position: 4
+    },
+    {
+      id: 31,
+      name: "Lagan Bansal",
+      role: "W24",
+      photo: "/img-ppl/Lagan.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Participating in current initiatives.",
+        "Helping expand Socratica's impact."
+      ],
+      letter: "C",
+      position: 5
+    },
+    {
+      id: 32,
+      name: "Freeman Jiang",
+      role: "W24",
+      photo: "/img-ppl/Freeman_Jiang.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Active in current projects.",
+        "Contributing to community growth."
+      ],
+      letter: "C",
+      position: 6
+    },
+    {
+      id: 33,
+      name: "Shivam Sharma",
+      role: "W24",
+      photo: "/img-ppl/Shivam_Sharma.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Recently joined member.",
+        "Working on current initiatives."
+      ],
+      letter: "C",
+      position: 7
+    },
+    // A2 letter people (second A in SOCRATICA)
+    {
+      id: 34,
+      name: "Joseph Bagheri",
+      role: "W24",
+      photo: "/img-ppl/Joseph.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Currently active participant.",
+        "Contributing to recent projects."
+      ],
+      letter: "A",
+      position: 4
+    },
+    {
+      id: 35,
+      name: "Brooke Joseph",
+      role: "W24",
+      photo: "/img-ppl/Brooke_Joseph.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Active community member.",
+        "Helping shape ongoing initiatives."
+      ],
+      letter: "A",
+      position: 5
+    },
+    {
+      id: 36,
+      name: "Jenn Dryden",
+      role: "W24",
+      photo: "/img-ppl/Jenn_Dryden.jpg",
+      description: [
+        "Winter 2024 cohort.",
+        "Recently joined team member.",
+        "Contributing to current projects."
+      ],
+      letter: "A",
+      position: 6
+    },
+    {
+      id: 37,
+      name: "Jaryd Diamond",
+      role: "S24",
+      photo: "/img-ppl/Jaryd_Diamond.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "New community member.",
+        "Contributing to current initiatives."
+      ],
+      letter: "A",
+      position: 7
+    },
+    {
+      id: 38,
+      name: "Rachel Scott",
+      role: "S24",
+      photo: "/img-ppl/Rachel_Scott.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "Recently joined member.",
+        "Participating in current projects."
+      ],
+      letter: "A",
+      position: 8
+    },
+    {
+      id: 39,
+      name: "Eric Gao",
+      role: "S24",
+      photo: "/img-ppl/Eric_Gao.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "New community participant.",
+        "Contributing to recent initiatives."
+      ],
+      letter: "A",
+      position: 9
+    },
+    // Add more people to any remaining positions
+    {
+      id: 40,
+      name: "Santiago Del Solar",
+      role: "S24",
+      photo: "/img-ppl/Santiago_Del_Solar.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "Recently joined Socratica.",
+        "Working on current projects."
+      ],
+      letter: "S",
+      position: 6
+    },
+    {
+      id: 41,
+      name: "Julia Fedorin",
+      role: "S24",
+      photo: "/img-ppl/Julia_Fedorin.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "New community member.",
+        "Participating in current initiatives."
+      ],
+      letter: "S",
+      position: 7
+    },
+    {
+      id: 42,
+      name: "Nevedhaa Ayyappan",
+      role: "S24",
+      photo: "/img-ppl/Nevedhaa_Ayyappan.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "Recently joined team.",
+        "Contributing to current projects."
+      ],
+      letter: "O",
+      position: 5
+    },
+    {
+      id: 43,
+      name: "Gaurav Shah",
+      role: "S24",
+      photo: "/img-ppl/Gaurav_Shah.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "New Socratica member.",
+        "Working on recent initiatives."
+      ],
+      letter: "O",
+      position: 6
+    },
+    {
+      id: 44,
+      name: "Tiffany Trinh",
+      role: "S24",
+      photo: "/img-ppl/Tiffany_Trinh.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "Recent addition to the community.",
+        "Contributing to current projects."
+      ],
+      letter: "O",
+      position: 7
+    },
+    {
+      id: 45,
+      name: "Keyan Virani",
+      role: "S24",
+      photo: "/img-ppl/Keyan_Virani.jpg",
+      description: [
+        "Spring 2024 cohort.",
+        "New team member.",
+        "Participating in ongoing initiatives."
+      ],
+      letter: "O",
+      position: 8
+    },
+    {
+      id: 46,
+      name: "Shahan Neda",
+      role: "F24",
+      photo: "/img-ppl/Shahan_Neda.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "Newest community member.",
+        "Beginning to contribute to projects."
       ],
       letter: "R",
-      position: 11 // Bottom-right of R (updated position)
+      position: 4
+    },
+    {
+      id: 47,
+      name: "Akira Yoshiyama",
+      role: "F24",
+      photo: "/img-ppl/Akira_Yoshiyama.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "Recently joined Socratica.",
+        "Starting work on new initiatives."
+      ],
+      letter: "R",
+      position: 5
+    },
+    {
+      id: 48,
+      name: "Suhani Trivedi",
+      role: "F24",
+      photo: "/img-ppl/Suhani_Trivedi.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "New community participant.",
+        "Beginning to contribute to projects."
+      ],
+      letter: "R",
+      position: 6
+    },
+    {
+      id: 49,
+      name: "Victoria Feng",
+      role: "F24",
+      photo: "/img-ppl/Victoria_Feng.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "Recently joined member.",
+        "Starting to work on initiatives."
+      ],
+      letter: "R",
+      position: 7
+    },
+    {
+      id: 50,
+      name: "Nefise Akcakir",
+      role: "F24",
+      photo: "/img-ppl/Nefise.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "New team member.",
+        "Beginning to contribute to Socratica."
+      ],
+      letter: "R",
+      position: 8
+    },
+    {
+      id: 51,
+      name: "Giang Tran",
+      role: "F24",
+      photo: "/img-ppl/Giang_Tran.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "Recently joined Socratica.",
+        "Starting to contribute to projects."
+      ],
+      letter: "R",
+      position: 9
+    },
+    {
+      id: 52,
+      name: "Rishi Kothari",
+      role: "F24",
+      photo: "/img-ppl/Rishi_Kothari.jpg",
+      description: [
+        "Fall 2024 cohort.",
+        "New community member.",
+        "Beginning to work on initiatives."
+      ],
+      letter: "R",
+      position: 10
+    },
+    {
+      id: 53,
+      name: "Brennan Windsor",
+      role: "W25",
+      photo: "/img-ppl/Brennan_Windsor.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Newest community member.",
+        "Starting to engage with Socratica."
+      ],
+      letter: "T",
+      position: 3
+    },
+    {
+      id: 54,
+      name: "Cheryl Chong",
+      role: "W25",
+      photo: "/img-ppl/Cheryl_Chong.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Recently joined the community.",
+        "Beginning to contribute to projects."
+      ],
+      letter: "T",
+      position: 4
+    },
+    {
+      id: 55,
+      name: "Cindy Qiu",
+      role: "W25",
+      photo: "/img-ppl/Cindy.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "New Socratica member.",
+        "Starting to work on initiatives."
+      ],
+      letter: "T",
+      position: 5
+    },
+    {
+      id: 56,
+      name: "Faisal Sayed",
+      role: "W25",
+      photo: "/img-ppl/Faisal_Sayed.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Newest team member.",
+        "Beginning to engage with the community."
+      ],
+      letter: "T",
+      position: 6
+    },
+    {
+      id: 57,
+      name: "Yash Karthik",
+      role: "W25",
+      photo: "/img-ppl/Yash_Karthik.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Recently joined Socratica.",
+        "Starting to contribute to initiatives."
+      ],
+      letter: "T",
+      position: 7
+    },
+    {
+      id: 58,
+      name: "Maisha Tahsin",
+      role: "W25",
+      photo: "/img-ppl/Maisha_Tahsin.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "New community member.",
+        "Beginning to engage with projects."
+      ],
+      letter: "I",
+      position: 3
+    },
+    {
+      id: 59,
+      name: "Kenson Hui",
+      role: "W25",
+      photo: "/img-ppl/Kenson_Hui.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Recently joined the team.",
+        "Starting to work on initiatives."
+      ],
+      letter: "I",
+      position: 4
+    },
+    {
+      id: 60,
+      name: "Kaifee Haque",
+      role: "W25",
+      photo: "/img-ppl/Kaifee_Haque.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Newest Socratica member.",
+        "Beginning to contribute to the community."
+      ],
+      letter: "I",
+      position: 5
+    },
+    {
+      id: 61,
+      name: "Angela Li",
+      role: "W25",
+      photo: "/img-ppl/Angela_Li.jpg",
+      description: [
+        "Winter 2025 cohort.",
+        "Recently joined member.",
+        "Starting to engage with Socratica projects."
+      ],
+      letter: "I",
+      position: 6
+    },
+    {
+      id: 62,
+      name: "Socratica Team",
+      role: "Community",
+      photo: "/lib/images/socratica-people.webp",
+      description: [
+        "Represents all community members.",
+        "Past, present, and future contributors.",
+        "The collective spirit of Socratica."
+      ],
+      letter: "C",
+      position: 8
+    },
+    {
+      id: 63,
+      name: "Socratica Collaborators",
+      role: "Partners",
+      photo: "/lib/images/socratica-people.webp",
+      description: [
+        "External partners and collaborators.",
+        "Those who support Socratica's mission.",
+        "Important allies in the community ecosystem."
+      ],
+      letter: "C",
+      position: 9
+    },
+    {
+      id: 64,
+      name: "Audrey Wang",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Contributing to Socratica projects.",
+        "Passionate about community learning."
+      ],
+      letter: "A",
+      position: 0
+    },
+    {
+      id: 65,
+      name: "Kavisha Shah",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Working on Socratica initiatives.",
+        "Dedicated to educational innovation."
+      ],
+      letter: "A",
+      position: 1
+    },
+    {
+      id: 66,
+      name: "Michael Chen",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Actively involved in Socratica.",
+        "Committed to knowledge sharing."
+      ],
+      letter: "A",
+      position: 2
+    },
+    {
+      id: 67,
+      name: "Neil Mehta",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Contributor to Socratica projects.",
+        "Focused on community growth."
+      ],
+      letter: "A",
+      position: 3
+    },
+    {
+      id: 68,
+      name: "Luca Brown",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Engaged in Socratica initiatives.",
+        "Interested in collaborative learning."
+      ],
+      letter: "A",
+      position: 4
+    },
+    {
+      id: 69,
+      name: "Sophia Kim",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Active Socratica member.",
+        "Dedicated to educational empowerment."
+      ],
+      letter: "A",
+      position: 5
+    },
+    {
+      id: 70,
+      name: "Julian Park",
+      role: "S24",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Summer 2024 cohort.",
+        "Contributing to Socratica growth.",
+        "Passionate about community building."
+      ],
+      letter: "A",
+      position: 6
+    },
+    {
+      id: 71,
+      name: "Future Members",
+      role: "Upcoming",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "Representing future cohorts.",
+        "The next generation of Socratica.",
+        "Those who will continue the mission."
+      ],
+      letter: "A",
+      position: 7
+    },
+    {
+      id: 72,
+      name: "Community Contributors",
+      role: "Supporters",
+      photo: "https://via.placeholder.com/150",
+      description: [
+        "All those who support Socratica.",
+        "The wider community ecosystem.",
+        "Everyone who believes in the mission."
+      ],
+      letter: "A",
+      position: 8
     }
   ];
 
@@ -417,17 +1255,22 @@
               selectedResult.position === position.positionId}
             <div 
               class="absolute w-10 h-10 rounded-full transition-all duration-300 cursor-pointer dot-element"
-              class:bg-[#2c2c2c]={!isActive}
-              class:bg-[#1e1e1e]={isActive && !isHighlighted}
-              class:bg-[#111]={isHighlighted}
-              class:hover:bg-[#111]={isActive}
+              class:bg-[#2c2c2c]={!isActive || (isActive && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder'))}
+              class:bg-[#1e1e1e]={isActive && !isHighlighted && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
+              class:bg-[#111]={isHighlighted && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
+              class:hover:bg-[#111]={isActive && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
               class:opacity-90={!isActive && !isHighlighted}
               class:opacity-100={isActive || isHighlighted}
               class:scale-125={isHighlighted}
               class:hover:scale-125={isActive}
               class:active-dot={isActive}
               class:highlight-pulse={isHighlighted}
-              style="left: {position.x}px; top: {position.y}px; transform: translate(-50%, -50%);"
+              style="left: {position.x}px; top: {position.y}px; transform: translate(-50%, -50%); 
+                    {isActive && !findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder') ? 
+                    `background-image: url('${findPersonForPosition(letterKey, position.positionId)?.photo}'); 
+                     background-size: cover; 
+                     background-position: center;
+                     border: 2px solid #FBF8EF;` : ''}"
               on:mouseenter={() => {
                 if (isActive) {
                   const person = findPersonForPosition(letterKey, position.positionId);
@@ -558,15 +1401,22 @@
   /* Dot styling */
   .dot-element {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
   
   .active-dot {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
   
+  .active-dot:not(.bg-\[\#2c2c2c\]):not(.bg-\[\#1e1e1e\]):not(.bg-\[\#111\]):hover {
+    box-shadow: 0 0 0 2px #FBF8EF, 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
   .highlight-pulse {
     animation: pulse 1.5s infinite;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+    z-index: 5;
   }
   
   @keyframes pulse {

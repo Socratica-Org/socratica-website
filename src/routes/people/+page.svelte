@@ -361,7 +361,7 @@
 
   <div class="pt-32 px-8 md:px-16 lg:px-24">
     <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-10">
-      The <i>people</i> behind Socratica.
+      The <i>people</i> behind it all.
     </h2>
     
     <div class="mt-8 md:mt-16 mb-16 max-w-4xl">

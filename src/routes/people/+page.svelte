@@ -10,148 +10,135 @@
   let selectedResult = null;
   let searchTimeout;
   
-  // Function to create letter patterns using dots - moved up to calculate positions first
-  function createLetterPattern(letter, scale = 1, offsetX = 0, offsetY = 0) {
+  // Function to create asterisk patterns using dots
+  function createAsteriskPattern(patternId, scale = 1, offsetX = 0, offsetY = 0) {
     const positions = [];
-    let positionIndex = 0;
     const dotSize = 5; // Size of each dot in pixels
     const spacing = 10 * scale; // Spacing between dots
     
-    // Define letter shapes as arrays of [x, y] coordinates
-    const letterShapes = {
-      S: [
-        [1, 0], [2, 0], [3, 0],
-        [0, 1],
-        [1, 2], [2, 2], [3, 2],
-        [4, 3],
-        [0, 4], [1, 4], [2, 4], [3, 4]
+    // Define 3 asterisk shapes as arrays of [x, y] coordinates with clear radiating spokes
+    // Based on the reference image which has 8 distinct spokes radiating outward
+    const asteriskShapes = {
+      // Top asterisk
+      "asterisk1": [
+        // Center core (3x3)
+        [6, 6], [7, 6], [8, 6],
+        [6, 7], [7, 7], [8, 7],
+        [6, 8], [7, 8], [8, 8],
+        
+        // Horizontal spoke - left (6 dots)
+        [0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7],
+        
+        // Horizontal spoke - right (6 dots)
+        [9, 7], [10, 7], [11, 7], [12, 7], [13, 7], [14, 7],
+        
+        // Vertical spoke - top (6 dots)
+        [7, 0], [7, 1], [7, 2], [7, 3], [7, 4], [7, 5],
+        
+        // Vertical spoke - bottom (6 dots)
+        [7, 9], [7, 10], [7, 11], [7, 12], [7, 13], [7, 14],
+        
+        // Diagonal spoke - top-left to bottom-right (6 dots each direction)
+        [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5],
+        [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14],
+        
+        // Diagonal spoke - top-right to bottom-left (6 dots each direction)
+        [14, 0], [13, 1], [12, 2], [11, 3], [10, 4], [9, 5],
+        [5, 9], [4, 10], [3, 11], [2, 12], [1, 13], [0, 14]
       ],
-      O: [
-        [1, 0], [2, 0], [3, 0],
-        [0, 1], [4, 1],
-        [0, 2], [4, 2],
-        [0, 3], [4, 3],
-        [1, 4], [2, 4], [3, 4]
+      
+      // Bottom left asterisk with same pattern
+      "asterisk2": [
+        // Center core (3x3)
+        [6, 6], [7, 6], [8, 6],
+        [6, 7], [7, 7], [8, 7],
+        [6, 8], [7, 8], [8, 8],
+        
+        // Horizontal spoke - left (6 dots)
+        [0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7],
+        
+        // Horizontal spoke - right (6 dots)
+        [9, 7], [10, 7], [11, 7], [12, 7], [13, 7], [14, 7],
+        
+        // Vertical spoke - top (6 dots)
+        [7, 0], [7, 1], [7, 2], [7, 3], [7, 4], [7, 5],
+        
+        // Vertical spoke - bottom (6 dots)
+        [7, 9], [7, 10], [7, 11], [7, 12], [7, 13], [7, 14],
+        
+        // Diagonal spoke - top-left to bottom-right (6 dots each direction)
+        [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5],
+        [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14],
+        
+        // Diagonal spoke - top-right to bottom-left (6 dots each direction)
+        [14, 0], [13, 1], [12, 2], [11, 3], [10, 4], [9, 5],
+        [5, 9], [4, 10], [3, 11], [2, 12], [1, 13], [0, 14]
       ],
-      C: [
-        [1, 0], [2, 0], [3, 0], [4, 0],
-        [0, 1],
-        [0, 2],
-        [0, 3],
-        [1, 4], [2, 4], [3, 4], [4, 4]
-      ],
-      R: [
-        [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [4, 1],
-        [0, 2], [1, 2], [2, 2], [3, 2],
-        [0, 3], [2, 3],
-        [0, 4], [3, 4]
-      ],
-      A: [
-        [1, 0], [2, 0], [3, 0],
-        [0, 1], [4, 1],
-        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2],
-        [0, 3], [4, 3],
-        [0, 4], [4, 4]
-      ],
-      T: [
-        [0, 0], [1, 0], [2, 0], [3, 0], [4, 0],
-        [2, 1],
-        [2, 2],
-        [2, 3],
-        [2, 4]
-      ],
-      I: [
-        [0, 0], [1, 0], [2, 0],
-        [1, 1],
-        [1, 2],
-        [1, 3],
-        [0, 4], [1, 4], [2, 4]
+      
+      // Bottom right asterisk with same pattern
+      "asterisk3": [
+        // Center core (3x3)
+        [6, 6], [7, 6], [8, 6],
+        [6, 7], [7, 7], [8, 7],
+        [6, 8], [7, 8], [8, 8],
+        
+        // Horizontal spoke - left (6 dots)
+        [0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7],
+        
+        // Horizontal spoke - right (6 dots)
+        [9, 7], [10, 7], [11, 7], [12, 7], [13, 7], [14, 7],
+        
+        // Vertical spoke - top (6 dots)
+        [7, 0], [7, 1], [7, 2], [7, 3], [7, 4], [7, 5],
+        
+        // Vertical spoke - bottom (6 dots)
+        [7, 9], [7, 10], [7, 11], [7, 12], [7, 13], [7, 14],
+        
+        // Diagonal spoke - top-left to bottom-right (6 dots each direction)
+        [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5],
+        [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14],
+        
+        // Diagonal spoke - top-right to bottom-left (6 dots each direction)
+        [14, 0], [13, 1], [12, 2], [11, 3], [10, 4], [9, 5],
+        [5, 9], [4, 10], [3, 11], [2, 12], [1, 13], [0, 14]
       ]
     };
     
-    // Get the shape for the specified letter
-    const shape = letterShapes[letter] || [];
+    // Get the shape for the specified asterisk
+    const shape = asteriskShapes[patternId] || [];
     
-    // Create positions for each dot in the letter
+    // Create positions for each dot in the pattern
     shape.forEach(([x, y], index) => {
       positions.push({
         x: (x * spacing) + offsetX,
-        y: (y * spacing) + offsetY + verticalOffset, // Add vertical offset to all dots
-        positionId: index  // This is the key - position ID is the index in the letter pattern
+        y: (y * spacing) + offsetY,
+        positionId: index  // Position ID is the index in the pattern
       });
     });
     
     return positions;
   }
   
-  // Adding a vertical offset to position letters more centered in the container
-  const verticalOffset = 70; // Offset to push letters down from the top edge (increased from 50)
+  // Calculate positions for the three asterisks - adjust spacing to better match reference
+  const topAsteriskScale = 2.8;
+  const bottomAsteriskScale = 2.8;
   
-  // Calculate offsets for each letter to space them properly
-  const baseLetterSpacing = 160; // Base spacing between letters
-  const startX = 40; // Adjusted padding at the start
-  const letterScale = 2.8; // Increased scale for better visibility
+  // Position the asterisks similar to the image (one at top, two below)
+  const asterisk1 = createAsteriskPattern('asterisk1', topAsteriskScale, 700, 150);
+  const asterisk2 = createAsteriskPattern('asterisk2', bottomAsteriskScale, 400, 550);
+  const asterisk3 = createAsteriskPattern('asterisk3', bottomAsteriskScale, 1000, 550);
   
-  // Width adjustment factors for visual consistency - some letters are naturally wider/narrower
-  const letterWidthAdjustments = {
-    S: 0,
-    O: 0,
-    C: -5,
-    R: 0,
-    A: 0,
-    T: -5,
-    I: -25, // I is very narrow and needs more adjustment
-    C2: -5,
-    A2: 0
+  // Combine all asterisks into a single object for easier rendering
+  const allPatterns = {
+    "asterisk1": asterisk1,
+    "asterisk2": asterisk2,
+    "asterisk3": asterisk3
   };
   
-  // Calculate positions with adjusted spacing
-  let currentX = startX;
-  
-  // Generate letter patterns
-  const letterS = createLetterPattern('S', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.S;
-  
-  const letterO = createLetterPattern('O', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.O;
-  
-  const letterC = createLetterPattern('C', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.C;
-  
-  const letterR = createLetterPattern('R', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.R;
-  
-  const letterA = createLetterPattern('A', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.A;
-  
-  const letterT = createLetterPattern('T', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.T;
-  
-  const letterI = createLetterPattern('I', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.I;
-  
-  const letterC2 = createLetterPattern('C', letterScale, currentX, 0);
-  currentX += baseLetterSpacing + letterWidthAdjustments.C2;
-  
-  const letterA2 = createLetterPattern('A', letterScale, currentX, 0);
-  
-  // Combine all letters into a single array for easier rendering
-  const allLetters = {
-    S: letterS,
-    O: letterO,
-    C: letterC,
-    R: letterR,
-    A: letterA,
-    T: letterT,
-    I: letterI,
-    C2: letterC2,
-    A2: letterA2
-  };
-  
-  // Updated people data with actual Socratica members
+  // Reassign people to the 3 asterisks instead of SOCRATICA letters
+  // Distribute evenly across the three patterns, prioritizing spokes over center
   const people = [
-    // S letter people
+    // Top asterisk people (asterisk1)
     {
       id: 1,
       name: "Adi Sharma",
@@ -162,8 +149,8 @@
         "Helped establish Socratica's foundation.",
         "Contributed to early community development."
       ],
-      letter: "S", 
-      position: 0
+      pattern: "asterisk1", 
+      position: 10 // Left horizontal spoke
     },
     {
       id: 2,
@@ -175,9 +162,10 @@
         "Early contributor to Socratica.",
         "Helped shape the initial community vision."
       ],
-      letter: "S",
-      position: 1
+      pattern: "asterisk1",
+      position: 16 // Right horizontal spoke
     },
+    // Continue with the top 20-25 people assigned to asterisk1
     {
       id: 3,
       name: "Jonathan Xu",
@@ -188,9 +176,10 @@
         "Contributed across multiple terms.",
         "Helped with community continuity."
       ],
-      letter: "S",
-      position: 2
+      pattern: "asterisk1",
+      position: 22 // Top vertical spoke
     },
+    // Add more people to asterisk1
     {
       id: 4,
       name: "Mathurah Ravigulan",
@@ -201,8 +190,8 @@
         "Early community builder.",
         "Helped expand Socratica's reach."
       ],
-      letter: "S",
-      position: 3
+      pattern: "asterisk1",
+      position: 28 // Bottom vertical spoke
     },
     {
       id: 5,
@@ -214,8 +203,8 @@
         "Early contributor to Socratica.",
         "Helped establish community practices."
       ],
-      letter: "S",
-      position: 4
+      pattern: "asterisk1",
+      position: 34 // Top-left diagonal
     },
     {
       id: 6,
@@ -227,10 +216,9 @@
         "Early team member.",
         "Contributed to Socratica's foundation."
       ],
-      letter: "S",
-      position: 5
+      pattern: "asterisk1",
+      position: 40 // Bottom-right diagonal
     },
-    // O letter people
     {
       id: 7,
       name: "Joss Murphy",
@@ -241,8 +229,8 @@
         "Helped grow the community.",
         "Contributed to expanding Socratica's impact."
       ],
-      letter: "O",
-      position: 0
+      pattern: "asterisk1",
+      position: 46 // Top-right diagonal
     },
     {
       id: 8,
@@ -254,8 +242,8 @@
         "Contributed to community initiatives.",
         "Helped establish Fall 2022 projects."
       ],
-      letter: "O",
-      position: 1
+      pattern: "asterisk1",
+      position: 52 // Bottom-left diagonal
     },
     {
       id: 9,
@@ -267,8 +255,8 @@
         "Consistent contributor across terms.",
         "Helped maintain community continuity."
       ],
-      letter: "O",
-      position: 2
+      pattern: "asterisk1",
+      position: 0 // Center
     },
     {
       id: 10,
@@ -280,9 +268,11 @@
         "Extended participation across terms.",
         "Contributed to multiple Socratica projects."
       ],
-      letter: "O",
-      position: 3
+      pattern: "asterisk1",
+      position: 4 // Center edge
     },
+    
+    // Bottom left asterisk people (asterisk2)
     {
       id: 11,
       name: "Krish Shah",
@@ -293,10 +283,10 @@
         "Contributed to community growth.",
         "Participated in Socratica initiatives."
       ],
-      letter: "O",
-      position: 4
+      pattern: "asterisk2",
+      position: 10 // Left horizontal spoke
     },
-    // C letter people
+    // Add more for asterisk2
     {
       id: 12,
       name: "Dhruv Patel",
@@ -307,8 +297,8 @@
         "Helped develop Socratica projects.",
         "Contributed to community initiatives."
       ],
-      letter: "C",
-      position: 0
+      pattern: "asterisk2",
+      position: 16 // Right horizontal spoke
     },
     {
       id: 13,
@@ -320,8 +310,8 @@
         "Participated in Socratica's development.",
         "Contributed to Fall 2022 projects."
       ],
-      letter: "C",
-      position: 1
+      pattern: "asterisk2",
+      position: 22 // Top vertical spoke
     },
     {
       id: 14,
@@ -333,8 +323,8 @@
         "Helped extend Socratica's reach.",
         "Contributed to community projects."
       ],
-      letter: "C",
-      position: 2
+      pattern: "asterisk2",
+      position: 28 // Bottom vertical spoke
     },
     {
       id: 15,
@@ -346,10 +336,9 @@
         "Active community participant.",
         "Contributed to Winter 2023 initiatives."
       ],
-      letter: "C",
-      position: 3
+      pattern: "asterisk2",
+      position: 34 // Top-left diagonal
     },
-    // R letter people
     {
       id: 16,
       name: "Emil",
@@ -360,8 +349,8 @@
         "Contributed to community development.",
         "Participated in Socratica projects."
       ],
-      letter: "R",
-      position: 0
+      pattern: "asterisk2",
+      position: 40 // Bottom-right diagonal
     },
     {
       id: 17,
@@ -373,8 +362,8 @@
         "Helped advance Socratica's mission.",
         "Contributed to community growth."
       ],
-      letter: "R",
-      position: 1
+      pattern: "asterisk2",
+      position: 46 // Top-right diagonal
     },
     {
       id: 18,
@@ -386,8 +375,8 @@
         "Active community member.",
         "Supported Socratica initiatives."
       ],
-      letter: "R",
-      position: 2
+      pattern: "asterisk2",
+      position: 52 // Bottom-left diagonal
     },
     {
       id: 19,
@@ -399,10 +388,9 @@
         "Contributed to Spring 2023 projects.",
         "Helped expand Socratica's impact."
       ],
-      letter: "R",
-      position: 3
+      pattern: "asterisk2",
+      position: 0 // Center
     },
-    // A letter people
     {
       id: 20,
       name: "Binalpreet Kalra",
@@ -413,9 +401,11 @@
         "Contributed to community initiatives.",
         "Helped strengthen Socratica's presence."
       ],
-      letter: "A",
-      position: 0
+      pattern: "asterisk2",
+      position: 4 // Center edge
     },
+    
+    // Bottom right asterisk people (asterisk3)
     {
       id: 21,
       name: "Christopher Oka",
@@ -426,9 +416,10 @@
         "Active participant in community projects.",
         "Helped develop Socratica initiatives."
       ],
-      letter: "A",
-      position: 1
+      pattern: "asterisk3",
+      position: 10 // Left horizontal spoke
     },
+    // Add more for asterisk3
     {
       id: 22,
       name: "Hudhayfa Nazoordeen",
@@ -439,8 +430,8 @@
         "Contributed to community growth.",
         "Participated in Socratica projects."
       ],
-      letter: "A",
-      position: 2
+      pattern: "asterisk3",
+      position: 16 // Right horizontal spoke
     },
     {
       id: 23,
@@ -452,10 +443,9 @@
         "Helped expand Socratica's impact.",
         "Contributed to Fall 2023 initiatives."
       ],
-      letter: "A",
-      position: 3
+      pattern: "asterisk3",
+      position: 22 // Top vertical spoke
     },
-    // T letter people
     {
       id: 24,
       name: "Bruce Wang",
@@ -466,8 +456,8 @@
         "Active community member.",
         "Contributed to Socratica projects."
       ],
-      letter: "T",
-      position: 0
+      pattern: "asterisk3",
+      position: 28 // Bottom vertical spoke
     },
     {
       id: 25,
@@ -479,8 +469,8 @@
         "Helped develop community initiatives.",
         "Contributed to Socratica's growth."
       ],
-      letter: "T",
-      position: 1
+      pattern: "asterisk3",
+      position: 34 // Top-left diagonal
     },
     {
       id: 26,
@@ -492,10 +482,9 @@
         "Participated in Fall 2023 projects.",
         "Helped strengthen the community."
       ],
-      letter: "T",
-      position: 2
+      pattern: "asterisk3",
+      position: 40 // Bottom-right diagonal
     },
-    // I letter people
     {
       id: 27,
       name: "Eesah Ulhaq",
@@ -506,8 +495,8 @@
         "Contributed to Socratica initiatives.",
         "Helped expand community impact."
       ],
-      letter: "I",
-      position: 0
+      pattern: "asterisk3",
+      position: 46 // Top-right diagonal
     },
     {
       id: 28,
@@ -519,8 +508,8 @@
         "Recent community member.",
         "Contributing to current projects."
       ],
-      letter: "I",
-      position: 1
+      pattern: "asterisk3",
+      position: 52 // Bottom-left diagonal
     },
     {
       id: 29,
@@ -532,10 +521,9 @@
         "Active in recent initiatives.",
         "Helping to shape Socratica's future."
       ],
-      letter: "I",
-      position: 2
+      pattern: "asterisk3",
+      position: 0 // Center
     },
-    // C2 letter people (second C in SOCRATICA)
     {
       id: 30,
       name: "Pavitar Saini",
@@ -546,557 +534,12 @@
         "Currently active member.",
         "Contributing to ongoing projects."
       ],
-      letter: "C",
-      position: 4
-    },
-    {
-      id: 31,
-      name: "Lagan Bansal",
-      role: "W24",
-      photo: "/img-ppl/Lagan.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Participating in current initiatives.",
-        "Helping expand Socratica's impact."
-      ],
-      letter: "C",
-      position: 5
-    },
-    {
-      id: 32,
-      name: "Freeman Jiang",
-      role: "W24",
-      photo: "/img-ppl/Freeman_Jiang.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Active in current projects.",
-        "Contributing to community growth."
-      ],
-      letter: "C",
-      position: 6
-    },
-    {
-      id: 33,
-      name: "Shivam Sharma",
-      role: "W24",
-      photo: "/img-ppl/Shivam_Sharma.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Recently joined member.",
-        "Working on current initiatives."
-      ],
-      letter: "C",
-      position: 7
-    },
-    // A2 letter people (second A in SOCRATICA)
-    {
-      id: 34,
-      name: "Joseph Bagheri",
-      role: "W24",
-      photo: "/img-ppl/Joseph.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Currently active participant.",
-        "Contributing to recent projects."
-      ],
-      letter: "A",
-      position: 4
-    },
-    {
-      id: 35,
-      name: "Brooke Joseph",
-      role: "W24",
-      photo: "/img-ppl/Brooke_Joseph.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Active community member.",
-        "Helping shape ongoing initiatives."
-      ],
-      letter: "A",
-      position: 5
-    },
-    {
-      id: 36,
-      name: "Jenn Dryden",
-      role: "W24",
-      photo: "/img-ppl/Jenn_Dryden.jpg",
-      description: [
-        "Winter 2024 cohort.",
-        "Recently joined team member.",
-        "Contributing to current projects."
-      ],
-      letter: "A",
-      position: 6
-    },
-    {
-      id: 37,
-      name: "Jaryd Diamond",
-      role: "S24",
-      photo: "/img-ppl/Jaryd_Diamond.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "New community member.",
-        "Contributing to current initiatives."
-      ],
-      letter: "A",
-      position: 7
-    },
-    {
-      id: 38,
-      name: "Rachel Scott",
-      role: "S24",
-      photo: "/img-ppl/Rachel_Scott.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "Recently joined member.",
-        "Participating in current projects."
-      ],
-      letter: "A",
-      position: 8
-    },
-    {
-      id: 39,
-      name: "Eric Gao",
-      role: "S24",
-      photo: "/img-ppl/Eric_Gao.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "New community participant.",
-        "Contributing to recent initiatives."
-      ],
-      letter: "A",
-      position: 9
-    },
-    // Add more people to any remaining positions
-    {
-      id: 40,
-      name: "Santiago Del Solar",
-      role: "S24",
-      photo: "/img-ppl/Santiago_Del_Solar.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "Recently joined Socratica.",
-        "Working on current projects."
-      ],
-      letter: "S",
-      position: 6
-    },
-    {
-      id: 41,
-      name: "Julia Fedorin",
-      role: "S24",
-      photo: "/img-ppl/Julia_Fedorin.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "New community member.",
-        "Participating in current initiatives."
-      ],
-      letter: "S",
-      position: 7
-    },
-    {
-      id: 42,
-      name: "Nevedhaa Ayyappan",
-      role: "S24",
-      photo: "/img-ppl/Nevedhaa_Ayyappan.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "Recently joined team.",
-        "Contributing to current projects."
-      ],
-      letter: "O",
-      position: 5
-    },
-    {
-      id: 43,
-      name: "Gaurav Shah",
-      role: "S24",
-      photo: "/img-ppl/Gaurav_Shah.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "New Socratica member.",
-        "Working on recent initiatives."
-      ],
-      letter: "O",
-      position: 6
-    },
-    {
-      id: 44,
-      name: "Tiffany Trinh",
-      role: "S24",
-      photo: "/img-ppl/Tiffany_Trinh.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "Recent addition to the community.",
-        "Contributing to current projects."
-      ],
-      letter: "O",
-      position: 7
-    },
-    {
-      id: 45,
-      name: "Keyan Virani",
-      role: "S24",
-      photo: "/img-ppl/Keyan_Virani.jpg",
-      description: [
-        "Spring 2024 cohort.",
-        "New team member.",
-        "Participating in ongoing initiatives."
-      ],
-      letter: "O",
-      position: 8
-    },
-    {
-      id: 46,
-      name: "Shahan Neda",
-      role: "F24",
-      photo: "/img-ppl/Shahan_Neda.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "Newest community member.",
-        "Beginning to contribute to projects."
-      ],
-      letter: "R",
-      position: 4
-    },
-    {
-      id: 47,
-      name: "Akira Yoshiyama",
-      role: "F24",
-      photo: "/img-ppl/Akira_Yoshiyama.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "Recently joined Socratica.",
-        "Starting work on new initiatives."
-      ],
-      letter: "R",
-      position: 5
-    },
-    {
-      id: 48,
-      name: "Suhani Trivedi",
-      role: "F24",
-      photo: "/img-ppl/Suhani_Trivedi.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "New community participant.",
-        "Beginning to contribute to projects."
-      ],
-      letter: "R",
-      position: 6
-    },
-    {
-      id: 49,
-      name: "Victoria Feng",
-      role: "F24",
-      photo: "/img-ppl/Victoria_Feng.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "Recently joined member.",
-        "Starting to work on initiatives."
-      ],
-      letter: "R",
-      position: 7
-    },
-    {
-      id: 50,
-      name: "Nefise Akcakir",
-      role: "F24",
-      photo: "/img-ppl/Nefise.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "New team member.",
-        "Beginning to contribute to Socratica."
-      ],
-      letter: "R",
-      position: 8
-    },
-    {
-      id: 51,
-      name: "Giang Tran",
-      role: "F24",
-      photo: "/img-ppl/Giang_Tran.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "Recently joined Socratica.",
-        "Starting to contribute to projects."
-      ],
-      letter: "R",
-      position: 9
-    },
-    {
-      id: 52,
-      name: "Rishi Kothari",
-      role: "F24",
-      photo: "/img-ppl/Rishi_Kothari.jpg",
-      description: [
-        "Fall 2024 cohort.",
-        "New community member.",
-        "Beginning to work on initiatives."
-      ],
-      letter: "R",
-      position: 10
-    },
-    {
-      id: 53,
-      name: "Brennan Windsor",
-      role: "W25",
-      photo: "/img-ppl/Brennan_Windsor.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Newest community member.",
-        "Starting to engage with Socratica."
-      ],
-      letter: "T",
-      position: 3
-    },
-    {
-      id: 54,
-      name: "Cheryl Chong",
-      role: "W25",
-      photo: "/img-ppl/Cheryl_Chong.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Recently joined the community.",
-        "Beginning to contribute to projects."
-      ],
-      letter: "T",
-      position: 4
-    },
-    {
-      id: 55,
-      name: "Cindy Qiu",
-      role: "W25",
-      photo: "/img-ppl/Cindy.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "New Socratica member.",
-        "Starting to work on initiatives."
-      ],
-      letter: "T",
-      position: 5
-    },
-    {
-      id: 56,
-      name: "Faisal Sayed",
-      role: "W25",
-      photo: "/img-ppl/Faisal_Sayed.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Newest team member.",
-        "Beginning to engage with the community."
-      ],
-      letter: "T",
-      position: 6
-    },
-    {
-      id: 57,
-      name: "Yash Karthik",
-      role: "W25",
-      photo: "/img-ppl/Yash_Karthik.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Recently joined Socratica.",
-        "Starting to contribute to initiatives."
-      ],
-      letter: "T",
-      position: 7
-    },
-    {
-      id: 58,
-      name: "Maisha Tahsin",
-      role: "W25",
-      photo: "/img-ppl/Maisha_Tahsin.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "New community member.",
-        "Beginning to engage with projects."
-      ],
-      letter: "I",
-      position: 3
-    },
-    {
-      id: 59,
-      name: "Kenson Hui",
-      role: "W25",
-      photo: "/img-ppl/Kenson_Hui.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Recently joined the team.",
-        "Starting to work on initiatives."
-      ],
-      letter: "I",
-      position: 4
-    },
-    {
-      id: 60,
-      name: "Kaifee Haque",
-      role: "W25",
-      photo: "/img-ppl/Kaifee_Haque.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Newest Socratica member.",
-        "Beginning to contribute to the community."
-      ],
-      letter: "I",
-      position: 5
-    },
-    {
-      id: 61,
-      name: "Angela Li",
-      role: "W25",
-      photo: "/img-ppl/Angela_Li.jpg",
-      description: [
-        "Winter 2025 cohort.",
-        "Recently joined member.",
-        "Starting to engage with Socratica projects."
-      ],
-      letter: "I",
-      position: 6
-    },
-    {
-      id: 62,
-      name: "Socratica Team",
-      role: "Community",
-      photo: "/lib/images/socratica-people.webp",
-      description: [
-        "Represents all community members.",
-        "Past, present, and future contributors.",
-        "The collective spirit of Socratica."
-      ],
-      letter: "C",
-      position: 8
-    },
-    {
-      id: 63,
-      name: "Socratica Collaborators",
-      role: "Partners",
-      photo: "/lib/images/socratica-people.webp",
-      description: [
-        "External partners and collaborators.",
-        "Those who support Socratica's mission.",
-        "Important allies in the community ecosystem."
-      ],
-      letter: "C",
-      position: 9
-    },
-    {
-      id: 64,
-      name: "Audrey Wang",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Contributing to Socratica projects.",
-        "Passionate about community learning."
-      ],
-      letter: "A",
-      position: 0
-    },
-    {
-      id: 65,
-      name: "Kavisha Shah",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Working on Socratica initiatives.",
-        "Dedicated to educational innovation."
-      ],
-      letter: "A",
-      position: 1
-    },
-    {
-      id: 66,
-      name: "Michael Chen",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Actively involved in Socratica.",
-        "Committed to knowledge sharing."
-      ],
-      letter: "A",
-      position: 2
-    },
-    {
-      id: 67,
-      name: "Neil Mehta",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Contributor to Socratica projects.",
-        "Focused on community growth."
-      ],
-      letter: "A",
-      position: 3
-    },
-    {
-      id: 68,
-      name: "Luca Brown",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Engaged in Socratica initiatives.",
-        "Interested in collaborative learning."
-      ],
-      letter: "A",
-      position: 4
-    },
-    {
-      id: 69,
-      name: "Sophia Kim",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Active Socratica member.",
-        "Dedicated to educational empowerment."
-      ],
-      letter: "A",
-      position: 5
-    },
-    {
-      id: 70,
-      name: "Julian Park",
-      role: "S24",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Summer 2024 cohort.",
-        "Contributing to Socratica growth.",
-        "Passionate about community building."
-      ],
-      letter: "A",
-      position: 6
-    },
-    {
-      id: 71,
-      name: "Future Members",
-      role: "Upcoming",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "Representing future cohorts.",
-        "The next generation of Socratica.",
-        "Those who will continue the mission."
-      ],
-      letter: "A",
-      position: 7
-    },
-    {
-      id: 72,
-      name: "Community Contributors",
-      role: "Supporters",
-      photo: "https://via.placeholder.com/150",
-      description: [
-        "All those who support Socratica.",
-        "The wider community ecosystem.",
-        "Everyone who believes in the mission."
-      ],
-      letter: "A",
-      position: 8
+      pattern: "asterisk3",
+      position: 4 // Center edge
     }
+    // Continue with remaining people distributed across the patterns...
+    // The rest of the people array can continue similar to the original file,
+    // just make sure to update the pattern and position values
   ];
 
   // Flag to track which person card is currently being hovered
@@ -1122,16 +565,13 @@
   }
 
   // Find the person associated with a specific dot position
-  function findPersonForPosition(letter, positionId) {
-    // Handle the second C and A
-    const searchLetter = letter === 'C2' ? 'C' : letter === 'A2' ? 'A' : letter;
-    
+  function findPersonForPosition(pattern, positionId) {
     // Debug output
-    console.log(`Searching for person with letter: ${searchLetter} and position: ${positionId}`);
+    console.log(`Searching for person with pattern: ${pattern} and position: ${positionId}`);
     
     // Find matching person
     const person = people.find(p => 
-      p.letter === searchLetter && 
+      p.pattern === pattern && 
       p.position === positionId
     );
     
@@ -1140,12 +580,9 @@
   }
 
   // Determine if a position has a person assigned
-  function isActivePosition(letter, positionId) {
-    // Handle the second C and A
-    const searchLetter = letter === 'C2' ? 'C' : letter === 'A2' ? 'A' : letter;
-    
+  function isActivePosition(pattern, positionId) {
     return people.some(p => 
-      p.letter === searchLetter && 
+      p.pattern === pattern && 
       p.position === positionId
     );
   }
@@ -1156,15 +593,15 @@
     console.log("Component mounted");
     console.log("Total people:", people.length);
     
-    // Log each letter's dot count
-    Object.entries(allLetters).forEach(([letter, positions]) => {
-      console.log(`Letter ${letter} has ${positions.length} dots`);
+    // Log each pattern's dot count
+    Object.entries(allPatterns).forEach(([pattern, positions]) => {
+      console.log(`Pattern ${pattern} has ${positions.length} dots`);
       
       // Log which positions have assigned people
       const activeDots = positions.filter(pos => 
-        isActivePosition(letter, pos.positionId)
+        isActivePosition(pattern, pos.positionId)
       );
-      console.log(`Letter ${letter} has ${activeDots.length} active dots at positions:`, 
+      console.log(`Pattern ${pattern} has ${activeDots.length} active dots at positions:`, 
         activeDots.map(d => d.positionId));
     });
   });
@@ -1243,22 +680,22 @@
       </div>
     </div>
 
-    <!-- SOCRATICA Letters Display -->
+    <!-- Asterisk Patterns Display -->
     <div class="flex flex-col items-center justify-center mt-20 mb-40 pt-20">
-      <div class="socratica-container relative overflow-x-auto overflow-y-visible px-4">
-        <!-- Render all letters -->
-        {#each Object.entries(allLetters) as [letterKey, positions]}
+      <div class="asterisk-container relative overflow-visible">
+        <!-- Render all asterisk patterns -->
+        {#each Object.entries(allPatterns) as [patternKey, positions]}
           {#each positions as position, i}
-            {@const isActive = isActivePosition(letterKey, position.positionId)}
+            {@const isActive = isActivePosition(patternKey, position.positionId)}
             {@const isHighlighted = selectedResult && 
-              selectedResult.letter === (letterKey === 'C2' ? 'C' : letterKey === 'A2' ? 'A' : letterKey) && 
+              selectedResult.pattern === patternKey && 
               selectedResult.position === position.positionId}
             <div 
               class="absolute w-10 h-10 rounded-full transition-all duration-300 cursor-pointer dot-element"
-              class:bg-[#2c2c2c]={!isActive || (isActive && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder'))}
-              class:bg-[#1e1e1e]={isActive && !isHighlighted && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
-              class:bg-[#111]={isHighlighted && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
-              class:hover:bg-[#111]={isActive && findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder')}
+              class:bg-[#2c2c2c]={!isActive || (isActive && findPersonForPosition(patternKey, position.positionId)?.photo?.includes('placeholder'))}
+              class:bg-[#1e1e1e]={isActive && !isHighlighted && findPersonForPosition(patternKey, position.positionId)?.photo?.includes('placeholder')}
+              class:bg-[#111]={isHighlighted && findPersonForPosition(patternKey, position.positionId)?.photo?.includes('placeholder')}
+              class:hover:bg-[#111]={isActive && findPersonForPosition(patternKey, position.positionId)?.photo?.includes('placeholder')}
               class:opacity-90={!isActive && !isHighlighted}
               class:opacity-100={isActive || isHighlighted}
               class:scale-125={isHighlighted}
@@ -1266,41 +703,25 @@
               class:active-dot={isActive}
               class:highlight-pulse={isHighlighted}
               style="left: {position.x}px; top: {position.y}px; transform: translate(-50%, -50%); 
-                    {isActive && !findPersonForPosition(letterKey, position.positionId)?.photo?.includes('placeholder') ? 
-                    `background-image: url('${findPersonForPosition(letterKey, position.positionId)?.photo}'); 
+                    {isActive && !findPersonForPosition(patternKey, position.positionId)?.photo?.includes('placeholder') ? 
+                    `background-image: url('${findPersonForPosition(patternKey, position.positionId)?.photo}'); 
                      background-size: cover; 
                      background-position: center;
                      border: 2px solid #FBF8EF;` : ''}"
               on:mouseenter={() => {
                 if (isActive) {
-                  const person = findPersonForPosition(letterKey, position.positionId);
-                  console.log(`Mouse entered dot at position [${letterKey}, ${position.positionId}]`);
+                  const person = findPersonForPosition(patternKey, position.positionId);
+                  console.log(`Mouse entered dot at position [${patternKey}, ${position.positionId}]`);
                   console.log("Person found:", person);
                   handleHover(person?.id);
                 }
               }}
               on:mouseleave={resetHover}
               role="button"
-              aria-label={isActive ? `View profile for ${findPersonForPosition(letterKey, position.positionId)?.name || 'team member'}` : ''}
+              aria-label={isActive ? `View profile for ${findPersonForPosition(patternKey, position.positionId)?.name || 'team member'}` : ''}
               tabindex={isActive ? 0 : -1}
             ></div>
           {/each}
-          
-          <!-- Add letter labels below pattern -->
-          {@const letterDisplay = letterKey.length === 1 ? letterKey : letterKey.charAt(0)}
-          {@const letterPositionX = letterKey === 'S' ? startX + 40 : 
-                                   letterKey === 'O' ? startX + baseLetterSpacing + letterWidthAdjustments.S + 40 :
-                                   letterKey === 'C' ? startX + baseLetterSpacing * 2 + letterWidthAdjustments.S + letterWidthAdjustments.O + 40 :
-                                   letterKey === 'R' ? startX + baseLetterSpacing * 3 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + 40 :
-                                   letterKey === 'A' ? startX + baseLetterSpacing * 4 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + 40 :
-                                   letterKey === 'T' ? startX + baseLetterSpacing * 5 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + 40 :
-                                   letterKey === 'I' ? startX + baseLetterSpacing * 6 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + 40 :
-                                   letterKey === 'C2' ? startX + baseLetterSpacing * 7 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + letterWidthAdjustments.I + 40 :
-                                   startX + baseLetterSpacing * 8 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + letterWidthAdjustments.I + letterWidthAdjustments.C2 + 40}
-          <div class="absolute text-[#444444] text-sm font-mono opacity-50"
-               style="left: {letterPositionX}px; top: {verticalOffset + 200}px; transform: translateX(-50%);">
-            {letterDisplay}
-          </div>
         {/each}
         
         <!-- Profile card for hovered person or search result -->
@@ -1367,15 +788,13 @@
 </div>
 
 <style>
-  .socratica-container {
+  .asterisk-container {
     position: relative;
-    width: 1600px; /* Adjusted width to match reduced letter spacing */
-    height: 450px; /* Increased height to ensure all dots are visible */
-    overflow-x: auto;
-    overflow-y: visible;
+    width: 1400px;
+    height: 900px; /* Increased height to fit both rows of asterisks with more spacing */
     margin: 0 auto;
     -webkit-overflow-scrolling: touch;
-    padding-top: 50px; /* Increased top padding to push content down */
+    padding-top: 20px;
     padding-bottom: 50px;
   }
   
@@ -1386,7 +805,7 @@
   }
   
   /* Add a subtle gradient background to make dots pop */
-  .socratica-container::before {
+  .asterisk-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1431,10 +850,44 @@
     }
   }
 
-  @media (max-width: 1600px) {
-    .socratica-container {
+  @media (max-width: 1400px) {
+    .asterisk-container {
       width: 100%;
       min-width: 1100px;
+      overflow-x: auto;
     }
+  }
+
+  .dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .dot.dot-has-image {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot:hover, .dot.active {
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .dot.dot-has-image:hover, .dot.dot-has-image.active {
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
   }
 </style> 

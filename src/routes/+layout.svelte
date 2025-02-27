@@ -141,6 +141,7 @@
             >
               <p class="leading-[26px]"><a href="/">Back to Top</a></p>
               <p class="leading-[26px]"><a href="/about">About</a></p>
+              <p class="leading-[26px]"><a href="/people">People</a></p>
               <p class="leading-[26px]"><a href="/map">Map</a></p>
               <p class="leading-[26px]">
                 <a href="/get-involved">Get Involved</a>

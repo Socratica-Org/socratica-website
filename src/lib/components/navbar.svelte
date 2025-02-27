@@ -21,6 +21,7 @@
   let hoverState = {
     home: false,
     about: false,
+    people: false,
     map: false,
     toolbox: false,
     getInvolved: false,
@@ -120,6 +121,26 @@
           class="w-4 h-4 md:w-6 md:h-6"
         />
         <span class:text-black={currentPath === "/about"}>ABOUT</span>
+      </a>
+      <a
+        href="/people"
+        class:opacity-50={currentPath === "/people"}
+        class:cursor-not-allowed={currentPath === "/people"}
+        class:bg-primary={currentPath === "/people"}
+        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:mouseenter={() => (hoverState.people = true)}
+        on:mouseleave={() => (hoverState.people = false)}
+      >
+        <img
+          src={currentPath === "/people"
+            ? DarkUsersThree
+            : hoverState.people
+            ? DarkUsersThree
+            : UsersThree}
+          alt="People"
+          class="w-4 h-4 md:w-6 md:h-6"
+        />
+        <span class:text-black={currentPath === "/people"}>PEOPLE</span>
       </a>
       <a
         href="/map"

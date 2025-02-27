@@ -145,9 +145,9 @@
       role: "W22",
       photo: "/img-ppl/Adi_Sharma.jpg",
       description: [
-        "Founding cohort (Winter 2022).",
-        "Helped establish Socratica's foundation.",
-        "Contributed to early community development."
+        "Started Socratica (Winter 2022).",
+        "Helped establish Socratica's foundation and core model.",
+        "Advised and mentored oncoming generations/cohorts and helped with growth"
       ],
       pattern: "asterisk1", 
       position: 10 // Left horizontal spoke

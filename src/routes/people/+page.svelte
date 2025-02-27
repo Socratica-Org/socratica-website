@@ -102,6 +102,10 @@
     hoveredPerson = null;
   }
 
+  // Adding a vertical offset to position letters more centered in the container
+  // Move this outside the function so it's accessible in the template
+  const verticalOffset = 50; // Offset to push letters down from the top edge
+
   // Function to create letter patterns using dots
   function createLetterPattern(letter, scale = 1, offsetX = 0, offsetY = 0) {
     const positions = [];
@@ -112,39 +116,39 @@
     // Define letter shapes as arrays of [x, y] coordinates
     const letterShapes = {
       S: [
-        [0, 0], [1, 0], [2, 0], [3, 0],
+        [1, 0], [2, 0], [3, 0],
         [0, 1],
-        [0, 2], [1, 2], [2, 2], [3, 2],
-        [3, 3],
+        [1, 2], [2, 2], [3, 2],
+        [4, 3],
         [0, 4], [1, 4], [2, 4], [3, 4]
       ],
       O: [
-        [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [3, 1],
-        [0, 2], [3, 2],
-        [0, 3], [3, 3],
-        [0, 4], [1, 4], [2, 4], [3, 4]
+        [1, 0], [2, 0], [3, 0],
+        [0, 1], [4, 1],
+        [0, 2], [4, 2],
+        [0, 3], [4, 3],
+        [1, 4], [2, 4], [3, 4]
       ],
       C: [
-        [0, 0], [1, 0], [2, 0], [3, 0],
+        [1, 0], [2, 0], [3, 0], [4, 0],
         [0, 1],
         [0, 2],
         [0, 3],
-        [0, 4], [1, 4], [2, 4], [3, 4]
+        [1, 4], [2, 4], [3, 4], [4, 4]
       ],
       R: [
         [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [3, 1],
-        [0, 2], [1, 2], [2, 2], [3, 0],
-        [0, 3], [2, 3],
-        [0, 4], [3, 4]
+        [0, 1], [4, 1],
+        [0, 2], [1, 2], [2, 2], [3, 2],
+        [0, 3], [2, 3], [3, 3],
+        [0, 4], [4, 4]
       ],
       A: [
-        [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [3, 1],
-        [0, 2], [1, 2], [2, 2], [3, 2],
-        [0, 3], [3, 3],
-        [0, 4], [3, 4]
+        [1, 0], [2, 0], [3, 0],
+        [0, 1], [4, 1],
+        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2],
+        [0, 3], [4, 3],
+        [0, 4], [4, 4]
       ],
       T: [
         [0, 0], [1, 0], [2, 0], [3, 0], [4, 0],
@@ -169,7 +173,7 @@
     shape.forEach(([x, y], index) => {
       positions.push({
         x: (x * spacing) + offsetX,
-        y: (y * spacing) + offsetY,
+        y: (y * spacing) + offsetY + verticalOffset, // Add vertical offset to all dots
         positionId: positionIndex++
       });
     });
@@ -178,9 +182,9 @@
   }
   
   // Calculate offsets for each letter to space them properly
-  const letterSpacing = 60; // Space between letters
-  const startX = 0;
-  const letterScale = 1.5;
+  const letterSpacing = 110; // Increased space between letters
+  const startX = 20; // Add some padding at the start
+  const letterScale = 2.0; // Increased scale for better visibility
   
   // Generate letter patterns
   const letterS = createLetterPattern('S', letterScale, startX, 0);
@@ -257,24 +261,45 @@
     </div>
 
     <!-- SOCRATICA Letters Display -->
-    <div class="flex flex-col items-center justify-center mt-40 mb-40 pt-20">
-      <div class="socratica-container relative">
+    <div class="flex flex-col items-center justify-center mt-20 mb-40 pt-20">
+      <div class="socratica-container relative overflow-x-auto overflow-y-visible px-4">
         <!-- Render all letters -->
         {#each Object.entries(allLetters) as [letterKey, positions]}
           {#each positions as position, i}
             {@const isActive = isActivePosition(letterKey, position.positionId)}
             <div 
-              class="absolute w-5 h-5 rounded-full transition-all duration-300 cursor-pointer"
-              class:bg-[#333333]={!isActive}
-              class:bg-[#222222]={isActive}
+              class="absolute w-7 h-7 rounded-full transition-all duration-300 cursor-pointer dot-element"
+              class:bg-[#2c2c2c]={!isActive}
+              class:bg-[#1e1e1e]={isActive}
               class:hover:bg-[#111]={isActive}
-              class:opacity-100={!isActive}
-              class:hover:scale-110={isActive}
+              class:opacity-90={!isActive}
+              class:opacity-100={isActive}
+              class:hover:scale-125={isActive}
+              class:active-dot={isActive}
               style="left: {position.x}px; top: {position.y}px; transform: translate(-50%, -50%);"
               on:mouseenter={() => isActive && handleHover(findPersonForPosition(letterKey, position.positionId)?.id)}
               on:mouseleave={resetHover}
+              role="button"
+              aria-label={isActive ? `View profile for ${findPersonForPosition(letterKey, position.positionId)?.name || 'team member'}` : ''}
+              tabindex={isActive ? 0 : -1}
             ></div>
           {/each}
+          
+          <!-- Add letter labels below pattern -->
+          {@const letterDisplay = letterKey.length === 1 ? letterKey : letterKey.charAt(0)}
+          {@const letterPositionX = letterKey === 'S' ? startX + 30 : 
+                                   letterKey === 'O' ? startX + letterSpacing + 30 :
+                                   letterKey === 'C' ? startX + letterSpacing * 2 + 30 :
+                                   letterKey === 'R' ? startX + letterSpacing * 3 + 30 :
+                                   letterKey === 'A' ? startX + letterSpacing * 4 + 30 :
+                                   letterKey === 'T' ? startX + letterSpacing * 5 + 30 :
+                                   letterKey === 'I' ? startX + letterSpacing * 6 + 30 :
+                                   letterKey === 'C2' ? startX + letterSpacing * 7 + 30 :
+                                   startX + letterSpacing * 8 + 30}
+          <div class="absolute text-[#444444] text-xs font-mono opacity-50"
+               style="left: {letterPositionX}px; top: {verticalOffset + 150}px; transform: translateX(-50%);">
+            {letterDisplay}
+          </div>
         {/each}
         
         <!-- Profile card for hovered person -->
@@ -282,8 +307,10 @@
           {@const person = people.find(p => p.id === hoveredPerson)}
           <div 
             class="absolute person-card bg-white shadow-lg rounded-xl p-5 z-10"
-            style="left: 300px; top: 0px; width: 300px; transform: translate(0, -100%);"
+            style="left: 550px; top: -20px; width: 320px; transform: translate(-50%, -100%);"
             transition:scale={{duration: 200, delay: 50, opacity: 0.5, start: 0.95, easing: cubicOut}}
+            role="dialog"
+            aria-label="Team member profile"
           >
             <div class="flex items-center">
               <img src={person.photo} alt={person.name} class="w-20 h-20 rounded-full mr-4 object-cover border-2 border-[#FBF8EF]" />
@@ -309,13 +336,48 @@
 <style>
   .socratica-container {
     position: relative;
-    width: 800px;
-    height: 200px;
-    overflow: visible;
+    width: 1400px; /* Increased width to accommodate wider spacing */
+    height: 350px; /* Increased height to ensure top dots are visible */
+    overflow-x: auto;
+    overflow-y: visible;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 40px; /* Increased top padding to push content down */
+    padding-bottom: 40px;
   }
   
   /* Card styling */
   .person-card {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Add a subtle gradient background to make dots pop */
+  .socratica-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    border-radius: 20px;
+  }
+  
+  /* Dot styling */
+  .dot-element {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .active-dot {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 1400px) {
+    .socratica-container {
+      width: 100%;
+      min-width: 900px;
+    }
   }
 </style> 

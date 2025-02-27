@@ -44,8 +44,8 @@
         [0, 0], [1, 0], [2, 0], [3, 0],
         [0, 1], [4, 1],
         [0, 2], [1, 2], [2, 2], [3, 2],
-        [0, 3], [2, 3], [3, 3],
-        [0, 4], [4, 4]
+        [0, 3], [2, 3],
+        [0, 4], [3, 4]
       ],
       A: [
         [1, 0], [2, 0], [3, 0],
@@ -89,20 +89,52 @@
   const verticalOffset = 70; // Offset to push letters down from the top edge (increased from 50)
   
   // Calculate offsets for each letter to space them properly
-  const letterSpacing = 160; // Reduced spacing to make full word visible without scrolling (was 200)
+  const baseLetterSpacing = 160; // Base spacing between letters
   const startX = 40; // Adjusted padding at the start
-  const letterScale = 2.8; // Increased scale for better visibility (from 2.0)
+  const letterScale = 2.8; // Increased scale for better visibility
+  
+  // Width adjustment factors for visual consistency - some letters are naturally wider/narrower
+  const letterWidthAdjustments = {
+    S: 0,
+    O: 0,
+    C: -5,
+    R: 0,
+    A: 0,
+    T: -5,
+    I: -25, // I is very narrow and needs more adjustment
+    C2: -5,
+    A2: 0
+  };
+  
+  // Calculate positions with adjusted spacing
+  let currentX = startX;
   
   // Generate letter patterns
-  const letterS = createLetterPattern('S', letterScale, startX, 0);
-  const letterO = createLetterPattern('O', letterScale, startX + letterSpacing, 0);
-  const letterC = createLetterPattern('C', letterScale, startX + letterSpacing * 2, 0);
-  const letterR = createLetterPattern('R', letterScale, startX + letterSpacing * 3, 0);
-  const letterA = createLetterPattern('A', letterScale, startX + letterSpacing * 4, 0);
-  const letterT = createLetterPattern('T', letterScale, startX + letterSpacing * 5, 0);
-  const letterI = createLetterPattern('I', letterScale, startX + letterSpacing * 6, 0);
-  const letterC2 = createLetterPattern('C', letterScale, startX + letterSpacing * 7, 0);
-  const letterA2 = createLetterPattern('A', letterScale, startX + letterSpacing * 8, 0);
+  const letterS = createLetterPattern('S', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.S;
+  
+  const letterO = createLetterPattern('O', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.O;
+  
+  const letterC = createLetterPattern('C', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.C;
+  
+  const letterR = createLetterPattern('R', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.R;
+  
+  const letterA = createLetterPattern('A', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.A;
+  
+  const letterT = createLetterPattern('T', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.T;
+  
+  const letterI = createLetterPattern('I', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.I;
+  
+  const letterC2 = createLetterPattern('C', letterScale, currentX, 0);
+  currentX += baseLetterSpacing + letterWidthAdjustments.C2;
+  
+  const letterA2 = createLetterPattern('A', letterScale, currentX, 0);
   
   // Combine all letters into a single array for easier rendering
   const allLetters = {
@@ -225,7 +257,7 @@
         "Develops strategic plans."
       ],
       letter: "R",
-      position: 12 // Bottom-right of R (the dot we just added)
+      position: 11 // Bottom-right of R (updated position)
     }
   ];
 
@@ -242,6 +274,13 @@
   function resetHover() {
     console.log("Hover reset called");
     hoveredPerson = null;
+  }
+
+  // Function to close profile popup manually
+  function closeProfile() {
+    console.log("Close profile button clicked");
+    hoveredPerson = null;
+    selectedResult = null;
   }
 
   // Find the person associated with a specific dot position
@@ -407,14 +446,14 @@
           <!-- Add letter labels below pattern -->
           {@const letterDisplay = letterKey.length === 1 ? letterKey : letterKey.charAt(0)}
           {@const letterPositionX = letterKey === 'S' ? startX + 40 : 
-                                   letterKey === 'O' ? startX + letterSpacing + 40 :
-                                   letterKey === 'C' ? startX + letterSpacing * 2 + 40 :
-                                   letterKey === 'R' ? startX + letterSpacing * 3 + 40 :
-                                   letterKey === 'A' ? startX + letterSpacing * 4 + 40 :
-                                   letterKey === 'T' ? startX + letterSpacing * 5 + 40 :
-                                   letterKey === 'I' ? startX + letterSpacing * 6 + 40 :
-                                   letterKey === 'C2' ? startX + letterSpacing * 7 + 40 :
-                                   startX + letterSpacing * 8 + 40}
+                                   letterKey === 'O' ? startX + baseLetterSpacing + letterWidthAdjustments.S + 40 :
+                                   letterKey === 'C' ? startX + baseLetterSpacing * 2 + letterWidthAdjustments.S + letterWidthAdjustments.O + 40 :
+                                   letterKey === 'R' ? startX + baseLetterSpacing * 3 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + 40 :
+                                   letterKey === 'A' ? startX + baseLetterSpacing * 4 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + 40 :
+                                   letterKey === 'T' ? startX + baseLetterSpacing * 5 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + 40 :
+                                   letterKey === 'I' ? startX + baseLetterSpacing * 6 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + 40 :
+                                   letterKey === 'C2' ? startX + baseLetterSpacing * 7 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + letterWidthAdjustments.I + 40 :
+                                   startX + baseLetterSpacing * 8 + letterWidthAdjustments.S + letterWidthAdjustments.O + letterWidthAdjustments.C + letterWidthAdjustments.R + letterWidthAdjustments.A + letterWidthAdjustments.T + letterWidthAdjustments.I + letterWidthAdjustments.C2 + 40}
           <div class="absolute text-[#444444] text-sm font-mono opacity-50"
                style="left: {letterPositionX}px; top: {verticalOffset + 200}px; transform: translateX(-50%);">
             {letterDisplay}
@@ -428,12 +467,24 @@
           {#if person}
             <div 
               class="absolute person-card bg-white shadow-lg rounded-xl p-5 z-20"
-              style="left: 650px; top: 120px; width: 340px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);"
+              style="left: 600px; top: 120px; width: 340px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);"
               in:scale={{duration: 150, delay: 0, start: 0.95, easing: cubicOut}}
               out:fade={{duration: 100}}
               role="dialog"
               aria-label="Team member profile"
             >
+              <!-- Close button -->
+              <button 
+                class="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                on:click={closeProfile}
+                aria-label="Close profile"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              
               <div class="flex items-center">
                 <img src={person.photo} alt={person.name} class="w-24 h-24 rounded-full mr-4 object-cover border-2 border-[#FBF8EF]" />
                 <div>
@@ -451,7 +502,18 @@
             </div>
           {:else}
             <div class="absolute bg-white shadow-lg rounded-xl p-3 z-10"
-                style="left: 650px; top: 120px; width: 200px;">
+                style="left: 600px; top: 120px; width: 200px;">
+              <!-- Close button for error message -->
+              <button 
+                class="absolute top-1 right-2 w-6 h-6 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                on:click={closeProfile}
+                aria-label="Close message"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
               Error: Person with ID {personId} not found
             </div>
           {/if}

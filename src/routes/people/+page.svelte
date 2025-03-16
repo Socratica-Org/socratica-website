@@ -20,10 +20,10 @@
   const nodeSpacing = nodeSize - 12; // Increased overlap from -8 to -12 to bring nodes even closer
   
   // Function to generate nodes in asterisk pattern
-  function generateNodes() {
+  function generateNodes(startIndex) {
     const nodeMap = new Map();
-    const gridRadius = 7;
-    let personIndex = 0;
+    const gridRadius = 5;
+    let personIndex = startIndex;
     
     // Function to add a node to the grid
     function addNode(q, r) {
@@ -86,8 +86,11 @@
     return Array.from(nodeMap.values());
   }
   
-  // Create the nodes
-  const nodes = generateNodes();
+  // Create three sets of nodes, each starting from a different index in the people array
+  const nodesPerAsterism = Math.ceil(people.length / 3);
+  const topNodes = generateNodes(0);
+  const leftNodes = generateNodes(nodesPerAsterism);
+  const rightNodes = generateNodes(nodesPerAsterism * 2);
   
   // Function to handle hover state
   function handleHover(personId) {
@@ -183,10 +186,11 @@
     </div>
 
     <!-- Asterisk Pattern Display -->
-    <div class="relative w-full overflow-hidden flex justify-center items-center py-20">
-      <div class="relative" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
+    <div class="relative w-full overflow-hidden flex flex-col items-center py-20">
+      <!-- Top Asterism -->
+      <div class="relative -mb-32" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
         <!-- All nodes (including placeholders) -->
-        {#each nodes as node}
+        {#each topNodes as node}
           {@const isHovered = node.person && hoveredPerson === node.person.id}
           <div
             class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder ? 'border-[#e0e0e0] bg-[#f5f5f5]' : 'border-[#FBF8EF] cursor-pointer'}"
@@ -210,9 +214,9 @@
           >
             {#if node.person}
               {#if node.person.photo === "https://via.placeholder.com/150"}
-                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                <div class="w-full h-full bg-[#404040] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#CCCCCC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
               {:else}
@@ -224,13 +228,114 @@
               {/if}
             {:else}
               <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
             {/if}
           </div>
         {/each}
+      </div>
+
+      <!-- Bottom Row Asterisms -->
+      <div class="flex justify-center gap-24">
+        <!-- Left Asterism -->
+        <div class="relative" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
+          {#each leftNodes as node}
+            {@const isHovered = node.person && hoveredPerson === node.person.id}
+            <div
+              class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder ? 'border-[#e0e0e0] bg-[#f5f5f5]' : 'border-[#FBF8EF] cursor-pointer'}"
+              style="
+                width: {nodeSize}px;
+                height: {nodeSize}px;
+                left: 50%;
+                top: 50%;
+                margin-left: {node.x}px;
+                margin-top: {node.y}px;
+                transform: translate(-50%, -50%) {isHovered ? 'scale(1.1)' : 'scale(1)'};
+                z-index: {isHovered ? 20 : 5};
+                filter: brightness({isHovered ? 1.2 : 1});
+                opacity: {node.isPlaceholder ? '0.5' : '1'};
+              "
+              on:mouseenter={() => node.person && handleHover(node.person.id)}
+              on:mouseleave={resetHover}
+              role={node.person ? "button" : "presentation"}
+              aria-label={node.person ? `View profile for ${node.person.name}` : undefined}
+              tabindex={node.person ? "0" : "-1"}
+            >
+              {#if node.person}
+                {#if node.person.photo === "https://via.placeholder.com/150"}
+                  <div class="w-full h-full bg-[#404040] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#CCCCCC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                {:else}
+                  <img
+                    src={node.person.photo}
+                    alt={node.person.name}
+                    class="w-full h-full object-cover"
+                  />
+                {/if}
+              {:else}
+                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </div>
+              {/if}
+            </div>
+          {/each}
+        </div>
+
+        <!-- Right Asterism -->
+        <div class="relative" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
+          {#each rightNodes as node}
+            {@const isHovered = node.person && hoveredPerson === node.person.id}
+            <div
+              class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder ? 'border-[#e0e0e0] bg-[#f5f5f5]' : 'border-[#FBF8EF] cursor-pointer'}"
+              style="
+                width: {nodeSize}px;
+                height: {nodeSize}px;
+                left: 50%;
+                top: 50%;
+                margin-left: {node.x}px;
+                margin-top: {node.y}px;
+                transform: translate(-50%, -50%) {isHovered ? 'scale(1.1)' : 'scale(1)'};
+                z-index: {isHovered ? 20 : 5};
+                filter: brightness({isHovered ? 1.2 : 1});
+                opacity: {node.isPlaceholder ? '0.5' : '1'};
+              "
+              on:mouseenter={() => node.person && handleHover(node.person.id)}
+              on:mouseleave={resetHover}
+              role={node.person ? "button" : "presentation"}
+              aria-label={node.person ? `View profile for ${node.person.name}` : undefined}
+              tabindex={node.person ? "0" : "-1"}
+            >
+              {#if node.person}
+                {#if node.person.photo === "https://via.placeholder.com/150"}
+                  <div class="w-full h-full bg-[#404040] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#CCCCCC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                {:else}
+                  <img
+                    src={node.person.photo}
+                    alt={node.person.name}
+                    class="w-full h-full object-cover"
+                  />
+                {/if}
+              {:else}
+                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </div>
+              {/if}
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
         
@@ -261,9 +366,9 @@
           
           <div class="flex items-center">
             {#if person.photo === "https://via.placeholder.com/150"}
-              <div class="w-24 h-24 rounded-full mr-4 bg-[#f5f5f5] flex items-center justify-center border-2 border-[#FBF8EF]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              <div class="w-24 h-24 rounded-full mr-4 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#CCCCCC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
             {:else}

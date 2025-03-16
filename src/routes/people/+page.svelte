@@ -209,11 +209,19 @@
             tabindex={node.person ? "0" : "-1"}
           >
             {#if node.person}
-              <img
-                src={node.person.photo}
-                alt={node.person.name}
-                class="w-full h-full object-cover"
-              />
+              {#if node.person.photo === "https://via.placeholder.com/150"}
+                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              {:else}
+                <img
+                  src={node.person.photo}
+                  alt={node.person.name}
+                  class="w-full h-full object-cover"
+                />
+              {/if}
             {:else}
               <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
@@ -252,16 +260,24 @@
           </button>
           
           <div class="flex items-center">
-            <img src={person.photo} alt={person.name} class="w-24 h-24 rounded-full mr-4 object-cover border-2 border-[#FBF8EF]" />
+            {#if person.photo === "https://via.placeholder.com/150"}
+              <div class="w-24 h-24 rounded-full mr-4 bg-[#f5f5f5] flex items-center justify-center border-2 border-[#FBF8EF]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#ccc]" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            {:else}
+              <img src={person.photo} alt={person.name} class="w-24 h-24 rounded-full mr-4 object-cover border-2 border-[#FBF8EF]" />
+            {/if}
             <div>
               <h3 class="font-tiempos-headline text-xl font-bold">{person.name}</h3>
-              <p class="text-sm text-gray-600 font-mono">{person.role}</p>
+              <p class="text-sm text-gray-600 font-mono">{person.location}</p>
             </div>
           </div>
           <div class="mt-4">
             <ul class="list-disc pl-5 text-sm space-y-1" style="font-family: 'Untitled Sans', sans-serif;">
-              {#each person.description as line}
-                <li class="text-[13px]">{line}</li>
+              {#each person.facts as fact}
+                <li class="text-[13px]">{fact}</li>
               {/each}
             </ul>
           </div>

@@ -12,6 +12,26 @@
   let searchTimeout;
   let isLoading = true;
   
+  // Mobile detection
+  let windowWidth;
+  $: isMobile = windowWidth < 768; // md breakpoint in Tailwind
+
+  onMount(() => {
+    const updateWidth = () => {
+      windowWidth = window.innerWidth;
+    };
+    
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+      if (searchTimeout) clearTimeout(searchTimeout);
+      memoizedNodes.clear();
+      usedPeople.clear();
+    };
+  });
+  
   // Filter people data once on load with safety checks
   $: filteredPeople = peopleData ? peopleData.filter(p => 
     !p.name.includes('Future') && 
@@ -190,15 +210,6 @@
     selectedResult = result;
     selectedPerson = result.id;
   }
-
-  // Cleanup on component unmount
-  onMount(() => {
-    return () => {
-      if (searchTimeout) clearTimeout(searchTimeout);
-      memoizedNodes.clear();
-      usedPeople.clear();
-    };
-  });
 </script>
 
 <div class="block min-h-screen bg-primary">
@@ -211,13 +222,55 @@
   </div>
 
   <div class="pt-32 px-8 md:px-16 lg:px-24">
-    <div class="flex justify-between items-center mb-10">
-      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline">
+    <!-- Title and Search Section -->
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6 md:mb-0">
         The <i>people</i> behind it all.
       </h2>
 
-      <!-- Search Bar -->
-      <div class="w-64 md:w-80">
+      <!-- Description visible only on md and above -->
+      <div class="hidden md:block">
+        <!-- Search Bar -->
+        <div class="w-64 md:w-80">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search team members..."
+              bind:value={searchQuery}
+              on:input={handleSearch}
+              class="w-full px-4 py-2 rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] focus:ring-2 focus:ring-[#333] focus:outline-none transition-all"
+            />
+            {#if searchQuery && searchResults.length > 0}
+              <div class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] max-h-60 overflow-y-auto">
+                {#each searchResults as result}
+                  <div
+                    class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
+                    on:click={() => selectSearchResult(result)}
+                  >
+                    <div class="font-medium">{result.name}</div>
+                  </div>
+                {/each}
+              </div>
+            {:else if searchQuery && searchResults.length === 0}
+              <div class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3">
+                <div class="text-gray-500">No matching team members found</div>
+              </div>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-8 md:mb-16 max-w-4xl">
+      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed" style="font-family: 'Untitled Sans', sans-serif;">
+        Socratica is built by a diverse community of creators, thinkers, and makers.<br>Click to learn more about the individuals.
+      </p>
+    </div>
+
+    <!-- Search Bar for mobile (visible only below md) -->
+    <div class="block md:hidden mb-16">
+      <div class="w-full">
         <div class="relative">
           <input
             type="text"
@@ -246,13 +299,6 @@
       </div>
     </div>
 
-    <!-- Description -->
-    <div class="mb-16 max-w-4xl">
-      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed" style="font-family: 'Untitled Sans', sans-serif;">
-        Socratica is built by a diverse community of creators, thinkers, and makers.<br>Click to learn more about the individuals.
-      </p>
-    </div>
-
     <!-- Loading state -->
     {#if isLoading}
       <div class="flex justify-center items-center h-[60vh]">
@@ -260,9 +306,9 @@
       </div>
     {:else}
       <!-- Asterisk Pattern Display -->
-      <div class="relative w-full overflow-hidden flex flex-col items-center" style="height: {nodeSize * 24}px;">
+      <div class="relative w-full overflow-hidden flex flex-col items-center" style="height: {nodeSize * (isMobile ? 72 : 24)}px;">
         <!-- Top Asterism -->
-        <div class="relative -mb-16 mt-8" style="width: {nodeSize * 20}px; height: {nodeSize * 13}px;">
+        <div class="relative {isMobile ? 'mb-8' : '-mb-16'} mt-8" style="width: {nodeSize * 20}px; height: {nodeSize * 13}px;">
           {#each topNodes as node (node.id)}
             {@const isSelected = node.person && selectedPerson === node.person.id}
             <div
@@ -276,7 +322,6 @@
                 margin-top: {node.y}px;
                 transform: translate(-50%, -50%) {isSelected ? 'scale(1.1)' : 'scale(1)'};
                 z-index: {isSelected ? 20 : 5};
-                {node.person ? '' : 'will-change: transform;'}
               "
               on:click={() => node.person && handleNodeClick(node.person.id)}
               role={node.person ? "button" : "presentation"}
@@ -313,7 +358,7 @@
         </div>
 
         <!-- Bottom Row Asterisms -->
-        <div class="flex justify-center gap-24 mt-8">
+        <div class="flex {isMobile ? 'flex-col gap-8' : 'flex-row gap-24'} mt-8">
           <!-- Left Asterism -->
           <div class="relative" style="width: {nodeSize * 20}px; height: {nodeSize * 13}px;">
             {#each leftNodes as node}

@@ -14,7 +14,7 @@
   
   // Mobile detection
   let windowWidth;
-  $: isMobile = windowWidth < 768; // md breakpoint in Tailwind
+  $: isMobile = windowWidth < 1024; // lg breakpoint in Tailwind
 
   onMount(() => {
     const updateWidth = () => {
@@ -306,7 +306,7 @@
       </div>
     {:else}
       <!-- Asterisk Pattern Display -->
-      <div class="relative w-full overflow-hidden flex flex-col items-center" style="height: {nodeSize * (isMobile ? 72 : 24)}px;">
+      <div class="relative w-full flex flex-col items-center" style="height: {nodeSize * (isMobile ? 72 : 24)}px;">
         <!-- Top Asterism -->
         <div class="relative {isMobile ? 'mb-8' : '-mb-16'} mt-8" style="width: {nodeSize * 20}px; height: {nodeSize * 13}px;">
           {#each topNodes as node (node.id)}

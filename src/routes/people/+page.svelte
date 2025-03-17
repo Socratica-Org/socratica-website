@@ -19,11 +19,31 @@
   const nodeSize = 32; // Reduced size from 36px to 32px
   const nodeSpacing = nodeSize - 12; // Increased overlap from -8 to -12 to bring nodes even closer
   
+  // Add this before the node generation
+  let usedPeople = new Set();
+  
   // Function to generate nodes in asterisk pattern
   function generateNodes(startIndex) {
     const nodeMap = new Map();
     const gridRadius = 5;
     let personIndex = startIndex;
+    let placeholderIndex = 0;
+    
+    function getNextPlaceholder() {
+      placeholderIndex = (placeholderIndex % 6) + 1;
+      return `/img-ppl/placeholder_${placeholderIndex}.png`;
+    }
+
+    function getNextAvailablePerson() {
+      while (personIndex < people.length) {
+        const person = people[personIndex++];
+        if (!usedPeople.has(person.id)) {
+          usedPeople.add(person.id);
+          return person;
+        }
+      }
+      return null;
+    }
     
     // Function to add a node to the grid
     function addNode(q, r) {
@@ -39,7 +59,7 @@
         const x = xBase * Math.cos(angle) - yBase * Math.sin(angle);
         const y = xBase * Math.sin(angle) + yBase * Math.cos(angle);
         
-        const person = personIndex < people.length ? people[personIndex++] : null;
+        const person = getNextAvailablePerson();
         
         nodeMap.set(key, {
           id: key,
@@ -48,7 +68,8 @@
           x,
           y,
           person,
-          isPlaceholder: !person
+          isPlaceholder: !person,
+          placeholderImage: !person ? getNextPlaceholder() : null
         });
       }
     }
@@ -140,22 +161,13 @@
   </div>
 
   <div class="pt-32 px-8 md:px-16 lg:px-24">
-    <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-10">
-      The <i>people</i> behind it all.
-    </h2>
-    
-    <div class="mt-8 md:mt-16 mb-16 max-w-4xl">
-      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4" style="font-family: 'Untitled Sans', sans-serif;">
-        Socratica is built by a diverse community of creators, thinkers, and makers
-        who share a passion for collaborative learning and building meaningful projects.
-      </p>
-      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4" style="font-family: 'Untitled Sans', sans-serif;">
-        Hover over the profiles below to learn more about the individuals who contribute 
-        to our community and help make Socratica what it is today.
-      </p>
-      
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline">
+        The <i>people</i> behind it all.
+      </h2>
+
       <!-- Search Bar -->
-      <div class="mb-10 max-w-md">
+      <div class="w-64 md:w-80">
         <div class="relative">
           <input
             type="text"
@@ -186,9 +198,9 @@
     </div>
 
     <!-- Asterisk Pattern Display -->
-    <div class="relative w-full overflow-hidden flex flex-col items-center py-20">
+    <div class="relative w-full overflow-hidden flex flex-col items-center -mt-32">
       <!-- Top Asterism -->
-      <div class="relative -mb-32" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
+      <div class="relative -mb-64" style="width: {nodeSize * 20}px; height: {nodeSize * 20}px;">
         <!-- All nodes (including placeholders) -->
         {#each topNodes as node}
           {@const isHovered = node.person && hoveredPerson === node.person.id}
@@ -204,7 +216,7 @@
               transform: translate(-50%, -50%) {isHovered ? 'scale(1.1)' : 'scale(1)'};
               z-index: {isHovered ? 20 : 5};
               filter: brightness({isHovered ? 1.2 : 1});
-              opacity: {node.isPlaceholder ? '0.5' : '1'};
+              opacity: {node.isPlaceholder ? '1' : '1'};
             "
             on:mouseenter={() => node.person && handleHover(node.person.id)}
             on:mouseleave={resetHover}
@@ -227,11 +239,11 @@
                 />
               {/if}
             {:else}
-              <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-              </div>
+              <img
+                src={node.placeholderImage}
+                alt="Empty node"
+                class="w-full h-full object-cover"
+              />
             {/if}
           </div>
         {/each}
@@ -255,7 +267,7 @@
                 transform: translate(-50%, -50%) {isHovered ? 'scale(1.1)' : 'scale(1)'};
                 z-index: {isHovered ? 20 : 5};
                 filter: brightness({isHovered ? 1.2 : 1});
-                opacity: {node.isPlaceholder ? '0.5' : '1'};
+                opacity: {node.isPlaceholder ? '1' : '1'};
               "
               on:mouseenter={() => node.person && handleHover(node.person.id)}
               on:mouseleave={resetHover}
@@ -278,11 +290,11 @@
                   />
                 {/if}
               {:else}
-                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                  </svg>
-                </div>
+                <img
+                  src={node.placeholderImage}
+                  alt="Empty node"
+                  class="w-full h-full object-cover"
+                />
               {/if}
             </div>
           {/each}
@@ -304,7 +316,7 @@
                 transform: translate(-50%, -50%) {isHovered ? 'scale(1.1)' : 'scale(1)'};
                 z-index: {isHovered ? 20 : 5};
                 filter: brightness({isHovered ? 1.2 : 1});
-                opacity: {node.isPlaceholder ? '0.5' : '1'};
+                opacity: {node.isPlaceholder ? '1' : '1'};
               "
               on:mouseenter={() => node.person && handleHover(node.person.id)}
               on:mouseleave={resetHover}
@@ -327,18 +339,30 @@
                   />
                 {/if}
               {:else}
-                <div class="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ddd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                  </svg>
-                </div>
+                <img
+                  src={node.placeholderImage}
+                  alt="Empty node"
+                  class="w-full h-full object-cover"
+                />
               {/if}
             </div>
           {/each}
         </div>
       </div>
     </div>
-        
+
+    <!-- Description moved below asterisms -->
+    <div class="mt-24 md:mt-32 mb-8 max-w-4xl">
+      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-2" style="font-family: 'Untitled Sans', sans-serif;">
+        Socratica is built by a diverse community of creators, thinkers, and makers
+        who share a passion for collaborative learning and building meaningful projects.
+      </p>
+      <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-2" style="font-family: 'Untitled Sans', sans-serif;">
+        Hover over the profiles below to learn more about the individuals who contribute 
+        to our community and help make Socratica what it is today.
+      </p>
+    </div>
+
     <!-- Profile card for hovered person or search result -->
     {#if hoveredPerson || (selectedResult && !hoveredPerson)}
       {@const personId = hoveredPerson || (selectedResult ? selectedResult.id : null)}

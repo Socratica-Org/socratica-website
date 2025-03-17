@@ -17,6 +17,12 @@
   export let twitterLink: string;
   export let youtubeLink: string;
   export let imageSrc: string | undefined;
+
+  let placeholderIndex = 0;
+  function getNextPlaceholder() {
+    placeholderIndex = (placeholderIndex % 6) + 1;
+    return `/img-ppl/placeholder_${placeholderIndex}.png`;
+  }
 </script>
 
 <div

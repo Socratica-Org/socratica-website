@@ -1,5 +1,4 @@
 <script>
-  import Navbar from "$lib/components/navbar.svelte";
   import { onMount } from "svelte";
   import { cubicOut } from "svelte/easing";
   import { fade, scale } from "svelte/transition";
@@ -218,15 +217,7 @@
 </script>
 
 <div class="block min-h-screen bg-primary">
-  <Navbar />
-
-  <div class="absolute top-20 left-10 sm:left-20 transform">
-    <a href="/">
-      <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
-    </a>
-  </div>
-
-  <div class="pt-32 px-8 md:px-16 lg:px-24">
+  <div class="pt-32">
     <!-- Title and Search Section -->
     <div
       class="flex flex-col md:flex-row md:justify-between md:items-center mb-10"
@@ -346,17 +337,17 @@
                 ? 'border-[#e0e0e0] bg-[#f5f5f5]'
                 : 'border-[#FBF8EF] cursor-pointer hover:scale-110'}"
               style="
-                width: {nodeSize}px;
-                height: {nodeSize}px;
-                left: 50%;
-                top: 50%;
-                margin-left: {node.x}px;
-                margin-top: {node.y}px;
-                transform: translate(-50%, -50%) {isSelected
+                  width: {nodeSize}px;
+                  height: {nodeSize}px;
+                  left: 50%;
+                  top: 50%;
+                  margin-left: {node.x}px;
+                  margin-top: {node.y}px;
+                  transform: translate(-50%, -50%) {isSelected
                 ? 'scale(1.1)'
                 : 'scale(1)'};
-                z-index: {isSelected ? 20 : 5};
-              "
+                  z-index: {isSelected ? 20 : 5};
+                "
               on:click={() => node.person && handleNodeClick(node.person.id)}
               role={node.person ? "button" : "presentation"}
               aria-label={node.person
@@ -423,19 +414,19 @@
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
                   : 'border-[#FBF8EF] cursor-pointer hover:scale-110'}"
                 style="
-                  width: {nodeSize}px;
-                  height: {nodeSize}px;
-                  left: 50%;
-                  top: 50%;
-                  margin-left: {node.x}px;
-                  margin-top: {node.y}px;
-                  transform: translate(-50%, -50%) {isSelected
+                    width: {nodeSize}px;
+                    height: {nodeSize}px;
+                    left: 50%;
+                    top: 50%;
+                    margin-left: {node.x}px;
+                    margin-top: {node.y}px;
+                    transform: translate(-50%, -50%) {isSelected
                   ? 'scale(1.1)'
                   : 'scale(1)'};
-                  z-index: {isSelected ? 20 : 5};
-                  filter: brightness({isSelected ? 1.2 : 1});
-                  opacity: {node.isPlaceholder ? '1' : '1'};
-                "
+                    z-index: {isSelected ? 20 : 5};
+                    filter: brightness({isSelected ? 1.2 : 1});
+                    opacity: {node.isPlaceholder ? '1' : '1'};
+                  "
                 on:click={() => node.person && handleNodeClick(node.person.id)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
@@ -494,19 +485,19 @@
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
                   : 'border-[#FBF8EF] cursor-pointer hover:scale-110'}"
                 style="
-                  width: {nodeSize}px;
-                  height: {nodeSize}px;
-                  left: 50%;
-                  top: 50%;
-                  margin-left: {node.x}px;
-                  margin-top: {node.y}px;
-                  transform: translate(-50%, -50%) {isSelected
+                    width: {nodeSize}px;
+                    height: {nodeSize}px;
+                    left: 50%;
+                    top: 50%;
+                    margin-left: {node.x}px;
+                    margin-top: {node.y}px;
+                    transform: translate(-50%, -50%) {isSelected
                   ? 'scale(1.1)'
                   : 'scale(1)'};
-                  z-index: {isSelected ? 20 : 5};
-                  filter: brightness({isSelected ? 1.2 : 1});
-                  opacity: {node.isPlaceholder ? '1' : '1'};
-                "
+                    z-index: {isSelected ? 20 : 5};
+                    filter: brightness({isSelected ? 1.2 : 1});
+                    opacity: {node.isPlaceholder ? '1' : '1'};
+                  "
                 on:click={() => node.person && handleNodeClick(node.person.id)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person

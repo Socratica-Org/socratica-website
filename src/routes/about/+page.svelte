@@ -1,7 +1,15 @@
 <script>
   import Navbar from "$lib/components/navbar.svelte";
-  import People from "$lib/components/people.svelte";
   import { slide } from "svelte/transition";
+  // image imports
+  // import F22A from "$lib/images/f22-group-symposium.jpg";
+  // import F22B from "$lib/images/f22-host-symposium.JPG";
+  import S22A from "$lib/images/s22-bubbles.jpg";
+  import S22B from "$lib/images/s22-session.jpg";
+  import S22C from "$lib/images/s22-workshop.jpg";
+  import W22A from "$lib/images/w22-adi.png";
+  import W22C from "$lib/images/w22-aman.png";
+  import W22B from "$lib/images/w22-tweet.png";
 
   let selectedTerm = "winter-2022";
   const timelineData = [
@@ -9,48 +17,50 @@
       id: "winter-2022",
       term: "W22",
       leaders: "Adi Sharma, Aman Mathur",
-      content: `In January 2022, amid Waterloo's post-pandemic return to campus, Adi Sharma and Aman Mathur identified a gap that students deeply felt—the lack of a dedicated environment for consistent exploration beyond academic and traditional career-oriented pursuits.
+      images: [W22A, W22B, W22C],
+      content: `In January 2022, amid Waterloo’s post-pandemic return to campus, Adi Sharma and Aman Mathur identified a gap that students deeply felt – a lack of a dedicated environment for consistent exploration beyond academic and traditional career-oriented pursuits.
 
-Dissatisfied with the status quo but energized to find a solution for future generations, they established Socratica's core model: Sunday morning gatherings that combined structured Pomodoro work sessions, social sharing of progress, and a welcoming community of inspiring makers.
+Dissatisfied with the status quo but energized to find a solution for future generations, they established Socratica’s core model: Sunday morning gatherings that combined structured Pomodoro work sessions, social sharing of progress, and a welcoming community of inspiring makers. 
 
-With this vision as Aman and Adi's compass, they kicked off the first Socratica sessions in a cozy E5 classroom, attracting a small but mighty group of curious minds. Socratica instantly struck a chord with the community, transforming ordinary Sunday mornings into inspiring spaces for creativity.`,
+With this vision as their compass, they  kicked off the first Socratica sessions in a cozy classroom, attracting a small but mighty group of curious minds. Socratica instantly struck a chord with the community, transforming ordinary Sunday mornings into inspiring spaces for creativity. 
+`,
     },
     {
       id: "summer-2022",
       term: "S22",
       leaders: "Jonathan Xu, Mathurah Ravigulan, Adriana Ceric",
-      content: `Socratica continued to experiment under the leadership of Mathurah and Jonathan over the summer. Since turnover between terms is high at Waterloo, they were tasked with growing a community almost from scratch. Getting creative and bouncing around empty classrooms on campus allowed people to start integrating Socratica Sessions as part of their weekly ritual. 
+      images: [S22A, S22B, S22C],
+      content: `Socratica’s momentum continued to grow over the summer. For many, attending Sunday Socratica sessions became a part of their weekly ritual. 
 
-Forward-thinking hosts put significant work into establishing Socratica as a Canadian Nonprofit. This allowed us to have a bank account, sign contracts, and get access to essential tools for our team later on. 
+The team got creative, bouncing between many classrooms on campus and hosting an end-of-term campfire. Forward-thinking hosts put significant work into establishing Socratica as a Nonprofit, allowing us to have a bank account, sign contracts, and get access to essential tools for our team later on. 
 
-During this time, Joss hosted several dinners through UW Startups for  people interested in talking about big ideas (it was found that the term "founder" was a quite intimidating word and caused many awesome people to self-eliminate). 
-      
-      `,
+With many previous hosts and attendees graduating, Socratica began collaborating closely with UW Startups, paving the way for the eventual merging of the two organizations.`,
     },
     {
       id: "fall-2022",
       term: "F22",
       leaders:
         "Joss Murphy, Anson Yu, Ananya Anupam, Daekun Kim, Krish Shah, Dhruv Patel, Dhvani Patel",
-      content: `By the end of summer, the builder-bug had caught on – with dinners constantly filling up in <24 hours and "the host mindset" well established, UW Startups was faced with a decision: turn people away… or get creative. 
 
-"The Kickoff" became a way to accommodate demand by welcoming students back to Waterloo with an evening of sharing ideas and excitement about the creative things they wanted to pursue in the term ahead. In fall 2022, The Host Pledge was born. 
+      content: `By the end of summer, the builder-bug had caught on – Socratica sessions were gaining steam and UW Startups events were selling out in <24 hours. 
 
-Sunday Socratica coworking sessions remained a weekly staple, now with permanent space in the Accelerator Center. UW Startups partnered with Jesse Rodgers and Maryam to host several larger events that introduced students to alumni founders and institutions around the city that could support them should they choose to pursue entrepreneurship. 
+Rather than turn people away, the team got creative: “The Kickoff” became a way to welcome students back to Waterloo to share their big ideas and excitement for the term ahead. The Host Pledge was born. 
 
-Finally, the first ever Socratica Symposium was hosted at Catalyst Commons to round out the semester. Symposium aimed to inspire more curious students to begin projects of their own, and as such intentionally showcased the depth and breadth of projects and people that were part of the Socratica community.`,
+Socratica sessions were hosted in their first permanent home at the Accelerator Center, and UW Startups partnered with Jesse Rodgers to host several larger events that introduced students to founders and Waterloo alumni. 
+
+The first ever Socratica Symposium was born: with demos curated to showcase the diversity of projects and people in our community, Symposium invited curious students to gain inspiration from the work of their peers.
+`,
     },
     {
       id: "winter-2023",
       term: "W23",
       leaders:
         "Jonathan Xu, Ananya Anupam, Jaclyn Chan, Maryam Rezakarimi, Daekun Kim",
-      content: `Winter 2023 came with growing pains – expectations were high, but once again an entirely new audience of students were back on campus and the community would have to be built up again. Despite this, the enthusiasm remained high among regular attendees – with people repeatedly asking for the RSVP link to sessions. 
+      content: `Winter 2023 marked Socratica's first full year. After witnessing Socratica's exciting growth during their co-op terms, newcomers jumped at the opportunity to continue building the community. 
 
-New communication infrastructure and artifacts were established so that previous hosts could support hosts from afar, much of which is crucial to Socratica's operation to this day. 
+Expectations were high, with highly anticipated kickoff and symposium events solidifying into termly traditions. Hosts had to get resourceful and adapt to road bumps and growing pains along the way — when a snowstorm cancelled kickoff, they ate leftover pizza for weeks. When a SECOND snowstorm threatened Symposium, attendees trekked through Waterloo's winter depths to show up anyway. 
 
-Kickoff (attempt 1) was cancelled by a snowstorm. Hosts ate leftover pizza for weeks. Symposium was almost interrupted by a snowstorm – but ultimately saw droves of students trekking through the depths of Waterloo Winter to support their friends and get inspired. 
-
+Previous hosts supported hosts remotely, setting up organizational infrastructure and writing documentation that continues to support our operations and paved the way for new nodes around the world.
 `,
     },
     {
@@ -58,11 +68,11 @@ Kickoff (attempt 1) was cancelled by a snowstorm. Hosts ate leftover pizza for w
       term: "S23",
       leaders:
         "Aava Sapkota, Brayden Petersen, Jake Rudolph, Binalpreet Kalra, Christopher Oka",
-      content: `Summer brought with it a new batch of hosts and a new infusion of energy and stability – Brayden, Jake, Aava, Binal, and Chris brought fresh ideas to sessions, Aileen and Anson solidified Socratica's brand, and Brayden and Joss kept reaching new audiences with UW Startups.
+      content: `Summer 2023 brought with it a new batch of hosts and a new infusion of energy and stability. Attendeeship was consistent, project progress compounded, Socratica’s brand was solidified, and our audience continued to grow through UW Startups. 
 
-For over a year, it had been an uphill battle to make Socratica sessions feel welcoming to non-engineering students, women, artists, musicians, and other underrepresented groups, and in Summer 2023 it became clear that our efforts were beginning to pay off. 
+After many terms of initiatives to make our spaces feel friendly to beginners and underrepresented groups, it became clear that our efforts were paying off. Kickoff and Symposium were a blast. 
 
-Attendeeship was consistent, project progress compounded, and young hosts built confidence as they contributed to Socratica's core values and strategy. "Sparkle" became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their "Sparkle" ideas to the mix. 
+“Sparkle” became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their “Sparkle” ideas to the mix. 
 
 `,
     },
@@ -72,11 +82,11 @@ Attendeeship was consistent, project progress compounded, and young hosts built 
       leaders:
         "Hudhayfa Nazoordeen, Anthea Tawiah, Bruce Wang, Aileen Luo, Jennifer Tsai, Eesah Ulhaq",
       eiu: "https://socratica.notion.site/F23-Emotional-Investor-Update-830f3d0f5e104e2797a690a07f164d67",
-      content: `The team had big dreams in Fall 2023. 
+      content: `In Fall 2023, we doubled our capacity by hosting morning and afternoon sessions, bringing us to 763 event attendees across all events. 
 
-We partnered significantly with Velocity, establishing a permanent location on campus where Socratica hosts (and the broader community) could host events, free of charge. To accommodate for increased demand, we began hosting both a morning and afternoon session every Sunday, and began experimenting with session format to better accommodate different types of projects. 
+We partnered with Velocity, designing a cozy space on campus where Socratica hosts (and the broader community) could easily host events, free of charge. We hosted paint nights and potlucks. Symposium grew in size, and for the first time, guests flew to Waterloo to attend.
 
-We grew a Twitter presence and released the Toolbox so that people outside of Waterloo could start nodes of their own, and the Symposium grew in size – for the first time, guests flew to Waterloo to attend. 
+This was also a term of sharing our learnings with the public – we started a Twitter account and released a toolbox so that people outside of Waterloo could start nodes of their own. 
 `,
     },
     {
@@ -85,7 +95,14 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
       leaders:
         "Dhriti Gabani, Soham Basu, Pavitar Saini, Lagan Bansal, Freeman Jiang, Shivam Sharma, Joseph Bagheri, Brooke Joseph, Jenn Dryden",
       eiu: "https://socratica.notion.site/W24-Socratica-Emotional-Investor-Update-e2c4eb08b4d14a7aa8a74ad1caf9dda9 ",
-      content: "TBD",
+      content: `Winter 2024 was a term of incredible growth. Across all sessions and events we had 1,713 unique attendees, 58% of which were attending for the first time. 
+
+We hosted a 500 person dance party. We ran a low-pressure wabi-sabi-thon that wrapped up with a lettuce eating competition. We partnered with UW photography to host a creator retreat. We watched the blackberry movie. 
+
+Our symposium saw over 1,000 registrations, with 450 tickets being claimed in less than 24 hours. 8 demoers took to the stage, with over 30 interactive booth demos filling classrooms and hallways surrounding the venue. 
+
+International nodes sprouted up across the world, with over 30 onboarded and running sessions weekly in their hometowns.
+`,
     },
     {
       id: "summer-2024",
@@ -93,22 +110,33 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
       leaders:
         "Jaryd Diamond, Rachel Scott, Eric Gao, Santiago Del Solar, Julia Fedorin, Nevedhaa Ayyappan, Gaurav Shah, Tiffany Trinh, Keyan Virani",
       eiu: "https://socratica.notion.site/S24-Socratica-Emotional-Investor-Update-175e034e1ad2493988c13be172697aa9 ",
-      content: "TBD",
+      content: `Summer in Waterloo (or, as the locals call it, Summerloo) is always buzzing with energy. With fewer students on campus,  it was a term for experimentation – and we learned a lot. 
+
+Over 400 unique attendees came to sessions, we reached all faculties at the university, and we organized a record 6 consecutive days of Socratica events. 
+
+The term started with a classic rooftop kickoff, featured a powerpoint night, a Socraticamp, and weeknight sessions conducted in new formats (including a double-length session called Soooocratica). To end off the summer of experimentation, the Socratica Assembly showcased 8 interactive booth demos and 25 rapid-fire stage demos presented in 2 minutes or less.`,
     },
     {
       id: "fall-2024",
       term: "F24",
       leaders:
         "Shahan Neda, Akira Yoshiyama, Suhani Trivedi, Victoria Feng, Nefise Akcakir, Giang Tran, Rishi Kothari",
-      content: "TBD",
+      eiu: "https://socratica.notion.site/F24-Socratica-Emotional-Investor-Update-772655a649104b82854a0ebb642758a5 ",
+      content: `Fall 2024 saw Sunday sessions averaging 75 signups per week, with a peak of 107 for a single session. 954 unique attendees made progress on 420 projects across 22 events. 
+
+We hosted a kickoff on the roof, a Socratica skill swap, an inventor’s workshop, a film festival, and wrapped up the term with A Night at the Socratica Museum: an evening that prioritized interactive booth demos instead of our traditional stage format. 
+
+The lattice grew to over 30 nodes around the world, with 5 of them hosting large demo days of their own. 
+
+AND, FINALLY, we got merch. 
+`,
     },
     {
       id: "winter-2025",
       term: "W25",
       leaders:
         "Brennan Windsor, Cheryl Chong, Cindy Qiu, Faisal Sayed, Yash Karthik, Maisha Tahsin, Kenson Hui, Kaifee Haque, Angela Li",
-      eiu: "https://socratica.notion.site/F24-Socratica-Emotional-Investor-Update-772655a649104b82854a0ebb642758a5 ",
-      content: `Coming soon!`,
+      content: `Our 10th term of Socratica. Coming soon!`,
     },
   ];
 
@@ -150,7 +178,7 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
       </h2>
 
       <div
-        class="mt-8 md:mt-16"
+        class="mt-4 md:mt-8"
         style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
       >
         <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
@@ -170,8 +198,23 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
           create. Socratica aims to help people do both.
         </p>
       </div>
+      <h2
+        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline pt-28"
+      >
+        The <i>people</i> behind it all.
+      </h2>
+      <div
+        class="mt-4 md:mt-8"
+        style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
+      >
+        <p
+          class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4 font-bold"
+        >
+          <a class="italic" href="/people">Click here</a> to learn about the people
+          who have built our diverse community of creators, thinkers, and makers.
+        </p>
+      </div>
 
-      <People />
       <h2
         class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline pt-28"
       >
@@ -211,25 +254,24 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
                 class="prose max-w-none"
                 style="font-family: 'Untitled Sans', sans-serif;"
               >
+                {#if item.id !== "winter-2025"}
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    {#if item.images && item.images.length > 0}
+                      {#each item.images as image, index}
+                        <div
+                          class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center"
+                        >
+                          <img src={image} alt={`Session ${index + 1}`} />
+                        </div>
+                      {/each}
+                    {/if}
+                  </div>
+                {/if}
                 <p
                   class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed"
                 >
                   {item.content}
                 </p>
-
-                {#if item.id === "winter-2022"}
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span class="text-gray-400">Session photo 1</span>
-                    </div>
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span class="text-gray-400">Session photo 2</span>
-                    </div>
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span class="text-gray-400">Session photo 3</span>
-                    </div>
-                  </div>
-                {/if}
               </div>
             </div>
           {/if}

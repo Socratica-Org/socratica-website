@@ -3,9 +3,9 @@
   import { slide } from "svelte/transition";
   // image imports
   import F22B from "$lib/images/f22-group.png";
+  import F22C from "$lib/images/f22-kickoff.jpg";
   import F22A from "$lib/images/f22-pledge.png";
-  import F22C from "$lib/images/f22-symposium.png";
-  import S22A from "$lib/images/s22-bubbles.jpg";
+  import S22A from "$lib/images/s22-bubbles.png";
   import S22B from "$lib/images/s22-session.jpg";
   import S22C from "$lib/images/s22-workshop.jpg";
   import W22A from "$lib/images/w22-adi.png";
@@ -15,8 +15,8 @@
   import F23A from "$lib/images/f23-kickoff.jpg";
   import F23B from "$lib/images/f23-painting.jpeg";
   import F23C from "$lib/images/f23-symposium-hudzah.jpg";
-  import S23A from "$lib/images/s23-kickoff.png";
-  import S23B from "$lib/images/s23-outside.jpg";
+  import S23A from "$lib/images/s23-kickoff.jpg";
+  import S23B from "$lib/images/s23-outside.jpeg";
   import S23C from "$lib/images/s23-symposium-stage.png";
   import W23A from "$lib/images/w23-retreat.jpg";
   import W23B from "$lib/images/w23-smile.jpg";

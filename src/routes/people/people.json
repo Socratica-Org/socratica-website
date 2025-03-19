@@ -125,9 +125,7 @@
     "role": "W24, S24, F24, W25",
     "photo": "/img-ppl/Angela_Li.jpg",
     "location": "Waterloo",
-    "facts": [
-      "worked on symposium designs!"
-    ]
+    "facts": ["worked on symposium designs!"]
   },
   {
     "id": 12,
@@ -183,9 +181,7 @@
     "role": "F23, W24, S24, F24, W25",
     "photo": "/img-ppl/aryan_afrouzi.png",
     "location": "Waterloo",
-    "facts": [
-      "Helping with Winter 2024 Symposium <3"
-    ]
+    "facts": ["Helping with Winter 2024 Symposium <3"]
   },
   {
     "id": 17,
@@ -277,9 +273,7 @@
     "role": "W24",
     "photo": "/img-ppl/chandhana_sathishkumar.jpeg",
     "location": "UNC",
-    "facts": [
-      "brought together vibe bringers at unc <3"
-    ]
+    "facts": ["brought together vibe bringers at unc <3"]
   },
   {
     "id": 25,
@@ -311,9 +305,7 @@
     "role": "F24, W25",
     "photo": "/img-ppl/chloe_nguyen.png",
     "location": "Waterloo, Vancouver",
-    "facts": [
-      "organized merch for symposium W'25"
-    ]
+    "facts": ["organized merch for symposium W'25"]
   },
   {
     "id": 28,
@@ -381,11 +373,7 @@
     "role": "W24, S24, F24",
     "photo": "/img-ppl/donald_jewkes.jpeg",
     "location": "Vancouver",
-    "facts": [
-      "storytelling !",
-      "cooking at weeknights",
-      "demo days :)"
-    ]
+    "facts": ["storytelling !", "cooking at weeknights", "demo days :)"]
   },
   {
     "id": 34,
@@ -941,9 +929,7 @@
     "role": "W23, S23, F23, W24, S24, F24, W25",
     "photo": "/img-ppl/Maya-Lekhi.jpg",
     "location": "Toronto, London (Ontario)",
-    "facts": [
-      "creating Momentum @ Western University!"
-    ]
+    "facts": ["creating Momentum @ Western University!"]
   },
   {
     "id": 81,
@@ -1034,9 +1020,7 @@
     "role": "F24, W25",
     "photo": "/img-ppl/noah_barrett.jpeg",
     "location": "Halifax",
-    "facts": [
-      "Forming a node on the east coast of Canada (Halifax) "
-    ]
+    "facts": ["Forming a node on the east coast of Canada (Halifax) "]
   },
   {
     "id": 89,
@@ -1064,9 +1048,7 @@
     "role": "W24",
     "photo": "/img-ppl/rachel_butler.jpg",
     "location": "Waterloo",
-    "facts": [
-      "Helped organize dance party and venue bookings at W24 Kickoff!!"
-    ]
+    "facts": ["Helped organize dance party and venue bookings at W24 Kickoff!!"]
   },
   {
     "id": 92,
@@ -1292,7 +1274,7 @@
       "Being a part of the AV team for symposium ",
       "Hosted multiple sessions"
     ]
-  }, 
+  },
   {
     "id": 111,
     "name": "Maryam Rezakarimi",

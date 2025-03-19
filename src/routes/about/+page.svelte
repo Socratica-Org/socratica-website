@@ -1,9 +1,6 @@
 <script>
   import Navbar from "$lib/components/navbar.svelte";
   import People from "$lib/components/people.svelte";
-  import AboutImage1 from "$lib/images/about-1.1.png";
-  import AboutImage2 from "$lib/images/about-1.2.png";
-  import AboutImage3 from "$lib/images/about-1.3.png";
   import { slide } from "svelte/transition";
 
   let selectedTerm = "winter-2022";
@@ -26,7 +23,7 @@ With this vision as Aman and Adi's compass, they kicked off the first Socratica 
 
 Forward-thinking hosts put significant work into establishing Socratica as a Canadian Nonprofit. This allowed us to have a bank account, sign contracts, and get access to essential tools for our team later on. 
 
-During this time, Joss hosted several dinners through UW Startups for  people interested in talking about big ideas (it was found that the term “founder” was a quite intimidating word and caused many awesome people to self-eliminate). 
+During this time, Joss hosted several dinners through UW Startups for  people interested in talking about big ideas (it was found that the term "founder" was a quite intimidating word and caused many awesome people to self-eliminate). 
       
       `,
     },
@@ -35,9 +32,9 @@ During this time, Joss hosted several dinners through UW Startups for  people in
       term: "F22",
       leaders:
         "Joss Murphy, Anson Yu, Ananya Anupam, Daekun Kim, Krish Shah, Dhruv Patel, Dhvani Patel",
-      content: `By the end of summer, the builder-bug had caught on – with dinners constantly filling up in <24 hours and “the host mindset” well established, UW Startups was faced with a decision: turn people away… or get creative. 
+      content: `By the end of summer, the builder-bug had caught on – with dinners constantly filling up in <24 hours and "the host mindset" well established, UW Startups was faced with a decision: turn people away… or get creative. 
 
-“The Kickoff” became a way to accommodate demand by welcoming students back to Waterloo with an evening of sharing ideas and excitement about the creative things they wanted to pursue in the term ahead. In fall 2022, The Host Pledge was born. 
+"The Kickoff" became a way to accommodate demand by welcoming students back to Waterloo with an evening of sharing ideas and excitement about the creative things they wanted to pursue in the term ahead. In fall 2022, The Host Pledge was born. 
 
 Sunday Socratica coworking sessions remained a weekly staple, now with permanent space in the Accelerator Center. UW Startups partnered with Jesse Rodgers and Maryam to host several larger events that introduced students to alumni founders and institutions around the city that could support them should they choose to pursue entrepreneurship. 
 
@@ -50,7 +47,7 @@ Finally, the first ever Socratica Symposium was hosted at Catalyst Commons to ro
         "Jonathan Xu, Ananya Anupam, Jaclyn Chan, Maryam Rezakarimi, Daekun Kim",
       content: `Winter 2023 came with growing pains – expectations were high, but once again an entirely new audience of students were back on campus and the community would have to be built up again. Despite this, the enthusiasm remained high among regular attendees – with people repeatedly asking for the RSVP link to sessions. 
 
-New communication infrastructure and artifacts were established so that previous hosts could support hosts from afar, much of which is crucial to Socratica’s operation to this day. 
+New communication infrastructure and artifacts were established so that previous hosts could support hosts from afar, much of which is crucial to Socratica's operation to this day. 
 
 Kickoff (attempt 1) was cancelled by a snowstorm. Hosts ate leftover pizza for weeks. Symposium was almost interrupted by a snowstorm – but ultimately saw droves of students trekking through the depths of Waterloo Winter to support their friends and get inspired. 
 
@@ -61,11 +58,11 @@ Kickoff (attempt 1) was cancelled by a snowstorm. Hosts ate leftover pizza for w
       term: "S23",
       leaders:
         "Aava Sapkota, Brayden Petersen, Jake Rudolph, Binalpreet Kalra, Christopher Oka",
-      content: `Summer brought with it a new batch of hosts and a new infusion of energy and stability – Brayden, Jake, Aava, Binal, and Chris brought fresh ideas to sessions, Aileen and Anson solidified Socratica’s brand, and Brayden and Joss kept reaching new audiences with UW Startups.
+      content: `Summer brought with it a new batch of hosts and a new infusion of energy and stability – Brayden, Jake, Aava, Binal, and Chris brought fresh ideas to sessions, Aileen and Anson solidified Socratica's brand, and Brayden and Joss kept reaching new audiences with UW Startups.
 
 For over a year, it had been an uphill battle to make Socratica sessions feel welcoming to non-engineering students, women, artists, musicians, and other underrepresented groups, and in Summer 2023 it became clear that our efforts were beginning to pay off. 
 
-Attendeeship was consistent, project progress compounded, and young hosts built confidence as they contributed to Socratica’s core values and strategy. “Sparkle” became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their “Sparkle” ideas to the mix. 
+Attendeeship was consistent, project progress compounded, and young hosts built confidence as they contributed to Socratica's core values and strategy. "Sparkle" became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their "Sparkle" ideas to the mix. 
 
 `,
     },
@@ -121,9 +118,8 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
 
   function formatLeaders(leaders) {
     return leaders
-      .trim()
-      .split(/\s*,\s*/)
-      .map((name) => `<span class="name-wrap">${name.trim()}</span>`)
+      .split(", ")
+      .map((name) => `<span class="name-wrap">${name}</span>`)
       .join(", ");
   }
 </script>
@@ -144,8 +140,8 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
     <div class=" flex flex-col position-center" style="left: 10%;">
       <img
         class="pt-40"
-        src="src/lib/images/Socratica_Symposium_Hosts.png"
-        alt="Description"
+        src="/lib/images/Socratica_Symposium_Hosts.png"
+        alt="Socratica Symposium Hosts"
       />
       <h2
         class="text-2xl pt-8 sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
@@ -223,21 +219,15 @@ We grew a Twitter presence and released the Toolbox so that people outside of Wa
 
                 {#if item.id === "winter-2022"}
                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                    <img
-                      src={AboutImage3}
-                      alt="Socratica Winter 2022"
-                      class="w-full h-auto rounded-lg"
-                    />
-                    <img
-                      src={AboutImage1}
-                      alt="Socratica Winter 2022"
-                      class="w-full h-auto rounded-lg"
-                    />
-                    <img
-                      src={AboutImage2}
-                      alt="Socratica Winter 2022"
-                      class="w-full h-auto rounded-lg"
-                    />
+                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span class="text-gray-400">Session photo 1</span>
+                    </div>
+                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span class="text-gray-400">Session photo 2</span>
+                    </div>
+                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span class="text-gray-400">Session photo 3</span>
+                    </div>
                   </div>
                 {/if}
               </div>

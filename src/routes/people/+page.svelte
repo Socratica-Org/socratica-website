@@ -4,6 +4,13 @@
   import { cubicOut } from "svelte/easing";
   import { fade, scale } from "svelte/transition";
   import peopleData from "./people.json";
+  import { browser } from '$app/environment';
+
+  // Add the export for data prop from load function
+  export let data = { imagePlaceholders: {} };
+  
+  // Access placeholders safely with default value
+  const { imagePlaceholders = {} } = data;
 
   // Helper to check if code is running in browser 
   const isBrowser = typeof window !== 'undefined';
@@ -42,6 +49,9 @@
       
       // Add resource hints for potentially critical resources
       addResourceHints();
+
+      // Add WebP conversion helper
+      createWebPVersions();
     }
 
     return () => {
@@ -217,6 +227,7 @@
           if (entry.isIntersecting) {
             const target = entry.target;
             const dataSrc = target.getAttribute('data-src');
+            const dataFullSrc = target.getAttribute('data-full-src');
             
             if (dataSrc) {
               // Mark the image as observed to prevent re-observation
@@ -228,6 +239,15 @@
                 target.classList.add('loaded');
                 target.classList.remove('opacity-0');
                 observer.unobserve(target);
+                
+                // If this is a thumbnail and we have a full-size version,
+                // load the full-size version in the background
+                if (dataFullSrc && dataFullSrc !== dataSrc) {
+                  const fullImg = new Image();
+                  fullImg.src = dataFullSrc;
+                  imageCache.add(dataFullSrc);
+                }
+                
                 return;
               }
               
@@ -241,6 +261,14 @@
                 target.classList.remove('opacity-0');
                 imageCache.add(dataSrc); // Add to our cache
                 observer.unobserve(target);
+                
+                // If this is a thumbnail and we have a full-size version,
+                // load the full-size version in the background
+                if (dataFullSrc && dataFullSrc !== dataSrc) {
+                  const fullImg = new Image();
+                  fullImg.src = dataFullSrc;
+                  imageCache.add(dataFullSrc);
+                }
               };
               
               // If loading fails, show the placeholder instead
@@ -451,11 +479,16 @@
         nextNode.person = person;
         nextNode.isPlaceholder = false;
         
-        // Add thumbnail path if available
+        // Add optimized images for different sizes
         if (person && !person.photo.includes('placeholder')) {
-          nextNode.thumbnailPhoto = person.photo.replace('.jpg', '-thumb.jpg')
-            .replace('.png', '-thumb.png')
-            .replace('.webp', '-thumb.webp');
+          // Tiny thumbnail for initial load (32px)
+          nextNode.tinyThumbnail = getOptimizedImageUrl(person.photo, 'tiny');
+          
+          // Small thumbnail for zoomed view (64px)
+          nextNode.smallThumbnail = getOptimizedImageUrl(person.photo, 'small');
+          
+          // Regular photo for the profile card
+          nextNode.optimizedPhoto = getOptimizedImageUrl(person.photo, 'large');
         }
         
         // Remove the person from available people
@@ -590,6 +623,72 @@
 
   function isImageLoaded(id) {
     return loadedImages.has(id);
+  }
+
+  // Add this function to create optimized image URLs based on size needs
+  function getOptimizedImageUrl(photoUrl, size) {
+    if (!photoUrl || photoUrl.includes('placeholder')) {
+      return photoUrl;
+    }
+    
+    const imgPath = photoUrl.startsWith('/') ? photoUrl.substring(1) : photoUrl;
+    const parts = imgPath.split('/');
+    const filename = parts[parts.length - 1].split('.')[0];
+    
+    // Check if we have WebP versions
+    if (size === 'tiny') return `/img-ppl/${filename}-32w.webp`;
+    if (size === 'small') return `/img-ppl/${filename}-64w.webp`;
+    if (size === 'medium') return `/img-ppl/${filename}-128w.webp`;
+    if (size === 'large') return `/img-ppl/${filename}-256w.webp`;
+    
+    // Fallback to original image
+    return photoUrl;
+  }
+
+  // Add a script to create WebP versions of images on load if not already present
+  function createWebPVersions() {
+    if (!isBrowser || typeof document === 'undefined') return;
+    
+    // Check if browser supports WebP
+    const webpSupported = document.createElement('canvas')
+      .toDataURL('image/webp')
+      .indexOf('data:image/webp') === 0;
+      
+    if (!webpSupported) return; // Skip if WebP is not supported
+    
+    // Only run in development mode to help create optimized assets
+    if (import.meta.env.DEV) {
+      console.log('Development mode: checking for WebP conversion opportunities');
+      
+      // Get all loaded images that aren't WebP
+      setTimeout(() => {
+        const nonWebPImages = Array.from(document.querySelectorAll('img[src*=".jpg"], img[src*=".png"]'));
+        
+        if (nonWebPImages.length > 0) {
+          console.log(`Found ${nonWebPImages.length} images that could be converted to WebP`);
+          
+          nonWebPImages.forEach(img => {
+            const src = img.getAttribute('src');
+            if (!src) return;
+            
+            // Log suggestion for converting to WebP
+            const basePath = src.substring(0, src.lastIndexOf('.'));
+            const width = img.naturalWidth || img.width;
+            console.log(`Consider creating: ${basePath}-${width}w.webp`);
+          });
+        }
+      }, 3000);
+    }
+  }
+
+  // Get image placeholder (if available)
+  function getPlaceholder(photoUrl) {
+    if (!photoUrl) return null;
+    
+    const parts = photoUrl.split('/');
+    const filename = parts[parts.length - 1].split('.')[0];
+    
+    return imagePlaceholders[filename] || null;
   }
 </script>
 
@@ -772,12 +871,15 @@
                   <div class="w-full h-full bg-[#f5f5f5] bg-loading-shimmer">
                     <img
                       src="/img-ppl/tiny-placeholder.svg"
-                      data-src={node.person.photo}
+                      data-src={node.tinyThumbnail || node.person.photo}
+                      data-full-src={node.person.photo}
                       alt={node.person.name}
                       class="w-full h-full object-cover transition-opacity duration-300 opacity-0"
                       loading="lazy"
                       decoding="async"
                       fetchpriority={Math.abs(node.q) + Math.abs(node.r) < 3 ? "high" : "low"}
+                      height="32"
+                      width="32"
                       use:observeImage
                     />
                   </div>
@@ -857,12 +959,15 @@
                     <div class="w-full h-full bg-[#f5f5f5] bg-loading-shimmer">
                       <img
                         src="/img-ppl/tiny-placeholder.svg"
-                        data-src={node.person.photo}
+                        data-src={node.tinyThumbnail || node.person.photo}
+                        data-full-src={node.person.photo}
                         alt={node.person.name}
                         class="w-full h-full object-cover transition-opacity duration-300 opacity-0"
                         loading="lazy"
                         decoding="async"
-                        fetchpriority="low"
+                        fetchpriority={Math.abs(node.q) + Math.abs(node.r) < 3 ? "high" : "low"}
+                        height="32"
+                        width="32"
                         use:observeImage
                       />
                     </div>
@@ -938,12 +1043,15 @@
                     <div class="w-full h-full bg-[#f5f5f5] bg-loading-shimmer">
                       <img
                         src="/img-ppl/tiny-placeholder.svg"
-                        data-src={node.person.photo}
+                        data-src={node.tinyThumbnail || node.person.photo}
+                        data-full-src={node.person.photo}
                         alt={node.person.name}
                         class="w-full h-full object-cover transition-opacity duration-300 opacity-0"
                         loading="lazy"
                         decoding="async"
-                        fetchpriority="low"
+                        fetchpriority={Math.abs(node.q) + Math.abs(node.r) < 3 ? "high" : "low"}
+                        height="32"
+                        width="32"
                         use:observeImage
                       />
                     </div>
@@ -1037,11 +1145,14 @@
                 </div>
               {:else}
                 <img
-                  src={person.photo}
+                  src={person.optimizedPhoto || person.photo}
+                  data-src={person.photo}
                   alt={person.name}
                   class="w-32 h-32 rounded-full mr-6 object-cover border-2 border-[#FBF8EF]"
                   loading="eager" 
                   fetchpriority="high"
+                  height="128"
+                  width="128"
                 />
               {/if}
               <div>
@@ -1119,4 +1230,103 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+  
+  /* Add fade-in animation for profile image */
+  .profile-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .profile-image.loaded {
+    opacity: 1;
+  }
+  
+  /* Placeholder for profile image */
+  .placeholder-image {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
 </style>
+
+<script context="module">
+  // Lazy load full-size images
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', () => {
+      // Create WebP versions of images if they don't exist
+      const checkWebPSupport = () => {
+        const canvas = document.createElement('canvas');
+        if (canvas.getContext && canvas.getContext('2d')) {
+          return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        }
+        return false;
+      };
+      
+      const webpSupported = checkWebPSupport();
+      
+      // Report non-WebP images that could be optimized
+      const reportNonOptimizedImages = () => {
+        if (webpSupported) {
+          const dots = document.querySelectorAll('.dot[style*="background-image"]');
+          const nonWebPImages = [];
+          
+          dots.forEach(dot => {
+            const url = dot.style.backgroundImage.replace(/url\(['"](.+)['"]\)/, '$1');
+            if (!url.endsWith('.webp')) {
+              nonWebPImages.push(url);
+            }
+          });
+          
+          if (nonWebPImages.length > 0) {
+            console.log('Images that could be optimized to WebP:', [...new Set(nonWebPImages)]);
+            console.log('Run: node scripts/optimize-images.js to convert these images');
+          }
+        }
+      };
+      
+      // Setup intersection observer for lazy loading
+      const observeImages = () => {
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const dot = entry.target;
+                const fullSrc = dot.dataset.src;
+                
+                if (fullSrc && !dot.style.backgroundImage.includes(fullSrc)) {
+                  // Load higher quality image
+                  const img = new Image();
+                  img.onload = () => {
+                    dot.style.backgroundImage = `url('${fullSrc}')`;
+                  };
+                  img.src = fullSrc;
+                  
+                  // Also preload the full-size image for the profile card
+                  if (dot.dataset.fullSrc) {
+                    const fullImg = new Image();
+                    fullImg.src = dot.dataset.fullSrc;
+                  }
+                }
+                
+                // Stop observing after loading
+                observer.unobserve(dot);
+              }
+            });
+          }, { rootMargin: '100px' });
+          
+          // Observe all dots with images
+          document.querySelectorAll('.dot[style*="background-image"]').forEach(dot => {
+            imageObserver.observe(dot);
+          });
+        }
+      };
+      
+      // Run optimizations
+      setTimeout(() => {
+        observeImages();
+        reportNonOptimizedImages();
+      }, 1000);
+    });
+  }
+</script>

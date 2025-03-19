@@ -214,6 +214,14 @@
     selectedResult = result;
     selectedPerson = result.id;
   }
+
+  // Handle keyboard events for accessibility
+  function handleKeydown(event, personId) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleNodeClick(personId);
+    }
+  }
 </script>
 
 <div class="block min-h-screen bg-primary">
@@ -349,11 +357,12 @@
                   z-index: {isSelected ? 20 : 5};
                 "
               on:click={() => node.person && handleNodeClick(node.person.id)}
+              on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
               role={node.person ? "button" : "presentation"}
               aria-label={node.person
                 ? `View profile for ${node.person.name}`
                 : undefined}
-              tabindex={node.person ? "0" : "-1"}
+              tabindex={node.person ? "0" : undefined}
             >
               {#if node.person}
                 {#if node.person.photo === "https://via.placeholder.com/150"}
@@ -428,11 +437,12 @@
                     opacity: {node.isPlaceholder ? '1' : '1'};
                   "
                 on:click={() => node.person && handleNodeClick(node.person.id)}
+                on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
                   : undefined}
-                tabindex={node.person ? "0" : "-1"}
+                tabindex={node.person ? "0" : undefined}
               >
                 {#if node.person}
                   {#if node.person.photo === "https://via.placeholder.com/150"}
@@ -499,11 +509,12 @@
                     opacity: {node.isPlaceholder ? '1' : '1'};
                   "
                 on:click={() => node.person && handleNodeClick(node.person.id)}
+                on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
                   : undefined}
-                tabindex={node.person ? "0" : "-1"}
+                tabindex={node.person ? "0" : undefined}
               >
                 {#if node.person}
                   {#if node.person.photo === "https://via.placeholder.com/150"}
@@ -557,6 +568,10 @@
           <div
             class="absolute inset-0 bg-black/5 backdrop-blur-[2px]"
             on:click={closeProfile}
+            on:keydown={(e) => e.key === 'Escape' && closeProfile()}
+            role="button"
+            tabindex="0"
+            aria-label="Close profile"
           />
 
           <!-- Card content -->
@@ -575,76 +590,48 @@
           >
             <!-- Close button -->
             <button
-              class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+              class="absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600"
               on:click={closeProfile}
               aria-label="Close profile"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
+                class="h-6 w-6"
                 fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
-            <div class="flex items-center">
-              {#if person.photo === "https://via.placeholder.com/150"}
-                <div
-                  class="w-32 h-32 rounded-full mr-6 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-12 h-12 text-[#CCCCCC]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-              {:else}
+            <!-- Profile image & info container -->
+            <div class="flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div
+                class="overflow-hidden rounded-full w-32 h-32 shrink-0 border-4 border-[#f8f8f8]"
+              >
                 <img
                   src={person.photo}
                   alt={person.name}
-                  class="w-32 h-32 rounded-full mr-6 object-cover border-2 border-[#FBF8EF]"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
-              {/if}
-              <div>
-                <h3 class="font-tiempos-headline text-2xl font-bold mb-1">
-                  {person.name}
-                </h3>
-                <p class="text-base text-gray-600 font-mono">
-                  {person.location}
-                </p>
-                <p class="text-sm text-gray-500 mt-1 font-mono">
-                  {person.role}
-                </p>
               </div>
-            </div>
-            <div class="mt-6">
-              <ul
-                class="list-disc pl-6 space-y-2"
-                style="font-family: 'Untitled Sans', sans-serif;"
-              >
-                {#each person.facts as fact}
-                  <li class="text-[15px] leading-relaxed text-gray-700">
-                    {fact}
-                  </li>
-                {/each}
-              </ul>
+
+              <div>
+                <h3 class="text-xl font-medium text-gray-900">{person.name}</h3>
+                <p class="text-sm text-gray-500 mt-1">{person.role}</p>
+
+                <div class="mt-4 text-sm text-gray-700 space-y-2">
+                  <p>{person.description}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

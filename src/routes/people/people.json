@@ -1,0 +1,1290 @@
+[
+  {
+    "id": 1,
+    "name": "Aadil Pickle",
+    "role": "W22, S22, F22, W23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Aadil-A.jpeg",
+    "location": "Toronto, SF",
+    "facts": [
+      "someone actively started writing and recording music after coming to SOTO after always wanting to",
+      "sf now has a reoccuring space where people get to know each other rather than what they do for work",
+      "S22 was able to buy snacks for the summer"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Aava Sapkota",
+    "role": "W23, S23",
+    "photo": "/img-ppl/Aava-Sapkota.jpeg",
+    "location": "Waterloo, Toronto",
+    "facts": [
+      "Co-Chaired S23 Symposium with 200 attendees at communitech",
+      "Hosted sessions in S23",
+      "Contributed to the Toolbox"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Adam Omarali",
+    "role": "F24, W25",
+    "photo": "/img-ppl/adam_omarali.jpeg",
+    "location": "Toronto",
+    "facts": [
+      "started the uoft socratica node",
+      "growing from 1 to 30 people sessions in 3 months",
+      "had the honour of watching 50+ demos over 20 sessions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Adi Sharma",
+    "role": "W22, S22, F22",
+    "photo": "/img-ppl/Adi_Sharma.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Started Socratica and hosted all the sessions in the first term ",
+      "Created Socratica's core model/framework of focused work, demos + community rituals ",
+      "Advicing on growth, recruiting, pep talks:) + Toolbox/website-dev + much more behind the scenes work"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Adriana Ceric",
+    "role": "S22, W23, S24, W25",
+    "photo": "/img-ppl/Adriana_Ceric.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "helped send hundreds of cold emails for w25 symposium",
+      "helped run a socratica \"hot girl walks\" club",
+      "helped organize a socratica book rental service in a math building locker"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "agniv sarkar",
+    "role": "F24, W25",
+    "photo": "/img-ppl/agniv_sarkar.png",
+    "location": "Oxford",
+    "facts": [
+      "Our orchard website :}",
+      "Playing Guitar during sessions.",
+      "Brewed really nice tea for everyone!"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Aileen Luo",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Aileen_Luo.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "the socratica mascot (i did our branding + fall symposium 23 design slay!)",
+      "wabisabithon ;)",
+      "helped introduce afternoon session potlucks/ culture of experimentation!!"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Aleeza Jahan",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Aleeza-Jahan.JPG",
+    "location": "London (Ontario)",
+    "facts": [
+      "helping grow London's Node!",
+      "Documenting Momentum through videos!",
+      "help organize this year's kickoff!"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ananya Anupam",
+    "role": "S22, F22, W23, S23",
+    "photo": "/img-ppl/ananya_anupam.jpeg",
+    "location": "Waterloo, Toronto",
+    "facts": [
+      "advocated for more arts/humanities representation!",
+      "helped host our first ever symposium <3",
+      "became a lot of people's topological big sister :)) "
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ananya Kannan",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/ananya_kannan.jpeg",
+    "location": "Vancouver",
+    "facts": [
+      "Helped organize MVD - an evening showcase of projects spanning technology, art and science.",
+      "Started Atelier Weeknights (Tuesday evening pomodemo sessions with free dinner!)",
+      "Helped various other nodes start + maintain themselves, provided advice on demo days/session logistics etc"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Angela Li",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/Angela_Li.jpg",
+    "location": "Waterloo",
+    "facts": ["worked on symposium designs!"]
+  },
+  {
+    "id": 12,
+    "name": "Anson Yu",
+    "role": "W22, S22, F22, W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/anson_yu.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Celebrating ambition & craft. Led first symposium. ",
+      "Introducing Socratica is to the world. Initial brand, voice, starting the Twitter, the asterism!",
+      "Archiving. Jumpstarting the Toolbox, taking photos from first session onwards"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Anthea Tawiah",
+    "role": "W23, S23, F23, W24, S24, W25",
+    "photo": "/img-ppl/anthea.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Ran a daily Socratica summer spin-off called the Kitchen! For the people working on their ideas full time. ",
+      "Helped pull together Waterloo's first large-scale Symposium in F23.",
+      "Led design for a mural at UWaterloo inspired by Socratica."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Arian Ahmadinejad",
+    "role": "F24, W25",
+    "photo": "/img-ppl/arian_ahmadinejad.jpeg",
+    "location": "Hamilton",
+    "facts": [
+      "Started the McMaster node ",
+      "Helped with symposium and spotlight logistics ",
+      "Spread the word about symposium and got 10+ to sign up"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Arielle Lok",
+    "role": "W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/arielle_lok.jpeg",
+    "location": "Vancouver, Montreal, Boston",
+    "facts": [
+      "turned strangers into best friends",
+      "executed so many schemes at many a session",
+      "created meaningful, lasting community"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Aryan Afrouzi",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/aryan_afrouzi.png",
+    "location": "Waterloo",
+    "facts": ["Helping with Winter 2024 Symposium <3"]
+  },
+  {
+    "id": 17,
+    "name": "Atnasia Ibsa",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Atnasia-Dejene.jpg",
+    "location": "London (Ontario)",
+    "facts": [
+      "Hosted momentum sessions",
+      "Encouraged the girlies to demo",
+      "Brought homemade banana fudge cake:)"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Beaumont Qu",
+    "role": "W25",
+    "photo": "/img-ppl/beaumont_qu.png",
+    "location": "Waterloo",
+    "facts": [
+      "Organizing Symposium with the best team",
+      "Telling people about Socratica and Symposium for the first time and seeing the excitement on their faces :)",
+      "Bringing together friends to build more cool projects"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Binalpreet Kalra",
+    "role": "F22, S23",
+    "photo": "/img-ppl/Binalpreet-Kalra.JPG",
+    "location": "Waterloo",
+    "facts": [
+      "encouraged more women to attend",
+      "organized group gym sessions at cif before socratica",
+      "contributed to the socratica toolbox"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Brayden Petersen",
+    "role": "F22, W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Brayden_Petersen.jpg",
+    "location": "Waterloo, Toronto",
+    "facts": [
+      "Designed our logo, website & the mascots!",
+      " Hosted S23",
+      "Figured out our brand identity with Aileen!"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Brooke Joseph",
+    "role": "F23, W24",
+    "photo": "/img-ppl/Brooke_Joseph.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "bringing my favourite people to sessions",
+      "helping people get microgrants",
+      "hosted sessions and helped organized w24 symposium"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Bruce Wang",
+    "role": "F23",
+    "photo": "/img-ppl/Bruce_Wang.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Helped run the F23 sessions!",
+      "Helped ensure things ran smoothly for symposium at CIGI",
+      "Painting the Socratica sign :)"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Calvin Liang",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/calvin_liang.png",
+    "location": "Vancouver",
+    "facts": [
+      "Hosted 43 Atelier sessions",
+      "Designed 4 Atelier posters",
+      "Created the Atelier Demo Timer"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Chandhana Sathishkumar",
+    "role": "W24",
+    "photo": "/img-ppl/chandhana_sathishkumar.jpeg",
+    "location": "UNC",
+    "facts": ["brought together vibe bringers at unc <3"]
+  },
+  {
+    "id": 25,
+    "name": "Charelle Constantino",
+    "role": "F24, W25",
+    "photo": "/img-ppl/charelle.jpeg",
+    "location": "Ottawa",
+    "facts": [
+      "Relaunched the Ottawa node of Socratica",
+      "Baked many cookies for our weekly meetings",
+      "Created a community that supports each others projects"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Cheryl Chong",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/Cheryl_Chong.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Hosted W25 sessions! ",
+      "Designed graphics here and there",
+      "Created the S24 KickOff photoframe!"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Chloe Nguyen",
+    "role": "F24, W25",
+    "photo": "/img-ppl/chloe_nguyen.png",
+    "location": "Waterloo, Vancouver",
+    "facts": ["organized merch for symposium W'25"]
+  },
+  {
+    "id": 28,
+    "name": "Christopher Oka",
+    "role": "S23",
+    "photo": "/img-ppl/Christopher-Oka.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Brought live music to sessions",
+      "Handled all the food at symposium #2 and socratica sessions ",
+      "Curated vibes and welcomed newcomers with open arms"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Cindy Qiu",
+    "role": "W25",
+    "photo": "/img-ppl/cindy.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Organizing community building socials  - from potlucks to chaotic DIY bbt events. ",
+      "Running Sunday sessions during W25 with a cool interdisciplinary team!",
+      "Boosting team moral with homemade bubble tea."
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Claire Kim",
+    "role": "F24, W25",
+    "photo": "/img-ppl/claire_kim.png",
+    "location": "Hamilton",
+    "facts": [
+      "Designed social media posts and promo art",
+      "Helped with sessions",
+      "Emotional support"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Clo Wang",
+    "role": "W24, S24, F24",
+    "photo": "/img-ppl/clo_wang.png",
+    "location": "Vancouver",
+    "facts": [
+      "started Atelier weeknights in Vancouver, now more popular than regular sessions",
+      "curated an ecosystem that self-sustains and sparks connection",
+      "encouraged studio art projects by working on things like needle felting and crochet"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Dhvani Patel",
+    "role": "F22, W23",
+    "photo": "/img-ppl/Dhvani_Patel.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "- ensuring every session has the most fire snack: teddy grahams",
+      "- encouraging tech projects to graduated beyond projects and get in front of users",
+      "- helping shape the early culture of socratica as not just being about tech"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Donald Jewkes",
+    "role": "W24, S24, F24",
+    "photo": "/img-ppl/donald_jewkes.jpeg",
+    "location": "Vancouver",
+    "facts": ["storytelling !", "cooking at weeknights", "demo days :)"]
+  },
+  {
+    "id": 34,
+    "name": "Eesha U",
+    "role": "F23, W24",
+    "photo": "/img-ppl/Eesha-U.png",
+    "location": "Waterloo",
+    "facts": [
+      "hosted the CIGI symposium",
+      "coded the website",
+      "hosted little afterparties"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Emil Redlinger",
+    "role": "W23, S23, F23, W24, S24",
+    "photo": "/img-ppl/Emil-Redlinger.jpeg",
+    "location": "Toronto",
+    "facts": [
+      "I think my demos make people smile",
+      "Creating spaces for unlikely friendships to form",
+      "Vibes"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Ena Manjgo",
+    "role": "S24, W25",
+    "photo": "/img-ppl/ena_manjgo.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Made some people laugh",
+      "Having positive vibes",
+      "Made cool animations :D"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Euan Ong",
+    "role": "F23, W24, S24",
+    "photo": "/img-ppl/Euan-Ong.jpg",
+    "location": "Cambridge (UK), London (UK), Oxford (UK)",
+    "facts": [
+      "started [scale down], the first UK socratica",
+      "ran [ensemble], the first UK symposium",
+      "started the second and third UK socraticas via the Collison installation method"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Faisal Sayed",
+    "role": "W25",
+    "photo": "/img-ppl/Faisal-Sayed.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Food logistics for the symposium. Bought $25,000 worth of Shawerma "
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Faye Chang",
+    "role": "F24, W25",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Oxford [orchard]",
+    "facts": [
+      "Started an 'arts' node to encourage new people to join",
+      "Introduced a 'host rota' ",
+      "Bought snacks!"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Freeman Jiang",
+    "role": "S23, F23, W24, W25",
+    "photo": "/img-ppl/Freeman_Jiang.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Created the inaugural Symposium matchmaking algorithm and visualization",
+      "Built welcome.socratica.info for Symposium W25",
+      "Led very talented teams of amateur photographers/videographers"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Gary Qin",
+    "role": "F24, W25",
+    "photo": "/img-ppl/gary_qin.jpeg",
+    "location": "Hamilton",
+    "facts": [
+      "kicked off the node at McMaster University!",
+      "brought incredibly talented people together to build Agora @agora.meet",
+      "stayed focused on the vision, never straying from Agora's ideals"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Giang Tran ",
+    "role": "W24, F24, W25",
+    "photo": "/img-ppl/Giang_Tran.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Hosted F24 sessions with the most awesome team",
+      "Designed all visual assets for Night At The Socratica Museum",
+      "reated posters, nametags, signs for Symposium & Kickoff"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Grace Sodunke",
+    "role": "F23, F24, W25",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Oxford, UK",
+    "facts": [
+      "Founded the Oxford, UK node with friends!",
+      "Connected with other hosts through Emergent Ventures",
+      "Brought yummy snacks"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Hardeep Gambhir",
+    "role": "S23, F23, W24, S24",
+    "photo": "/img-ppl/Hardeep-Gambhir.jpeg",
+    "location": "Toronto, London (Ontario), Berkeley, New Delhi (one-off)",
+    "facts": [
+      "roping in people ik who would love Socratica to join",
+      "bringing host vibes to 7 nodes in 3 countries",
+      "connecting 5 ppl to core team to start 5 new nodes"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Hudhayfa Nazoordeen",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Hudhayfa_Nazoordeen.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Made Socratica impossible to ignore",
+      "Turned dreams into Symposia",
+      "Raised the bar for everyone"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Illya Terekhov",
+    "role": "F24",
+    "photo": "/img-ppl/Illya-Terekhov.jpeg",
+    "location": "Vancouver",
+    "facts": [
+      "Hosted sessions",
+      "Helped the \"Weeknights\" version of Atelier survive",
+      "Food ops + cooked many meals for Atelier"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Jackie Yi",
+    "role": "W24, W25",
+    "photo": "/img-ppl/Jackie-Yi.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Directed the W24 and soon the W25 Symposium livestreams \ud83d\ude80"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Jacky Zhao",
+    "role": "W23, W24, S24, F24, W25",
+    "photo": "/img-ppl/jacky_zhao.jpeg",
+    "location": "Vancouver, SF",
+    "facts": [
+      "started saturdays (w vivian) and playspace (w scott and kai)",
+      "brought a sense of recurring community to sf, a city that severely lacks recurring things!",
+      "experimented w new formats (outdoor playspaces, small demos, scrapbook, community fund)"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "jaclyn chan",
+    "role": "W22, W23, S23",
+    "photo": "/img-ppl/jaclyn.jpeg",
+    "location": "Waterloo, NYC",
+    "facts": [
+      "The og finance and budgeting spreadsheets lol",
+      "starting a thriving cozy sundays node in nyc!",
+      "driving the winter 23 kickoff and symposium "
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Jake Rudolph",
+    "role": "S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Jake_Rudolph.jpg",
+    "location": "Waterloo, Toronto",
+    "facts": [
+      "Ran many experiments to discover more of what works",
+      "Coined the term \"pomodemo\"",
+      "Created the most fun feedback forms in the world"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "jakob leveille",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/jakob_leveille.png",
+    "location": "Waterloo",
+    "facts": [
+      "launched merch",
+      "hosting pop-up sessions in different cities",
+      "idk man i kinda just do whatever needs to be done"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Janelle Tam",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/janelle_tam.jpeg",
+    "location": "Montreal",
+    "facts": [
+      "Helped organize Montreal's first ever demo night, Cr\u00e9a Cinq \ud83e\udef6",
+      "Helped onboard 4 cohosts + 4 new incoming ones!",
+      "Led many douze \u00e0 deux spin-offs! (vision boarding, PowerPoint night, and more \ud83d\ude09)"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Jaryd Diamond",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/Jaryd-Diamond.png",
+    "location": "Waterloo, Melbourne (starting up this Sunday \ud83d\udc40)",
+    "facts": [
+      "Organized the first Socratica film festival",
+      "Led socraticamp and other community initiatives (slideshow night, silly little songs, etc.)",
+      "Hosted sessions that increased interdisciplinary nature of Socratica (dramatic increase in number of arts/hobby based projects)"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Jenn Dryden",
+    "role": "S23, W24",
+    "photo": "/img-ppl/Jenn-Dryden.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Hosted the W24 symposium with 700+ attendees in Waterloo!",
+      "Helping the Instagram reach 1k followers ",
+      "Creating fun reels to promote the W24 symposium "
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Jennifer Tsai",
+    "role": "W23, F23, W24, S24",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Waterloo, SF",
+    "facts": [
+      "Hosted an Intro to Biotech mixer event on campus",
+      "Kickstarted morning and afternoon sessions with potlucks",
+      "Got my roommates to present their art and music at Symposium"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Jibraan Kadri",
+    "role": "S23, F23, S24, F24, W25",
+    "photo": "/img-ppl/Jibraan-Kadri.jpg",
+    "location": "Waterloo, Toronto, Guelph",
+    "facts": [
+      "Started a node in Guelph",
+      "pushing others to build cool shit and work on their side projects",
+      "gave an illegal sneak peek of socratica merch on twitter"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Jinglin Li (sorry if these are too joke-y and you want more serious answers)",
+    "role": "W24, S24",
+    "photo": "/img-ppl/jinglin_li.png",
+    "location": "SF, making@umn node",
+    "facts": [
+      "(regularly) kidnapped makers for monthly dinner parties & other random hangouts",
+      "smuggled questionable amounts of snacks from my workplace to feed our hardworking, hungry makers",
+      "curatived spaces where we welcomed incomplete, scrappy, unfinished demos!!!"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Jocelyne Murphy",
+    "role": "W22, S22, F22, W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/jocelyne_murphy.jpg",
+    "location": "Waterloo, Toronto, Montreal",
+    "facts": [
+      "Writing the host pledge & instituting the \"host mindset\" ",
+      "Creating the UW Startups -> Socratica marketing MACHINE",
+      "Team building, long-term strategy & partnerships"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Jonathan Xu",
+    "role": "W22, S22, W23, W24",
+    "photo": "/img-ppl/jonathan_xu.jpg",
+    "location": "Waterloo, Toronto, SF",
+    "facts": [
+      "Sustained Socratica through summer with 3 members, securing new meeting spaces.",
+      "Organized 50+ person bonfire, poetry readings, and 8-hour hackathon.",
+      "Established community identity via locker library and nonprofit registration."
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Josh Wolk",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/Joshua-Wolk.jpg",
+    "location": "Los Angeles",
+    "facts": [
+      "Started Sundays in LA",
+      "Built symposium.socratica.info",
+      "Demoed, demoed, demoed"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Judy Yang",
+    "role": "W24",
+    "photo": "/img-ppl/Judy-Yang.png",
+    "location": "Waterloo",
+    "facts": [
+      "helped organize w24 kickoff",
+      "brought good energy",
+      "encouraged friends to share their projects "
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Julia Fedorin",
+    "role": "S24, F24",
+    "photo": "/img-ppl/Julia_Fedorin.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Created a Socratica documentary ",
+      "Co-hosted a Socratica Film Fest",
+      "Found a love for event planning "
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Justin Wang",
+    "role": "F24, W25",
+    "photo": "/img-ppl/justin_wang.png",
+    "location": "Pittsburgh",
+    "facts": [
+      "started our pittsburgh node!",
+      "created a polaroid wall",
+      "resident guitar teacher"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Kai Nah",
+    "role": "W24, S24, F24, W25",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Vancouver",
+    "facts": [
+      "Hosted over 50 sessions and 3 major Atelier events",
+      "Engineered the vibes, logistics-ed the logistics, and treasured the treasury",
+      "Flew in for W24 Symposium only to serve pizza"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "kai xie",
+    "role": "S23, F23, W24",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Toronto, Vancouver, SF",
+    "facts": [
+      "started nodes in 2 cities with my friends :)",
+      "helped scott get back in time to lead toronto\u2019s first symposium",
+      "helped at least 1 person believe in themselves :)"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Kaifee Haque",
+    "role": "W25",
+    "photo": "/img-ppl/Kaifee_Haque.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Kept the weekly Sunday sessions running smoothly",
+      "Experimented with new snacks",
+      "Helped organize our first POTLUCK session\ud83e\udef6"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Katie Reed",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Kate-Reed.png",
+    "location": "London (UK)",
+    "facts": [
+      "Hosted Sessions",
+      "Worked on ML project ",
+      "Helped out with [ensemble] "
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Keira Wong",
+    "role": "F23, W24, F24, W25",
+    "photo": "/img-ppl/keira_wong.png",
+    "location": "Washington",
+    "facts": [
+      "Created saturdays\u2122",
+      "Hosted sessions",
+      "Brought community for builders"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Kelly Chong",
+    "role": "F23, W24, S24, W25",
+    "photo": "/img-ppl/kelly_chong.png",
+    "location": "Toronto, Vancouver",
+    "facts": [
+      "branded Atelier x2 ",
+      "hosted the first Soto Spotlight (200+ person demo day)",
+      "contributions to Demo Days section of toolbox"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Kenson Hui",
+    "role": "W25",
+    "photo": "/img-ppl/Kenson-H.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Encouraging people to demo!",
+      "Designing Instagram stories",
+      "Organizing Socratica sessions"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Keyan Virani",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/Keyan_Virani.jpg",
+    "location": "Waterloo, Montreal",
+    "facts": [
+      "helped create a friendly, energetic atmosphere at sessions",
+      "designed for s24!",
+      "hosted socraticamp and other fun events :)"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Krish Shah",
+    "role": "W22, F22, W23, W24",
+    "photo": "/img-ppl/Krish_Shah.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Hosted some of the very first socratica sessions",
+      "Managed to get a mini cybertruck for F24 symposium",
+      "Redirecting all the awesome, talented people I meet to come to the sessions!"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Lydia Nottingham",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Lydia-Nottingham.jpg",
+    "location": "Oxford",
+    "facts": [
+      "Incorporated the UK Innovation Initiative!",
+      "Got us a bank account (\u00a3\u00a3\u00a3)",
+      "Brought unconference to [ensemble]"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Mahum Khawaja",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Mahum-K.jpg",
+    "location": "Hamilton/McMaster",
+    "facts": [
+      "Co-hosting a collab event with a magazine in the coolest location on campus",
+      "Creating connections with the school's start-up incubator",
+      "Meeting new people with the same interest!"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Maisha Thasin",
+    "role": "W25",
+    "photo": "/img-ppl/Maisha_Tahsin.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Creating PRISM with friends met at socratica",
+      "Bringing friends to socratica ",
+      "Growing Pex"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Malaika Aiyar",
+    "role": "F24, W25",
+    "photo": "/img-ppl/malaika_aiyar.jpeg",
+    "location": "Oxford",
+    "facts": [
+      "scaled [orchard] from ~10 to 50 weekly orchids :)",
+      "put on several symposiums! 100+ attendees",
+      "helped secure great venue, great tea, great vibes!"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Malak Oualid",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/malak_oualid.png",
+    "location": "Montreal",
+    "facts": [
+      "Helped people make friends in a new city (mtl)",
+      "Made cool stuff come to life",
+      "Created a fun space to learn and experiment"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Mani Rash Ahmadi",
+    "role": "F24, W25",
+    "photo": "/img-ppl/Mani-Rashahmadi.jpeg",
+    "location": "Waterloo, Guelph",
+    "facts": [
+      "starting and pushing this node in Guelph with Jibraan and others, we've taken off in the past couple of weeks and quadrupled our member count",
+      "maintaining to have a presentable demo each week as a means to encourage everyone else to get up there and show what they got even if they might think that it's not good enough",
+      "timbits :P"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Mathurah Ravigulan",
+    "role": "S22",
+    "photo": "/img-ppl/Mathurah_Ravigulan.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "hosting the 2nd term of ever of socratica - making it happen before everyone believed in us",
+      "organizing socratica campfire with 50+ ppl",
+      "helping host the wabi sabi hackathon in Waterloo"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Maya Lekhi",
+    "role": "W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Maya-Lekhi.jpg",
+    "location": "Toronto, London (Ontario)",
+    "facts": ["creating Momentum @ Western University!"]
+  },
+  {
+    "id": 81,
+    "name": "Merouane ZOUAID",
+    "role": "F24, W25",
+    "photo": "https://via.placeholder.com/150",
+    "location": "Rabat, Morocco",
+    "facts": [
+      "brought the builders energy to africa",
+      "created a massive collective of moroccan polymaths",
+      "shared hilarious memes on the slack channel (?)"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Minh Anh Dong Nguyen",
+    "role": "F24",
+    "photo": "/img-ppl/mihn_ahn_nguyen.png",
+    "location": "Toronto",
+    "facts": [
+      "Built out Toronto Meraki node!",
+      "Built a bracket bot project during the sessions with my cohost",
+      "Having a booth during meraki for a bake sale charity"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Mollee Ye",
+    "role": "F24, W25",
+    "photo": "/img-ppl/mollee_ye.png",
+    "location": "Montreal",
+    "facts": [
+      "organized the Montreal node's first demo day with my besties!!",
+      "growing the community at the Montreal node with more diversity!",
+      "brainstorming new project ideas with attendees!"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Nathaniel Budijono",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/nathaniel_budijono.jpeg",
+    "location": "Minneapolis",
+    "facts": [
+      "cofounding the Minneapolis node of Socratica (making@umn)",
+      "designed the octogram logo for making@umn",
+      "hosted sessions and socials in Minneapolis"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "nefise akcakir",
+    "role": "W24, F24",
+    "photo": "/img-ppl/Nefise.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Hosted a creators\u2019 retreat",
+      "Organized the Night at the Museum",
+      "Helped plan The Film Fest "
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Nevedhaa Ayyappan",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/Nevedhaa_Ayyappan.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "envisioned Assembly, really focusing on experimenting with demo styles and encapsulating the summerloo socratica essence!",
+      "started the tradition of team onboarding/offboarding dinners where everyone cooks together! supported 3 sets of hosts so far <3",
+      "Socratica lab: experimenting with various session models! I'm a huge advocate for weekday sessions + Sooooocratica, loved bringing those to life!"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Nicholas Lam",
+    "role": "W24, F24, W25",
+    "photo": "/img-ppl/Nicholas-Lam.jpg",
+    "location": "London (Ontario)",
+    "facts": [
+      "Inspired people to pursue and share their passions.",
+      "Helping build a community of passion filled individuals."
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Noah Barrett",
+    "role": "F24, W25",
+    "photo": "/img-ppl/noah_barrett.jpeg",
+    "location": "Halifax",
+    "facts": ["Forming a node on the east coast of Canada (Halifax) "]
+  },
+  {
+    "id": 89,
+    "name": "Om Gandhi",
+    "role": "W23, S23, F23",
+    "photo": "/img-ppl/om_gandhi.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Pizza delivery boy @ W24 Symposium",
+      "Hosted pop-up session in SF during S23",
+      "Helped run intro circles in S23"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Parth Sareen",
+    "role": "F22, F23, W24",
+    "photo": "/img-ppl/parth_sareen.png",
+    "location": "Waterloo",
+    "facts": []
+  },
+  {
+    "id": 91,
+    "name": "Rachel Butler",
+    "role": "W24",
+    "photo": "/img-ppl/rachel_butler.jpg",
+    "location": "Waterloo",
+    "facts": ["Helped organize dance party and venue bookings at W24 Kickoff!!"]
+  },
+  {
+    "id": 92,
+    "name": "Rachel Scott",
+    "role": "W24, S24, F24, W25",
+    "photo": "/img-ppl/Rachel_Scott.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Started cosy weeknight sessions",
+      "Hosted lots of new fun events in S24",
+      "Captured the magic (photographed many lol)"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Rajan Agarwal",
+    "role": "W23, F23, W24, F24, W25",
+    "photo": "/img-ppl/rajan_agarwal.png",
+    "location": "Waterloo, Toronto, SF",
+    "facts": [
+      "built matchmaking graphs and software for symposiums and kickoffs",
+      "demoing technical experiments at symposiums and sessions",
+      "getting feedback from students to make socratica feel more welcoming"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Ricky Mao",
+    "role": "F22, S23, W24",
+    "photo": "/img-ppl/ricky_mao.png",
+    "location": "Waterloo",
+    "facts": [
+      "created a directory of VC contacts for Socraticans to get funding for their ideas",
+      "introed VCs to nodes (e.g. USC) for node funding",
+      "helped lead a walking group at Socratica Dance Kickoff "
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Robin Hylands",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/Robin-Hylands.JPG",
+    "location": "London (Ontario)",
+    "facts": [
+      "spread london socratica (momentum) community as a host and organizer",
+      "organized an AI paper reading group with momentum friends",
+      "kickstarted momentum's twitter demo blog"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Sam Silver",
+    "role": "F24, W25",
+    "photo": "/img-ppl/sam-silver.jpg",
+    "location": "Halifax",
+    "facts": [
+      "Helped start the Halifax node!",
+      "Brought networking equipment to sessions!",
+      "Brought snacks to sessions!"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Samantha Faith Cruz",
+    "role": "W25",
+    "photo": "/img-ppl/Samantha-Cruz.jpg",
+    "location": "Calgary",
+    "facts": [
+      "Fostered a community of ambitious builders in Calgary (first node in Calgary)",
+      "Challenged the notion that Alberta is just oil and gas",
+      "Built a space where people feel encouraged to take action"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Santiago Del Solar",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/Santiago_Del_Solar.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Brought all my excitement and passion about building hardware into the room  ",
+      "Helped others build things with their hands",
+      "Made a socratica enamel pin for every past a new Socratican"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Scott Langille",
+    "role": "S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/scott_langille.jpeg",
+    "location": "Toronto, Vancouver, SF",
+    "facts": [
+      "Started Atelier, Vancouver\u2019s Socratica node, which has involved 800+ people in 110 sessions.",
+      "Organized mini symposiums in Toronto & Vancouver.",
+      "Helped foster the first international nodes."
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Seneca Forster",
+    "role": "F23, W24, F24, W25",
+    "photo": "/img-ppl/seneca_forster.png",
+    "location": "Vancouver",
+    "facts": [
+      "Growing Atelier ever since its first session",
+      "Helped onboard and scale 6 nodes",
+      "Curated sessions to make painters and programmers besties "
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Shahan Neda",
+    "role": "W24, F24, W25",
+    "photo": "/img-ppl/Shahan_Neda.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Curating and coaching the demoers of the W25 Symposium",
+      "Leading the F24 EOT: A Night at The Socratica Museum"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Soham Basu",
+    "role": "S23, F23, W24, F24, W25",
+    "photo": "/img-ppl/Soham.JPG",
+    "location": "Waterloo, Vancouver",
+    "facts": [
+      "built the socratica.info website, the website these profiles are gonna be on, full circle moment",
+      "piano performances to warm-up audiences for multiple symposiums",
+      "building the merch website which will hopefully help with self-sustaining Socratica's finances"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Spark Mark",
+    "role": "S24, W25",
+    "photo": "/img-ppl/spark_mark.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "learning to make a light show for symposium :D",
+      "making lu.ma animation and more!",
+      "ordering 130ft of transparent pvc pipes for set design"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Steve Nguyen",
+    "role": "W24, S24, F24",
+    "photo": "/img-ppl/steve_nguyen.jpeg",
+    "location": "Boston",
+    "facts": [
+      "Started Boston node with the help of Claire, Taryn, Arielle and Rishi"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Theo Lemay",
+    "role": "F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/theo_lemay.jpeg",
+    "location": "Vancouver, Kingston, SF, Halifax",
+    "facts": [
+      "started kingston node with friends",
+      "helped grow halifax and sf node",
+      "built a robot"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Tiffany Trinh",
+    "role": "W24, S24, W25",
+    "photo": "/img-ppl/Tiffany_Trinh.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "Created a Blindbox Powerpoint Night with Jaryd ! ",
+      "Helping with Symposium designs and growth (W24 + W25)",
+      "Hosting 2 weekly sessions during S24"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Victoria Feng",
+    "role": "S24, F24, W25",
+    "photo": "/img-ppl/Victoria_Feng.jpg",
+    "location": "Waterloo",
+    "facts": [
+      "invited others to create and explore out of curiosity!",
+      "experimenting with types of events and demo formats :D",
+      "led W25 kickoff team <3"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Wilbur Zhang",
+    "role": "W24",
+    "photo": "/img-ppl/wilbur_zhang.png",
+    "location": "Waterloo",
+    "facts": [
+      "Organized a creator camp retreat",
+      "Being a host!",
+      "Demoing at symposium"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Xi Da",
+    "role": "W23, S23, F23, W24, S24, F24, W25",
+    "photo": "/img-ppl/xi_da.jpeg",
+    "location": "London ",
+    "facts": [
+      "helping start the first uk symposium",
+      "starting the london node",
+      "helping run more demo days in the uk :D"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Yousuf Zia",
+    "role": "F23, W24, S24, F24",
+    "photo": "/img-ppl/yousuf_zia.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Working on Symposium 2024 branding",
+      "Being a part of the AV team for symposium ",
+      "Hosted multiple sessions"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Maryam Rezakarimi",
+    "role": "F22, W23, S23",
+    "photo": "/img-ppl/maryam_rezakarimi.jpeg",
+    "location": "Waterloo",
+    "facts": [
+      "Encourages creatives from different programs/backgrounds to showcase their passion projects",
+      "Pulling off/hosting W2023 symposium",
+      "Ordering real good food to F22/W23 events :D"
+    ]
+  }
+]

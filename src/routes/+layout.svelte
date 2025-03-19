@@ -18,13 +18,29 @@
   import { page } from "$app/stores";
   import { locations } from "../routes/map/locations";
   import Banner from '$lib/components/Banner.svelte';
+  import { browser } from '$app/environment';
 
+  // For TypeScript users, we have a global declaration in src/types/global.d.ts
   let currentPath = $page.url.pathname;
   $: {
     currentPath = $page.url.pathname;
   }
 
   let db: any;
+  
+  // Initialize global tracking of prefetched images if in browser
+  if (browser && typeof window !== 'undefined') {
+    // Create global state for tracking prefetched images
+    // @ts-ignore - We've defined this in our global.d.ts
+    window.socraticaPrefetchedImages = window.socraticaPrefetchedImages || new Set();
+  }
+  
+  // Add a cache for prefetched images using the global state or a new set
+  const prefetchedImages = browser && typeof window !== 'undefined' 
+    // @ts-ignore - We've defined this in our global.d.ts
+    ? window.socraticaPrefetchedImages 
+    : new Set();
+  
   onMount(() => {
     const firebaseConfig = {
       apiKey: import.meta.env.VITE_API_KEY,
@@ -38,8 +54,109 @@
     };
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    db = getFirestore(app); //////
+    db = getFirestore(app);
+    
+    // Start prefetching people images if on the home page
+    if (currentPath === '/') {
+      prefetchPeoplePageAssets();
+    }
   });
+  
+  // Function to prefetch essential people page images
+  function prefetchPeoplePageAssets() {
+    try {
+      // Prefetch the tiny placeholder image first
+      prefetchImage('/img-ppl/tiny-placeholder.svg', 'high');
+      
+      // Import the people data to get image paths
+      import('./people/people.json')
+        .then(module => {
+          const peopleData = module.default;
+          if (!peopleData || !Array.isArray(peopleData)) return;
+          
+          // Filter out placeholder images
+          const peopleWithImages = peopleData.filter(
+            p => p.photo && !p.photo.includes('placeholder')
+          );
+          
+          // Sort by importance (first 15 are considered important)
+          const importantPeople = peopleWithImages.slice(0, 15);
+          const otherPeople = peopleWithImages.slice(15);
+          
+          // Prefetch optimized tiny thumbnails for important people first
+          setTimeout(() => {
+            importantPeople.forEach((person, index) => {
+              // Extract the filename from the photo path
+              const imgPath = person.photo.startsWith('/') ? person.photo.substring(1) : person.photo;
+              const parts = imgPath.split('/');
+              const filename = parts[parts.length - 1].split('.')[0];
+              
+              // Prefetch the tiny thumbnail WebP version
+              prefetchImage(`/img-ppl/${filename}-32w.webp`, 'high');
+              
+              // Also prefetch small versions for the first 5 people with a slight delay
+              if (index < 5) {
+                setTimeout(() => {
+                  prefetchImage(`/img-ppl/${filename}-64w.webp`, 'medium');
+                }, 500);
+              }
+            });
+          }, 300);
+          
+          // Prefetch less important images with a longer delay
+          setTimeout(() => {
+            otherPeople.forEach((person, index) => {
+              // Only prefetch the first 10 of the remaining people
+              if (index < 10) {
+                const imgPath = person.photo.startsWith('/') ? person.photo.substring(1) : person.photo;
+                const parts = imgPath.split('/');
+                const filename = parts[parts.length - 1].split('.')[0];
+                
+                prefetchImage(`/img-ppl/${filename}-32w.webp`, 'low');
+              }
+            });
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Error prefetching people data:', err);
+        });
+    } catch (error) {
+      console.error('Error in prefetching:', error);
+    }
+  }
+  
+  // Helper function to prefetch an image
+  function prefetchImage(url, priority = 'low') {
+    if (!url || !browser || prefetchedImages.has(url)) return;
+    
+    // Create a link element for prefetching
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'image';
+    link.href = url;
+    link.fetchpriority = priority;
+    document.head.appendChild(link);
+    
+    // Also create an image object for browsers that don't support link prefetching
+    const img = new Image();
+    img.src = url;
+    img.fetchPriority = priority;
+    
+    // Mark this URL as prefetched in our global state
+    prefetchedImages.add(url);
+    if (browser && typeof window !== 'undefined') {
+      window.socraticaPrefetchedImages = prefetchedImages;
+    }
+    
+    // Clean up prefetch link after 20 seconds
+    setTimeout(() => {
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    }, 20000);
+    
+    return true;
+  }
 
   let email = "";
   let emailValidationMessage = ""; // Feedback message
@@ -93,6 +210,16 @@
   }
 </script>
 
+<svelte:head>
+  <!-- Add preconnect hints for faster image loading -->
+  {#if currentPath === '/' && browser}
+    <link rel="preconnect" href={window.location.origin} crossorigin>
+    <link rel="dns-prefetch" href={window.location.origin}>
+    <link rel="prefetch" href="/people" as="document">
+    <link rel="preload" href="/img-ppl/tiny-placeholder.svg" as="image" type="image/svg+xml" fetchpriority="high">
+  {/if}
+</svelte:head>
+
 <Banner />
 <div class="site-container">
   <div class="app">
@@ -141,6 +268,7 @@
             >
               <p class="leading-[26px]"><a href="/">Back to Top</a></p>
               <p class="leading-[26px]"><a href="/about">About</a></p>
+              <p class="leading-[26px]"><a href="/people">People</a></p>
               <p class="leading-[26px]"><a href="/map">Map</a></p>
               <p class="leading-[26px]">
                 <a href="/get-involved">Get Involved</a>

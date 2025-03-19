@@ -26,11 +26,82 @@
   let searchTimeout;
   let isLoading = true;
 
+  // Flag to track which person card is currently being shown
+  let selectedPerson = null;
+  // Add this variable to track the highlighted person (from hover or click)
+  let highlightedPerson = null;
+
   // Mobile detection
   let windowWidth = 1024; // Default to desktop size
   $: isMobile = windowWidth < 1024; // lg breakpoint in Tailwind
 
+  // Track which images were prefetched from layout
+  const imagesPrefetchedFromLayout = browser && isBrowser 
+    ? (window.socraticaPrefetchedImages || new Set()) 
+    : new Set();
+  
+  // Add prefetch support for important images
+  // @ts-ignore - We need to convert to a regular Set for non-TS environments
+  let prefetchedImages = new Set(Array.from(imagesPrefetchedFromLayout));
+  
+  // Add connection detection for adaptive loading
+  let isSlowConnection = false;
+  
+  // Performance monitoring - start timing when component initializes
+  const componentLoadStart = browser ? performance.now() : 0;
+
+  // Add mouse position tracking for profile card positioning
+  let mouseX = 0;
+  let mouseY = 0;
+  let screenWidth = 1024;  // Default; will be updated on mount
+  let screenHeight = 768;  // Default; will be updated on mount
+  let cardWidth = 480;     // Default profile card width
+  let cardHeight = 300;    // Estimated card height (will vary)
+
   onMount(() => {
+    if (browser) {
+      // Detect connection type for adaptive loading
+      const connection = navigator.connection || 
+                        navigator.mozConnection || 
+                        navigator.webkitConnection;
+      
+      if (connection) {
+        // 4g is fast, 3g or slower is considered slow
+        isSlowConnection = connection.effectiveType === '3g' || 
+                          connection.effectiveType === '2g' || 
+                          connection.effectiveType === 'slow-2g';
+        
+        console.log(`Connection type: ${connection.effectiveType}`);
+      }
+      
+      // Log timing information for performance analysis
+      const loadTime = performance.now() - componentLoadStart;
+      console.log(`People page loaded in ${Math.round(loadTime)}ms`);
+      console.log(`${prefetchedImages.size} images were prefetched from layout`);
+      
+      // If we're missing critical images, prefetch them now
+      prefetchMissingCriticalImages();
+      
+      // Save the prefetched images on window for future use
+      if (typeof window !== 'undefined') {
+        window.socraticaPrefetchedImages = prefetchedImages;
+      }
+      
+      // Record time for first contentful paint
+      firstContentfulPaint = performance.now() - pageLoadStartTime;
+      console.log(`First contentful paint: ${Math.round(firstContentfulPaint)}ms`);
+      
+      // Adjust loading strategy based on connection
+      if (isSlowConnection) {
+        console.log('Slow connection detected, adjusting loading strategy');
+        // Load only what's visible first, delay other loads
+        adjustLoadingForSlowConnection();
+      } else {
+        // On fast connections, we can be more aggressive
+        console.log('Fast connection detected, standard loading strategy');
+      }
+    }
+
     // Only run browser-specific code in browser environment
     if (isBrowser) {
       // Record time for first contentful paint
@@ -52,6 +123,17 @@
 
       // Add WebP conversion helper
       createWebPVersions();
+
+      // Add mouse move tracking
+      window.addEventListener('mousemove', handleGlobalMouseMove);
+      
+      // Update screen dimensions on resize
+      const updateDimensions = () => {
+        screenWidth = window.innerWidth;
+        screenHeight = window.innerHeight;
+      };
+      window.addEventListener('resize', updateDimensions);
+      updateDimensions(); // Initial call
     }
 
     return () => {
@@ -63,6 +145,8 @@
         imageCache.clear(); // Clear the image cache
         // Disconnect observer when component is destroyed
         if (observer) observer.disconnect();
+        window.removeEventListener('mousemove', handleGlobalMouseMove);
+        window.removeEventListener('resize', updateDimensions);
       }
     };
   });
@@ -503,9 +587,6 @@
     }
   }
 
-  // Flag to track which person card is currently being shown
-  let selectedPerson = null;
-
   // Asterisk pattern configuration
   const nodeSize = 32; // Reduced size from 36px to 32px
   const nodeSpacing = nodeSize - 12; // Increased overlap from -8 to -12 to bring nodes even closer
@@ -553,15 +634,129 @@
     );
   }
 
-  function handleNodeClick(personId) {
-    selectedPerson = personId;
+  // Add hover state tracking
+  let hoveredPerson = null;
+  let hoverTimer = null;
+  let hoverIntentDelay = 300; // ms to wait before showing person info
+  
+  // Track explicit selection vs. hover
+  let isPersonSelected = false;
+  
+  // Update enhanced hover detection to also capture mouse position
+  function handleMouseEnter(node, event) {
+    // Update mouse position if event is provided
+    if (event) {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    }
+    
+    // Clear any existing hover timer
+    if (hoverTimer) {
+      clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+    
+    // Set a timer to confirm intentional hover
+    hoverTimer = setTimeout(() => {
+      hoveredPerson = node.person;
+      highlightedPerson = node.person;
+    }, hoverIntentDelay);
   }
-
-  // Function to close profile popup manually
+  
+  // Track mouse position globally for better card positioning
+  function handleGlobalMouseMove(event) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  }
+  
+  // Calculate optimal card position based on mouse position
+  function getCardPosition() {
+    // Get window dimensions
+    if (typeof window !== 'undefined') {
+      screenWidth = window.innerWidth;
+      screenHeight = window.innerHeight;
+    }
+    
+    // Calculate card dimensions - use fixed values to avoid layout shifts
+    cardWidth = 480;
+    cardHeight = 350; // Estimate based on typical content
+    
+    // Base positions - place card to the right of cursor by default
+    let left = mouseX + 20;
+    let top = mouseY - 40; // Slightly above cursor to avoid blocking it
+    
+    // Available space calculations
+    const rightSpace = screenWidth - mouseX - 20;
+    const leftSpace = mouseX - 20;
+    const bottomSpace = screenHeight - mouseY - 20;
+    const topSpace = mouseY - 20;
+    
+    // Choose best position based on available space
+    if (rightSpace >= cardWidth) {
+      // Enough space to the right - keep it there
+      left = mouseX + 20;
+    } else if (leftSpace >= cardWidth) {
+      // Not enough space right, but enough to the left
+      left = mouseX - cardWidth - 20;
+    } else {
+      // Not enough space on either side - center horizontally
+      left = Math.max(20, (screenWidth - cardWidth) / 2);
+    }
+    
+    // Vertical positioning
+    if (bottomSpace >= cardHeight) {
+      // Enough space below - align top with cursor 
+      top = mouseY - 20;
+    } else if (topSpace >= cardHeight) {
+      // Not enough space below, but enough above
+      top = mouseY - cardHeight - 20;
+    } else {
+      // Not enough space above or below - center vertically
+      top = Math.max(20, (screenHeight - cardHeight) / 2);
+    }
+    
+    // Ensure the card stays within viewport bounds
+    left = Math.max(20, Math.min(screenWidth - cardWidth - 20, left));
+    top = Math.max(20, Math.min(screenHeight - cardHeight - 20, top));
+    
+    // Use absolute pixel values instead of percentages for more precise positioning
+    return {
+      left: `${left}px`,
+      top: `${top}px`,
+      transform: 'translate(0, 0)' // Override the default transform
+    };
+  }
+  
+  // Enhanced mouse leave handler with debouncing
+  function handleMouseLeave() {
+    // Clear hover timer if mouse leaves before delay completes
+    if (hoverTimer) {
+      clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+    
+    // Don't immediately remove highlighted person
+    // This creates a small delay before hiding, preventing flicker
+    setTimeout(() => {
+      // Only clear if person hasn't been explicitly selected
+      if (!isPersonSelected) {
+        hoveredPerson = null;
+        highlightedPerson = null;
+      }
+    }, 100);
+  }
+  
+  // New click handler that explicitly selects a person
+  function handleNodeClick(node) {
+    isPersonSelected = true;
+    highlightedPerson = node.person;
+  }
+  
+  // Close profile explicitly via close button
   function closeProfile() {
-    console.log("Close profile button clicked");
-    selectedPerson = null;
-    selectedResult = null;
+    isPersonSelected = false;
+    highlightedPerson = null;
+    hoveredPerson = null;
   }
 
   // Optimize search functionality with debounce
@@ -690,14 +885,125 @@
     
     return imagePlaceholders[filename] || null;
   }
+
+  // New function to adjust loading for slow connections
+  function adjustLoadingForSlowConnection() {
+    // Only visible nodes should load immediately
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          if (target.tagName === 'IMG' && target.hasAttribute('data-src')) {
+            const src = target.getAttribute('data-src');
+            target.src = src;
+            observer.unobserve(target);
+          }
+        }
+      });
+    }, {
+      rootMargin: '0px',
+      threshold: 0.1
+    });
+    
+    // Find all images with data-src that are not prefetched
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+      const src = img.getAttribute('data-src');
+      if (src && !prefetchedImages.has(src)) {
+        observer.observe(img);
+      }
+    });
+  }
+
+  // Enhance the prefetch strategy for missing images
+  function prefetchMissingCriticalImages() {
+    if (!browser) return;
+    
+    // Get the visible nodes based on current scroll position
+    const getVisibleNodes = () => {
+      const nodes = [];
+      // Get nodes from all three asterisks
+      const allNodes = [...topNodes, ...leftNodes, ...rightNodes];
+      
+      // Sort by distance from screen center
+      allNodes.sort((a, b) => {
+        // Simple approximation based on grid position
+        const centerDistA = Math.abs(a.q) + Math.abs(a.r);
+        const centerDistB = Math.abs(b.q) + Math.abs(b.r);
+        return centerDistA - centerDistB;
+      });
+      
+      // Take the top 15 closest to center nodes
+      return allNodes.slice(0, 15);
+    };
+    
+    // Get visually important nodes
+    const visibleNodes = getVisibleNodes();
+    
+    // Check if their images were prefetched
+    visibleNodes.forEach((node, index) => {
+      if (node.person && node.tinyThumbnail && !prefetchedImages.has(node.tinyThumbnail)) {
+        // Set decreasing priority based on index
+        const priority = index < 5 ? 'high' : (index < 10 ? 'medium' : 'low');
+        
+        // Delay loading based on priority
+        setTimeout(() => {
+          // Create a link element for prefetching
+          const link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.as = 'image';
+          link.href = node.tinyThumbnail;
+          link.fetchpriority = priority;
+          document.head.appendChild(link);
+          
+          // Also create an image object for browsers that don't support link prefetching
+          const img = new Image();
+          img.src = node.tinyThumbnail;
+          img.fetchPriority = priority;
+          
+          // Mark as prefetched
+          prefetchedImages.add(node.tinyThumbnail);
+          
+          // Clean up prefetch link after 10 seconds
+          setTimeout(() => {
+            if (document.head.contains(link)) {
+              document.head.removeChild(link);
+            }
+          }, 10000);
+        }, index * 100); // Stagger prefetching with 100ms interval
+      }
+    });
+    
+    // If on a good connection and we have bandwidth, prefetch high-quality images for visible nodes
+    if (!isSlowConnection) {
+      setTimeout(() => {
+        visibleNodes.slice(0, 5).forEach(node => {
+          if (node.person && node.person.photo && !prefetchedImages.has(node.person.photo)) {
+            const img = new Image();
+            img.src = node.person.photo;
+            prefetchedImages.add(node.person.photo);
+          }
+        });
+      }, 1000); // Delay high-quality prefetch until after essential content is loaded
+    }
+  }
 </script>
 
 <!-- Add a hint for browsers to preconnect to the image domain if needed -->
 <svelte:head>
-  {#if isBrowser}
+  {#if browser}
     <link rel="preconnect" href={window.location.origin} />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Explicitly preload any non-prefetched critical images -->
+    {#if topNodes?.length > 0 && topNodes[0]?.tinyThumbnail}
+      <link rel="preload" 
+        href={topNodes[0].tinyThumbnail} 
+        as="image" 
+        type="image/webp" 
+        fetchpriority="high" />
+    {/if}
   {/if}
 </svelte:head>
 
@@ -719,8 +1025,8 @@
         class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6 md:mb-0"
       >
         The <i>people</i> behind it all.
-      </h2>
-
+    </h2>
+    
       <!-- Description visible only on md and above -->
       <div class="hidden md:block">
         <!-- Search Bar -->
@@ -790,20 +1096,20 @@
                   on:click={() => selectSearchResult(result)}
                 >
                   <div class="font-medium">{result.name}</div>
-                </div>
-              {/each}
+              </div>
+                {/each}
             </div>
           {:else if searchQuery && searchResults.length === 0}
             <div
               class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3"
             >
               <div class="text-gray-500">No matching team members found</div>
-            </div>
-          {/if}
+          </div>
+        {/if}
         </div>
       </div>
-    </div>
-
+      </div>
+      
     <!-- Loading state -->
     {#if isLoading}
       <div class="flex justify-center items-center h-[60vh]">
@@ -823,7 +1129,7 @@
           style="width: {nodeSize * 20}px; height: {nodeSize * 13}px;"
         >
           {#each topNodes as node (node.id)}
-            {@const isSelected = node.person && selectedPerson === node.person.id}
+            {@const isSelected = node.person && highlightedPerson && node.person.id === highlightedPerson.id}
             <div
               class="absolute rounded-full overflow-hidden border-2 transition-transform duration-200 {node.isPlaceholder
                 ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -840,7 +1146,9 @@
                 : 'scale(1)'};
                 z-index: {isSelected ? 20 : 5};
               "
-              on:click={() => node.person && handleNodeClick(node.person.id)}
+              on:mouseenter={(e) => handleMouseEnter(node, e)}
+              on:mouseleave={handleMouseLeave}
+              on:click={() => node.person && handleNodeClick(node)}
               role={node.person ? "button" : "presentation"}
               aria-label={node.person
                 ? `View profile for ${node.person.name}`
@@ -910,7 +1218,7 @@
           >
             {#each leftNodes as node}
               {@const isSelected =
-                node.person && selectedPerson === node.person.id}
+                node.person && highlightedPerson && node.person.id === highlightedPerson.id}
               <div
                 class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -928,7 +1236,9 @@
                   z-index: {isSelected ? 20 : 5};
                   filter: brightness({isSelected ? 1.2 : 1});
                 "
-                on:click={() => node.person && handleNodeClick(node.person.id)}
+                on:mouseenter={(e) => handleMouseEnter(node, e)}
+                on:mouseleave={handleMouseLeave}
+                on:click={() => node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
@@ -954,7 +1264,7 @@
                           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                         />
                       </svg>
-                    </div>
+                </div>
                   {:else}
                     <div class="w-full h-full bg-[#f5f5f5] bg-loading-shimmer">
                       <img
@@ -970,7 +1280,7 @@
                         width="32"
                         use:observeImage
                       />
-                    </div>
+              </div>
                   {/if}
                 {:else}
                   <div class="w-full h-full bg-[#f5f5f5]">
@@ -984,8 +1294,8 @@
                   </div>
                 {/if}
               </div>
-            {/each}
-          </div>
+                  {/each}
+              </div>
 
           <!-- Right Asterism -->
           <div
@@ -994,7 +1304,7 @@
           >
             {#each rightNodes as node}
               {@const isSelected =
-                node.person && selectedPerson === node.person.id}
+                node.person && highlightedPerson && node.person.id === highlightedPerson.id}
               <div
                 class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -1012,7 +1322,9 @@
                   z-index: {isSelected ? 20 : 5};
                   filter: brightness({isSelected ? 1.2 : 1});
                 "
-                on:click={() => node.person && handleNodeClick(node.person.id)}
+                on:mouseenter={(e) => handleMouseEnter(node, e)}
+                on:mouseleave={handleMouseLeave}
+                on:click={() => node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
@@ -1054,8 +1366,8 @@
                         width="32"
                         use:observeImage
                       />
-                    </div>
-                  {/if}
+            </div>
+          {/if}
                 {:else}
                   <div class="w-full h-full bg-[#f5f5f5]">
                     <img
@@ -1065,7 +1377,7 @@
                       loading="lazy"
                       decoding="async"
                     />
-                  </div>
+        </div>
                 {/if}
               </div>
             {/each}
@@ -1075,113 +1387,112 @@
     {/if}
 
     <!-- Profile card for selected person or search result -->
-    {#if selectedPerson || (selectedResult && !selectedPerson)}
-      {@const personId =
-        selectedPerson || (selectedResult ? selectedResult.id : null)}
-      {@const person = filteredPeople.find((p) => p.id === personId)}
-      {#if person}
-        <div class="fixed inset-0 z-30 flex items-center justify-center">
-          <!-- Semi-transparent overlay -->
-          <div
-            class="absolute inset-0 bg-black/5 backdrop-blur-[2px]"
-            on:click={closeProfile}
-          />
-
-          <!-- Card content -->
-          <div
-            class="person-card bg-white shadow-lg rounded-xl p-8 z-40 relative"
-            style="width: 480px;"
-            in:scale={{
-              duration: 200,
-              delay: 0,
-              start: 0.95,
-              easing: cubicOut,
-            }}
-            out:fade={{ duration: 150 }}
-            role="dialog"
-            aria-label="Team member profile"
-          >
-            <!-- Close button -->
-            <button
-              class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
-              on:click={closeProfile}
-              aria-label="Close profile"
+    {#if highlightedPerson}
+      {@const cardPosition = getCardPosition()}
+      <div 
+        class="profile-card" 
+        class:hover-card={!isPersonSelected} 
+        transition:fade={{duration: 200}}
+        style="
+          position: fixed;
+          left: {cardPosition.left};
+          top: {cardPosition.top};
+          transform: {cardPosition.transform};
+        "
+      >
+        <div class="flex items-center mb-4">
+          {#if !highlightedPerson.photo.includes('placeholder')}
+            <img 
+              src={getOptimizedImageUrl(highlightedPerson.photo, 'large')} 
+              alt={highlightedPerson.name} 
+              class="w-32 h-32 rounded-full mr-6 object-cover border-2 border-[#FBF8EF]"
+              loading="lazy"
+              fetchpriority="high"
+              height="128"
+              width="128"
+            />
+          {:else}
+            <div
+              class="w-32 h-32 rounded-full mr-6 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
+                class="w-12 h-12 text-[#CCCCCC]"
                 fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-
-            <div class="flex items-center">
-              {#if person.photo === "https://via.placeholder.com/150"}
-                <div
-                  class="w-32 h-32 rounded-full mr-6 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-12 h-12 text-[#CCCCCC]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-              {:else}
-                <img
-                  src={person.optimizedPhoto || person.photo}
-                  data-src={person.photo}
-                  alt={person.name}
-                  class="w-32 h-32 rounded-full mr-6 object-cover border-2 border-[#FBF8EF]"
-                  loading="eager" 
-                  fetchpriority="high"
-                  height="128"
-                  width="128"
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
-              {/if}
-              <div>
-                <h3 class="font-tiempos-headline text-2xl font-bold mb-1">
-                  {person.name}
-                </h3>
-                <p class="text-base text-gray-600 font-mono">
-                  {person.location}
-                </p>
-                <p class="text-sm text-gray-500 mt-1 font-mono">
-                  {person.role}
-                </p>
-              </div>
+              </svg>
             </div>
-            <div class="mt-6">
-              <ul
-                class="list-disc pl-6 space-y-2"
-                style="font-family: 'Untitled Sans', sans-serif;"
-              >
-                {#each person.facts as fact}
-                  <li class="text-[15px] leading-relaxed text-gray-700">
-                    {fact}
-                  </li>
-                {/each}
-              </ul>
-            </div>
+          {/if}
+          
+          <div>
+            <h3 class="font-tiempos-headline text-2xl font-bold mb-1">
+              {highlightedPerson.name}
+            </h3>
+            {#if highlightedPerson.location}
+              <p class="text-base text-gray-600 font-mono">
+                {highlightedPerson.location}
+              </p>
+            {/if}
+            <p class="text-sm text-gray-500 mt-1 font-mono">
+              {highlightedPerson.role || ""}
+            </p>
           </div>
         </div>
-      {/if}
+        
+        {#if highlightedPerson.facts && highlightedPerson.facts.length > 0}
+          <div class="mt-6">
+            <ul
+              class="list-disc pl-6 space-y-2"
+              style="font-family: 'Untitled Sans', sans-serif;"
+            >
+              {#each highlightedPerson.facts as fact}
+                <li class="text-[15px] leading-relaxed text-gray-700">
+                  {fact}
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {:else if highlightedPerson.description}
+          <div class="mt-6">
+            <p 
+              class="text-[15px] leading-relaxed text-gray-700"
+              style="font-family: 'Untitled Sans', sans-serif;"
+            >
+              {highlightedPerson.description}
+            </p>
+          </div>
+        {/if}
+        
+        <!-- Close button -->
+        <button 
+          class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+          on:click={closeProfile}
+          aria-label="Close profile"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
     {/if}
   </div>
 </div>
@@ -1248,7 +1559,85 @@
     height: 100%;
     border-radius: 50%;
   }
-</style>
+  
+  /* Enhanced hover effects for dot-container */
+  .dot-container {
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    backface-visibility: hidden;
+  }
+  
+  .dot-container:hover {
+    z-index: 10;
+  }
+  
+  .dot-container:hover .dot {
+    transform: scale(1.2);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Enhanced profile card */
+  .profile-card {
+    /* Remove positioning that will now be inline */
+    /*
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    */
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 50;
+    max-width: 90%;
+    width: 480px;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  
+  /* Update hover card style */
+  .profile-card.hover-card {
+    padding: 1.5rem;
+    width: 480px;
+  }
+  
+  .profile-card-inner {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .profile-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .profile-info .role {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem;
+  }
+  
+  .profile-info .description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+</style> 
 
 <script context="module">
   // Lazy load full-size images
@@ -1330,3 +1719,6 @@
     });
   }
 </script>
+
+<!-- Track mouse position for cursor-based card positioning -->
+<svelte:window on:mousemove={handleGlobalMouseMove} />

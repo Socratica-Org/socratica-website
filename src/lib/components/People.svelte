@@ -11,6 +11,24 @@
   let searchTimeout;
   let isLoading = true;
 
+  // Add hover state tracking
+  let hoveredPerson = null;
+  let highlightedPerson = null;
+  let hoverTimer = null;
+  let isPersonSelected = false;
+  let hoverIntentDelay = 300; // ms to wait before showing person info
+
+  // Track which images were already prefetched globally
+  const isBrowser = typeof window !== 'undefined';
+  const prefetchedImages = isBrowser && window.socraticaPrefetchedImages
+    ? window.socraticaPrefetchedImages
+    : new Set();
+    
+  // Log prefetched images for debugging
+  if (isBrowser && prefetchedImages.size > 0) {
+    console.log(`People component using ${prefetchedImages.size} prefetched images`);
+  }
+
   // Mobile detection
   let windowWidth;
   $: isMobile = windowWidth < 1024; // lg breakpoint in Tailwind
@@ -158,6 +176,28 @@
           person = candidate;
         }
       }
+      
+      // Check for prefetched image data
+      let tinyThumbnail = null;
+      let smallThumbnail = null;
+      
+      if (person && person.photo && !person.photo.includes('placeholder')) {
+        // Extract filename for optimized versions
+        const parts = person.photo.split('/');
+        const filename = parts[parts.length - 1].split('.')[0];
+        
+        // Create optimized image paths
+        tinyThumbnail = `/img-ppl/${filename}-32w.webp`;
+        smallThumbnail = `/img-ppl/${filename}-64w.webp`;
+        
+        // Check if they're already prefetched
+        const isTinyPrefetched = prefetchedImages.has(tinyThumbnail);
+        const isSmallPrefetched = prefetchedImages.has(smallThumbnail);
+        
+        if (isBrowser && (isTinyPrefetched || isSmallPrefetched)) {
+          console.log(`Using prefetched image for ${person.name}`);
+        }
+      }
 
       placeholderIndex = (placeholderIndex % 6) + 1;
       nodes.push({
@@ -171,6 +211,9 @@
         placeholderImage: !person
           ? `/img-ppl/placeholder_${placeholderIndex}.png`
           : null,
+        tinyThumbnail, // Add optimized thumbnail path
+        smallThumbnail, // Add small thumbnail path
+        isPrefetched: tinyThumbnail && prefetchedImages.has(tinyThumbnail)
       });
     }
 
@@ -179,15 +222,51 @@
     return nodes;
   }
 
-  function handleNodeClick(personId) {
-    selectedPerson = personId;
+  // Replace handleNodeClick function with enhanced hover detection
+  function handleMouseEnter(node) {
+    // Clear any existing hover timer
+    if (hoverTimer) {
+      clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+    
+    // Set a timer to confirm intentional hover
+    hoverTimer = setTimeout(() => {
+      hoveredPerson = node.person;
+      highlightedPerson = node.person;
+    }, hoverIntentDelay);
   }
-
-  // Function to close profile popup manually
+  
+  // Enhanced mouse leave handler with debouncing
+  function handleMouseLeave() {
+    // Clear hover timer if mouse leaves before delay completes
+    if (hoverTimer) {
+      clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+    
+    // Don't immediately remove highlighted person
+    // This creates a small delay before hiding, preventing flicker
+    setTimeout(() => {
+      // Only clear if person hasn't been explicitly selected
+      if (!isPersonSelected) {
+        hoveredPerson = null;
+        highlightedPerson = null;
+      }
+    }, 100);
+  }
+  
+  // New click handler that explicitly selects a person
+  function handleNodeClick(node) {
+    isPersonSelected = true;
+    highlightedPerson = node.person;
+  }
+  
+  // Close profile explicitly via close button
   function closeProfile() {
-    console.log("Close profile button clicked");
-    selectedPerson = null;
-    selectedResult = null;
+    isPersonSelected = false;
+    highlightedPerson = null;
+    hoveredPerson = null;
   }
 
   // Optimize search functionality with debounce
@@ -339,7 +418,7 @@
         >
           {#each topNodes as node (node.id)}
             {@const isSelected =
-              node.person && selectedPerson === node.person.id}
+              node.person && highlightedPerson && node.person.id === highlightedPerson.id}
             <div
               class="absolute rounded-full overflow-hidden border-2 transition-transform duration-200 {node.isPlaceholder
                 ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -356,8 +435,9 @@
                 : 'scale(1)'};
                   z-index: {isSelected ? 20 : 5};
                 "
-              on:click={() => node.person && handleNodeClick(node.person.id)}
-              on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
+              on:mouseenter={() => handleMouseEnter(node)}
+              on:mouseleave={handleMouseLeave}
+              on:click={() => node.person && handleNodeClick(node)}
               role={node.person ? "button" : "presentation"}
               aria-label={node.person
                 ? `View profile for ${node.person.name}`
@@ -385,13 +465,20 @@
                     </svg>
                   </div>
                 {:else}
-                  <img
-                    src={node.person.photo}
-                    alt={node.person.name}
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <div class="w-full h-full bg-[#f5f5f5]{node.isPrefetched ? '' : ' bg-loading-shimmer'}">
+                    <img
+                      src={node.isPrefetched ? node.tinyThumbnail : "/img-ppl/tiny-placeholder.svg"}
+                      data-src={node.tinyThumbnail || node.person.photo}
+                      data-full-src={node.person.photo}
+                      alt={node.person.name}
+                      class="w-full h-full object-cover transition-opacity duration-300{node.isPrefetched ? '' : ' opacity-0'}"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority={node.isPrefetched ? "low" : (Math.abs(node.q) + Math.abs(node.r) < 3 ? "high" : "low")}
+                      height="32"
+                      width="32"
+                    />
+                  </div>
                 {/if}
               {:else}
                 <img
@@ -417,7 +504,7 @@
           >
             {#each leftNodes as node}
               {@const isSelected =
-                node.person && selectedPerson === node.person.id}
+                node.person && highlightedPerson && node.person.id === highlightedPerson.id}
               <div
                 class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -436,8 +523,9 @@
                     filter: brightness({isSelected ? 1.2 : 1});
                     opacity: {node.isPlaceholder ? '1' : '1'};
                   "
-                on:click={() => node.person && handleNodeClick(node.person.id)}
-                on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
+                on:mouseenter={() => handleMouseEnter(node)}
+                on:mouseleave={handleMouseLeave}
+                on:click={() => node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
@@ -465,11 +553,20 @@
                       </svg>
                     </div>
                   {:else}
-                    <img
-                      src={node.person.photo}
-                      alt={node.person.name}
-                      class="w-full h-full object-cover"
-                    />
+                    <div class="w-full h-full bg-[#f5f5f5]{node.isPrefetched ? '' : ' bg-loading-shimmer'}">
+                      <img
+                        src={node.isPrefetched ? node.tinyThumbnail : "/img-ppl/tiny-placeholder.svg"}
+                        data-src={node.tinyThumbnail || node.person.photo}
+                        data-full-src={node.person.photo}
+                        alt={node.person.name}
+                        class="w-full h-full object-cover transition-opacity duration-300{node.isPrefetched ? '' : ' opacity-0'}"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority={node.isPrefetched ? "low" : (Math.abs(node.q) + Math.abs(node.r) < 3 ? "high" : "low")}
+                        height="32"
+                        width="32"
+                      />
+                    </div>
                   {/if}
                 {:else}
                   <img
@@ -489,7 +586,7 @@
           >
             {#each rightNodes as node}
               {@const isSelected =
-                node.person && selectedPerson === node.person.id}
+                node.person && highlightedPerson && node.person.id === highlightedPerson.id}
               <div
                 class="absolute rounded-full overflow-hidden border-2 transition-all duration-300 {node.isPlaceholder
                   ? 'border-[#e0e0e0] bg-[#f5f5f5]'
@@ -508,8 +605,9 @@
                     filter: brightness({isSelected ? 1.2 : 1});
                     opacity: {node.isPlaceholder ? '1' : '1'};
                   "
-                on:click={() => node.person && handleNodeClick(node.person.id)}
-                on:keydown={(e) => node.person && handleKeydown(e, node.person.id)}
+                on:mouseenter={() => handleMouseEnter(node)}
+                on:mouseleave={handleMouseLeave}
+                on:click={() => node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
@@ -637,6 +735,42 @@
         </div>
       {/if}
     {/if}
+
+    <!-- Add profile card for hover functionality -->
+    {#if highlightedPerson}
+      <div class="profile-card" class:hover-card={!isPersonSelected} transition:fade={{duration: 200}}>
+        <div class="profile-card-inner">
+          <div class="profile-image-container">
+            {#if highlightedPerson.photo && !highlightedPerson.photo.includes('placeholder')}
+              <img 
+                src={highlightedPerson.photo} 
+                alt={highlightedPerson.name} 
+                loading="lazy"
+                class="profile-image"
+              />
+            {:else}
+              <div class="placeholder-image"></div>
+            {/if}
+          </div>
+          <div class="profile-info">
+            <h3>{highlightedPerson.name}</h3>
+            <p class="role">{highlightedPerson.role || ""}</p>
+            <p class="description">{highlightedPerson.description || ""}</p>
+          </div>
+        </div>
+        
+        <!-- Close button only shown when explicitly selected -->
+        {#if isPersonSelected}
+          <button 
+            class="close-button" 
+            on:click={closeProfile}
+            aria-label="Close profile"
+          >
+            ×
+          </button>
+        {/if}
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -645,5 +779,119 @@
   .person-card {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Enhanced hover effects for dot-container */
+  .absolute {
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    backface-visibility: hidden;
+  }
+  
+  .absolute:hover {
+    z-index: 10;
+  }
+  
+  /* Enhanced profile card */
+  .profile-card {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 50;
+    max-width: 90%;
+    width: 400px;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  
+  .profile-card-inner {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .profile-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .profile-info .role {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem;
+  }
+  
+  .profile-info .description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* Styling for hover-only cards vs explicitly selected */
+  .profile-card.hover-card {
+    padding: 1rem;
+    width: 350px;
+    bottom: 2rem;
+    opacity: 0.95;
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  
+  .close-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .profile-image.loaded {
+    opacity: 1;
+  }
+  
+  /* Placeholder image */
+  .placeholder-image {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
 </style>

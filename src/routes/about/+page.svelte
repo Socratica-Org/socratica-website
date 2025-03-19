@@ -2,14 +2,37 @@
   import Navbar from "$lib/components/navbar.svelte";
   import { slide } from "svelte/transition";
   // image imports
-  // import F22A from "$lib/images/f22-group-symposium.jpg";
-  // import F22B from "$lib/images/f22-host-symposium.JPG";
+  import F22B from "$lib/images/f22-group.png";
+  import F22A from "$lib/images/f22-pledge.png";
+  import F22C from "$lib/images/f22-symposium.png";
   import S22A from "$lib/images/s22-bubbles.jpg";
   import S22B from "$lib/images/s22-session.jpg";
   import S22C from "$lib/images/s22-workshop.jpg";
   import W22A from "$lib/images/w22-adi.png";
   import W22C from "$lib/images/w22-aman.png";
   import W22B from "$lib/images/w22-tweet.png";
+
+  import F23A from "$lib/images/f23-kickoff.jpg";
+  import F23B from "$lib/images/f23-painting.jpeg";
+  import F23C from "$lib/images/f23-symposium-hudzah.jpg";
+  import S23A from "$lib/images/s23-kickoff.png";
+  import S23B from "$lib/images/s23-outside.jpg";
+  import S23C from "$lib/images/s23-symposium-stage.png";
+  import W23A from "$lib/images/w23-retreat.jpg";
+  import W23B from "$lib/images/w23-smile.jpg";
+  import W23C from "$lib/images/w23-symposium.jpg";
+
+  import F24A from "$lib/images/f24-group.webp";
+  import F24C from "$lib/images/f24-lattice.webp";
+  import F24B from "$lib/images/f24-overview.webp";
+  import S24A from "$lib/images/s24-assembly.webp";
+  import S24B from "$lib/images/s24-kickoff.webp";
+  import S24C from "$lib/images/s24-summer.webp";
+  import W24A from "$lib/images/w24-kickoff.webp";
+  import W24B from "$lib/images/w24-summary.webp";
+  import W24C from "$lib/images/w24-wabi-sabi.webp";
+
+  import Symposium_Hosts from "$lib/images/Socratica_Symposium_Hosts.png";
 
   let selectedTerm = "winter-2022";
   const timelineData = [
@@ -41,6 +64,7 @@ With many previous hosts and attendees graduating, Socratica began collaborating
       term: "F22",
       leaders:
         "Joss Murphy, Anson Yu, Ananya Anupam, Daekun Kim, Krish Shah, Dhruv Patel, Dhvani Patel",
+      images: [F22A, F22B, F22C],
 
       content: `By the end of summer, the builder-bug had caught on – Socratica sessions were gaining steam and UW Startups events were selling out in <24 hours. 
 
@@ -56,6 +80,7 @@ The first ever Socratica Symposium was born: with demos curated to showcase the 
       term: "W23",
       leaders:
         "Jonathan Xu, Ananya Anupam, Jaclyn Chan, Maryam Rezakarimi, Daekun Kim",
+      images: [W23A, W23B, W23C],
       content: `Winter 2023 marked Socratica's first full year. After witnessing Socratica's exciting growth during their co-op terms, newcomers jumped at the opportunity to continue building the community. 
 
 Expectations were high, with highly anticipated kickoff and symposium events solidifying into termly traditions. Hosts had to get resourceful and adapt to road bumps and growing pains along the way — when a snowstorm cancelled kickoff, they ate leftover pizza for weeks. When a SECOND snowstorm threatened Symposium, attendees trekked through Waterloo's winter depths to show up anyway. 
@@ -68,6 +93,8 @@ Previous hosts supported hosts remotely, setting up organizational infrastructur
       term: "S23",
       leaders:
         "Aava Sapkota, Brayden Petersen, Jake Rudolph, Binalpreet Kalra, Christopher Oka",
+      images: [S23A, S23B, S23C],
+
       content: `Summer 2023 brought with it a new batch of hosts and a new infusion of energy and stability. Attendeeship was consistent, project progress compounded, Socratica’s brand was solidified, and our audience continued to grow through UW Startups. 
 
 After many terms of initiatives to make our spaces feel friendly to beginners and underrepresented groups, it became clear that our efforts were paying off. Kickoff and Symposium were a blast. 
@@ -81,6 +108,7 @@ After many terms of initiatives to make our spaces feel friendly to beginners an
       term: "F23",
       leaders:
         "Hudhayfa Nazoordeen, Anthea Tawiah, Bruce Wang, Aileen Luo, Jennifer Tsai, Eesah Ulhaq",
+      images: [F23A, F23B, F23C],
       eiu: "https://socratica.notion.site/F23-Emotional-Investor-Update-830f3d0f5e104e2797a690a07f164d67",
       content: `In Fall 2023, we doubled our capacity by hosting morning and afternoon sessions, bringing us to 763 event attendees across all events. 
 
@@ -94,6 +122,7 @@ This was also a term of sharing our learnings with the public – we started a T
       term: "W24",
       leaders:
         "Dhriti Gabani, Soham Basu, Pavitar Saini, Lagan Bansal, Freeman Jiang, Shivam Sharma, Joseph Bagheri, Brooke Joseph, Jenn Dryden",
+      images: [W24A, W24B, W24C],
       eiu: "https://socratica.notion.site/W24-Socratica-Emotional-Investor-Update-e2c4eb08b4d14a7aa8a74ad1caf9dda9 ",
       content: `Winter 2024 was a term of incredible growth. Across all sessions and events we had 1,713 unique attendees, 58% of which were attending for the first time. 
 
@@ -109,6 +138,7 @@ International nodes sprouted up across the world, with over 30 onboarded and run
       term: "S24",
       leaders:
         "Jaryd Diamond, Rachel Scott, Eric Gao, Santiago Del Solar, Julia Fedorin, Nevedhaa Ayyappan, Gaurav Shah, Tiffany Trinh, Keyan Virani",
+      images: [S24A, S24B, S24C],
       eiu: "https://socratica.notion.site/S24-Socratica-Emotional-Investor-Update-175e034e1ad2493988c13be172697aa9 ",
       content: `Summer in Waterloo (or, as the locals call it, Summerloo) is always buzzing with energy. With fewer students on campus,  it was a term for experimentation – and we learned a lot. 
 
@@ -121,6 +151,7 @@ The term started with a classic rooftop kickoff, featured a powerpoint night, a 
       term: "F24",
       leaders:
         "Shahan Neda, Akira Yoshiyama, Suhani Trivedi, Victoria Feng, Nefise Akcakir, Giang Tran, Rishi Kothari",
+      images: [F24A, F24B, F24C],
       eiu: "https://socratica.notion.site/F24-Socratica-Emotional-Investor-Update-772655a649104b82854a0ebb642758a5 ",
       content: `Fall 2024 saw Sunday sessions averaging 75 signups per week, with a peak of 107 for a single session. 954 unique attendees made progress on 420 projects across 22 events. 
 
@@ -168,7 +199,7 @@ AND, FINALLY, we got merch.
     <div class=" flex flex-col position-center" style="left: 10%;">
       <img
         class="pt-40"
-        src="/lib/images/Socratica_Symposium_Hosts.png"
+        src={Symposium_Hosts}
         alt="Socratica Symposium Hosts"
       />
       <h2

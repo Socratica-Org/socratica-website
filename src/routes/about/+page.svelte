@@ -330,16 +330,6 @@ AND, FINALLY, we got merch.
           {#each timelineData as item}
             {#if selectedTerm === item.id}
               <div transition:slide={{ duration: 300 }} class="content-section">
-                <!-- Leaders - Now enable this section and make names clickable -->
-                <!-- <div
-                class="names-container max-w-[700px] mb-6"
-                style="font-family: 'Untitled Sans', sans-serif;"
-              >
-                <p class="text-gray-600 text-[11px] md:text-[17px] lg:text-lg">
-                  Led by: {@html formatLeaders(item.leaders)}
-                </p>
-              </div> -->
-
                 <!-- Content -->
                 <div
                   class="prose max-w-none"

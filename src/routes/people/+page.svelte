@@ -1109,7 +1109,7 @@
     {:else}
       <!-- Asterisk Pattern Display -->
       <div
-        class="relative w-full flex flex-col items-center"
+        class="relative w-full flex flex-col items-center overflow-hidden"
         style="height: {nodeSize * (isMobile ? 72 : 24)}px;"
       >
         <!-- Top Asterism -->

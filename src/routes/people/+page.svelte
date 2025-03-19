@@ -1032,7 +1032,7 @@
         class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6"
       >
         The <i>people</i> behind it all.
-      </h2>
+    </h2>
     </div>
 
     <!-- Description -->
@@ -1064,8 +1064,8 @@
               <div
                 class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
                 on:click={() => handleSearchResultSelect(result)}
-              >
-                <div class="flex items-center">
+          >
+            <div class="flex items-center">
                   {#if result.photo && !result.photo.includes('placeholder')}
                     <img 
                       src={getOptimizedImageUrl(result.photo, 'tiny')} 
@@ -1075,16 +1075,16 @@
                   {:else}
                     <div class="w-8 h-8 rounded-full bg-gray-200 mr-2"></div>
                   {/if}
-                  <div>
+              <div>
                     <div class="font-medium">{result.name}</div>
                     {#if result.role}
                       <div class="text-xs text-gray-500">{result.role}</div>
                     {/if}
-                  </div>
-                </div>
               </div>
-            {/each}
-          </div>
+            </div>
+              </div>
+                {/each}
+            </div>
         {:else if searchQuery && searchResults.length === 0}
           <div
             class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3"
@@ -1093,8 +1093,8 @@
           </div>
         {/if}
       </div>
-    </div>
-
+      </div>
+      
     <!-- Loading state -->
     {#if isLoading}
       <div class="flex justify-center items-center h-[60vh]">
@@ -1159,7 +1159,7 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                       />
                     </svg>
-                  </div>
+                </div>
                 {:else}
                   <div class="w-full h-full bg-[#f5f5f5] bg-loading-shimmer">
                     <img
@@ -1175,7 +1175,7 @@
                       width="32"
                       use:observeImage
                     />
-                  </div>
+              </div>
                 {/if}
               {:else}
                 <div class="w-full h-full bg-[#f5f5f5]">
@@ -1189,8 +1189,8 @@
                 </div>
               {/if}
             </div>
-          {/each}
-        </div>
+                  {/each}
+              </div>
 
         <!-- Bottom Row Asterisms -->
         <div
@@ -1265,8 +1265,8 @@
                         width="32"
                         use:observeImage
                       />
-              </div>
-                  {/if}
+            </div>
+          {/if}
                 {:else}
                   <div class="w-full h-full bg-[#f5f5f5]">
                     <img
@@ -1280,8 +1280,8 @@
                 {/if}
               </div>
                   {/each}
-              </div>
-
+        </div>
+        
           <!-- Right Asterism -->
           <div
             class="relative"
@@ -1365,7 +1365,7 @@
         </div>
                 {/if}
               </div>
-            {/each}
+          {/each}
           </div>
         </div>
       </div>
@@ -1385,12 +1385,13 @@
           transform: {cardPosition.transform};
         "
       >
-        <div class="flex items-center mb-4">
+        <!-- Vertical layout -->
+        <div class="flex flex-col items-center text-center mb-4">
           {#if !highlightedPerson.photo.includes('placeholder')}
             <img 
               src={getOptimizedImageUrl(highlightedPerson.photo, 'large')} 
               alt={highlightedPerson.name} 
-              class="w-32 h-32 rounded-full mr-6 object-cover border-2 border-[#FBF8EF]"
+              class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-[#FBF8EF]"
               loading="lazy"
               fetchpriority="high"
               height="128"
@@ -1398,7 +1399,7 @@
             />
           {:else}
             <div
-              class="w-32 h-32 rounded-full mr-6 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
+              class="w-32 h-32 rounded-full mb-4 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1433,20 +1434,20 @@
         </div>
         
         {#if highlightedPerson.facts && highlightedPerson.facts.length > 0}
-          <div class="mt-6">
+          <div class="mt-2">
             <ul
               class="list-disc pl-6 space-y-2"
               style="font-family: 'Untitled Sans', sans-serif;"
             >
               {#each highlightedPerson.facts as fact}
-                <li class="text-[15px] leading-relaxed text-gray-700">
+                <li class="text-[15px] leading-relaxed text-gray-700 text-left">
                   {fact}
                 </li>
               {/each}
             </ul>
           </div>
         {:else if highlightedPerson.description}
-          <div class="mt-6">
+          <div class="mt-2">
             <p 
               class="text-[15px] leading-relaxed text-gray-700"
               style="font-family: 'Untitled Sans', sans-serif;"

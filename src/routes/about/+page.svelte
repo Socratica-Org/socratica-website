@@ -1,6 +1,8 @@
 <script>
   import Navbar from "$lib/components/navbar.svelte";
-  import { slide } from "svelte/transition";
+  import { slide, fade } from "svelte/transition";
+  import { onMount } from "svelte";
+  import peopleData from "../people/people.json";
   // image imports
   import F22B from "$lib/images/f22-group.png";
   import F22C from "$lib/images/f22-kickoff.jpg";
@@ -34,6 +36,54 @@
 
   import Symposium_Hosts from "$lib/images/Socratica_Symposium_Hosts.png";
 
+  // State for profile popup
+  let highlightedPerson = null;
+  let isPersonSelected = false;
+  
+  // Find a person by name in the people data
+  function findPersonByName(name) {
+    // Remove any whitespace from the search name
+    const searchName = name.trim();
+    
+    // Find the person in peopleData
+    return peopleData.find(p => p.name.toLowerCase() === searchName.toLowerCase());
+  }
+  
+  // Handle leader name click
+  function handleLeaderClick(name) {
+    const person = findPersonByName(name);
+    if (person) {
+      highlightedPerson = person;
+      isPersonSelected = true;
+    }
+  }
+  
+  // Close profile popup
+  function closeProfile() {
+    highlightedPerson = null;
+    isPersonSelected = false;
+  }
+  
+  // Get optimized image URL based on size needs
+  function getOptimizedImageUrl(photoUrl, size) {
+    if (!photoUrl || photoUrl.includes('placeholder')) {
+      return photoUrl;
+    }
+    
+    const imgPath = photoUrl.startsWith('/') ? photoUrl.substring(1) : photoUrl;
+    const parts = imgPath.split('/');
+    const filename = parts[parts.length - 1].split('.')[0];
+    
+    // Check if we have WebP versions
+    if (size === 'tiny') return `/img-ppl/${filename}-32w.webp`;
+    if (size === 'small') return `/img-ppl/${filename}-64w.webp`;
+    if (size === 'medium') return `/img-ppl/${filename}-128w.webp`;
+    if (size === 'large') return `/img-ppl/${filename}-256w.webp`;
+    
+    // Fallback to original image
+    return photoUrl;
+  }
+
   let selectedTerm = "winter-2022";
   const timelineData = [
     {
@@ -41,9 +91,9 @@
       term: "W22",
       leaders: "Adi Sharma, Aman Mathur",
       images: [W22A, W22B, W22C],
-      content: `In January 2022, amid Waterloo’s post-pandemic return to campus, Adi Sharma and Aman Mathur identified a gap that students deeply felt – a lack of a dedicated environment for consistent exploration beyond academic and traditional career-oriented pursuits.
+      content: `In January 2022, amid Waterloo's post-pandemic return to campus, Adi Sharma and Aman Mathur identified a gap that students deeply felt – a lack of a dedicated environment for consistent exploration beyond academic and traditional career-oriented pursuits.
 
-Dissatisfied with the status quo but energized to find a solution for future generations, they established Socratica’s core model: Sunday morning gatherings that combined structured Pomodoro work sessions, social sharing of progress, and a welcoming community of inspiring makers. 
+Dissatisfied with the status quo but energized to find a solution for future generations, they established Socratica's core model: Sunday morning gatherings that combined structured Pomodoro work sessions, social sharing of progress, and a welcoming community of inspiring makers. 
 
 With this vision as their compass, they  kicked off the first Socratica sessions in a cozy classroom, attracting a small but mighty group of curious minds. Socratica instantly struck a chord with the community, transforming ordinary Sunday mornings into inspiring spaces for creativity. 
 `,
@@ -53,7 +103,7 @@ With this vision as their compass, they  kicked off the first Socratica sessions
       term: "S22",
       leaders: "Jonathan Xu, Mathurah Ravigulan, Adriana Ceric",
       images: [S22A, S22B, S22C],
-      content: `Socratica’s momentum continued to grow over the summer. For many, attending Sunday Socratica sessions became a part of their weekly ritual. 
+      content: `Socratica's momentum continued to grow over the summer. For many, attending Sunday Socratica sessions became a part of their weekly ritual. 
 
 The team got creative, bouncing between many classrooms on campus and hosting an end-of-term campfire. Forward-thinking hosts put significant work into establishing Socratica as a Nonprofit, allowing us to have a bank account, sign contracts, and get access to essential tools for our team later on. 
 
@@ -68,7 +118,7 @@ With many previous hosts and attendees graduating, Socratica began collaborating
 
       content: `By the end of summer, the builder-bug had caught on – Socratica sessions were gaining steam and UW Startups events were selling out in <24 hours. 
 
-Rather than turn people away, the team got creative: “The Kickoff” became a way to welcome students back to Waterloo to share their big ideas and excitement for the term ahead. The Host Pledge was born. 
+Rather than turn people away, the team got creative: "The Kickoff" became a way to welcome students back to Waterloo to share their big ideas and excitement for the term ahead. The Host Pledge was born. 
 
 Socratica sessions were hosted in their first permanent home at the Accelerator Center, and UW Startups partnered with Jesse Rodgers to host several larger events that introduced students to founders and Waterloo alumni. 
 
@@ -95,11 +145,11 @@ Previous hosts supported hosts remotely, setting up organizational infrastructur
         "Aava Sapkota, Brayden Petersen, Jake Rudolph, Binalpreet Kalra, Christopher Oka",
       images: [S23A, S23B, S23C],
 
-      content: `Summer 2023 brought with it a new batch of hosts and a new infusion of energy and stability. Attendeeship was consistent, project progress compounded, Socratica’s brand was solidified, and our audience continued to grow through UW Startups. 
+      content: `Summer 2023 brought with it a new batch of hosts and a new infusion of energy and stability. Attendeeship was consistent, project progress compounded, Socratica's brand was solidified, and our audience continued to grow through UW Startups. 
 
 After many terms of initiatives to make our spaces feel friendly to beginners and underrepresented groups, it became clear that our efforts were paying off. Kickoff and Symposium were a blast. 
 
-“Sparkle” became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their “Sparkle” ideas to the mix. 
+"Sparkle" became a word we used to define creative tactics that help attendees feel seen and welcomed in the spaces we host, and many helpers were pulled in from across the UW Startups and Socratica community to add their "Sparkle" ideas to the mix. 
 
 `,
     },
@@ -155,7 +205,7 @@ The term started with a classic rooftop kickoff, featured a powerpoint night, a 
       eiu: "https://socratica.notion.site/F24-Socratica-Emotional-Investor-Update-772655a649104b82854a0ebb642758a5 ",
       content: `Fall 2024 saw Sunday sessions averaging 75 signups per week, with a peak of 107 for a single session. 954 unique attendees made progress on 420 projects across 22 events. 
 
-We hosted a kickoff on the roof, a Socratica skill swap, an inventor’s workshop, a film festival, and wrapped up the term with A Night at the Socratica Museum: an evening that prioritized interactive booth demos instead of our traditional stage format. 
+We hosted a kickoff on the roof, a Socratica skill swap, an inventor's workshop, a film festival, and wrapped up the term with A Night at the Socratica Museum: an evening that prioritized interactive booth demos instead of our traditional stage format. 
 
 The lattice grew to over 30 nodes around the world, with 5 of them hosting large demo days of their own. 
 
@@ -176,11 +226,25 @@ AND, FINALLY, we got merch.
   }
 
   function formatLeaders(leaders) {
+    // Use a standard span without special classes but add data attribute for click handling
     return leaders
       .split(", ")
-      .map((name) => `<span class="name-wrap">${name}</span>`)
+      .map((name) => `<span data-name="${name}" class="leader">${name}</span>`)
       .join(", ");
   }
+  
+  // Add event listener for leader name clicks after component mounts
+  onMount(() => {
+    document.addEventListener('click', (e) => {
+      // Check if clicked element has the leader class
+      if (e.target.classList.contains('leader') || e.target.closest('.leader')) {
+        const name = e.target.dataset.name || e.target.closest('.leader').dataset.name;
+        if (name) {
+          handleLeaderClick(name);
+        }
+      }
+    });
+  });
 </script>
 
 <div class="block">
@@ -198,7 +262,7 @@ AND, FINALLY, we got merch.
 
     <div class=" flex flex-col position-center" style="left: 10%;">
       <img
-        class="pt-40"
+        class="pt-40 w-[80%]"
         src={Symposium_Hosts}
         alt="Socratica Symposium Hosts"
       />
@@ -270,15 +334,15 @@ AND, FINALLY, we got merch.
         {#each timelineData as item}
           {#if selectedTerm === item.id}
             <div transition:slide={{ duration: 300 }} class="content-section">
-              <!-- Leaders
+              <!-- Leaders - Now enable this section and make names clickable -->
               <div
                 class="names-container max-w-[700px] mb-6"
                 style="font-family: 'Untitled Sans', sans-serif;"
               >
                 <p class="text-gray-600 text-[11px] md:text-[17px] lg:text-lg">
-                  {@html formatLeaders(item.leaders)}
+                  Led by: {@html formatLeaders(item.leaders)}
                 </p>
-              </div> -->
+              </div>
 
               <!-- Content -->
               <div
@@ -286,20 +350,24 @@ AND, FINALLY, we got merch.
                 style="font-family: 'Untitled Sans', sans-serif;"
               >
                 {#if item.id !== "winter-2025"}
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <!-- Image grid with improved responsive handling -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pt-4">
                     {#if item.images && item.images.length > 0}
                       {#each item.images as image, index}
-                        <div
-                          class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center"
-                        >
-                          <img src={image} alt={`Session ${index + 1}`} />
+                        <div class="aspect-ratio-container rounded-lg overflow-hidden bg-gray-100">
+                          <img 
+                            src={image} 
+                            alt={`Session ${index + 1}`} 
+                            class="image-fit" 
+                            loading="lazy"
+                          />
                         </div>
                       {/each}
                     {/if}
                   </div>
                 {/if}
                 <p
-                  class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed"
+                  class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed mt-6"
                 >
                   {item.content}
                 </p>
@@ -310,6 +378,108 @@ AND, FINALLY, we got merch.
       </div>
     </div>
   </div>
+
+  <!-- Profile popup - Copy the same component from people page -->
+  {#if highlightedPerson}
+    <div 
+      class="profile-card" 
+      transition:fade={{duration: 200}}
+    >
+      <!-- Vertical layout -->
+      <div class="flex flex-col items-center text-center mb-4">
+        {#if !highlightedPerson.photo.includes('placeholder')}
+          <img 
+            src={getOptimizedImageUrl(highlightedPerson.photo, 'large')} 
+            alt={highlightedPerson.name} 
+            class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-[#FBF8EF]"
+            loading="lazy"
+            fetchpriority="high"
+            height="128"
+            width="128"
+          />
+        {:else}
+          <div
+            class="w-32 h-32 rounded-full mb-4 bg-[#404040] flex items-center justify-center border-2 border-[#FBF8EF]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-12 h-12 text-[#CCCCCC]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+          </div>
+        {/if}
+        
+        <div>
+          <h3 class="font-tiempos-headline text-2xl font-bold mb-1">
+            {highlightedPerson.name}
+          </h3>
+          {#if highlightedPerson.location}
+            <p class="text-base text-gray-600 font-mono">
+              {highlightedPerson.location}
+            </p>
+          {/if}
+          <p class="text-sm text-gray-500 mt-1 font-mono">
+            {highlightedPerson.role || ""}
+          </p>
+        </div>
+      </div>
+      
+      {#if highlightedPerson.facts && highlightedPerson.facts.length > 0}
+        <div class="mt-2">
+          <ul
+            class="list-disc pl-6 space-y-2"
+            style="font-family: 'Untitled Sans', sans-serif;"
+          >
+            {#each highlightedPerson.facts as fact}
+              <li class="text-[15px] leading-relaxed text-gray-700 text-left">
+                {fact}
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {:else if highlightedPerson.description}
+        <div class="mt-2">
+          <p 
+            class="text-[15px] leading-relaxed text-gray-700"
+            style="font-family: 'Untitled Sans', sans-serif;"
+          >
+            {highlightedPerson.description}
+          </p>
+        </div>
+      {/if}
+      
+      <!-- Close button -->
+      <button 
+        class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+        on:click={closeProfile}
+        aria-label="Close profile"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -331,6 +501,7 @@ AND, FINALLY, we got merch.
   }
   .content-section {
     padding-top: 2rem;
+    margin-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
   .prose {
@@ -342,8 +513,58 @@ AND, FINALLY, we got merch.
     overflow-wrap: break-word;
   }
 
-  .name-wrap {
-    display: inline;
-    white-space: nowrap;
+  .leader {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+  
+  .leader:hover {
+    color: #000;
+  }
+
+  /* Profile card styles */
+  .profile-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    max-width: 90%;
+    width: 480px;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  /* Aspect ratio container for responsive images */
+  .aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+  }
+  
+  .image-fit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure entire image is visible */
+    background-color: #f5f5f5;
+  }
+  
+  /* Add media query for larger screens */
+  @media (min-width: 768px) {
+    .aspect-ratio-container {
+      padding-bottom: 66.67%; /* 3:2 aspect ratio on larger screens */
+    }
   }
 </style>

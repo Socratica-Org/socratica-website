@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { fly, fade } from "svelte/transition";
   import { quintInOut } from "svelte/easing";
+  import { goto } from "$app/navigation";
   import SocraticaWhite from "$lib/images/SocraticaWhite.svg";
   import House from "$lib/images/house.svg";
   import DarkHouse from "$lib/images/dark-house.svg";
@@ -30,7 +31,33 @@
 
   onMount(() => {
     currentPath = window.location.pathname;
+    
+    // Add click handlers to ensure proper navigation
+    document.querySelectorAll('.navbar-link').forEach(link => {
+      link.addEventListener('click', handleNavLinkClick);
+    });
+    
+    return () => {
+      // Clean up event listeners when component is destroyed
+      document.querySelectorAll('.navbar-link').forEach(link => {
+        link.removeEventListener('click', handleNavLinkClick);
+      });
+    };
   });
+
+  function handleNavLinkClick(e) {
+    // Only process internal links (not external)
+    const href = e.currentTarget.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('//')) {
+      e.preventDefault();
+      
+      // Close the overlay before navigating
+      showOverlay = false;
+      
+      // Use programmatic navigation to ensure proper page transitions
+      goto(href);
+    }
+  }
 
   function toggleOverlay() {
     showOverlay = !showOverlay;
@@ -87,7 +114,7 @@
         class:opacity-50={currentPath === "/"}
         class:cursor-not-allowed={currentPath === "/"}
         class:bg-primary={currentPath === "/"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.home = true)}
         on:mouseleave={() => (hoverState.home = false)}
       >
@@ -107,7 +134,7 @@
         class:opacity-50={currentPath === "/about"}
         class:cursor-not-allowed={currentPath === "/about"}
         class:bg-primary={currentPath === "/about"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.about = true)}
         on:mouseleave={() => (hoverState.about = false)}
       >
@@ -127,7 +154,7 @@
         class:opacity-50={currentPath === "/people"}
         class:cursor-not-allowed={currentPath === "/people"}
         class:bg-primary={currentPath === "/people"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.people = true)}
         on:mouseleave={() => (hoverState.people = false)}
       >
@@ -147,7 +174,7 @@
         class:opacity-50={currentPath === "/map"}
         class:cursor-not-allowed={currentPath === "/map"}
         class:bg-primary={currentPath === "/map"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.map = true)}
         on:mouseleave={() => (hoverState.map = false)}
       >
@@ -165,7 +192,7 @@
       <a
         href="https://toolbox.socratica.info/"
         target="_blank"
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.toolbox = true)}
         on:mouseleave={() => (hoverState.toolbox = false)}
       >
@@ -181,7 +208,7 @@
         class:opacity-50={currentPath === "/get-involved"}
         class:cursor-not-allowed={currentPath === "/get-involved"}
         class:bg-primary={currentPath === "/get-involved"}
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.getInvolved = true)}
         on:mouseleave={() => (hoverState.getInvolved = false)}
       >
@@ -202,7 +229,7 @@
       <a
         href="https://donate.stripe.com/5kA6qZcondXE8Te008"
         target="_blank"
-        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.donate = true)}
         on:mouseleave={() => (hoverState.donate = false)}
       >

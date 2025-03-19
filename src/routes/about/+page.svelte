@@ -1,7 +1,7 @@
 <script>
   import Navbar from "$lib/components/navbar.svelte";
-  import { slide, fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import { fade, slide } from "svelte/transition";
   import peopleData from "../people/people.json";
   // image imports
   import F22B from "$lib/images/f22-group.png";
@@ -39,16 +39,18 @@
   // State for profile popup
   let highlightedPerson = null;
   let isPersonSelected = false;
-  
+
   // Find a person by name in the people data
   function findPersonByName(name) {
     // Remove any whitespace from the search name
     const searchName = name.trim();
-    
+
     // Find the person in peopleData
-    return peopleData.find(p => p.name.toLowerCase() === searchName.toLowerCase());
+    return peopleData.find(
+      (p) => p.name.toLowerCase() === searchName.toLowerCase()
+    );
   }
-  
+
   // Handle leader name click
   function handleLeaderClick(name) {
     const person = findPersonByName(name);
@@ -57,29 +59,29 @@
       isPersonSelected = true;
     }
   }
-  
+
   // Close profile popup
   function closeProfile() {
     highlightedPerson = null;
     isPersonSelected = false;
   }
-  
+
   // Get optimized image URL based on size needs
   function getOptimizedImageUrl(photoUrl, size) {
-    if (!photoUrl || photoUrl.includes('placeholder')) {
+    if (!photoUrl || photoUrl.includes("placeholder")) {
       return photoUrl;
     }
-    
-    const imgPath = photoUrl.startsWith('/') ? photoUrl.substring(1) : photoUrl;
-    const parts = imgPath.split('/');
-    const filename = parts[parts.length - 1].split('.')[0];
-    
+
+    const imgPath = photoUrl.startsWith("/") ? photoUrl.substring(1) : photoUrl;
+    const parts = imgPath.split("/");
+    const filename = parts[parts.length - 1].split(".")[0];
+
     // Check if we have WebP versions
-    if (size === 'tiny') return `/img-ppl/${filename}-32w.webp`;
-    if (size === 'small') return `/img-ppl/${filename}-64w.webp`;
-    if (size === 'medium') return `/img-ppl/${filename}-128w.webp`;
-    if (size === 'large') return `/img-ppl/${filename}-256w.webp`;
-    
+    if (size === "tiny") return `/img-ppl/${filename}-32w.webp`;
+    if (size === "small") return `/img-ppl/${filename}-64w.webp`;
+    if (size === "medium") return `/img-ppl/${filename}-128w.webp`;
+    if (size === "large") return `/img-ppl/${filename}-256w.webp`;
+
     // Fallback to original image
     return photoUrl;
   }
@@ -232,13 +234,17 @@ AND, FINALLY, we got merch.
       .map((name) => `<span data-name="${name}" class="leader">${name}</span>`)
       .join(", ");
   }
-  
+
   // Add event listener for leader name clicks after component mounts
   onMount(() => {
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       // Check if clicked element has the leader class
-      if (e.target.classList.contains('leader') || e.target.closest('.leader')) {
-        const name = e.target.dataset.name || e.target.closest('.leader').dataset.name;
+      if (
+        e.target.classList.contains("leader") ||
+        e.target.closest(".leader")
+      ) {
+        const name =
+          e.target.dataset.name || e.target.closest(".leader").dataset.name;
         if (name) {
           handleLeaderClick(name);
         }
@@ -248,94 +254,84 @@ AND, FINALLY, we got merch.
 </script>
 
 <div class="block">
-  <div class="flex flex-col p-20 min-h-screen pb-32 bg-primary">
+  <div class="flex flex-col p-10 min-h-screen pb-32 bg-primary">
     <!-- <div
       class="absolute top-5 left-7 sm:left-10 w-10 h-10 bg-black rounded-full"
     /> -->
     <Navbar />
 
-    <div class="absolute top-20 left-10 sm:left-20 transform">
+    <div class="absolute top-20 transform">
       <a href="/">
         <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
       </a>
     </div>
 
-    <div class=" flex flex-col position-center" style="left: 10%;">
-      <img
-        class="pt-40 w-[80%]"
-        src={Symposium_Hosts}
-        alt="Socratica Symposium Hosts"
-      />
-      <h2
-        class="text-2xl pt-8 sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
-      >
-        For the love of <i>making</i>.
-      </h2>
-
-      <div
-        class="mt-4 md:mt-8"
-        style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
-      >
-        <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-          Great creative work is historically done together, across backgrounds
-          and disciplines, in small, high trust groups. This is the foundation
-          of boundary pushing work - in engineering, science, art, and more.
-        </p>
-        <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
-          On top of that... there are increasingly few, low stakes ways for
-          people to make interest, values aligned friends IRL. This is made
-          worse by an endless stream of catered consumption.
-        </p>
-        <p
-          class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4 font-bold"
+    <div class="flex m-auto lg:max-w-7xl">
+      <div class="flex flex-col" style="left: 10%; ">
+        <img
+          class="pt-20 w-[100%]"
+          src={Symposium_Hosts}
+          alt="Socratica Symposium Hosts"
+        />
+        <h2
+          class="text-2xl pt-8 sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
         >
-          It becomes pretty clear that we should do two things: gather and
-          create. Socratica aims to help people do both.
-        </p>
-      </div>
-      <h2
-        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline pt-28"
-      >
-        The <i>people</i> behind it all.
-      </h2>
-      <div
-        class="mt-4 md:mt-8"
-        style="font-family: 'Untitled Sans', sans-serif; width: 80%;"
-      >
-        <p
-          class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4 font-bold"
+          For the love of <i>making</i>.
+        </h2>
+
+        <div
+          class="mt-4 md:mt-8"
+          style="font-family: 'Untitled Sans', sans-serif;"
         >
-          <a class="italic" href="/people">Click here</a> to learn about the people
-          who have built our diverse community of creators, thinkers, and makers.
-        </p>
-      </div>
-
-      <h2
-        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline pt-28"
-      >
-        Our Story
-      </h2>
-
-      <!-- Timeline Component -->
-      <div class="w-full mt-8">
-        <!-- Pills navigation -->
-        <div class="flex flex-wrap gap-2 mb-8">
-          {#each timelineData as item}
-            <button
-              class="pill-button {selectedTerm === item.id ? 'active' : ''}"
-              on:click={() => selectTerm(item.id)}
-            >
-              {item.term}
-            </button>
-          {/each}
+          <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
+            Great creative work is historically done together, across
+            backgrounds and disciplines, in small, high trust groups. This is
+            the foundation of boundary pushing work - in engineering, science,
+            art, and more.
+          </p>
+          <p class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4">
+            On top of that... there are increasingly few, low stakes ways for
+            people to make interest, values aligned friends IRL. This is made
+            worse by an endless stream of catered consumption.
+          </p>
+          <p
+            class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-4 font-bold"
+          >
+            It becomes pretty clear that we should do two things: gather and
+            create. Socratica aims to help people do both.
+          </p>
+          <button
+            class="px-4 py-2 mt-2 hover:bg-black hover:text-white rounded-full font-sans text-sm transition-all duration-200 border border-black bg-transparent"
+          >
+            <a href="/people">Meet our team</a>
+          </button>
         </div>
+        <h2
+          class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline pt-28"
+        >
+          Our Story
+        </h2>
 
-        <!-- Content section -->
-        {#each timelineData as item}
-          {#if selectedTerm === item.id}
-            <div transition:slide={{ duration: 300 }} class="content-section">
-              <!-- Leaders - Now enable this section and make names clickable -->
-              <!-- <div
+        <!-- Timeline Component -->
+        <div class="w-full mt-8 lg:max-w-7xl">
+          <!-- Pills navigation -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            {#each timelineData as item}
+              <button
+                class="pill-button {selectedTerm === item.id ? 'active' : ''}"
+                on:click={() => selectTerm(item.id)}
+              >
+                {item.term}
+              </button>
+            {/each}
+          </div>
+
+          <!-- Content section -->
+          {#each timelineData as item}
+            {#if selectedTerm === item.id}
+              <div transition:slide={{ duration: 300 }} class="content-section">
+                <!-- Leaders - Now enable this section and make names clickable -->
+                <!-- <div
                 class="names-container max-w-[700px] mb-6"
                 style="font-family: 'Untitled Sans', sans-serif;"
               >
@@ -344,53 +340,55 @@ AND, FINALLY, we got merch.
                 </p>
               </div> -->
 
-              <!-- Content -->
-              <div
-                class="prose max-w-none"
-                style="font-family: 'Untitled Sans', sans-serif;"
-              >
-                {#if item.id !== "winter-2025"}
-                  <!-- Image grid with improved responsive handling -->
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pt-4">
-                    {#if item.images && item.images.length > 0}
-                      {#each item.images as image, index}
-                        <div class="aspect-ratio-container rounded-lg overflow-hidden bg-gray-100">
-                          <img 
-                            src={image} 
-                            alt={`Session ${index + 1}`} 
-                            class="image-fit" 
-                            loading="lazy"
-                          />
-                        </div>
-                      {/each}
-                    {/if}
-                  </div>
-                {/if}
-                <p
-                  class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed mt-6"
+                <!-- Content -->
+                <div
+                  class="prose max-w-none"
+                  style="font-family: 'Untitled Sans', sans-serif;"
                 >
-                  {item.content}
-                </p>
+                  {#if item.id !== "winter-2025"}
+                    <!-- Image grid with improved responsive handling -->
+                    <div
+                      class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pt-4"
+                    >
+                      {#if item.images && item.images.length > 0}
+                        {#each item.images as image, index}
+                          <div
+                            class="aspect-ratio-container rounded-lg overflow-hidden bg-gray-100"
+                          >
+                            <img
+                              src={image}
+                              alt={`Session ${index + 1}`}
+                              class="image-fit"
+                              loading="lazy"
+                            />
+                          </div>
+                        {/each}
+                      {/if}
+                    </div>
+                  {/if}
+                  <p
+                    class="whitespace-pre-line text-gray-700 text-[11px] md:text-[17px] lg:text-lg leading-relaxed mt-6"
+                  >
+                    {item.content}
+                  </p>
+                </div>
               </div>
-            </div>
-          {/if}
-        {/each}
+            {/if}
+          {/each}
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Profile popup - Copy the same component from people page -->
   {#if highlightedPerson}
-    <div 
-      class="profile-card" 
-      transition:fade={{duration: 200}}
-    >
+    <div class="profile-card" transition:fade={{ duration: 200 }}>
       <!-- Vertical layout -->
       <div class="flex flex-col items-center text-center mb-4">
-        {#if !highlightedPerson.photo.includes('placeholder')}
-          <img 
-            src={getOptimizedImageUrl(highlightedPerson.photo, 'large')} 
-            alt={highlightedPerson.name} 
+        {#if !highlightedPerson.photo.includes("placeholder")}
+          <img
+            src={getOptimizedImageUrl(highlightedPerson.photo, "large")}
+            alt={highlightedPerson.name}
             class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-[#FBF8EF]"
             loading="lazy"
             fetchpriority="high"
@@ -417,7 +415,7 @@ AND, FINALLY, we got merch.
             </svg>
           </div>
         {/if}
-        
+
         <div>
           <h3 class="font-tiempos-headline text-2xl font-bold mb-1">
             {highlightedPerson.name}
@@ -432,7 +430,7 @@ AND, FINALLY, we got merch.
           </p>
         </div>
       </div>
-      
+
       {#if highlightedPerson.facts && highlightedPerson.facts.length > 0}
         <div class="mt-2">
           <ul
@@ -448,7 +446,7 @@ AND, FINALLY, we got merch.
         </div>
       {:else if highlightedPerson.description}
         <div class="mt-2">
-          <p 
+          <p
             class="text-[15px] leading-relaxed text-gray-700"
             style="font-family: 'Untitled Sans', sans-serif;"
           >
@@ -456,9 +454,9 @@ AND, FINALLY, we got merch.
           </p>
         </div>
       {/if}
-      
+
       <!-- Close button -->
-      <button 
+      <button
         class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
         on:click={closeProfile}
         aria-label="Close profile"
@@ -520,7 +518,7 @@ AND, FINALLY, we got merch.
     text-underline-offset: 2px;
     transition: color 0.2s;
   }
-  
+
   .leader:hover {
     color: #000;
   }
@@ -550,7 +548,7 @@ AND, FINALLY, we got merch.
     padding-bottom: 75%; /* 4:3 aspect ratio */
     overflow: hidden;
   }
-  
+
   .image-fit {
     position: absolute;
     top: 0;
@@ -560,7 +558,7 @@ AND, FINALLY, we got merch.
     object-fit: contain; /* Ensure entire image is visible */
     background-color: #f5f5f5;
   }
-  
+
   /* Add media query for larger screens */
   @media (min-width: 768px) {
     .aspect-ratio-container {

@@ -57,9 +57,18 @@
   let screenHeight = 768;  // Default; will be updated on mount
   let cardWidth = 480;     // Default profile card width
   let cardHeight = 300;    // Estimated card height (will vary)
+  
+  // Define document click handler to ensure it can be properly removed
+  function documentClickHandler(e) {
+    // This will be registered if needed by other functions
+    // Having it defined here allows us to properly remove it in cleanup
+  }
 
   onMount(() => {
     if (browser) {
+      // Set a flag in window to track that we're on the people page
+      window.socraticaActivePage = 'people';
+      
       // Detect connection type for adaptive loading
       const connection = navigator.connection || 
                         navigator.mozConnection || 
@@ -140,13 +149,26 @@
       if (isBrowser) {
         window.removeEventListener("resize", updateWidth);
         if (searchTimeout) clearTimeout(searchTimeout);
-        memoizedNodes.clear();
-        usedPeople.clear();
-        imageCache.clear(); // Clear the image cache
-        // Disconnect observer when component is destroyed
-        if (observer) observer.disconnect();
+        
+        // Ensure these are defined before trying to clear them
+        if (typeof memoizedNodes !== 'undefined') memoizedNodes.clear();
+        if (typeof usedPeople !== 'undefined') usedPeople.clear();
+        if (typeof imageCache !== 'undefined') imageCache.clear();
+        
+        // Properly disconnect observer
+        if (typeof observer !== 'undefined' && observer) observer.disconnect();
+        
+        // Remove document event listeners
+        document.removeEventListener('click', documentClickHandler);
+        
+        // Remove window event listeners
         window.removeEventListener('mousemove', handleGlobalMouseMove);
         window.removeEventListener('resize', updateDimensions);
+        
+        // Clear any other global state that might persist
+        if (typeof window !== 'undefined') {
+          window.socraticaActivePage = undefined;
+        }
       }
     };
   });

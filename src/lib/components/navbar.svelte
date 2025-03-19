@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { fly, fade } from "svelte/transition";
   import { quintInOut } from "svelte/easing";
+  import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import SocraticaWhite from "$lib/images/SocraticaWhite.svg";
   import House from "$lib/images/house.svg";
@@ -19,6 +20,12 @@
 
   let currentPath = "";
   let showOverlay = false;
+  let innerWidth;
+  let innerHeight;
+  
+  // Subscribe to the current page to get the path
+  $: currentPath = $page.url.pathname;
+  
   let hoverState = {
     home: false,
     about: false,
@@ -30,37 +37,21 @@
   };
 
   onMount(() => {
+    // Initialize window measurements
+    innerWidth = window.innerWidth;
+    innerHeight = window.innerHeight;
+    
+    // No need for path initialization here as it's handled by the $page store
     currentPath = window.location.pathname;
-    
-    // Add click handlers to ensure proper navigation
-    document.querySelectorAll('.navbar-link').forEach(link => {
-      link.addEventListener('click', handleNavLinkClick);
-    });
-    
-    return () => {
-      // Clean up event listeners when component is destroyed
-      document.querySelectorAll('.navbar-link').forEach(link => {
-        link.removeEventListener('click', handleNavLinkClick);
-      });
-    };
   });
-
-  function handleNavLinkClick(e) {
-    // Only process internal links (not external)
-    const href = e.currentTarget.getAttribute('href');
-    if (href && !href.startsWith('http') && !href.startsWith('//')) {
-      e.preventDefault();
-      
-      // Close the overlay before navigating
-      showOverlay = false;
-      
-      // Use programmatic navigation to ensure proper page transitions
-      goto(href);
-    }
-  }
 
   function toggleOverlay() {
     showOverlay = !showOverlay;
+  }
+  
+  // Simple navigation function that works with Vercel by closing the overlay
+  function handleNavClick() {
+    showOverlay = false;
   }
 </script>
 
@@ -80,8 +71,8 @@
     transition:fly={{
       delay: 50,
       duration: 500,
-      x: window.innerWidth * 0.93,
-      y: -window.innerHeight * 0.89,
+      x: innerWidth ? innerWidth * 0.93 : 500,
+      y: innerHeight ? -innerHeight * 0.89 : -500,
       opacity: 0,
       easing: quintInOut,
     }}
@@ -97,8 +88,8 @@
       transition:fly={{
         delay: 0,
         duration: 1500,
-        x: window.innerWidth / 3,
-        y: window.innerHeight / 3,
+        x: innerWidth ? innerWidth / 3 : 300,
+        y: innerHeight ? innerHeight / 3 : 300,
         opacity: 0,
         easing: quintInOut,
       }}
@@ -115,6 +106,12 @@
         class:cursor-not-allowed={currentPath === "/"}
         class:bg-primary={currentPath === "/"}
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click|preventDefault={() => {
+          if (currentPath !== "/") {
+            showOverlay = false;
+            goto("/");
+          }
+        }}
         on:mouseenter={() => (hoverState.home = true)}
         on:mouseleave={() => (hoverState.home = false)}
       >
@@ -135,6 +132,12 @@
         class:cursor-not-allowed={currentPath === "/about"}
         class:bg-primary={currentPath === "/about"}
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click|preventDefault={() => {
+          if (currentPath !== "/about") {
+            showOverlay = false;
+            goto("/about");
+          }
+        }}
         on:mouseenter={() => (hoverState.about = true)}
         on:mouseleave={() => (hoverState.about = false)}
       >
@@ -155,6 +158,12 @@
         class:cursor-not-allowed={currentPath === "/people"}
         class:bg-primary={currentPath === "/people"}
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click|preventDefault={() => {
+          if (currentPath !== "/people") {
+            showOverlay = false;
+            goto("/people");
+          }
+        }}
         on:mouseenter={() => (hoverState.people = true)}
         on:mouseleave={() => (hoverState.people = false)}
       >
@@ -175,6 +184,12 @@
         class:cursor-not-allowed={currentPath === "/map"}
         class:bg-primary={currentPath === "/map"}
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click|preventDefault={() => {
+          if (currentPath !== "/map") {
+            showOverlay = false;
+            goto("/map");
+          }
+        }}
         on:mouseenter={() => (hoverState.map = true)}
         on:mouseleave={() => (hoverState.map = false)}
       >
@@ -193,6 +208,9 @@
         href="https://toolbox.socratica.info/"
         target="_blank"
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click={() => {
+          showOverlay = false;
+        }}
         on:mouseenter={() => (hoverState.toolbox = true)}
         on:mouseleave={() => (hoverState.toolbox = false)}
       >
@@ -209,6 +227,12 @@
         class:cursor-not-allowed={currentPath === "/get-involved"}
         class:bg-primary={currentPath === "/get-involved"}
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click|preventDefault={() => {
+          if (currentPath !== "/get-involved") {
+            showOverlay = false;
+            goto("/get-involved");
+          }
+        }}
         on:mouseenter={() => (hoverState.getInvolved = true)}
         on:mouseleave={() => (hoverState.getInvolved = false)}
       >
@@ -230,6 +254,9 @@
         href="https://donate.stripe.com/5kA6qZcondXE8Te008"
         target="_blank"
         class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
+        on:click={() => {
+          showOverlay = false;
+        }}
         on:mouseenter={() => (hoverState.donate = true)}
         on:mouseleave={() => (hoverState.donate = false)}
       >

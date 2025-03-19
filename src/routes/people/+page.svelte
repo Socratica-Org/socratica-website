@@ -1064,8 +1064,12 @@
               <div
                 class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
                 on:click={() => handleSearchResultSelect(result)}
-          >
-            <div class="flex items-center">
+                on:keydown={(e) => e.key === 'Enter' && handleSearchResultSelect(result)}
+                role="button"
+                tabindex="0"
+                aria-label="View profile for {result.name}"
+              >
+                <div class="flex items-center">
                   {#if result.photo && !result.photo.includes('placeholder')}
                     <img 
                       src={getOptimizedImageUrl(result.photo, 'tiny')} 
@@ -1075,13 +1079,13 @@
                   {:else}
                     <div class="w-8 h-8 rounded-full bg-gray-200 mr-2"></div>
                   {/if}
-              <div>
-                    <div class="font-medium">{result.name}</div>
-                    {#if result.role}
-                      <div class="text-xs text-gray-500">{result.role}</div>
-                    {/if}
+                <div>
+                      <div class="font-medium">{result.name}</div>
+                      {#if result.role}
+                        <div class="text-xs text-gray-500">{result.role}</div>
+                      {/if}
+                </div>
               </div>
-            </div>
               </div>
                 {/each}
             </div>
@@ -1134,16 +1138,20 @@
               on:mouseenter={(e) => handleMouseEnter(node, e)}
               on:mouseleave={handleMouseLeave}
               on:click={() => node.person && handleNodeClick(node)}
+              on:keydown={(e) => e.key === 'Enter' && node.person && handleNodeClick(node)}
               role={node.person ? "button" : "presentation"}
               aria-label={node.person
                 ? `View profile for ${node.person.name}`
                 : undefined}
-              tabindex={node.person ? "0" : "-1"}
+              tabindex= "-1"
             >
               {#if node.person}
                 {#if node.person.photo === "https://via.placeholder.com/150"}
                   <div
                     class="w-full h-full bg-[#404040] flex items-center justify-center"
+                    role="img"
+                    aria-label="Default user avatar"
+                    tabindex="-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1224,16 +1232,20 @@
                 on:mouseenter={(e) => handleMouseEnter(node, e)}
                 on:mouseleave={handleMouseLeave}
                 on:click={() => node.person && handleNodeClick(node)}
+                on:keydown={(e) => e.key === 'Enter' && node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
                   : undefined}
-                tabindex={node.person ? "0" : "-1"}
+                tabindex="-1"
               >
                 {#if node.person}
                   {#if node.person.photo === "https://via.placeholder.com/150"}
                     <div
                       class="w-full h-full bg-[#404040] flex items-center justify-center"
+                      role="img"
+                      aria-label="Default user avatar"
+                      tabindex="-1"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1310,16 +1322,20 @@
                 on:mouseenter={(e) => handleMouseEnter(node, e)}
                 on:mouseleave={handleMouseLeave}
                 on:click={() => node.person && handleNodeClick(node)}
+                on:keydown={(e) => e.key === 'Enter' && node.person && handleNodeClick(node)}
                 role={node.person ? "button" : "presentation"}
                 aria-label={node.person
                   ? `View profile for ${node.person.name}`
                   : undefined}
-                tabindex={node.person ? "0" : "-1"}
+                tabindex="-1"
               >
                 {#if node.person}
                   {#if node.person.photo === "https://via.placeholder.com/150"}
                     <div
                       class="w-full h-full bg-[#404040] flex items-center justify-center"
+                      role="img"
+                      aria-label="Default user avatar"
+                      tabindex="-1"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1484,12 +1500,6 @@
 </div>
 
 <style>
-  /* Card styling */
-  .person-card {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-  }
-  
   /* Add shimmer loading animation for image placeholders */
   @keyframes shimmer {
     0% {
@@ -1504,12 +1514,6 @@
     background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
-  }
-  
-  /* Animation for loaded images */
-  img.loaded {
-    animation: fadeIn 0.3s ease-in-out;
-    opacity: 1 !important;
   }
   
   @keyframes fadeIn {
@@ -1528,50 +1532,8 @@
     backface-visibility: hidden;
   }
   
-  /* Add fade-in animation for profile image */
-  .profile-image {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .profile-image.loaded {
-    opacity: 1;
-  }
-  
-  /* Placeholder for profile image */
-  .placeholder-image {
-    background-color: #f0f0f0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
-  
-  /* Enhanced hover effects for dot-container */
-  .dot-container {
-    will-change: transform;
-    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
-    backface-visibility: hidden;
-  }
-  
-  .dot-container:hover {
-    z-index: 10;
-  }
-  
-  .dot-container:hover .dot {
-    transform: scale(1.2);
-    border-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
   /* Enhanced profile card */
   .profile-card {
-    /* Remove positioning that will now be inline */
-    /*
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    */
     background: white;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -1587,41 +1549,6 @@
   .profile-card.hover-card {
     padding: 1.5rem;
     width: 480px;
-  }
-  
-  .profile-card-inner {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .profile-image-container {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-  
-  .profile-info {
-    flex: 1;
-  }
-  
-  .profile-info h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  .profile-info .role {
-    color: #666;
-    font-size: 0.875rem;
-    margin: 0 0 0.5rem;
-  }
-  
-  .profile-info .description {
-    font-size: 0.875rem;
-    line-height: 1.4;
-    margin: 0;
   }
 </style> 
 

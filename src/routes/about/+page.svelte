@@ -488,7 +488,6 @@ AND, FINALLY, we got merch.
     color: #fff;
   }
   .content-section {
-    padding-top: 2rem;
     margin-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -535,7 +534,7 @@ AND, FINALLY, we got merch.
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 75%; /* 4:3 aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     overflow: hidden;
   }
 
@@ -545,14 +544,14 @@ AND, FINALLY, we got merch.
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensure entire image is visible */
+    object-fit: cover; /* Changed from contain to cover */
     background-color: #f5f5f5;
   }
 
   /* Add media query for larger screens */
   @media (min-width: 768px) {
     .aspect-ratio-container {
-      padding-bottom: 66.67%; /* 3:2 aspect ratio on larger screens */
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
     }
   }
 </style>

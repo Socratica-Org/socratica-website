@@ -759,29 +759,38 @@
     hoveredPerson = null;
   }
 
-  // Optimize search functionality with debounce
-  function handleSearch(event) {
-    searchQuery = event.target.value;
-    if (searchTimeout) {
-      clearTimeout(searchTimeout);
-    }
+  // Add this function to handle search result selection
+  function handleSearchResultSelect(person) {
+    // Set the highlighted person to the selected search result
+    highlightedPerson = person;
+    
+    // Mark as explicitly selected (not just hovered)
+    isPersonSelected = true;
+    
+    // Clear search results after selection
+    searchResults = [];
+    searchQuery = '';
+  }
 
-    if (searchQuery.length === 0) {
+  // Update the search functionality
+  function handleSearch() {
+    clearTimeout(searchTimeout);
+    
+    if (searchQuery.length < 2) {
       searchResults = [];
       return;
     }
-
+    
     searchTimeout = setTimeout(() => {
       const query = searchQuery.toLowerCase();
       searchResults = filteredPeople
-        .filter((p) => p.name.toLowerCase().includes(query))
-        .slice(0, 10); // Limit results to improve performance
-    }, 300); // Reduced debounce time
-  }
-
-  function selectSearchResult(result) {
-    selectedResult = result;
-    selectedPerson = result.id;
+        .filter(person => 
+          person.name.toLowerCase().includes(query) ||
+          (person.role && person.role.toLowerCase().includes(query)) ||
+          (person.location && person.location.toLowerCase().includes(query))
+        )
+        .slice(0, 5); // Limit to top 5 results
+    }, 300);
   }
 
   // Preload visible images for the first screen
@@ -1018,54 +1027,16 @@
 
   <div class="pt-32 px-8 md:px-16 lg:px-24">
     <!-- Title and Search Section -->
-    <div
-      class="flex flex-col md:flex-row md:justify-between md:items-center mb-10"
-    >
+    <div class="mb-10">
       <h2
-        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6 md:mb-0"
+        class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6"
       >
         The <i>people</i> behind it all.
-    </h2>
-    
-      <!-- Description visible only on md and above -->
-      <div class="hidden md:block">
-        <!-- Search Bar -->
-        <div class="w-64 md:w-80">
-          <div class="relative">
-            <input
-              type="text"
-              placeholder="Search team members..."
-              bind:value={searchQuery}
-              on:input={handleSearch}
-              class="w-full px-4 py-2 rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] focus:ring-2 focus:ring-[#333] focus:outline-none transition-all"
-            />
-            {#if searchQuery && searchResults.length > 0}
-              <div
-                class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] max-h-60 overflow-y-auto"
-              >
-                {#each searchResults as result}
-                  <div
-                    class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
-                    on:click={() => selectSearchResult(result)}
-                  >
-                    <div class="font-medium">{result.name}</div>
-                  </div>
-                {/each}
-              </div>
-            {:else if searchQuery && searchResults.length === 0}
-              <div
-                class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3"
-              >
-                <div class="text-gray-500">No matching team members found</div>
-              </div>
-            {/if}
-          </div>
-        </div>
-      </div>
+      </h2>
     </div>
 
     <!-- Description -->
-    <div class="mb-8 md:mb-16 max-w-4xl">
+    <div class="mb-8 max-w-4xl">
       <p
         class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed"
         style="font-family: 'Untitled Sans', sans-serif;"
@@ -1075,41 +1046,55 @@
       </p>
     </div>
 
-    <!-- Search Bar for mobile (visible only below md) -->
-    <div class="block md:hidden mb-16">
-      <div class="w-full">
-        <div class="relative">
-          <input
-            type="text"
-            placeholder="Search team members..."
-            bind:value={searchQuery}
-            on:input={handleSearch}
-            class="w-full px-4 py-2 rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] focus:ring-2 focus:ring-[#333] focus:outline-none transition-all"
-          />
-          {#if searchQuery && searchResults.length > 0}
-            <div
-              class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] max-h-60 overflow-y-auto"
-            >
-              {#each searchResults as result}
-                <div
-                  class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
-                  on:click={() => selectSearchResult(result)}
-                >
-                  <div class="font-medium">{result.name}</div>
+    <!-- Unified Search Bar for all screen sizes -->
+    <div class="mb-16 max-w-lg">
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Search team members..."
+          bind:value={searchQuery}
+          on:input={handleSearch}
+          class="w-full px-4 py-2 rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] focus:ring-2 focus:ring-[#333] focus:outline-none transition-all"
+        />
+        {#if searchQuery && searchResults.length > 0}
+          <div
+            class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] max-h-60 overflow-y-auto"
+          >
+            {#each searchResults as result}
+              <div
+                class="px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors"
+                on:click={() => handleSearchResultSelect(result)}
+              >
+                <div class="flex items-center">
+                  {#if result.photo && !result.photo.includes('placeholder')}
+                    <img 
+                      src={getOptimizedImageUrl(result.photo, 'tiny')} 
+                      alt={result.name}
+                      class="w-8 h-8 rounded-full mr-2 object-cover"
+                    />
+                  {:else}
+                    <div class="w-8 h-8 rounded-full bg-gray-200 mr-2"></div>
+                  {/if}
+                  <div>
+                    <div class="font-medium">{result.name}</div>
+                    {#if result.role}
+                      <div class="text-xs text-gray-500">{result.role}</div>
+                    {/if}
+                  </div>
+                </div>
               </div>
-                {/each}
-            </div>
-          {:else if searchQuery && searchResults.length === 0}
-            <div
-              class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3"
-            >
-              <div class="text-gray-500">No matching team members found</div>
+            {/each}
+          </div>
+        {:else if searchQuery && searchResults.length === 0}
+          <div
+            class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] p-3"
+          >
+            <div class="text-gray-500">No matching team members found</div>
           </div>
         {/if}
-        </div>
       </div>
-      </div>
-      
+    </div>
+
     <!-- Loading state -->
     {#if isLoading}
       <div class="flex justify-center items-center h-[60vh]">

@@ -21,7 +21,7 @@
   import S23B from "$lib/images/s23-outside.jpeg";
   import S23C from "$lib/images/s23-symposium-stage.png";
   import W23A from "$lib/images/w23-retreat.jpg";
-  import W23B from "$lib/images/w23-smile.jpg";
+  import W23B from "$lib/images/w23-smiley.png";
   import W23C from "$lib/images/w23-symposium.jpg";
 
   import F24A from "$lib/images/f24-group.webp";

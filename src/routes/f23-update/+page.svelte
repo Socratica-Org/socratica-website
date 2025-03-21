@@ -11,6 +11,7 @@
     addDoc,
   } from "firebase/firestore";
   import { onMount } from "svelte";
+  import { browser } from '$app/environment';
 
   import GreenGuy from "$lib/images/GreenGuy.png";
   import OrangeGuy from "$lib/images/OrangeGuy.png";
@@ -21,18 +22,48 @@
   import BeigeGuy from "$lib/images/BeigeGuy.png";
 
   onMount(() => {
-    const firebaseConfig = {
-      apiKey: import.meta.env.VITE_API_KEY,
-      authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-      databaseURL: import.meta.env.VIT_DATABASE_URL,
-      projectId: import.meta.env.VITE_PROJECT_ID,
-      storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-      messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-      appId: import.meta.env.VITE_APP_ID,
-      measurementId: import.meta.env.VITE_MEASUREMENT_ID,
-    };
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    if (browser) {
+      try {
+        // Only initialize Firebase if all required env vars exist
+        if (
+          import.meta.env.VITE_API_KEY && 
+          import.meta.env.VITE_AUTH_DOMAIN && 
+          import.meta.env.VITE_PROJECT_ID && 
+          import.meta.env.VITE_STORAGE_BUCKET && 
+          import.meta.env.VITE_MESSAGING_SENDER_ID && 
+          import.meta.env.VITE_APP_ID
+        ) {
+          const firebaseConfig = {
+            apiKey: import.meta.env.VITE_API_KEY,
+            authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+            databaseURL: import.meta.env.VIT_DATABASE_URL,
+            projectId: import.meta.env.VITE_PROJECT_ID,
+            storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+            messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+            appId: import.meta.env.VITE_APP_ID,
+            measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+          };
+          
+          try {
+            const app = initializeApp(firebaseConfig);
+            // Only initialize analytics if the measurement ID exists
+            if (import.meta.env.VITE_MEASUREMENT_ID) {
+              try {
+                const analytics = getAnalytics(app);
+              } catch (analyticsError) {
+                console.warn("Firebase analytics initialization failed:", analyticsError);
+              }
+            }
+          } catch (error) {
+            console.warn("Firebase initialization skipped (app may already be initialized):", error);
+          }
+        } else {
+          console.warn("Firebase environment variables not found. Firebase features disabled.");
+        }
+      } catch (error) {
+        console.error("Error during Firebase setup:", error);
+      }
+    }
   });
 </script>
 
@@ -62,8 +93,8 @@
           <p>Hi!</p>
           <p>
             It has been a fun and wild 4 months. There are inevitably things we
-            fail to capture in these updates - it’s hard to measure the
-            confidence built or friendships made - but here’s what we’ve been up
+            fail to capture in these updates - it's hard to measure the
+            confidence built or friendships made - but here's what we've been up
             to!
           </p>
           <h2 class="mt-5 text-xl font-bold">Sessions</h2>
@@ -74,7 +105,7 @@
               across all events!
             </li>
             <li>
-              It was our most diverse term yet, in many ways. We’ve had the most
+              It was our most diverse term yet, in many ways. We've had the most
               balanced ratio of technical to non-technical projects, and also
               our best gender ratio yet.
             </li>

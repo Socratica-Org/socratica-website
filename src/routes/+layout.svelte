@@ -27,6 +27,7 @@
   }
 
   let db: any;
+  let firebaseInitialized = false;
   
   // Initialize global tracking of prefetched images if in browser
   if (browser && typeof window !== 'undefined') {
@@ -42,22 +43,70 @@
     : new Set();
   
   onMount(() => {
-    const firebaseConfig = {
-      apiKey: import.meta.env.VITE_API_KEY,
-      authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-      databaseURL: import.meta.env.VIT_DATABASE_URL,
-      projectId: import.meta.env.VITE_PROJECT_ID,
-      storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-      messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-      appId: import.meta.env.VITE_APP_ID,
-      measurementId: import.meta.env.VITE_MEASUREMENT_ID,
-    };
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    db = getFirestore(app);
+    // Only try to initialize Firebase if we're in the browser
+    if (browser && !firebaseInitialized) {
+      try {
+        // Check if all required Firebase config variables exist
+        const allEnvVarsExist = 
+          import.meta.env.VITE_API_KEY && 
+          import.meta.env.VITE_AUTH_DOMAIN && 
+          import.meta.env.VITE_PROJECT_ID && 
+          import.meta.env.VITE_STORAGE_BUCKET && 
+          import.meta.env.VITE_MESSAGING_SENDER_ID && 
+          import.meta.env.VITE_APP_ID;
+        
+        if (allEnvVarsExist) {
+          const firebaseConfig = {
+            apiKey: import.meta.env.VITE_API_KEY,
+            authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+            databaseURL: import.meta.env.VIT_DATABASE_URL,
+            projectId: import.meta.env.VITE_PROJECT_ID,
+            storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+            messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+            appId: import.meta.env.VITE_APP_ID,
+            measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+          };
+          
+          const app = initializeApp(firebaseConfig);
+          // Only initialize analytics if measurement ID exists
+          if (import.meta.env.VITE_MEASUREMENT_ID) {
+            try {
+              const analytics = getAnalytics(app);
+            } catch (analyticsError) {
+              console.warn("Analytics initialization failed:", analyticsError);
+              // Don't let analytics failures break the app
+            }
+          }
+          
+          try {
+            db = getFirestore(app);
+          } catch (dbError) {
+            console.warn("Firestore initialization failed:", dbError);
+            // Set a fallback db that won't break email submission
+            db = {
+              collection: () => ({})
+            };
+          }
+          
+          firebaseInitialized = true;
+        } else {
+          console.warn("Firebase environment variables not found. Firebase features disabled.");
+          // Create a dummy db object to prevent errors when used
+          db = {
+            collection: () => ({})
+          };
+        }
+      } catch (error) {
+        console.error("Firebase initialization error:", error);
+        // Create a dummy db object to prevent errors
+        db = {
+          collection: () => ({})
+        };
+      }
+    }
     
     // Start prefetching people images if on the home page
-    if (currentPath === '/') {
+    if (currentPath === '/' && browser) {
       prefetchPeoplePageAssets();
     }
   });
@@ -178,30 +227,41 @@
       console.log("Valid Email:", email);
       emailValidationMessage = ""; // Clear any previous error messages
 
-      // Check if the email already exists in Firestore using a query
-      const emailsRef = collection(db, "emails");
-      const q = query(emailsRef, where("email", "==", email));
-      const querySnapshot = await getDocs(q);
+      if (!db || !firebaseInitialized) {
+        console.warn("Firebase not initialized. Email collection disabled.");
+        emailValidationMessage = "Email collection temporarily unavailable.";
+        return;
+      }
 
-      if (querySnapshot.empty) {
-        // Email does not exist, add it to Firestore
-        try {
-          const newDoc = {
-            email: email,
-            dateCreated: new Date(), // Add the current date and time
-          };
-          const docRef = await addDoc(emailsRef, newDoc);
-          console.log("Document written with ID: ", docRef.id);
-          emailValidationMessage = "Email successfully added!";
-          email = "";
-        } catch (e) {
-          console.error("Error adding document: ", e);
-          emailValidationMessage = "Error adding email. Please try again.";
+      try {
+        // Check if the email already exists in Firestore using a query
+        const emailsRef = collection(db, "emails");
+        const q = query(emailsRef, where("email", "==", email));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+          // Email does not exist, add it to Firestore
+          try {
+            const newDoc = {
+              email: email,
+              dateCreated: new Date(), // Add the current date and time
+            };
+            const docRef = await addDoc(emailsRef, newDoc);
+            console.log("Document written with ID: ", docRef.id);
+            emailValidationMessage = "Email successfully added!";
+            email = "";
+          } catch (e) {
+            console.error("Error adding document: ", e);
+            emailValidationMessage = "Error adding email. Please try again.";
+          }
+        } else {
+          // Email exists
+          console.log("Email already exists: ", email);
+          emailValidationMessage = "This email already exists in our records.";
         }
-      } else {
-        // Email exists
-        console.log("Email already exists: ", email);
-        emailValidationMessage = "This email already exists in our records.";
+      } catch (error) {
+        console.error("Firebase operation error:", error);
+        emailValidationMessage = "Email collection temporarily unavailable.";
       }
     } else {
       console.log("Invalid Email:", email);

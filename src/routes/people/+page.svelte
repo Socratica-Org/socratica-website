@@ -65,22 +65,27 @@
   }
 
   onMount(() => {
-    if (browser) {
-      // Set a flag in window to track that we're on the people page
+    // Flag the current page for proper state management
+    if (isBrowser && typeof window !== 'undefined') {
       window.socraticaActivePage = 'people';
       
-      // Detect connection type for adaptive loading
-      const connection = navigator.connection || 
-                        navigator.mozConnection || 
-                        navigator.webkitConnection;
-      
-      if (connection) {
-        // 4g is fast, 3g or slower is considered slow
-        isSlowConnection = connection.effectiveType === '3g' || 
-                          connection.effectiveType === '2g' || 
-                          connection.effectiveType === 'slow-2g';
-        
-        console.log(`Connection type: ${connection.effectiveType}`);
+      // Check for connection type
+      if (navigator && 'connection' in navigator) {
+        const conn = navigator.connection;
+        if (conn && conn.effectiveType) {
+          isSlowConnection = ['slow-2g', '2g', '3g'].includes(conn.effectiveType);
+          console.log(`Connection type: ${conn.effectiveType}`);
+          
+          // Adjust loading strategy based on connection
+          if (isSlowConnection) {
+            console.log('Slow connection detected, adjusting loading strategy');
+            // Load only what's visible first, delay other loads
+            adjustLoadingForSlowConnection();
+          }
+        }
+      } else {
+        // On fast connections, we can be more aggressive
+        console.log('Fast connection detected, standard loading strategy');
       }
       
       // Log timing information for performance analysis
@@ -92,23 +97,7 @@
       prefetchMissingCriticalImages();
       
       // Save the prefetched images on window for future use
-      if (typeof window !== 'undefined') {
-        window.socraticaPrefetchedImages = prefetchedImages;
-      }
-      
-      // Record time for first contentful paint
-      firstContentfulPaint = performance.now() - pageLoadStartTime;
-      console.log(`First contentful paint: ${Math.round(firstContentfulPaint)}ms`);
-      
-      // Adjust loading strategy based on connection
-      if (isSlowConnection) {
-        console.log('Slow connection detected, adjusting loading strategy');
-        // Load only what's visible first, delay other loads
-        adjustLoadingForSlowConnection();
-      } else {
-        // On fast connections, we can be more aggressive
-        console.log('Fast connection detected, standard loading strategy');
-      }
+      window.socraticaPrefetchedImages = prefetchedImages;
     }
 
     // Only run browser-specific code in browser environment
@@ -146,28 +135,47 @@
     }
 
     return () => {
-      if (isBrowser) {
-        window.removeEventListener("resize", updateWidth);
-        if (searchTimeout) clearTimeout(searchTimeout);
+      // Close over these safely by checking if window still exists
+      if (isBrowser && typeof window !== 'undefined') {
+        // Safely remove event listeners only if they exist
+        try {
+          window.removeEventListener("resize", updateWidth);
+          window.removeEventListener('mousemove', handleGlobalMouseMove);
+          window.removeEventListener('resize', updateDimensions);
         
-        // Ensure these are defined before trying to clear them
-        if (typeof memoizedNodes !== 'undefined') memoizedNodes.clear();
-        if (typeof usedPeople !== 'undefined') usedPeople.clear();
-        if (typeof imageCache !== 'undefined') imageCache.clear();
-        
-        // Properly disconnect observer
-        if (typeof observer !== 'undefined' && observer) observer.disconnect();
-        
-        // Remove document event listeners
-        document.removeEventListener('click', documentClickHandler);
-        
-        // Remove window event listeners
-        window.removeEventListener('mousemove', handleGlobalMouseMove);
-        window.removeEventListener('resize', updateDimensions);
-        
-        // Clear any other global state that might persist
-        if (typeof window !== 'undefined') {
+          if (searchTimeout) clearTimeout(searchTimeout);
+          
+          // Ensure these are defined before trying to clear them
+          if (typeof memoizedNodes !== 'undefined') memoizedNodes.clear();
+          if (typeof usedPeople !== 'undefined') usedPeople.clear();
+          if (typeof imageCache !== 'undefined') imageCache.clear();
+          
+          // Properly disconnect observer
+          if (typeof observer !== 'undefined' && observer) observer.disconnect();
+          
+          // Remove document event listeners
+          if (typeof document !== 'undefined' && documentClickHandler) {
+            document.removeEventListener('click', documentClickHandler);
+          }
+          
+          // Clean up any other global state
+          if (typeof hoverTimer !== 'undefined' && hoverTimer) {
+            clearTimeout(hoverTimer);
+          }
+          
+          // Clear any other global state that might persist
           window.socraticaActivePage = undefined;
+          
+          // Clear any resource hints we might have added
+          const preloadLinks = document.querySelectorAll('link[rel="preload"], link[rel="prefetch"]');
+          preloadLinks.forEach(link => {
+            if (document.head.contains(link)) {
+              document.head.removeChild(link);
+            }
+          });
+        } catch (error) {
+          console.warn("Error during cleanup:", error);
+          // Don't let cleanup errors break navigation
         }
       }
     };

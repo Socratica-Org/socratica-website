@@ -97,7 +97,7 @@
 
 Dissatisfied with the status quo but energized to find a solution for future generations, they established Socratica's core model: Sunday morning gatherings that combined structured Pomodoro work sessions, social sharing of progress, and a welcoming community of inspiring makers. 
 
-With this vision as their compass, they  kicked off the first Socratica sessions in a cozy classroom, attracting a small but mighty group of curious minds. Socratica instantly struck a chord with the community, thanks greatly to early members and future hosts like Anson Yu and Jaclyn Chan who helped cultivate such a strong community, transforming ordinary Sunday mornings into inspiring spaces for creativity. 
+With this vision as their compass, they  kicked off the first Socratica sessions in a cozy classroom, attracting a small but mighty group of curious minds. Socratica instantly struck a chord with the community, thanks greatly to early members who helped cultivate such a strong community, transforming ordinary Sunday mornings into inspiring spaces for creativity. 
 `,
     },
     {

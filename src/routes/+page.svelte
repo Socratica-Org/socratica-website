@@ -78,7 +78,7 @@
     /> -->
     <Navbar />
 
-    <div class="absolute top-24 md:top-20 left-10 transform">
+    <div class="absolute top-5 left-4 transform">
       <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
     </div>
 

@@ -260,7 +260,7 @@ AND, FINALLY, we got merch.
     /> -->
     <Navbar />
 
-    <div class="absolute top-20 transform">
+    <div class="absolute top-5 left-4 transform">
       <a href="/">
         <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
       </a>

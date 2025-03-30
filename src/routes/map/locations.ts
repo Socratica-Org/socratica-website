@@ -309,4 +309,14 @@ export const locations = [
     websiteLink: "https://www.socratica.info/",
     coordinates: [43.53075, -80.229139],
   },
+  {
+    id: "ottawa",
+    name: "Synchronize",
+    date: "SEPTEMBER 2024",
+    location: "Ottawa, ON",
+    lumaLink: "https://lu.ma/embed/calendar/cal-W2eSnhNARlYQWqD/events?lt=light",
+    joinLink: "https://lu.ma/synchronize",
+    instagramLink: "https://www.instagram.com/synchronize.now/",
+    coordinates: [45.384481, -75.696955],
+  },
 ];

@@ -280,7 +280,7 @@
   {/if}
 </svelte:head>
 
-<Banner />
+<!-- <Banner /> -->
 <div class="site-container">
   <div class="app">
     <main class="main-content">

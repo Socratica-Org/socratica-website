@@ -17,6 +17,8 @@
   import DarkHeart from "$lib/images/dark-heart-straight.svg";
   import Toolbox from "$lib/images/toolbox.svg";
   import DarkToolbox from "$lib/images/dark-toolbox.svg";
+  import Store from "$lib/images/store.svg";
+  import DarkStore from "$lib/images/dark-store.svg";
 
   let currentPath = "";
   let showOverlay = false;
@@ -34,6 +36,7 @@
     toolbox: false,
     getInvolved: false,
     donate: false,
+    supply: false,
   };
 
   onMount(() => {
@@ -55,7 +58,7 @@
   }
 </script>
 
-<div class="absolute top-24 md:top-20 right-3 z-30">
+<div class="absolute top-4 right-3 z-30">
   <button
     class="w-10 h-10 bg-black rounded-full flex flex-col justify-center items-center"
     on:click={toggleOverlay}
@@ -253,10 +256,7 @@
       <a
         href="https://donate.stripe.com/5kA6qZcondXE8Te008"
         target="_blank"
-        class="navbar-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
-        on:click={() => {
-          showOverlay = false;
-        }}
+        class="z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out"
         on:mouseenter={() => (hoverState.donate = true)}
         on:mouseleave={() => (hoverState.donate = false)}
       >

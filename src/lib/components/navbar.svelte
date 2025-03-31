@@ -155,7 +155,7 @@
         />
         <span class:text-black={currentPath === "/about"}>ABOUT</span>
       </a>
-      <a
+      <!-- <a
         href="/people"
         class:opacity-50={currentPath === "/people"}
         class:cursor-not-allowed={currentPath === "/people"}
@@ -180,7 +180,7 @@
           class="w-4 h-4 md:w-6 md:h-6"
         />
         <span class:text-black={currentPath === "/people"}>PEOPLE</span>
-      </a>
+      </a> -->
       <a
         href="/map"
         class:opacity-50={currentPath === "/map"}

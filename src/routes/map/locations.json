@@ -301,6 +301,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "rabat-ALTs Morocco",
+      "name": "ALTs Morocco",
+      "date": "OCTOBER 2024",
+      "location": "Rabat, Morocco",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-PWXzFvN0nlL0D4R/events?compact=true?lt=light",
+      "joinLink": "https://lu.ma/alts.morocco",
+      "coordinates": [
+        34,
+        -6
+      ],
+      "instagramLink": "https://www.instagram.com/alts.morocco/",
+      "twitterLink": "https://twitter.com/altsmorocco",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://altsmorocco.com"
     }
   ]
 }

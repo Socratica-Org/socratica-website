@@ -301,6 +301,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "philadelphia-Code & Coffee",
+      "name": "Code & Coffee",
+      "date": "AUGUST 2024",
+      "location": "Philadelphia, PA",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-dummy/events?lt=light",
+      "joinLink": "https://lu.ma/f9dt1ugl",
+      "coordinates": [
+        39,
+        -75
+      ],
+      "instagramLink": "https://www.instagram.com/philly_codes",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://phillycodes.rsvp"
     }
   ]
 }

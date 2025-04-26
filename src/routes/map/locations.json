@@ -317,6 +317,22 @@
       "twitterLink": "https://twitter.com/altsmorocco",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://altsmorocco.com"
+    },
+    {
+      "id": "halifax-Collect.",
+      "name": "Collect.",
+      "date": "OCTOBER 2024",
+      "location": "Halifax, NS",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-VLkFm9DKIHxx0HF/events?lt=light",
+      "joinLink": "https://lu.ma/CollectHalifax",
+      "coordinates": [
+        44,
+        -63
+      ],
+      "instagramLink": "https://www.instagram.com/collecthalifax/",
+      "twitterLink": "https://x.com/collecthalifax",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "http://collecthalifax.org/"
     }
   ]
 }

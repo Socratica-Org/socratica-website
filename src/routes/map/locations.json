@@ -322,6 +322,19 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://phillycodes.rsvp"
+    },
+    {
+      "id": "toronto-Meraki",
+      "name": "Meraki",
+      "date": "SEPTEMBER 2024",
+      "location": "Toronto, ON",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-JA6dB7MHTEbdAtH/events?lt=light",
+      "joinLink": "https://lu.ma/merakiuoft",
+      "coordinates": [43.77114263337472, -79.18814083475627],
+      "instagramLink": "https://www.instagram.com/meraki_uoft/",
+      "twitterLink": "https://x.com/merakiuoft",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

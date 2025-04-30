@@ -445,6 +445,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://orchard.day"
+    },
+    {
+      "id": "nairobi-Eden",
+      "name": "Eden",
+      "date": "JANUARY 2025",
+      "location": "Nairobi, Kenya",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
+      "joinLink": "https://lu.ma/enr3l3zs",
+      "coordinates": [
+        -1.345868,
+        36.765037
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

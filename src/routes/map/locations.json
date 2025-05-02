@@ -445,6 +445,54 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://orchard.day"
+    },
+    {
+      "id": "nairobi-Eden",
+      "name": "Eden",
+      "date": "JANUARY 2025",
+      "location": "Nairobi, Kenya",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
+      "joinLink": "https://lu.ma/enr3l3zs",
+      "coordinates": [
+        -1.345868,
+        36.765037
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "calgary-Ascend",
+      "name": "Ascend",
+      "date": "JANUARY 2025",
+      "location": "Calgary, Canada",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
+      "joinLink": "https://lu.ma/ascendcalgary",
+      "coordinates": [
+        51.0378303527832,
+        -114.08059692382812
+      ],
+      "instagramLink": "https://www.instagram.com/ascendcalgary/",
+      "twitterLink": "https://x.com/ascendcalgary",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "lagos-Eureka",
+      "name": "Eureka",
+      "date": "MARCH 2025",
+      "location": "Lagos, Nigeria",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
+      "joinLink": "https://lu.ma/c7krel3v",
+      "coordinates": [
+        6.482550854841786,
+        3.3677974829643156
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://x.com/create_eureka",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

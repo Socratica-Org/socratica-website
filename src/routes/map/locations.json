@@ -477,6 +477,22 @@
       "twitterLink": "https://x.com/ascendcalgary",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "lagos-Eureka",
+      "name": "Eureka",
+      "date": "MARCH 2025",
+      "location": "Lagos, Nigeria",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
+      "joinLink": "https://lu.ma/c7krel3v",
+      "coordinates": [
+        6.482550854841786,
+        3.3677974829643156
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://x.com/create_eureka",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

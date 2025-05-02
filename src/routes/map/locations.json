@@ -461,6 +461,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "calgary-Ascend",
+      "name": "Ascend",
+      "date": "JANUARY 2025",
+      "location": "Calgary, Canada",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
+      "joinLink": "https://lu.ma/ascendcalgary",
+      "coordinates": [
+        51.0378303527832,
+        -114.08059692382812
+      ],
+      "instagramLink": "https://www.instagram.com/ascendcalgary/",
+      "twitterLink": "https://x.com/ascendcalgary",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

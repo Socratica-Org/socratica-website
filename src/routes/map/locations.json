@@ -11,26 +11,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.477305,
-        -80.549252
-      ]
-    },
-    {
-      "id": "toronto",
-      "name": "Socratica",
-      "date": "JANUARY 2023",
-      "location": "Toronto, ON",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light",
-      "joinLink": "https://lu.ma/soto",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.664714,
-        -79.385477
-      ]
+      "coordinates": [43.477305, -80.549252]
     },
     {
       "id": "vancouver",
@@ -43,10 +24,7 @@
       "twitterLink": "https://twitter.com/atelier_ubc",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.atelier.ac/",
-      "coordinates": [
-        49.2600924,
-        -123.2509564
-      ]
+      "coordinates": [49.2600924, -123.2509564]
     },
     {
       "id": "cambridge-uk",
@@ -59,10 +37,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        52.205338,
-        0.121817
-      ]
+      "coordinates": [52.205338, 0.121817]
     },
     {
       "id": "kingston",
@@ -75,10 +50,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        44.231172,
-        -76.485954
-      ]
+      "coordinates": [44.231172, -76.485954]
     },
     {
       "id": "western",
@@ -91,10 +63,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.009561,
-        -81.275471
-      ]
+      "coordinates": [43.009561, -81.275471]
     },
     {
       "id": "mit",
@@ -107,10 +76,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        42.3629,
-        -71.0839
-      ]
+      "coordinates": [42.3629, -71.0839]
     },
     {
       "id": "usc",
@@ -123,10 +89,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.sundays.rsvp/",
-      "coordinates": [
-        34.0224,
-        -118.2851
-      ]
+      "coordinates": [34.0224, -118.2851]
     },
     {
       "id": "montreal",
@@ -139,10 +102,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        45.5017,
-        -73.5673
-      ]
+      "coordinates": [45.5017, -73.5673]
     },
     {
       "id": "washington",
@@ -155,10 +115,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://saturdays.rsvp/",
-      "coordinates": [
-        47.6062,
-        -122.3321
-      ]
+      "coordinates": [47.6062, -122.3321]
     },
     {
       "id": "unc",
@@ -171,10 +128,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        35.9049,
-        -79.0469
-      ]
+      "coordinates": [35.9049, -79.0469]
     },
     {
       "id": "imperial",
@@ -187,10 +141,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        51.4988,
-        -0.1749
-      ]
+      "coordinates": [51.4988, -0.1749]
     },
     {
       "id": "ny",
@@ -204,10 +155,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
-      "coordinates": [
-        40.7128,
-        -74.006
-      ]
+      "coordinates": [40.7128, -74.006]
     },
     {
       "id": "umn",
@@ -220,10 +168,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        44.9753,
-        -93.2362
-      ]
+      "coordinates": [44.9753, -93.2362]
     },
     {
       "id": "singapore",
@@ -236,10 +181,7 @@
       "twitterLink": "https://twitter.com/owlspaceorg",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://tinyurl.com/Owlspaceorg",
-      "coordinates": [
-        1.3521,
-        103.8198
-      ]
+      "coordinates": [1.3521, 103.8198]
     },
     {
       "id": "mcmaster",
@@ -252,10 +194,7 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.26211519287825,
-        -79.91705655784756
-      ]
+      "coordinates": [43.26211519287825, -79.91705655784756]
     },
     {
       "id": "guelph",
@@ -268,10 +207,7 @@
       "twitterLink": "https://x.com/JoinCrescentia",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.53075,
-        -80.229139
-      ]
+      "coordinates": [43.53075, -80.229139]
     },
     {
       "id": "ottawa",
@@ -281,10 +217,7 @@
       "lumaLink": "https://lu.ma/embed/calendar/cal-W2eSnhNARlYQWqD/events?lt=light",
       "joinLink": "https://lu.ma/synchronize",
       "instagramLink": "https://www.instagram.com/synchronize.now/",
-      "coordinates": [
-        45.384481,
-        -75.696955
-      ]
+      "coordinates": [45.384481, -75.696955]
     },
     {
       "id": "dhaka-atrai",
@@ -293,10 +226,7 @@
       "location": "Dhaka, BD",
       "lumaLink": "https://lu.ma/embed/calendar/cal-6hicpioPAAXuEW3/events?lt=light",
       "joinLink": "https://lu.ma/atrai",
-      "coordinates": [
-        23.772745541655816,
-        90.4256807343437
-      ],
+      "coordinates": [23.772745541655816, 90.4256807343437],
       "instagramLink": "https://www.instagram.com/socraticadhaka.atrai/",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -309,10 +239,7 @@
       "location": "Rabat, Morocco",
       "lumaLink": "https://lu.ma/embed/calendar/cal-PWXzFvN0nlL0D4R/events?compact=true?lt=light",
       "joinLink": "https://lu.ma/alts.morocco",
-      "coordinates": [
-        34.018191219618586,
-        -6.842542531073535
-      ],
+      "coordinates": [34.018191219618586, -6.842542531073535],
       "instagramLink": "https://www.instagram.com/alts.morocco/",
       "twitterLink": "https://twitter.com/altsmorocco",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -325,10 +252,7 @@
       "location": "Halifax, NS",
       "lumaLink": "https://lu.ma/embed/calendar/cal-VLkFm9DKIHxx0HF/events?lt=light",
       "joinLink": "https://lu.ma/CollectHalifax",
-      "coordinates": [
-        44.64823054343091,
-        -63.57566869722125
-      ],
+      "coordinates": [44.64823054343091, -63.57566869722125],
       "instagramLink": "https://www.instagram.com/collecthalifax/",
       "twitterLink": "https://x.com/collecthalifax",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -341,10 +265,7 @@
       "location": "Paris, FR",
       "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
       "joinLink": "https://lu.ma/parenthese",
-      "coordinates": [
-        48.83114664067373,
-        2.3581479071271696
-      ],
+      "coordinates": [48.83114664067373, 2.3581479071271696],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -357,10 +278,7 @@
       "location": "Swarthmore, PA",
       "lumaLink": "https://lu.ma/embed/calendar/cal-qZE3lPYa5OqZwBF/events?lt=light",
       "joinLink": "https://lu.ma/ag2htdpq",
-      "coordinates": [
-        39.906539195171526,
-        -75.35479324973382
-      ],
+      "coordinates": [39.906539195171526, -75.35479324973382],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -373,10 +291,7 @@
       "location": "Pittsburgh, PA",
       "lumaLink": "https://lu.ma/embed/calendar/cal-02sNXkLBpjqtZSm/events?lt=light",
       "joinLink": "https://lu.ma/apricity-pgh",
-      "coordinates": [
-        40.43580089149957,
-        -79.92900425295927
-      ],
+      "coordinates": [40.43580089149957, -79.92900425295927],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -389,10 +304,7 @@
       "location": "Philadelphia, PA",
       "lumaLink": "https://lu.ma/embed/calendar/cal-dummy/events?lt=light",
       "joinLink": "https://lu.ma/f9dt1ugl",
-      "coordinates": [
-        39.95012222667061,
-        -75.1689031966586
-      ],
+      "coordinates": [39.95012222667061, -75.1689031966586],
       "instagramLink": "https://www.instagram.com/philly_codes",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -405,10 +317,7 @@
       "location": "Toronto, ON",
       "lumaLink": "https://lu.ma/embed/calendar/cal-JA6dB7MHTEbdAtH/events?lt=light",
       "joinLink": "https://lu.ma/merakiuoft",
-      "coordinates": [
-        43.650021765372415,
-        -79.39717969285986
-      ],
+      "coordinates": [43.650021765372415, -79.39717969285986],
       "instagramLink": "https://www.instagram.com/meraki_uoft/",
       "twitterLink": "https://x.com/merakiuoft",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -421,10 +330,7 @@
       "location": "Munich, GER",
       "lumaLink": "https://lu.ma/embed/calendar/cal-1B7veSjfCYzSPu2/events?lt=light",
       "joinLink": "https://lu.ma/ursprung",
-      "coordinates": [
-        48.148822595651936,
-        11.568033607231559
-      ],
+      "coordinates": [48.148822595651936, 11.568033607231559],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -437,10 +343,7 @@
       "location": "Oxford, UK",
       "lumaLink": "https://lu.ma/embed/calendar/cal-TGGXNEITTevMhOG/events?lt=light",
       "joinLink": "https://lu.ma/orchard",
-      "coordinates": [
-        51.74972622279844,
-        -1.2550452752446217
-      ],
+      "coordinates": [51.74972622279844, -1.2550452752446217],
       "instagramLink": "https://www.instagram.com/orchard.oxford/",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -453,10 +356,7 @@
       "location": "Nairobi, Kenya",
       "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
       "joinLink": "https://lu.ma/enr3l3zs",
-      "coordinates": [
-        -1.345868,
-        36.765037
-      ],
+      "coordinates": [-1.345868, 36.765037],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -469,10 +369,7 @@
       "location": "Calgary, Canada",
       "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
       "joinLink": "https://lu.ma/ascendcalgary",
-      "coordinates": [
-        51.0378303527832,
-        -114.08059692382812
-      ],
+      "coordinates": [51.0378303527832, -114.08059692382812],
       "instagramLink": "https://www.instagram.com/ascendcalgary/",
       "twitterLink": "https://x.com/ascendcalgary",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
@@ -485,10 +382,7 @@
       "location": "Lagos, Nigeria",
       "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
       "joinLink": "https://lu.ma/c7krel3v",
-      "coordinates": [
-        6.482550854841786,
-        3.3677974829643156
-      ],
+      "coordinates": [6.482550854841786, 3.3677974829643156],
       "instagramLink": "https://www.instagram.com/socratica.info",
       "twitterLink": "https://x.com/create_eureka",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",

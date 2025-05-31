@@ -334,6 +334,9 @@
                 <a href="/get-involved">Get Involved</a>
               </p>
               <p class="leading-[26px]">
+                <a href="https://github.com/Socratica-Org/">GitHub</a>
+              </p>
+              <p class="leading-[26px]">
                 <a
                   href="https://www.youtube.com/watch?v=ydYDqZQpim8"
                   target="_blank">Easter Egg</a

@@ -387,6 +387,22 @@
       "twitterLink": "https://x.com/create_eureka",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "markham-Playmor",
+      "name": "Playmor",
+      "date": "APRIL 2025",
+      "location": "Markham, ON",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-NqrihWVSnqZvtGG/events?lt=light",
+      "joinLink": "https://lu.ma/gtaplaymor",
+      "coordinates": [
+        43.8543237,
+        -79.3110445
+      ],
+      "instagramLink": "https://www.instagram.com/playmor__/",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

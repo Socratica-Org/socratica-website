@@ -1,21 +1,21 @@
 <script lang="ts">
+  import ArrowUpRight from "$lib/images/ArrowUpRight.svg";
+  import CircleWavyCheck from "$lib/images/CircleWavyCheck.svg";
   import Globe from "$lib/images/Globe.svg";
   import InstagramLogo from "$lib/images/InstagramLogo.svg";
   import TwitterLogo from "$lib/images/TwitterLogo.svg";
   import YoutubeLogo from "$lib/images/YoutubeLogo.svg";
-  import ArrowUpRight from "$lib/images/ArrowUpRight.svg";
-  import CircleWavyCheck from "$lib/images/CircleWavyCheck.svg";
 
   export let id: string;
   export let name: string;
   export let date: string;
-  export let location: string;
-  export let lumaLink: string;
-  export let joinLink: string;
-  export let websiteLink: string;
-  export let instagramLink: string;
-  export let twitterLink: string;
-  export let youtubeLink: string;
+  export let location: string | undefined;
+  export let lumaLink: string | undefined;
+  export let joinLink: string | undefined;
+  export let websiteLink: string | undefined;
+  export let instagramLink: string | undefined;
+  export let twitterLink: string | undefined;
+  export let youtubeLink: string | undefined;
   export let imageSrc: string | undefined;
 
   let placeholderIndex = 0;
@@ -40,55 +40,65 @@
       <p class="font-sf-mono text-sm text-[#A09D98]">{location}</p>
     </div>
     <div class="flex items-center gap-2.5 mb-8">
-      <a href={joinLink} target="_blank">
-        <button
-          class="bg-[#2A2928] py-1 px-3 rounded-full text-white text-sm font-mono border-2 border-[#2A2928] flex items-center justify-center"
+      {#if joinLink}
+        <a href={joinLink} target="_blank">
+          <button
+            class="bg-[#2A2928] py-1 px-3 rounded-full text-white text-sm font-mono border-2 border-[#2A2928] flex items-center justify-center"
+          >
+            <img
+              src={ArrowUpRight}
+              alt="Join"
+              class="w-4 h-4 md:w-6 md:h-6 mr-2"
+            />
+            JOIN
+          </button>
+        </a>
+      {/if}
+      {#if websiteLink}
+        <a
+          href={websiteLink}
+          target="_blank"
+          class="icon-container"
+          style="border-color: #000000;"
         >
-          <img
-            src={ArrowUpRight}
-            alt="Join"
-            class="w-4 h-4 md:w-6 md:h-6 mr-2"
-          />
-          JOIN
-        </button>
-      </a>
-      <a
-        href={websiteLink}
-        target="_blank"
-        class="icon-container"
-        style="border-color: #000000;"
-      >
-        <img src={Globe} alt="Website" class="icon" />
-      </a>
-      <a
-        href={instagramLink}
-        target="_blank"
-        class="icon-container"
-        style="border-color: #854F6F;"
-      >
-        <img src={InstagramLogo} alt="Instagram" class="icon" />
-      </a>
-      <a
-        href={twitterLink}
-        target="_blank"
-        class="icon-container"
-        style="border-color: #649AEA;"
-      >
-        <img src={TwitterLogo} alt="Twitter" class="icon" />
-      </a>
-      <a
-        href={youtubeLink}
-        target="_blank"
-        class="icon-container"
-        style="border-color: #C6482C;"
-      >
-        <img src={YoutubeLogo} alt="Youtube" class="icon" />
-      </a>
+          <img src={Globe} alt="Website" class="icon" />
+        </a>
+      {/if}
+      {#if instagramLink}
+        <a
+          href={instagramLink}
+          target="_blank"
+          class="icon-container"
+          style="border-color: #854F6F;"
+        >
+          <img src={InstagramLogo} alt="Instagram" class="icon" />
+        </a>
+      {/if}
+      {#if twitterLink}
+        <a
+          href={twitterLink}
+          target="_blank"
+          class="icon-container"
+          style="border-color: #000;"
+        >
+          <img src={TwitterLogo} alt="Twitter" class="icon" />
+        </a>
+      {/if}
+      {#if youtubeLink}
+        <a
+          href={youtubeLink}
+          target="_blank"
+          class="icon-container"
+          style="border-color: #C6482C;"
+        >
+          <img src={YoutubeLogo} alt="Youtube" class="icon" />
+        </a>
+      {/if}
     </div>
   </div>
 
-{#if lumaLink}
-  <iframe
+  {#if lumaLink}
+    <iframe
       title={name}
       src={lumaLink}
       class="w-full md:w-400"
@@ -98,16 +108,15 @@
       aria-hidden="false"
     />
   {:else if imageSrc}
-    <img src={imageSrc}
-    alt="socratica node preview"
-    class="w-full md:w-400"
-    style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6; border: 2px solid #CFCCC4;"
-    aria-hidden="false"
-    height="350"
-    >
-  {:else}
-  <div></div>
-{/if}
+    <img
+      src={imageSrc}
+      alt="socratica node preview"
+      class="w-full md:w-400"
+      style="border-radius: 8px; margin: 0 auto; margin-bottom: 20px; background: #F4F5F6; border: 2px solid #CFCCC4;"
+      aria-hidden="false"
+      height="350"
+    />
+  {/if}
 
   <button
     class="bg-[#FFFCF3] py-1 px-3 rounded-full text-xs md:text-sm text-[#2A2928] font-mono border-2 border-dashed border-soft-grey flex items-center justify-center"

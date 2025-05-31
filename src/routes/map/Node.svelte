@@ -79,7 +79,7 @@
           href={twitterLink}
           target="_blank"
           class="icon-container"
-          style="border-color: #649AEA;"
+          style="border-color: #000;"
         >
           <img src={TwitterLogo} alt="Twitter" class="icon" />
         </a>

@@ -132,6 +132,16 @@
       "websiteLink": "https://making.mn/"
     },
     {
+      "id": "mcmaster",
+      "name": "Agora",
+      "date": "OCTOBER 2024",
+      "location": "Hamilton, ON",
+      "coordinates": [43.26211519287825, -79.91705655784756],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
+      "joinLink": "https://lu.ma/agora",
+      "instagramLink": "https://instagram.com/agora.meet"
+    },
+    {
       "id": "guelph",
       "name": "Crescentia",
       "date": "NOVEMBER 2024",
@@ -251,7 +261,7 @@
     },
     {
       "id": "nairobi-Eden",
-      "name": "Eden",
+      "name": "EDEN",
       "date": "JANUARY 2025",
       "location": "Nairobi, Kenya",
       "coordinates": [-1.345868, 36.765037],
@@ -262,7 +272,7 @@
       "id": "calgary-Ascend",
       "name": "Ascend",
       "date": "JANUARY 2025",
-      "location": "Calgary, Canada",
+      "location": "Calgary, AB",
       "coordinates": [51.0378303527832, -114.08059692382812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
       "joinLink": "https://lu.ma/ascendcalgary",
@@ -271,7 +281,7 @@
     },
     {
       "id": "lagos-Eureka",
-      "name": "Eureka",
+      "name": "eureka",
       "date": "MARCH 2025",
       "location": "Lagos, Nigeria",
       "coordinates": [6.482550854841786, 3.3677974829643156],

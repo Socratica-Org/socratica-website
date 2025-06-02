@@ -319,6 +319,16 @@
       "joinLink": "https://instagram.com/daisy.sun.life",
       "instagramLink": "https://instagram.com/daisy.sun.life",
       "websiteLink": "https://daisy.sundown.life/"
+    },
+    {
+      "id": "sf-sundays",
+      "name": "Sundays",
+      "date": "May 2025",
+      "location": "San Francisco, CA",
+      "coordinates": [37.794405, -122.403411],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-FFBSUEbqC7XLj6d/events?lt=light",
+      "joinLink": "https://lu.ma/sundaysinsf",
+      "websiteLink": "https://sundaysinsf.com/"
     }
   ]
 }

@@ -328,7 +328,19 @@
       "coordinates": [37.794405, -122.403411],
       "lumaLink": "https://lu.ma/embed/calendar/cal-FFBSUEbqC7XLj6d/events?lt=light",
       "joinLink": "https://lu.ma/sundaysinsf",
+      "instagramLink": "https://instagram.com/sundayinsf",
+      "twitterLink": "https://x.com/sundaysinsf",
       "websiteLink": "https://sundaysinsf.com/"
+    },
+    {
+      "id": "vic-tenfold",
+      "name": "Tenfold",
+      "date": "May 2024",
+      "location": "Victoria, BC",
+      "coordinates": [48.429915, -123.362389],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-ChvmXj1B1x2n23o/events?lt=light",
+      "joinLink": "https://lu.ma/tenfold",
+      "websiteLink": "https://www.tenfoldvictoria.com/"
     }
   ]
 }

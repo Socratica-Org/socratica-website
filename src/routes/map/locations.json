@@ -249,6 +249,16 @@
       "websiteLink": "hhttps://merakiuoft.my.canva.site/"
     },
     {
+      "id": "munich-Ursprung",
+      "name": "Ursprung",
+      "date": "December 2024",
+      "location": "Munich, Germany",
+      "coordinates": [48.148822595651936, 11.568033607231559],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-1B7veSjfCYzSPu2/events?lt=light",
+      "joinLink": "https://lu.ma/ursprung",
+      "websiteLink": "https://ursprung.community"
+    },
+    {
       "id": "oxford-orchard",
       "name": "[orchard]",
       "date": "November 2023",
@@ -341,6 +351,17 @@
       "lumaLink": "https://lu.ma/embed/calendar/cal-ChvmXj1B1x2n23o/events?lt=light",
       "joinLink": "https://lu.ma/tenfold",
       "websiteLink": "https://www.tenfoldvictoria.com/"
+    },
+    {
+      "id": "ashoka-scenes",
+      "name": "scenes",
+      "date": "January 2024",
+      "location": "NCR, India",
+      "coordinates": [28.946937, 77.101438],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-byxD36XQslHqCKc/events?lt=light",
+      "joinLink": "https://lu.ma/scenes.ashoka",
+      "instagramLink": "https://instagram.com/scenes.ashoka",
+      "twitterLink": "https://x.com/scenesatashoka"
     }
   ]
 }

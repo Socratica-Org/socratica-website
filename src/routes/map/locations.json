@@ -3,7 +3,7 @@
     {
       "id": "waterloo",
       "name": "Socratica",
-      "date": "MARCH 2022",
+      "date": "March 2022",
       "location": "Waterloo, ON",
       "coordinates": [43.477305, -80.549252],
       "lumaLink": "https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light",
@@ -16,7 +16,7 @@
     {
       "id": "vancouver",
       "name": "Atelier",
-      "date": "SEPTEMBER 2023",
+      "date": "September 2023",
       "location": "Vancouver, BC",
       "coordinates": [49.264813, -123.253812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light",
@@ -28,7 +28,7 @@
     {
       "id": "cambridge-uk",
       "name": "[scale down]",
-      "date": "OCTOBER 2023",
+      "date": "October 2023",
       "location": "Cambridge, UK",
       "coordinates": [52.205338, 0.121817],
       "lumaLink": "https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light",
@@ -37,7 +37,7 @@
     {
       "id": "kingston",
       "name": "id8",
-      "date": "OCTOBER 2023",
+      "date": "October 2023",
       "location": "Kingston, ON",
       "coordinates": [44.231172, -76.485954],
       "lumaLink": "https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light",
@@ -47,7 +47,7 @@
     {
       "id": "western",
       "name": "momentum",
-      "date": "SEPTEMBER 2023",
+      "date": "September 2023",
       "location": "London, ON",
       "coordinates": [43.009561, -81.275471],
       "lumaLink": "https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light",
@@ -59,7 +59,7 @@
     {
       "id": "mit",
       "name": "Friendly Beans!",
-      "date": "DECEMBER 2023",
+      "date": "December 2023",
       "location": "Cambridge, MA",
       "lumaLink": "https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?lt=light",
       "joinLink": "https://lu.ma/beans",
@@ -69,7 +69,7 @@
     {
       "id": "usc",
       "name": "sundays",
-      "date": "JANUARY 2024",
+      "date": "January 2024",
       "location": "Los Angeles, CA",
       "coordinates": [34.0224, -118.2851],
       "lumaLink": "https://lu.ma/embed/calendar/cal-81AnmgiInWOKNmv/events?lt=light",
@@ -81,7 +81,7 @@
     {
       "id": "montreal",
       "name": "Douze à Deux",
-      "date": "SEPTEMBER 2023",
+      "date": "September 2023",
       "location": "Montreal, QC",
       "coordinates": [45.5017, -73.5673],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
@@ -92,7 +92,7 @@
     {
       "id": "washington",
       "name": "Saturdays",
-      "date": "NOVEMEBER 2023",
+      "date": "November 2023",
       "location": "Seattle, WA",
       "coordinates": [47.6062, -122.3321],
       "lumaLink": "https://lu.ma/embed/calendar/cal-SD9FoHuZW6pQn6D/events?lt=light",
@@ -102,7 +102,7 @@
     {
       "id": "imperial",
       "name": "craft!",
-      "date": "JANUARY 2024",
+      "date": "January 2024",
       "location": "London, UK",
       "coordinates": [51.4988, -0.1749],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qFfyVkBdmPJ7yBv/events?lt=light",
@@ -113,7 +113,7 @@
     {
       "id": "ny",
       "name": "New York Nodes",
-      "date": "MARCH 2024",
+      "date": "March 2024",
       "location": "New York, NY",
       "coordinates": [40.7128, -74.006],
       "imageSrc": "http://straightupjac.xyz/socratica-nyc-cozy-sundays.png",
@@ -123,7 +123,7 @@
     {
       "id": "umn",
       "name": "making@umn",
-      "date": "MARCH 2024",
+      "date": "March 2024",
       "location": "Minneapolis, MN",
       "coordinates": [44.9753, -93.2362],
       "lumaLink": "https://lu.ma/embed/calendar/cal-0U8g6FXtpy0P1ih/events?lt=light",
@@ -134,7 +134,7 @@
     {
       "id": "mcmaster",
       "name": "Agora",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Hamilton, ON",
       "coordinates": [43.26211519287825, -79.91705655784756],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
@@ -144,7 +144,7 @@
     {
       "id": "guelph",
       "name": "Crescentia",
-      "date": "NOVEMBER 2024",
+      "date": "November 2024",
       "location": "Guelph, ON",
       "coordinates": [43.53075, -80.229139],
       "lumaLink": "https://lu.ma/embed/calendar/cal-3rFVYPtoENGIGIk/events?lt=light",
@@ -155,7 +155,7 @@
     {
       "id": "ottawa",
       "name": "Synchronize",
-      "date": "SEPTEMBER 2024",
+      "date": "September 2024",
       "location": "Ottawa, ON",
       "coordinates": [45.384481, -75.696955],
       "lumaLink": "https://lu.ma/embed/calendar/cal-W2eSnhNARlYQWqD/events?lt=light",
@@ -165,7 +165,7 @@
     {
       "id": "dhaka-atrai",
       "name": "atrai",
-      "date": "FEBRUARY 2025",
+      "date": "February 2025",
       "location": "Dhaka, BD",
       "coordinates": [23.772745541655816, 90.4256807343437],
       "lumaLink": "https://lu.ma/embed/calendar/cal-6hicpioPAAXuEW3/events?lt=light",
@@ -176,7 +176,7 @@
     {
       "id": "rabat-ALTs Morocco",
       "name": "ALTs Morocco",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Rabat, Morocco",
       "coordinates": [34.018191219618586, -6.842542531073535],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PWXzFvN0nlL0D4R/events?compact=true?lt=light",
@@ -188,7 +188,7 @@
     {
       "id": "halifax-Collect.",
       "name": "Collect.",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Halifax, NS",
       "coordinates": [44.64823054343091, -63.57566869722125],
       "lumaLink": "https://lu.ma/embed/calendar/cal-VLkFm9DKIHxx0HF/events?lt=light",
@@ -200,7 +200,7 @@
     {
       "id": "paris-Parenth\u00e8se",
       "name": "Parenthesis",
-      "date": "MARCH 2025",
+      "date": "March 2025",
       "location": "Paris, FR",
       "coordinates": [48.83114664067373, 2.3581479071271696],
       "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
@@ -209,7 +209,7 @@
     {
       "id": "swarthmore-Synthesis",
       "name": "Synthesis",
-      "date": "DECEMBER 2024",
+      "date": "December 2024",
       "location": "Swarthmore, PA",
       "coordinates": [39.906539195171526, -75.35479324973382],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qZE3lPYa5OqZwBF/events?lt=light",
@@ -219,7 +219,7 @@
     {
       "id": "pittsburgh-Apricity",
       "name": "apricity",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Pittsburgh, PA",
       "coordinates": [40.43580089149957, -79.92900425295927],
       "lumaLink": "https://lu.ma/embed/calendar/cal-02sNXkLBpjqtZSm/events?lt=light",
@@ -228,7 +228,7 @@
     {
       "id": "philadelphia-Code & Coffee",
       "name": "Code & Coffee",
-      "date": "AUGUST 2024",
+      "date": "August 2024",
       "location": "Philadelphia, PA",
       "coordinates": [39.95012222667061, -75.1689031966586],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ftxaA6PDR5Tbllt/events?lt=light",
@@ -239,7 +239,7 @@
     {
       "id": "toronto-Meraki",
       "name": "Meraki",
-      "date": "SEPTEMBER 2024",
+      "date": "September 2024",
       "location": "Toronto, ON",
       "coordinates": [43.650021765372415, -79.39717969285986],
       "lumaLink": "https://lu.ma/embed/calendar/cal-JA6dB7MHTEbdAtH/events?lt=light",
@@ -251,7 +251,7 @@
     {
       "id": "oxford-orchard",
       "name": "[orchard]",
-      "date": "NOVEMBER 2023",
+      "date": "November 2023",
       "location": "Oxford, UK",
       "lumaLink": "https://lu.ma/embed/calendar/cal-TGGXNEITTevMhOG/events?lt=light",
       "joinLink": "https://lu.ma/orchard",
@@ -262,7 +262,7 @@
     {
       "id": "nairobi-Eden",
       "name": "EDEN",
-      "date": "JANUARY 2025",
+      "date": "January 2025",
       "location": "Nairobi, Kenya",
       "coordinates": [-1.345868, 36.765037],
       "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
@@ -271,7 +271,7 @@
     {
       "id": "calgary-Ascend",
       "name": "Ascend",
-      "date": "JANUARY 2025",
+      "date": "January 2025",
       "location": "Calgary, AB",
       "coordinates": [51.0378303527832, -114.08059692382812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
@@ -282,7 +282,7 @@
     {
       "id": "lagos-Eureka",
       "name": "eureka",
-      "date": "MARCH 2025",
+      "date": "March 2025",
       "location": "Lagos, Nigeria",
       "coordinates": [6.482550854841786, 3.3677974829643156],
       "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
@@ -292,7 +292,7 @@
     {
       "id": "markham-Playmor",
       "name": "Playmor",
-      "date": "APRIL 2025",
+      "date": "April 2025",
       "location": "Markham, ON",
       "coordinates": [43.8543237, -79.3110445],
       "lumaLink": "https://lu.ma/embed/calendar/cal-NqrihWVSnqZvtGG/events?lt=light",
@@ -303,7 +303,7 @@
     {
       "id": "warwick-meadow",
       "name": "[meadow]",
-      "date": "JANUARY 2025",
+      "date": "January 2025",
       "location": "Warwick, UK",
       "coordinates": [52.379312, -1.561438],
       "lumaLink": "https://lu.ma/embed/calendar/cal-LNJroTBMKAMCJDv/events?lt=light",
@@ -312,7 +312,7 @@
     {
       "id": "liverpool-Daisy",
       "name": "Daisy",
-      "date": "JANUARY 2025",
+      "date": "January 2025",
       "location": "Liverpool, UK",
       "coordinates": [53.410562, -2.970562],
       "lumaLink": "https://lu.ma/embed/calendar/cal-6flGZ5OxOBVKQA7/events?lt=light",

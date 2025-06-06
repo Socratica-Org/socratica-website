@@ -119,7 +119,7 @@
   {/if}
 
   <button
-    class="bg-[#FFFCF3] py-1 px-3 rounded-full text-xs md:text-sm text-[#2A2928] font-mono border-2 border-dashed border-soft-grey flex items-center justify-center"
+    class="bg-[#FFFCF3] py-1 px-3 rounded-full text-xs md:text-sm text-[#2A2928] font-mono border-2 border-dashed border-soft-grey flex items-center justify-center uppercase"
   >
     <img src={CircleWavyCheck} alt="Date" class="w-4 h-4 md:w-6 md:h-6 mr-2" />
     {date}

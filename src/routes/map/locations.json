@@ -199,10 +199,10 @@
     },
     {
       "id": "paris-Parenth\u00e8se",
-      "name": "Parenthesis",
+      "name": "Parenthèse",
       "date": "March 2025",
       "location": "Paris, FR",
-      "coordinates": [48.83114664067373, 2.3581479071271696],
+      "coordinates": [48.8534951, 2.3483915],
       "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
       "joinLink": "https://lu.ma/parenthese"
     },
@@ -341,16 +341,6 @@
       "instagramLink": "https://instagram.com/sundayinsf",
       "twitterLink": "https://x.com/sundaysinsf",
       "websiteLink": "https://sundaysinsf.com/"
-    },
-    {
-      "id": "vic-tenfold",
-      "name": "Tenfold",
-      "date": "May 2024",
-      "location": "Victoria, BC",
-      "coordinates": [48.429915, -123.362389],
-      "lumaLink": "https://lu.ma/embed/calendar/cal-ChvmXj1B1x2n23o/events?lt=light",
-      "joinLink": "https://lu.ma/tenfold",
-      "websiteLink": "https://www.tenfoldvictoria.com/"
     },
     {
       "id": "ashoka-scenes",

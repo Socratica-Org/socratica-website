@@ -276,7 +276,7 @@
       "location": "Nairobi, Kenya",
       "coordinates": [-1.345868, 36.765037],
       "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
-      "joinLink": "https://lu.ma/calendar/cal-w6zPQfuWF26fyfc/events"
+      "joinLink": "https://lu.ma/calendar/cal-w6zPQfuWF26fyfc"
     },
     {
       "id": "calgary-Ascend",
@@ -352,6 +352,15 @@
       "joinLink": "https://lu.ma/scenes.ashoka",
       "instagramLink": "https://instagram.com/scenes.ashoka",
       "twitterLink": "https://x.com/scenesatashoka"
+    },
+    {
+      "id": "amsterdam-ankerplaats",
+      "name": "ankerplaats",
+      "date": "June 2025",
+      "location": "Amsterdam, Netherlands",
+      "coordinates": [52.3637925, 4.9067331],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-016LhHDMBXEfKJP/events?lt=light",
+      "joinLink": "https://lu.ma/ankerplaats"
     }
   ]
 }

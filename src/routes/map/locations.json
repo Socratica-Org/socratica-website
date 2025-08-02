@@ -525,6 +525,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "tokyo-Shinobuyume",
+      "name": "Shinobuyume",
+      "date": "AUGUST 2025",
+      "location": "Tokyo, Japan",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-IVaQNaQwNaI0FC9/events?lt=light",
+      "joinLink": "https://lu.ma/shinobuyume",
+      "coordinates": [
+        35.646046011579244,
+        139.70381172258735
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

@@ -387,6 +387,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "st. john's-10am",
+      "name": "10am",
+      "date": "JULY 2025",
+      "location": "St. John's, NL",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-YKNiHwabR8OGuve/events?lt=light",
+      "joinLink": "https://lu.ma/gnn0jr4s",
+      "coordinates": [
+        47.57322344479589,
+        -52.73557899964588
+      ],
+      "instagramLink": "https://www.instagram.com/10am_mun/",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.linkedin.com/company/10am-mun/"
     }
   ]
 }

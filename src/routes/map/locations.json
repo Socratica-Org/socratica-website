@@ -3,544 +3,374 @@
     {
       "id": "waterloo",
       "name": "Socratica",
-      "date": "MARCH 2022",
+      "date": "March 2022",
       "location": "Waterloo, ON",
+      "coordinates": [43.477305, -80.549252],
       "lumaLink": "https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light",
       "joinLink": "https://lu.ma/socratica",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.477305,
-        -80.549252
-      ]
-    },
-    {
-      "id": "toronto",
-      "name": "Socratica",
-      "date": "JANUARY 2023",
-      "location": "Toronto, ON",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-PxG5QruZfgz28XB/events?lt=light",
-      "joinLink": "https://lu.ma/soto",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.664714,
-        -79.385477
-      ]
+      "instagramLink": "https://instagram.com/socratica.info",
+      "twitterLink": "https://x.com/socraticainfo",
+      "youtubeLink": "https://youtube.com/@socraticainfo",
+      "websiteLink": "https://socratica.info/"
     },
     {
       "id": "vancouver",
       "name": "Atelier",
-      "date": "SEPTEMBER 2023",
+      "date": "September 2023",
       "location": "Vancouver, BC",
+      "coordinates": [49.264813, -123.253812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light",
-      "joinLink": "https://lu.ma/atelier.ubc",
-      "instagramLink": "https://www.instagram.com/atelier.ubc",
-      "twitterLink": "https://twitter.com/atelier_ubc",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.atelier.ac/",
-      "coordinates": [
-        49.2600924,
-        -123.2509564
-      ]
+      "joinLink": "https://lu.ma/atelier.place",
+      "instagramLink": "https://instagram.com/atelier.place",
+      "twitterLink": "https://x.com/atelier_place",
+      "websiteLink": "https://atelier.place/"
     },
     {
       "id": "cambridge-uk",
-      "name": "Scale Down",
-      "date": "OCTOBER 2023",
+      "name": "[scale down]",
+      "date": "October 2023",
       "location": "Cambridge, UK",
+      "coordinates": [52.205338, 0.121817],
       "lumaLink": "https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light",
-      "joinLink": "https://lu.ma/scaledown",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        52.205338,
-        0.121817
-      ]
+      "joinLink": "https://lu.ma/scaledown"
     },
     {
       "id": "kingston",
-      "name": "id8.blankcanvas",
-      "date": "OCTOBER 2023",
+      "name": "id8",
+      "date": "October 2023",
       "location": "Kingston, ON",
+      "coordinates": [44.231172, -76.485954],
       "lumaLink": "https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light",
       "joinLink": "https://lu.ma/id8id8id8",
-      "instagramLink": "https://www.instagram.com/id8id8id8",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        44.231172,
-        -76.485954
-      ]
+      "instagramLink": "https://instagram.com/id8id8id8"
     },
     {
       "id": "western",
-      "name": "Momentum",
-      "date": "SEPTEMBER 2023",
+      "name": "momentum",
+      "date": "September 2023",
       "location": "London, ON",
+      "coordinates": [43.009561, -81.275471],
       "lumaLink": "https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light",
       "joinLink": "https://lu.ma/moment.um",
-      "instagramLink": "https://www.instagram.com/momentum_uwo",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.009561,
-        -81.275471
-      ]
+      "instagramLink": "https://instagram.com/momentum_uwo",
+      "twitterLink": "https://x.com/momentum_place",
+      "websiteLink": "https://momentum.place/"
     },
     {
       "id": "mit",
-      "name": "Friendly Beans",
-      "date": "DECEMBER 2023",
+      "name": "Friendly Beans!",
+      "date": "December 2023",
       "location": "Cambridge, MA",
       "lumaLink": "https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?lt=light",
       "joinLink": "https://lu.ma/beans",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        42.3629,
-        -71.0839
-      ]
+      "instagramLink": "https://instagram.com/friendlybeansboston",
+      "coordinates": [42.3629, -71.0839]
     },
     {
       "id": "usc",
-      "name": "Sundays",
-      "date": "JANUARY 2024",
+      "name": "sundays",
+      "date": "January 2024",
       "location": "Los Angeles, CA",
+      "coordinates": [34.0224, -118.2851],
       "lumaLink": "https://lu.ma/embed/calendar/cal-81AnmgiInWOKNmv/events?lt=light",
-      "joinLink": "https://lu.ma/calendar/cal-81AnmgiInWOKNmv",
-      "instagramLink": "https://www.instagram.com/sundaysatusc",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.sundays.rsvp/",
-      "coordinates": [
-        34.0224,
-        -118.2851
-      ]
+      "joinLink": "https://lu.ma/sundaysinla",
+      "instagramLink": "https://instagram.com/sundaysnla",
+      "twitterLink": "https://x.com/sundaysatusc",
+      "websiteLink": "https://sundays.rsvp/"
     },
     {
       "id": "montreal",
-      "name": "DouzeaDeux",
-      "date": "SEPTEMBER 2023",
+      "name": "Douze à Deux",
+      "date": "September 2023",
       "location": "Montreal, QC",
+      "coordinates": [45.5017, -73.5673],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
       "joinLink": "https://lu.ma/douzeadeuxMontreal",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        45.5017,
-        -73.5673
-      ]
+      "instagramLink": "https://instagram.com/douzeadeux",
+      "twitterLink": "https://x.com/douzeadeux"
     },
     {
       "id": "washington",
       "name": "Saturdays",
-      "date": "NOVEMEBER 2023",
+      "date": "November 2023",
       "location": "Seattle, WA",
+      "coordinates": [47.6062, -122.3321],
       "lumaLink": "https://lu.ma/embed/calendar/cal-SD9FoHuZW6pQn6D/events?lt=light",
       "joinLink": "https://lu.ma/uwsaturdays",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://saturdays.rsvp/",
-      "coordinates": [
-        47.6062,
-        -122.3321
-      ]
-    },
-    {
-      "id": "unc",
-      "name": "Hatch",
-      "date": "JANUARY 2024",
-      "location": "Chapel Hill, NC",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-p0CcDhZn6Z5elyX/events?lt=light",
-      "joinLink": "https://lu.ma/unc-hatch",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        35.9049,
-        -79.0469
-      ]
+      "instagramLink": "https://instagram.com/saturdays.rsvp"
     },
     {
       "id": "imperial",
-      "name": "Craft",
-      "date": "JANUARY 2024",
+      "name": "craft!",
+      "date": "January 2024",
       "location": "London, UK",
+      "coordinates": [51.4988, -0.1749],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qFfyVkBdmPJ7yBv/events?lt=light",
       "joinLink": "https://lu.ma/craft_",
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        51.4988,
-        -0.1749
-      ]
+      "instagramLink": "https://instagram.com/craft_ldn",
+      "websiteLink": "https://craftedu.org/"
     },
     {
       "id": "ny",
       "name": "New York Nodes",
-      "date": "MARCH 2024",
+      "date": "March 2024",
       "location": "New York, NY",
-      "lumaLink": "",
+      "coordinates": [40.7128, -74.006],
       "imageSrc": "http://straightupjac.xyz/socratica-nyc-cozy-sundays.png",
       "joinLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
-      "instagramLink": "https://www.instagram.com/_ichinichiippo/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
-      "coordinates": [
-        40.7128,
-        -74.006
-      ]
+      "websiteLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4"
     },
     {
       "id": "umn",
       "name": "making@umn",
-      "date": "MARCH 2024",
+      "date": "March 2024",
       "location": "Minneapolis, MN",
+      "coordinates": [44.9753, -93.2362],
       "lumaLink": "https://lu.ma/embed/calendar/cal-0U8g6FXtpy0P1ih/events?lt=light",
       "joinLink": "https://lu.ma/making-umn",
-      "instagramLink": "https://www.instagram.com/makingatumn/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        44.9753,
-        -93.2362
-      ]
-    },
-    {
-      "id": "singapore",
-      "name": "Owl Space",
-      "date": "JUNE 2024",
-      "location": "Singapore",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-Wv97MpIiMgbkofM/events?lt=light",
-      "joinLink": "https://lu.ma/owlspace",
-      "instagramLink": "https://www.instagram.com/socratica.info/",
-      "twitterLink": "https://twitter.com/owlspaceorg",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://tinyurl.com/Owlspaceorg",
-      "coordinates": [
-        1.3521,
-        103.8198
-      ]
+      "instagramLink": "https://instagram.com/makingatumn/",
+      "websiteLink": "https://making.mn/"
     },
     {
       "id": "mcmaster",
-      "name": "agora",
-      "date": "OCTOBER 2024",
+      "name": "Agora",
+      "date": "October 2024",
       "location": "Hamilton, ON",
+      "coordinates": [43.26211519287825, -79.91705655784756],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
-      "joinLink": "https://lu.ma/theagora",
-      "instagramLink": "https://www.instagram.com/agora.meet/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.26211519287825,
-        -79.91705655784756
-      ]
+      "joinLink": "https://lu.ma/agora",
+      "instagramLink": "https://instagram.com/agora.meet"
     },
     {
       "id": "guelph",
       "name": "Crescentia",
-      "date": "NOVEMBER 2024",
+      "date": "November 2024",
       "location": "Guelph, ON",
+      "coordinates": [43.53075, -80.229139],
       "lumaLink": "https://lu.ma/embed/calendar/cal-3rFVYPtoENGIGIk/events?lt=light",
       "joinLink": "https://lu.ma/crescentia",
-      "instagramLink": "https://www.instagram.com/crescentia_guelph/",
-      "twitterLink": "https://x.com/JoinCrescentia",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/",
-      "coordinates": [
-        43.53075,
-        -80.229139
-      ]
+      "instagramLink": "https://instagram.com/crescentia_guelph",
+      "twitterLink": "https://x.com/JoinCrescentia"
     },
     {
       "id": "ottawa",
       "name": "Synchronize",
-      "date": "SEPTEMBER 2024",
+      "date": "September 2024",
       "location": "Ottawa, ON",
+      "coordinates": [45.384481, -75.696955],
       "lumaLink": "https://lu.ma/embed/calendar/cal-W2eSnhNARlYQWqD/events?lt=light",
       "joinLink": "https://lu.ma/synchronize",
-      "instagramLink": "https://www.instagram.com/synchronize.now/",
-      "coordinates": [
-        45.384481,
-        -75.696955
-      ]
+      "instagramLink": "https://instagram.com/synchronize.now/"
     },
     {
       "id": "dhaka-atrai",
       "name": "atrai",
-      "date": "FEBRUARY 2025",
+      "date": "February 2025",
       "location": "Dhaka, BD",
+      "coordinates": [23.772745541655816, 90.4256807343437],
       "lumaLink": "https://lu.ma/embed/calendar/cal-6hicpioPAAXuEW3/events?lt=light",
       "joinLink": "https://lu.ma/atrai",
-      "coordinates": [
-        23.772745541655816,
-        90.4256807343437
-      ],
-      "instagramLink": "https://www.instagram.com/socraticadhaka.atrai/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "instagramLink": "https://instagram.com/atrai.dhaka",
+      "websiteLink": "https://docs.google.com/document/d/e/2PACX-1vRotpfeBw-VjrNXjQbITtToINyDCjdYcuAY3e9YPVMhcKFgShU3ou0qwixPWueTr-f8U7c0R3wU8KYK/pub"
     },
     {
       "id": "rabat-ALTs Morocco",
       "name": "ALTs Morocco",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Rabat, Morocco",
+      "coordinates": [34.018191219618586, -6.842542531073535],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PWXzFvN0nlL0D4R/events?compact=true?lt=light",
       "joinLink": "https://lu.ma/alts.morocco",
-      "coordinates": [
-        34.018191219618586,
-        -6.842542531073535
-      ],
-      "instagramLink": "https://www.instagram.com/alts.morocco/",
-      "twitterLink": "https://twitter.com/altsmorocco",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "instagramLink": "https://instagram.com/alts.morocco",
+      "twitterLink": "https://x.com/altsmorocco",
       "websiteLink": "https://altsmorocco.com"
     },
     {
       "id": "halifax-Collect.",
       "name": "Collect.",
-      "date": "OCTOBER 2024",
+      "date": "October 2024",
       "location": "Halifax, NS",
+      "coordinates": [44.64823054343091, -63.57566869722125],
       "lumaLink": "https://lu.ma/embed/calendar/cal-VLkFm9DKIHxx0HF/events?lt=light",
       "joinLink": "https://lu.ma/CollectHalifax",
-      "coordinates": [
-        44.64823054343091,
-        -63.57566869722125
-      ],
-      "instagramLink": "https://www.instagram.com/collecthalifax/",
+      "instagramLink": "https://instagram.com/collecthalifax/",
       "twitterLink": "https://x.com/collecthalifax",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "http://collecthalifax.org/"
     },
     {
       "id": "paris-Parenth\u00e8se",
-      "name": "Parenth\u00e8se",
-      "date": "MARCH 2025",
-      "location": "Paris, FR",
+      "name": "Parenthèse",
+      "date": "March 2025",
+      "location": "Paris, France",
+      "coordinates": [48.8534951, 2.3483915],
       "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
-      "joinLink": "https://lu.ma/parenthese",
-      "coordinates": [
-        48.83114664067373,
-        2.3581479071271696
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "joinLink": "https://lu.ma/parenthese"
     },
     {
       "id": "swarthmore-Synthesis",
       "name": "Synthesis",
-      "date": "DECEMBER 2024",
+      "date": "December 2024",
       "location": "Swarthmore, PA",
+      "coordinates": [39.906539195171526, -75.35479324973382],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qZE3lPYa5OqZwBF/events?lt=light",
-      "joinLink": "https://lu.ma/ag2htdpq",
-      "coordinates": [
-        39.906539195171526,
-        -75.35479324973382
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "joinLink": "https://lu.ma/user/usr-aiYrdVuNM5JJXB9",
       "websiteLink": "https://swatsynthesis.info"
     },
     {
       "id": "pittsburgh-Apricity",
-      "name": "Apricity",
-      "date": "OCTOBER 2024",
+      "name": "apricity",
+      "date": "October 2024",
       "location": "Pittsburgh, PA",
+      "coordinates": [40.43580089149957, -79.92900425295927],
       "lumaLink": "https://lu.ma/embed/calendar/cal-02sNXkLBpjqtZSm/events?lt=light",
-      "joinLink": "https://lu.ma/apricity-pgh",
-      "coordinates": [
-        40.43580089149957,
-        -79.92900425295927
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "joinLink": "https://lu.ma/apricity-pgh"
     },
     {
       "id": "philadelphia-Code & Coffee",
       "name": "Code & Coffee",
-      "date": "AUGUST 2024",
+      "date": "August 2024",
       "location": "Philadelphia, PA",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-dummy/events?lt=light",
-      "joinLink": "https://lu.ma/f9dt1ugl",
-      "coordinates": [
-        39.95012222667061,
-        -75.1689031966586
-      ],
-      "instagramLink": "https://www.instagram.com/philly_codes",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://phillycodes.rsvp"
+      "coordinates": [39.95012222667061, -75.1689031966586],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-ftxaA6PDR5Tbllt/events?lt=light",
+      "joinLink": "https://lu.ma/code-and-coffee",
+      "instagramLink": "https://instagram.com/philly_codes",
+      "websiteLink": "https://www.codephiladelphia.com/"
     },
     {
       "id": "toronto-Meraki",
       "name": "Meraki",
-      "date": "SEPTEMBER 2024",
+      "date": "September 2024",
       "location": "Toronto, ON",
+      "coordinates": [43.650021765372415, -79.39717969285986],
       "lumaLink": "https://lu.ma/embed/calendar/cal-JA6dB7MHTEbdAtH/events?lt=light",
       "joinLink": "https://lu.ma/merakiuoft",
-      "coordinates": [
-        43.650021765372415,
-        -79.39717969285986
-      ],
-      "instagramLink": "https://www.instagram.com/meraki_uoft/",
+      "instagramLink": "https://instagram.com/meraki_uoft/",
       "twitterLink": "https://x.com/merakiuoft",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "websiteLink": "https://merakiuoft.my.canva.site/"
     },
     {
       "id": "munich-Ursprung",
       "name": "Ursprung",
-      "date": "DECEMBER 2024",
-      "location": "Munich, GER",
+      "date": "December 2024",
+      "location": "Munich, Germany",
+      "coordinates": [48.148822595651936, 11.568033607231559],
       "lumaLink": "https://lu.ma/embed/calendar/cal-1B7veSjfCYzSPu2/events?lt=light",
       "joinLink": "https://lu.ma/ursprung",
-      "coordinates": [
-        48.148822595651936,
-        11.568033607231559
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://ursprung.community"
     },
     {
       "id": "oxford-orchard",
-      "name": "orchard",
-      "date": "NOVEMBER 2023",
+      "name": "[orchard]",
+      "date": "November 2023",
       "location": "Oxford, UK",
       "lumaLink": "https://lu.ma/embed/calendar/cal-TGGXNEITTevMhOG/events?lt=light",
       "joinLink": "https://lu.ma/orchard",
-      "coordinates": [
-        51.74972622279844,
-        -1.2550452752446217
-      ],
-      "instagramLink": "https://www.instagram.com/orchard.oxford/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "coordinates": [51.74972622279844, -1.2550452752446217],
+      "instagramLink": "https://instagram.com/orchard.oxford",
       "websiteLink": "https://orchard.day"
     },
     {
       "id": "nairobi-Eden",
-      "name": "Eden",
-      "date": "JANUARY 2025",
+      "name": "EDEN",
+      "date": "January 2025",
       "location": "Nairobi, Kenya",
+      "coordinates": [-1.345868, 36.765037],
       "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
-      "joinLink": "https://lu.ma/enr3l3zs",
-      "coordinates": [
-        -1.345868,
-        36.765037
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "joinLink": "https://lu.ma/calendar/cal-w6zPQfuWF26fyfc"
     },
     {
       "id": "calgary-Ascend",
       "name": "Ascend",
-      "date": "JANUARY 2025",
-      "location": "Calgary, Canada",
+      "date": "January 2025",
+      "location": "Calgary, AB",
+      "coordinates": [51.0378303527832, -114.08059692382812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
       "joinLink": "https://lu.ma/ascendcalgary",
-      "coordinates": [
-        51.0378303527832,
-        -114.08059692382812
-      ],
-      "instagramLink": "https://www.instagram.com/ascendcalgary/",
-      "twitterLink": "https://x.com/ascendcalgary",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "instagramLink": "https://instagram.com/ascendcalgary",
+      "twitterLink": "https://x.com/ascendcalgary"
     },
     {
       "id": "lagos-Eureka",
-      "name": "Eureka",
-      "date": "MARCH 2025",
+      "name": "eureka",
+      "date": "March 2025",
       "location": "Lagos, Nigeria",
+      "coordinates": [6.482550854841786, 3.3677974829643156],
       "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
-      "joinLink": "https://lu.ma/c7krel3v",
-      "coordinates": [
-        6.482550854841786,
-        3.3677974829643156
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://x.com/create_eureka",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "joinLink": "https://lu.ma/user/usr-V7sL16Mbc94s98D",
+      "twitterLink": "https://x.com/create_eureka"
     },
     {
       "id": "markham-Playmor",
       "name": "Playmor",
-      "date": "APRIL 2025",
+      "date": "April 2025",
       "location": "Markham, ON",
+      "coordinates": [43.8543237, -79.3110445],
       "lumaLink": "https://lu.ma/embed/calendar/cal-NqrihWVSnqZvtGG/events?lt=light",
       "joinLink": "https://lu.ma/gtaplaymor",
-      "coordinates": [
-        43.8543237,
-        -79.3110445
-      ],
-      "instagramLink": "https://www.instagram.com/playmor__/",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "instagramLink": "https://instagram.com/playmor__/",
+      "websiteLink": "https://linktr.ee/gtaplaymor"
     },
     {
-      "id": "paris-Parenth\u00e8se",
-      "name": "Parenth\u00e8se",
-      "date": "MARCH 2025",
-      "location": "Paris, France",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
-      "joinLink": "https://lu.ma/parenthese",
-      "coordinates": [
-        48.8534951,
-        2.3483915
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "id": "warwick-meadow",
+      "name": "[meadow]",
+      "date": "January 2025",
+      "location": "Warwick, UK",
+      "coordinates": [52.379312, -1.561438],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-LNJroTBMKAMCJDv/events?lt=light",
+      "joinLink": "https://lu.ma/meadow"
     },
     {
-      "id": "tokyo-Shinobuyume",
-      "name": "Shinobuyume",
-      "date": "AUGUST 2025",
-      "location": "Tokyo, Japan",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-IVaQNaQwNaI0FC9/events?lt=light",
-      "joinLink": "https://lu.ma/shinobuyume",
-      "coordinates": [
-        35.646046011579244,
-        139.70381172258735
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      "id": "liverpool-Daisy",
+      "name": "Daisy",
+      "date": "January 2025",
+      "location": "Liverpool, UK",
+      "coordinates": [53.410562, -2.970562],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-6flGZ5OxOBVKQA7/events?lt=light",
+      "joinLink": "https://instagram.com/daisy.sun.life",
+      "instagramLink": "https://instagram.com/daisy.sun.life",
+      "websiteLink": "https://daisy.sundown.life/"
+    },
+    {
+      "id": "sf-sundays",
+      "name": "Sundays",
+      "date": "May 2025",
+      "location": "San Francisco, CA",
+      "coordinates": [37.794405, -122.403411],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-FFBSUEbqC7XLj6d/events?lt=light",
+      "joinLink": "https://lu.ma/sundaysinsf",
+      "instagramLink": "https://instagram.com/sundayinsf",
+      "twitterLink": "https://x.com/sundaysinsf",
+      "websiteLink": "https://sundaysinsf.com/"
+    },
+    {
+      "id": "vic-tenfold",
+      "name": "Tenfold",
+      "date": "May 2024",
+      "location": "Victoria, BC",
+      "coordinates": [48.429915, -123.362389],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-ChvmXj1B1x2n23o/events?lt=light",
+      "joinLink": "https://lu.ma/tenfold",
+      "websiteLink": "https://tenfoldvictoria.com/"
+    },
+    {
+      "id": "ashoka-scenes",
+      "name": "scenes",
+      "date": "January 2024",
+      "location": "NCR, India",
+      "coordinates": [28.946937, 77.101438],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-byxD36XQslHqCKc/events?lt=light",
+      "joinLink": "https://lu.ma/scenes.ashoka",
+      "instagramLink": "https://instagram.com/scenes.ashoka",
+      "twitterLink": "https://x.com/scenesatashoka"
+    },
+    {
+      "id": "amsterdam-ankerplaats",
+      "name": "ankerplaats",
+      "date": "June 2025",
+      "location": "Amsterdam, Netherlands",
+      "coordinates": [52.3637925, 4.9067331],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-016LhHDMBXEfKJP/events?lt=light",
+      "joinLink": "https://lu.ma/ankerplaats"
     }
   ]
 }

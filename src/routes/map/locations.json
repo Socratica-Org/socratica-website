@@ -403,6 +403,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.linkedin.com/company/10am-mun/"
+    },
+    {
+      "id": "austin-Carpentry",
+      "name": "Carpentry",
+      "date": "JUNE 2025",
+      "location": "Austin, TX",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-StONeZQY4dMqBpg/events?lt=light",
+      "joinLink": "https://lu.ma/carpentry",
+      "coordinates": [
+        30.404940429931692,
+        -97.72104432362195
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

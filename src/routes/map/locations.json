@@ -541,6 +541,22 @@
       "twitterLink": "https://twitter.com/socraticainfo",
       "youtubeLink": "https://www.youtube.com/@socraticainfo",
       "websiteLink": "https://www.socratica.info/"
+    },
+    {
+      "id": "test-Socratica Jr",
+      "name": "Socratica Jr",
+      "date": "AUGUST 2025",
+      "location": "Test, Test",
+      "lumaLink": "https://lu.ma/embed/calendar/cal-StONeZQY4dMqBpg/events?lt=light?lt=light",
+      "joinLink": "https://lu.ma/carpentry",
+      "coordinates": [
+        43.477305,
+        -80.549252
+      ],
+      "instagramLink": "https://www.instagram.com/socratica.info",
+      "twitterLink": "https://twitter.com/socraticainfo",
+      "youtubeLink": "https://www.youtube.com/@socraticainfo",
+      "websiteLink": "https://www.socratica.info/"
     }
   ]
 }

@@ -371,6 +371,16 @@
       "coordinates": [52.3637925, 4.9067331],
       "lumaLink": "https://lu.ma/embed/calendar/cal-016LhHDMBXEfKJP/events?lt=light",
       "joinLink": "https://lu.ma/ankerplaats"
+    },
+    {
+      "id": "chicago-Scratchpad",
+      "name": "Scratchpad",
+      "date": "June 2025",
+      "location": "Chicago, IL",
+      "coordinates": [41.8866995, -87.6676492],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-SK2uWZKxMFLE4lj/events?lt=light",
+      "joinLink": "https://lu.ma/scratchpad",
+      "twitterLink": "https://x.com/ScratchpadClub"
     }
   ]
 }

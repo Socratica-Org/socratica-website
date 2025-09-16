@@ -5,10 +5,7 @@
       "name": "Socratica",
       "date": "March 2022",
       "location": "Waterloo, ON",
-      "coordinates": [
-        43.477305,
-        -80.549252
-      ],
+      "coordinates": [43.477305, -80.549252],
       "lumaLink": "https://lu.ma/embed/calendar/cal-cBMgU2QXqXZQSv1/events?lt=light",
       "joinLink": "https://lu.ma/socratica",
       "instagramLink": "https://instagram.com/socratica.info",
@@ -21,10 +18,7 @@
       "name": "Atelier",
       "date": "September 2023",
       "location": "Vancouver, BC",
-      "coordinates": [
-        49.264813,
-        -123.253812
-      ],
+      "coordinates": [49.264813, -123.253812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-CvuDnsONPxinxqk/events?lt=light",
       "joinLink": "https://lu.ma/atelier.place",
       "instagramLink": "https://instagram.com/atelier.place",
@@ -36,10 +30,7 @@
       "name": "[scale down]",
       "date": "October 2023",
       "location": "Cambridge, UK",
-      "coordinates": [
-        52.205338,
-        0.121817
-      ],
+      "coordinates": [52.205338, 0.121817],
       "lumaLink": "https://lu.ma/embed/calendar/cal-vHCyjMqqjpdduOt/events?lt=light",
       "joinLink": "https://lu.ma/scaledown"
     },
@@ -48,10 +39,7 @@
       "name": "id8",
       "date": "October 2023",
       "location": "Kingston, ON",
-      "coordinates": [
-        44.231172,
-        -76.485954
-      ],
+      "coordinates": [44.231172, -76.485954],
       "lumaLink": "https://lu.ma/embed/calendar/cal-AxzTU0DF1vlwRSI/events?lt=light",
       "joinLink": "https://lu.ma/id8id8id8",
       "instagramLink": "https://instagram.com/id8id8id8"
@@ -61,10 +49,7 @@
       "name": "momentum",
       "date": "September 2023",
       "location": "London, ON",
-      "coordinates": [
-        43.009561,
-        -81.275471
-      ],
+      "coordinates": [43.009561, -81.275471],
       "lumaLink": "https://lu.ma/embed/calendar/cal-gt0OmSf2cUw1HHl/events?lt=light",
       "joinLink": "https://lu.ma/moment.um",
       "instagramLink": "https://instagram.com/momentum_uwo",
@@ -79,20 +64,14 @@
       "lumaLink": "https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?lt=light",
       "joinLink": "https://lu.ma/beans",
       "instagramLink": "https://instagram.com/friendlybeansboston",
-      "coordinates": [
-        42.3629,
-        -71.0839
-      ]
+      "coordinates": [42.3629, -71.0839]
     },
     {
       "id": "usc",
       "name": "sundays",
       "date": "January 2024",
       "location": "Los Angeles, CA",
-      "coordinates": [
-        34.0224,
-        -118.2851
-      ],
+      "coordinates": [34.0224, -118.2851],
       "lumaLink": "https://lu.ma/embed/calendar/cal-81AnmgiInWOKNmv/events?lt=light",
       "joinLink": "https://lu.ma/sundaysinla",
       "instagramLink": "https://instagram.com/sundaysnla",
@@ -104,10 +83,7 @@
       "name": "Douze \u00e0 Deux",
       "date": "September 2023",
       "location": "Montreal, QC",
-      "coordinates": [
-        45.5017,
-        -73.5673
-      ],
+      "coordinates": [45.5017, -73.5673],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PIrfoWlJDawpNDO/events?lt=light",
       "joinLink": "https://lu.ma/douzeadeuxMontreal",
       "instagramLink": "https://instagram.com/douzeadeux",
@@ -118,10 +94,7 @@
       "name": "Saturdays",
       "date": "November 2023",
       "location": "Seattle, WA",
-      "coordinates": [
-        47.6062,
-        -122.3321
-      ],
+      "coordinates": [47.6062, -122.3321],
       "lumaLink": "https://lu.ma/embed/calendar/cal-SD9FoHuZW6pQn6D/events?lt=light",
       "joinLink": "https://lu.ma/uwsaturdays",
       "instagramLink": "https://instagram.com/saturdays.rsvp"
@@ -131,10 +104,7 @@
       "name": "craft!",
       "date": "January 2024",
       "location": "London, UK",
-      "coordinates": [
-        51.4988,
-        -0.1749
-      ],
+      "coordinates": [51.4988, -0.1749],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qFfyVkBdmPJ7yBv/events?lt=light",
       "joinLink": "https://lu.ma/craft_",
       "instagramLink": "https://instagram.com/craft_ldn",
@@ -145,10 +115,7 @@
       "name": "New York Nodes",
       "date": "March 2024",
       "location": "New York, NY",
-      "coordinates": [
-        40.7128,
-        -74.006
-      ],
+      "coordinates": [40.7128, -74.006],
       "imageSrc": "http://straightupjac.xyz/socratica-nyc-cozy-sundays.png",
       "joinLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4",
       "websiteLink": "https://socratica-nyc.notion.site/Socratica-NYC-Info-Page-5f387d55f1794450ad77a9a8af7bde8f?pvs=4"
@@ -158,10 +125,7 @@
       "name": "making@umn",
       "date": "March 2024",
       "location": "Minneapolis, MN",
-      "coordinates": [
-        44.9753,
-        -93.2362
-      ],
+      "coordinates": [44.9753, -93.2362],
       "lumaLink": "https://lu.ma/embed/calendar/cal-0U8g6FXtpy0P1ih/events?lt=light",
       "joinLink": "https://lu.ma/making-umn",
       "instagramLink": "https://instagram.com/makingatumn/",
@@ -172,10 +136,7 @@
       "name": "Agora",
       "date": "October 2024",
       "location": "Hamilton, ON",
-      "coordinates": [
-        43.26211519287825,
-        -79.91705655784756
-      ],
+      "coordinates": [43.26211519287825, -79.91705655784756],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
       "joinLink": "https://lu.ma/agora",
       "instagramLink": "https://instagram.com/agora.meet"
@@ -185,10 +146,7 @@
       "name": "Crescentia",
       "date": "November 2024",
       "location": "Guelph, ON",
-      "coordinates": [
-        43.53075,
-        -80.229139
-      ],
+      "coordinates": [43.53075, -80.229139],
       "lumaLink": "https://lu.ma/embed/calendar/cal-3rFVYPtoENGIGIk/events?lt=light",
       "joinLink": "https://lu.ma/crescentia",
       "instagramLink": "https://instagram.com/crescentia_guelph",
@@ -199,10 +157,7 @@
       "name": "Synchronize",
       "date": "September 2024",
       "location": "Ottawa, ON",
-      "coordinates": [
-        45.384481,
-        -75.696955
-      ],
+      "coordinates": [45.384481, -75.696955],
       "lumaLink": "https://lu.ma/embed/calendar/cal-W2eSnhNARlYQWqD/events?lt=light",
       "joinLink": "https://lu.ma/synchronize",
       "instagramLink": "https://instagram.com/synchronize.now/"
@@ -212,10 +167,7 @@
       "name": "atrai",
       "date": "February 2025",
       "location": "Dhaka, BD",
-      "coordinates": [
-        23.772745541655816,
-        90.4256807343437
-      ],
+      "coordinates": [23.772745541655816, 90.4256807343437],
       "lumaLink": "https://lu.ma/embed/calendar/cal-6hicpioPAAXuEW3/events?lt=light",
       "joinLink": "https://lu.ma/atrai",
       "instagramLink": "https://instagram.com/atrai.dhaka",
@@ -226,10 +178,7 @@
       "name": "ALTs Morocco",
       "date": "October 2024",
       "location": "Rabat, Morocco",
-      "coordinates": [
-        34.018191219618586,
-        -6.842542531073535
-      ],
+      "coordinates": [34.018191219618586, -6.842542531073535],
       "lumaLink": "https://lu.ma/embed/calendar/cal-PWXzFvN0nlL0D4R/events?compact=true?lt=light",
       "joinLink": "https://lu.ma/alts.morocco",
       "instagramLink": "https://instagram.com/alts.morocco",
@@ -241,10 +190,7 @@
       "name": "Collect.",
       "date": "October 2024",
       "location": "Halifax, NS",
-      "coordinates": [
-        44.64823054343091,
-        -63.57566869722125
-      ],
+      "coordinates": [44.64823054343091, -63.57566869722125],
       "lumaLink": "https://lu.ma/embed/calendar/cal-VLkFm9DKIHxx0HF/events?lt=light",
       "joinLink": "https://lu.ma/CollectHalifax",
       "instagramLink": "https://instagram.com/collecthalifax/",
@@ -256,10 +202,7 @@
       "name": "Parenth\u00e8se",
       "date": "March 2025",
       "location": "Paris, France",
-      "coordinates": [
-        48.8534951,
-        2.3483915
-      ],
+      "coordinates": [48.8534951, 2.3483915],
       "lumaLink": "https://lu.ma/embed/calendar/cal-r8uTLIB0w2weDz5/events?lt=light",
       "joinLink": "https://lu.ma/parenthese"
     },
@@ -268,10 +211,7 @@
       "name": "Synthesis",
       "date": "December 2024",
       "location": "Swarthmore, PA",
-      "coordinates": [
-        39.906539195171526,
-        -75.35479324973382
-      ],
+      "coordinates": [39.906539195171526, -75.35479324973382],
       "lumaLink": "https://lu.ma/embed/calendar/cal-qZE3lPYa5OqZwBF/events?lt=light",
       "joinLink": "https://lu.ma/user/usr-aiYrdVuNM5JJXB9",
       "websiteLink": "https://swatsynthesis.info"
@@ -281,10 +221,7 @@
       "name": "apricity",
       "date": "October 2024",
       "location": "Pittsburgh, PA",
-      "coordinates": [
-        40.43580089149957,
-        -79.92900425295927
-      ],
+      "coordinates": [40.43580089149957, -79.92900425295927],
       "lumaLink": "https://lu.ma/embed/calendar/cal-02sNXkLBpjqtZSm/events?lt=light",
       "joinLink": "https://lu.ma/apricity-pgh"
     },
@@ -293,10 +230,7 @@
       "name": "Code & Coffee",
       "date": "August 2024",
       "location": "Philadelphia, PA",
-      "coordinates": [
-        39.95012222667061,
-        -75.1689031966586
-      ],
+      "coordinates": [39.95012222667061, -75.1689031966586],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ftxaA6PDR5Tbllt/events?lt=light",
       "joinLink": "https://lu.ma/code-and-coffee",
       "instagramLink": "https://instagram.com/philly_codes",
@@ -307,10 +241,7 @@
       "name": "Meraki",
       "date": "September 2024",
       "location": "Toronto, ON",
-      "coordinates": [
-        43.650021765372415,
-        -79.39717969285986
-      ],
+      "coordinates": [43.650021765372415, -79.39717969285986],
       "lumaLink": "https://lu.ma/embed/calendar/cal-JA6dB7MHTEbdAtH/events?lt=light",
       "joinLink": "https://lu.ma/merakiuoft",
       "instagramLink": "https://instagram.com/meraki_uoft/",
@@ -322,10 +253,7 @@
       "name": "Ursprung",
       "date": "December 2024",
       "location": "Munich, Germany",
-      "coordinates": [
-        48.148822595651936,
-        11.568033607231559
-      ],
+      "coordinates": [48.148822595651936, 11.568033607231559],
       "lumaLink": "https://lu.ma/embed/calendar/cal-1B7veSjfCYzSPu2/events?lt=light",
       "joinLink": "https://lu.ma/ursprung",
       "websiteLink": "https://ursprung.community"
@@ -337,10 +265,7 @@
       "location": "Oxford, UK",
       "lumaLink": "https://lu.ma/embed/calendar/cal-TGGXNEITTevMhOG/events?lt=light",
       "joinLink": "https://lu.ma/orchard",
-      "coordinates": [
-        51.74972622279844,
-        -1.2550452752446217
-      ],
+      "coordinates": [51.74972622279844, -1.2550452752446217],
       "instagramLink": "https://instagram.com/orchard.oxford",
       "websiteLink": "https://orchard.day"
     },
@@ -349,10 +274,7 @@
       "name": "EDEN",
       "date": "January 2025",
       "location": "Nairobi, Kenya",
-      "coordinates": [
-        -1.345868,
-        36.765037
-      ],
+      "coordinates": [-1.345868, 36.765037],
       "lumaLink": "https://lu.ma/embed/calendar/cal-w6zPQfuWF26fyfc/events?lt=light",
       "joinLink": "https://lu.ma/calendar/cal-w6zPQfuWF26fyfc"
     },
@@ -361,10 +283,7 @@
       "name": "Ascend",
       "date": "January 2025",
       "location": "Calgary, AB",
-      "coordinates": [
-        51.0378303527832,
-        -114.08059692382812
-      ],
+      "coordinates": [51.0378303527832, -114.08059692382812],
       "lumaLink": "https://lu.ma/embed/calendar/cal-yM3Os6uOrrDfKb8/events?lt=light",
       "joinLink": "https://lu.ma/ascendcalgary",
       "instagramLink": "https://instagram.com/ascendcalgary",
@@ -375,10 +294,7 @@
       "name": "eureka",
       "date": "March 2025",
       "location": "Lagos, Nigeria",
-      "coordinates": [
-        6.482550854841786,
-        3.3677974829643156
-      ],
+      "coordinates": [6.482550854841786, 3.3677974829643156],
       "lumaLink": "https://lu.ma/embed/calendar/cal-fLNcsgVByxAEjLL/events?lt=light",
       "joinLink": "https://lu.ma/user/usr-V7sL16Mbc94s98D",
       "twitterLink": "https://x.com/create_eureka"
@@ -388,10 +304,7 @@
       "name": "Playmor",
       "date": "April 2025",
       "location": "Markham, ON",
-      "coordinates": [
-        43.8543237,
-        -79.3110445
-      ],
+      "coordinates": [43.8543237, -79.3110445],
       "lumaLink": "https://lu.ma/embed/calendar/cal-NqrihWVSnqZvtGG/events?lt=light",
       "joinLink": "https://lu.ma/gtaplaymor",
       "instagramLink": "https://instagram.com/playmor__/",
@@ -402,10 +315,7 @@
       "name": "[meadow]",
       "date": "January 2025",
       "location": "Warwick, UK",
-      "coordinates": [
-        52.379312,
-        -1.561438
-      ],
+      "coordinates": [52.379312, -1.561438],
       "lumaLink": "https://lu.ma/embed/calendar/cal-LNJroTBMKAMCJDv/events?lt=light",
       "joinLink": "https://lu.ma/meadow"
     },
@@ -414,10 +324,7 @@
       "name": "Daisy",
       "date": "January 2025",
       "location": "Liverpool, UK",
-      "coordinates": [
-        53.410562,
-        -2.970562
-      ],
+      "coordinates": [53.410562, -2.970562],
       "lumaLink": "https://lu.ma/embed/calendar/cal-6flGZ5OxOBVKQA7/events?lt=light",
       "joinLink": "https://instagram.com/daisy.sun.life",
       "instagramLink": "https://instagram.com/daisy.sun.life",
@@ -428,10 +335,7 @@
       "name": "Sundays",
       "date": "May 2025",
       "location": "San Francisco, CA",
-      "coordinates": [
-        37.794405,
-        -122.403411
-      ],
+      "coordinates": [37.794405, -122.403411],
       "lumaLink": "https://lu.ma/embed/calendar/cal-FFBSUEbqC7XLj6d/events?lt=light",
       "joinLink": "https://lu.ma/sundaysinsf",
       "instagramLink": "https://instagram.com/sundayinsf",
@@ -443,10 +347,7 @@
       "name": "Tenfold",
       "date": "May 2024",
       "location": "Victoria, BC",
-      "coordinates": [
-        48.429915,
-        -123.362389
-      ],
+      "coordinates": [48.429915, -123.362389],
       "lumaLink": "https://lu.ma/embed/calendar/cal-ChvmXj1B1x2n23o/events?lt=light",
       "joinLink": "https://lu.ma/tenfold",
       "websiteLink": "https://tenfoldvictoria.com/"
@@ -456,10 +357,7 @@
       "name": "scenes",
       "date": "January 2024",
       "location": "NCR, India",
-      "coordinates": [
-        28.946937,
-        77.101438
-      ],
+      "coordinates": [28.946937, 77.101438],
       "lumaLink": "https://lu.ma/embed/calendar/cal-byxD36XQslHqCKc/events?lt=light",
       "joinLink": "https://lu.ma/scenes.ashoka",
       "instagramLink": "https://instagram.com/scenes.ashoka",
@@ -470,10 +368,7 @@
       "name": "ankerplaats",
       "date": "June 2025",
       "location": "Amsterdam, Netherlands",
-      "coordinates": [
-        52.3637925,
-        4.9067331
-      ],
+      "coordinates": [52.3637925, 4.9067331],
       "lumaLink": "https://lu.ma/embed/calendar/cal-016LhHDMBXEfKJP/events?lt=light",
       "joinLink": "https://lu.ma/ankerplaats"
     },
@@ -484,10 +379,7 @@
       "location": "Tokyo, Japan",
       "lumaLink": "https://lu.ma/embed/calendar/cal-IVaQNaQwNaI0FC9/events?lt=light",
       "joinLink": "https://lu.ma/shinobuyume",
-      "coordinates": [
-        35.646046011579244,
-        139.70381172258735
-      ],
+      "coordinates": [35.646046011579244, 139.70381172258735],
       "instagramLink": "https://instagram.com/yu_me_tokyo"
     },
     {
@@ -497,10 +389,7 @@
       "location": "St. John's, NL",
       "lumaLink": "https://lu.ma/embed/calendar/cal-YKNiHwabR8OGuve/events?lt=light",
       "joinLink": "https://lu.ma/calendar/cal-YKNiHwabR8OGuve",
-      "coordinates": [
-        47.57322344479589,
-        -52.73557899964588
-      ],
+      "coordinates": [47.57322344479589, -52.73557899964588],
       "instagramLink": "https://instagram.com/10am_mun/",
       "websiteLink": "https://linkedin.com/company/10am-mun/"
     },
@@ -511,20 +400,14 @@
       "location": "Austin, TX",
       "lumaLink": "https://lu.ma/embed/calendar/cal-StONeZQY4dMqBpg/events?lt=light",
       "joinLink": "https://lu.ma/carpentry",
-      "coordinates": [
-        30.404940429931692,
-        -97.72104432362195
-      ]
+      "coordinates": [30.404940429931692, -97.72104432362195]
     },
     {
       "id": "chicago-Scratchpad",
       "name": "Scratchpad",
       "date": "June 2025",
       "location": "Chicago, IL",
-      "coordinates": [
-        41.8866995,
-        -87.6676492
-      ],
+      "coordinates": [41.8866995, -87.6676492],
       "lumaLink": "https://lu.ma/embed/calendar/cal-SK2uWZKxMFLE4lj/events?lt=light",
       "joinLink": "https://lu.ma/scratchpad",
       "twitterLink": "https://x.com/ScratchpadClub"
@@ -536,12 +419,19 @@
       "location": "Curitiba, BR",
       "lumaLink": "https://lu.ma/embed/calendar/cal-1fvgbMKFTPlXKDs/events?lt=light",
       "joinLink": "https://lu.ma/-ccc",
-      "coordinates": [
-        -25.40084494728934,
-        -49.248030712469294
-      ],
+      "coordinates": [-25.40084494728934, -49.248030712469294],
       "instagramLink": "https://www.instagram.com/curitibacodingclub/",
       "websiteLink": "https://www.curitibacodingclub.com/"
+    },
+    {
+      "id": "surrey-treehouse",
+      "name": "Treehouse",
+      "date": "June 2025",
+      "location": "Surrey, BC",
+      "coordinates": [49.1891028, -122.8501678],
+      "lumaLink": "https://lu.ma/embed/calendar/cal-lCEuQwfFQyKmOLs/events?lt=light",
+      "joinLink": "https://luma.com/treehouse.place",
+      "instagramLink": "https://instagram.com/thetreehouse.place"
     }
   ]
 }

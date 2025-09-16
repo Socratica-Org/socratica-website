@@ -53,7 +53,7 @@
     currentDoodle = doodles[randomIndex];
   }
 
-  const socraticaURL = "https://lu.ma/socratica";
+  const socraticaURL = "https://luma.com/socratica";
 
   function scrollToSection() {
     const section = document.getElementById("what-we-are");
@@ -111,7 +111,8 @@
               style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round"
               >co-working sessions</span
             >
-            for you to work on your <span class="italic">passion projects</span> with likeminded people.
+            for you to work on your <span class="italic">passion projects</span>
+            with likeminded people.
           </p>
           <div class="mt-4">
             <a href="/map" target="_blank" rel="noopener noreferrer">
@@ -191,7 +192,7 @@
 			  </div>	  
 			</div>
 		</div> -->
-    
+
     <div
       class="flex flex-col justify-center items-center text-[16px] sm:text-[20px] md:text-4xl font-tiempos-headline md:pt-8"
       style="font-weight: 300;"
@@ -222,7 +223,7 @@
           and <span
             class="border-dashed border-b-2"
             style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"
-          >everything</span
+            >everything</span
           >
         </div>
         <img
@@ -244,19 +245,21 @@
     >
       <div class="text-center text-[12px] md:text-sm">
         <span class="block md:hidden"
-          >Socratica is a live, IRL co-working session hosted every Sunday in Waterloo
-          bringing together people who want to <span class="italic">make</span>
+          >Socratica is a live, IRL co-working session hosted every Sunday in
+          Waterloo bringing together people who want to <span class="italic"
+            >make</span
+          >
           stuff, and
           <a
-            href="https://lu.ma/socratica"
+            href="https://luma.com/socratica"
             target="_blank"
             class="border-b-2"
             style="border-color: #706F6B; color: #706F6B;">you're invited</a
           >.</span
         >
         <div class="hidden md:block">
-          Socratica is a live, IRL co-working session hosted every Sunday in Waterloo
-          bringing together people who want to 
+          Socratica is a live, IRL co-working session hosted every Sunday in
+          Waterloo bringing together people who want to
         </div>
         <div class="hidden md:block mx-auto">
           <span class="italic">make</span> stuff, and
@@ -298,7 +301,7 @@
         class="font-Graphik pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md"
       >
         We know it can be intimidating to start (we've been there),
-        <br> but you'll be surrounded by others doing the same.
+        <br /> but you'll be surrounded by others doing the same.
       </div>
     </div>
     <img
@@ -365,8 +368,10 @@
           >
         </div>
         <div class="pt-5 text-[11px] md:text-[14px] text-zinc-800 font-inter">
-          The real magic is in the demos - whether you've got 3 bullet points on a Google Docs or a full-blown prototype, we want to see it.
-          It's a chance to share your work, get feedback, and celebrate your progress. And of course, make new friends.
+          The real magic is in the demos - whether you've got 3 bullet points on
+          a Google Docs or a full-blown prototype, we want to see it. It's a
+          chance to share your work, get feedback, and celebrate your progress.
+          And of course, make new friends.
         </div>
       </div>
     </div>
@@ -417,24 +422,28 @@
             </a>
           </div>
         </div>
-          <div
+        <div
           class="font-Graphik pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md"
+        >
+          We're united by the love of making things, and we want to help you
+          make your thing.
+          <br /> Not in Waterloo? There's a good chance
+          <a
+            href="/map"
+            class="border-b-2"
+            style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
           >
-          We're united by the love of making things, and we want to help you make your thing.
-          <br> Not in Waterloo? There's a good chance
-            <a
-              href="/map"
-              class="border-b-2"
-              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
-              >
-              a node exists near you.
-            </a> If not, <a
-              href="/get-involved"
-              class="border-b-2"
-              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
-              >
-              you can start a new one.
-            </a>
+            a node exists near you.
+          </a>
+          If not,
+          <a
+            href="/get-involved"
+            class="border-b-2"
+            style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+          >
+            you can start a new one.
+          </a>
+        </div>
       </div>
     </div>
   </div>

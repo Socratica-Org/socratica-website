@@ -142,17 +142,6 @@
       "instagramLink": "https://instagram.com/agora.meet"
     },
     {
-      "id": "guelph",
-      "name": "Crescentia",
-      "date": "November 2024",
-      "location": "Guelph, ON",
-      "coordinates": [43.53075, -80.229139],
-      "lumaLink": "https://luma.com/embed/calendar/cal-3rFVYPtoENGIGIk/events?lt=light",
-      "joinLink": "https://luma.com/crescentia",
-      "instagramLink": "https://instagram.com/crescentia_guelph",
-      "twitterLink": "https://x.com/JoinCrescentia"
-    },
-    {
       "id": "ottawa",
       "name": "Synchronize",
       "date": "September 2024",

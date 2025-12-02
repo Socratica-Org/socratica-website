@@ -375,7 +375,7 @@
     {
       "id": "tokyo-Shinobuyume",
       "name": "Shinobuyume",
-      "date": "AUGUST 2025",
+      "date": "August 2025",
       "location": "Tokyo, Japan",
       "lumaLink": "https://luma.com/embed/calendar/cal-IVaQNaQwNaI0FC9/events?lt=light",
       "joinLink": "https://luma.com/shinobuyume",
@@ -385,7 +385,7 @@
     {
       "id": "st. john's-10am",
       "name": "10am",
-      "date": "JULY 2025",
+      "date": "July 2025",
       "location": "St. John's, NL",
       "lumaLink": "https://luma.com/embed/calendar/cal-YKNiHwabR8OGuve/events?lt=light",
       "joinLink": "https://luma.com/calendar/cal-YKNiHwabR8OGuve",
@@ -432,6 +432,16 @@
       "lumaLink": "https://luma.com/embed/calendar/cal-lCEuQwfFQyKmOLs/events?lt=light",
       "joinLink": "https://luma.com/treehouse.place",
       "instagramLink": "https://instagram.com/thetreehouse.place"
+    },
+    {
+      "id": "barcelona-crea",
+      "name": "[crea]",
+      "date": "September 2025",
+      "location": "Barcelona, Spain",
+      "coordinates": [41.39, 2.1125],
+      "lumaLink": "https://luma.com/embed/calendar/cal-4ejZ2Ev1kJDRprg/events?lt=light",
+      "joinLink": "https://luma.com/crea",
+      "instagramLink": "https://instagram.com/crea.bcn"
     }
   ]
 }

@@ -142,17 +142,6 @@
       "instagramLink": "https://instagram.com/agora.meet"
     },
     {
-      "id": "guelph",
-      "name": "Crescentia",
-      "date": "November 2024",
-      "location": "Guelph, ON",
-      "coordinates": [43.53075, -80.229139],
-      "lumaLink": "https://luma.com/embed/calendar/cal-3rFVYPtoENGIGIk/events?lt=light",
-      "joinLink": "https://luma.com/crescentia",
-      "instagramLink": "https://instagram.com/crescentia_guelph",
-      "twitterLink": "https://x.com/JoinCrescentia"
-    },
-    {
       "id": "ottawa",
       "name": "Synchronize",
       "date": "September 2024",
@@ -231,8 +220,7 @@
       "date": "August 2024",
       "location": "Philadelphia, PA",
       "coordinates": [39.95012222667061, -75.1689031966586],
-      "lumaLink": "https://luma.com/embed/calendar/cal-ftxaA6PDR5Tbllt/events?lt=light",
-      "joinLink": "https://luma.com/code-and-coffee",
+      "joinLink": "https://www.meetup.com/code-coffee-philly/events/",
       "instagramLink": "https://instagram.com/philly_codes",
       "websiteLink": "https://www.codephiladelphia.com/"
     },
@@ -374,11 +362,11 @@
     },
     {
       "id": "tokyo-Shinobuyume",
-      "name": "Shinobuyume",
+      "name": "Yu+Me",
       "date": "August 2025",
       "location": "Tokyo, Japan",
       "lumaLink": "https://luma.com/embed/calendar/cal-IVaQNaQwNaI0FC9/events?lt=light",
-      "joinLink": "https://luma.com/shinobuyume",
+      "joinLink": "https://luma.com/YuMe",
       "coordinates": [35.646046011579244, 139.70381172258735],
       "instagramLink": "https://instagram.com/yu_me_tokyo"
     },

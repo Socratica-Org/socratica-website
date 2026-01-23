@@ -1,24 +1,70 @@
-<script>
+<script lang="ts">
+  import ArrowUpRight from "$lib/images/ArrowUpRight.svg";
+  import s26wLogo from "$lib/images/s26w-logo.avif";
+
   const BANNER_URL = "http://symposium.socratica.info/?utm_source=website";
 </script>
 
-<div class="w-full bg-[#2A2928] text-[#FBF8EF] text-center py-3.5 font-['Tiempos_Text'] flex items-center justify-center">
-  <a 
-    href={BANNER_URL} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="text-[#FBF8EF] no-underline text-sm md:text-lg leading-relaxed hover:opacity-90 transition-opacity duration-200 flex flex-col md:flex-row items-center justify-center px-4 md:px-0"
+<div class="w-full bg-[#2A2928] text-[#FBF8EF] font-tiempos-headline">
+  <a
+    href={BANNER_URL}
+    target="_blank"
+    class="banner:hidden mx-auto max-w-screen-xl px-4 py-3 flex items-start justify-between gap-3 text-sm font-[300]"
   >
-    <div class="flex items-center">
-      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[14px] md:h-[14px] inline-block mx-2">
-        <circle cx="10" cy="10" r="10" fill="#899248"/>
-      </svg>
-      <span class="font-[300]">by the way... you're invited to our symposium! limited tickets only.</span>
-    </div>
-   
-    <span class="text-[#CDC19F] font-[500] mt-1 md:mt-0 md:ml-2 inline-flex items-center">
-      rsvp here
-      <span class="ml-1 inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1">→</span>
+    <span class="min-w-0 flex items-start gap-2">
+      <img
+        src={s26wLogo}
+        class="h-5 w-auto flex-shrink-0 self-start"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        aria-hidden
+      />
+      <span class="min-w-0">
+        The world's greatest celebration of <i>making</i> is back.
+      </span>
     </span>
+    <img
+      src={ArrowUpRight}
+      class="w-5 h-5 flex-shrink-0 self-start"
+      loading="lazy"
+      decoding="async"
+      alt=""
+      aria-hidden
+    />
   </a>
+  <div
+    class="hidden banner:grid mx-auto max-w-screen-xl px-4 py-3 banner:py-4 grid-cols-1 banner:grid-cols-[1fr_auto_1fr] items-center gap-2 banner:gap-6 text-center"
+  >
+    <div class="text-sm banner:text-lg font-[300] banner:text-left">
+      The world's greatest celebration of <i>making</i> is back.
+    </div>
+    <img
+      src={s26wLogo}
+      class="h-7 banner:h-8 w-auto"
+      loading="lazy"
+      decoding="async"
+      alt=""
+      aria-hidden
+    />
+    <div
+      class="text-sm banner:text-lg flex flex-col banner:flex-row items-center banner:justify-end banner:text-right"
+    >
+      <span><b>March 21-22</b> | Waterloo |</span>
+      &#32;
+      <a
+        href={BANNER_URL}
+        target="_blank"
+        class="text-[#FBF8EF] hover:opacity-90 transition-opacity duration-200 inline-flex"
+        >Register for Symposium here.<img
+          src={ArrowUpRight}
+          class="w-6 h-6 ml-2"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          aria-hidden
+        /></a
+      >
+    </div>
+  </div>
 </div>

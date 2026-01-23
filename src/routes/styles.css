@@ -19,6 +19,15 @@
 }
 
 @font-face {
+  font-family: "Tiempos Headline";
+  src: url("/fonts/tiempos-headline/tiempos-headline-bold.woff2")
+    format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Untitled Sans";
   src: url("/fonts/untitled-sans/untitled-sans-regular.woff2");
   font-weight: 400;

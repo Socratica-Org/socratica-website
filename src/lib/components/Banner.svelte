@@ -50,15 +50,14 @@
     <div
       class="text-sm banner:text-lg flex flex-col banner:flex-row items-center banner:justify-end banner:text-right"
     >
-      <span><b>March 21-22</b> | Waterloo |</span>
-      &#32;
+      <span><b>March 21-22</b> | Waterloo |&#32;</span>
       <a
         href={BANNER_URL}
         target="_blank"
         class="text-[#FBF8EF] hover:opacity-90 transition-opacity duration-200 inline-flex"
         >Register for Symposium here.<img
           src={ArrowUpRight}
-          class="w-6 h-6 ml-2"
+          class="w-6 h-6 relative top-[0.1em]"
           loading="lazy"
           decoding="async"
           alt=""

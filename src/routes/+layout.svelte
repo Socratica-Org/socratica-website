@@ -280,8 +280,8 @@
   {/if}
 </svelte:head>
 
-<!-- <Banner /> -->
 <div class="site-container">
+  <Banner />
   <div class="app">
     <main class="main-content">
       <slot />
@@ -414,6 +414,7 @@
   }
 
   .main-content {
+    position: relative;
     width: 100%;
     flex: 1;
   }

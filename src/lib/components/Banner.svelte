@@ -9,20 +9,18 @@
   <a
     href={BANNER_URL}
     target="_blank"
-    class="banner:hidden mx-auto max-w-screen-xl px-4 py-3 flex items-start justify-between gap-3 text-sm font-[300]"
+    class="banner:hidden mx-auto max-w-screen-xl px-4 py-3 flex items-start justify-between gap-3 text-[12px] font-[300]"
   >
-    <span class="min-w-0 flex items-start gap-2">
-      <img
-        src={s26wLogo}
-        class="h-5 w-auto flex-shrink-0 self-start"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        aria-hidden
-      />
-      <span class="min-w-0">
-        The world's greatest celebration of <i>making</i> is back.
-      </span>
+    <img
+      src={s26wLogo}
+      class="h-5 w-auto flex-shrink-0 self-start"
+      loading="lazy"
+      decoding="async"
+      alt=""
+      aria-hidden
+    />
+    <span class="min-w-0 flex-1 text-center self-center">
+      The world's greatest celebration of <i>making</i> is back.
     </span>
     <img
       src={ArrowUpRight}

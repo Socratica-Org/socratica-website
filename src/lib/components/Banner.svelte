@@ -5,7 +5,7 @@
   const BANNER_URL = "http://symposium.socratica.info/?utm_source=website";
 </script>
 
-<div class="w-full bg-[#2A2928] text-[#FBF8EF] font-tiempos-headline">
+<div class="w-full bg-black text-[#FBF8EF] font-tiempos-headline">
   <a
     href={BANNER_URL}
     target="_blank"
@@ -31,10 +31,14 @@
       aria-hidden
     />
   </a>
-  <div
-    class="hidden banner:grid mx-auto max-w-screen-xl px-4 py-3 banner:py-4 grid-cols-1 banner:grid-cols-[1fr_auto_1fr] items-center gap-2 banner:gap-6 text-center"
+  <a
+    href={BANNER_URL}
+    target="_blank"
+    class="hidden banner:flex mx-auto max-w-screen-xl px-4 py-3 banner:py-4 items-center justify-between gap-2 banner:gap-6 hover:opacity-90 transition-opacity duration-200"
   >
-    <div class="text-sm banner:text-lg font-[300] banner:text-left">
+    <div
+      class="text-sm banner:text-lg font-[300] banner:text-left whitespace-nowrap"
+    >
       The world's greatest celebration of <i>making</i> is back.
     </div>
     <img
@@ -46,22 +50,17 @@
       aria-hidden
     />
     <div
-      class="text-sm banner:text-lg flex flex-col banner:flex-row items-center banner:justify-end banner:text-right"
+      class="text-sm banner:text-lg flex flex-col banner:flex-row items-center banner:justify-end banner:text-right whitespace-nowrap"
     >
-      <span><b>March 21-22</b> | Waterloo |</span>
-      <a
-        href={BANNER_URL}
-        target="_blank"
-        class="text-[#FBF8EF] hover:opacity-90 transition-opacity duration-200 inline-flex ml-1"
-        >Register for Symposium here.<img
-          src={ArrowUpRight}
-          class="w-6 h-6 relative top-[0.1em]"
-          loading="lazy"
-          decoding="async"
-          alt=""
-          aria-hidden
-        /></a
-      >
+      <span><b>March 21-22</b> | Waterloo | Register for Symposium here.</span>
+      <img
+        src={ArrowUpRight}
+        class="w-6 h-6 ml-1"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        aria-hidden
+      />
     </div>
-  </div>
+  </a>
 </div>

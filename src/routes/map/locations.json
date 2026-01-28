@@ -559,16 +559,12 @@
       "name": "sunday scribbles",
       "date": "SEPTEMBER 2025",
       "location": "Madison, WI",
-      "lumaLink": "https://lu.ma/embed/calendar/cal-tbroqna8CoKHgWN/events?lt=light",
-      "joinLink": "https://lu.ma/sundayscribbles",
+      "lumaLink": "https://luma.com/embed/calendar/cal-tbroqna8CoKHgWN/events?lt=light",
+      "joinLink": "https://luma.com/sundayscribbles",
       "coordinates": [
         43.03091049194336,
         -89.54486846923828
-      ],
-      "instagramLink": "https://www.instagram.com/socratica.info",
-      "twitterLink": "https://twitter.com/socraticainfo",
-      "youtubeLink": "https://www.youtube.com/@socraticainfo",
-      "websiteLink": "https://www.socratica.info/"
+      ]
     }
   ]
 }

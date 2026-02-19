@@ -490,18 +490,6 @@
       "websiteLink": "https://linkedin.com/company/10am-mun/"
     },
     {
-      "id": "austin-Carpentry",
-      "name": "Carpentry",
-      "date": "June 2025",
-      "location": "Austin, TX",
-      "lumaLink": "https://luma.com/embed/calendar/cal-StONeZQY4dMqBpg/events?lt=light",
-      "joinLink": "https://luma.com/carpentry",
-      "coordinates": [
-        30.404940429931692,
-        -97.72104432362195
-      ]
-    },
-    {
       "id": "chicago-Scratchpad",
       "name": "Scratchpad",
       "date": "June 2025",

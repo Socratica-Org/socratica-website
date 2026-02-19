@@ -172,13 +172,14 @@
       "name": "Agora",
       "date": "October 2024",
       "location": "Hamilton, ON",
+      "lumaLink": "https://luma.com/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
+      "joinLink": "https://luma.com/agora",
       "coordinates": [
         43.26211519287825,
         -79.91705655784756
       ],
-      "lumaLink": "https://luma.com/embed/calendar/cal-ImDNuyKTF00fOYK/events?lt=light",
-      "joinLink": "https://luma.com/agora",
-      "instagramLink": "https://instagram.com/agora.meet"
+      "instagramLink": "https://instagram.com/agora.meet",
+      "twitterLink": "https://x.com/agorameet"
     },
     {
       "id": "ottawa",

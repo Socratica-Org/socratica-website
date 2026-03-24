@@ -17,7 +17,6 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import { locations } from "../routes/map/locations";
-  import Banner from '$lib/components/Banner.svelte';
   import { browser } from '$app/environment';
 
   // For TypeScript users, we have a global declaration in src/types/global.d.ts
@@ -281,7 +280,6 @@
 </svelte:head>
 
 <div class="site-container">
-  <Banner />
   <div class="app">
     <main class="main-content">
       <slot />

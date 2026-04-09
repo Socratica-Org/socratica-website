@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/webring/:path*",
+      "destination": "https://webring.socratica-info.workers.dev/webring/:path*"
+    }
+  ]
+}

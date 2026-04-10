@@ -1,5 +1,7 @@
 import type { RequestHandler } from "./$types";
 
+export const trailingSlash = "ignore";
+
 const ORIGIN = "https://webring.socratica-info.workers.dev";
 
 export const fallback: RequestHandler = ({

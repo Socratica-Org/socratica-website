@@ -3,6 +3,7 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "name": "website",
   "main": "@astrojs/cloudflare/entrypoints/server",
+  "workers.dev": true,
   "routes": [
     {
       "pattern": "socratica.info",

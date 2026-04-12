@@ -1,17 +1,12 @@
 ---
-import darkEye from "@/assets/images/dark-eye.svg";
-import darkHeartStraight from "@/assets/images/dark-heart-straight.svg";
-import darkHouse from "@/assets/images/dark-house.svg";
-import darkMapTrifold from "@/assets/images/dark-map-trifold.svg";
-import darkToolbox from "@/assets/images/dark-toolbox.svg";
-import darkUsersThree from "@/assets/images/dark-users-three.svg";
-import eye from "@/assets/images/eye.svg";
-import heartStraight from "@/assets/images/heart-straight.svg";
-import house from "@/assets/images/house.svg";
-import mapTrifold from "@/assets/images/map-trifold.svg";
 import SocraticaWhite from "@/assets/images/SocraticaWhite.svg";
-import toolbox from "@/assets/images/toolbox.svg";
-import usersThree from "@/assets/images/users-three.svg";
+import eye from "./assets/eye.svg?raw";
+import heartStraight from "./assets/heart-straight.svg?raw";
+import house from "./assets/house.svg?raw";
+import mapTrifold from "./assets/map-trifold.svg?raw";
+import toolbox from "./assets/toolbox.svg?raw";
+import usersThree from "./assets/users-three.svg?raw";
+import webring from "./assets/webring.svg?raw";
 
 const currentPath = Astro.url.pathname;
 
@@ -19,43 +14,43 @@ const navLinks = [
   {
     href: "/",
     label: "HOME",
-    icon: house.src,
-    darkIcon: darkHouse.src,
+    icon: house,
     isExternal: false,
   },
   {
     href: "/about",
     label: "ABOUT",
-    icon: usersThree.src,
-    darkIcon: darkUsersThree.src,
+    icon: usersThree,
     isExternal: false,
   },
   {
     href: "/map",
     label: "MAP",
-    icon: mapTrifold.src,
-    darkIcon: darkMapTrifold.src,
+    icon: mapTrifold,
+    isExternal: false,
+  },
+  {
+    href: "/webring",
+    label: "WEBRING",
+    icon: webring,
     isExternal: false,
   },
   {
     href: "https://toolbox.socratica.info/",
     label: "TOOLBOX",
-    icon: toolbox.src,
-    darkIcon: darkToolbox.src,
+    icon: toolbox,
     isExternal: true,
   },
   {
     href: "/get-involved",
     label: "GET INVOLVED",
-    icon: eye.src,
-    darkIcon: darkEye.src,
-    isExternal: false,
+    icon: eye,
+    isExternal: true,
   },
   {
     href: "https://donate.stripe.com/5kA6qZcondXE8Te008",
     label: "DONATE",
-    icon: heartStraight.src,
-    darkIcon: darkHeartStraight.src,
+    icon: heartStraight,
     isExternal: true,
   },
 ];
@@ -103,16 +98,16 @@ const navLinks = [
             target={link.isExternal ? "_blank" : undefined}
             class:list={[
               "nav-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out",
-              { "opacity-50 cursor-not-allowed bg-primary": isActive },
+              {
+                "opacity-50 cursor-not-allowed !bg-primary !text-black":
+                  isActive,
+              },
             ]}
-            data-icon={link.icon}
-            data-dark-icon={link.darkIcon}
             data-active={isActive ? "true" : "false"}
           >
-            <img
-              src={isActive ? link.darkIcon : link.icon}
-              alt={link.label}
-              class="nav-icon w-4 h-4 md:w-6 md:h-6"
+            <span
+              class="nav-icon w-4 h-4 md:w-6 md:h-6 [&>svg]:w-full [&>svg]:h-full"
+              set:html={link.icon}
             />
             <span class:list={[{ "text-black": isActive }]}>{link.label}</span>
           </a>
@@ -146,23 +141,6 @@ const navLinks = [
 
   toggle?.addEventListener("click", openNav);
   close?.addEventListener("click", closeNav);
-
-  // Handle hover states for nav icons
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    const el = link as HTMLElement;
-    const icon = el.dataset.icon;
-    const darkIcon = el.dataset.darkIcon;
-    const isActive = el.dataset.active === "true";
-    const img = el.querySelector(".nav-icon") as HTMLImageElement;
-    if (!img || isActive) return;
-
-    el.addEventListener("mouseenter", () => {
-      img.src = darkIcon!;
-    });
-    el.addEventListener("mouseleave", () => {
-      img.src = icon!;
-    });
-  });
 
   // Close overlay on internal nav link click
   document.querySelectorAll(".nav-link").forEach((link) => {

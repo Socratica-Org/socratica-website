@@ -1,0 +1,89 @@
+---
+import House from "@/assets/images/House.png";
+import BeigeGuy from "@/assets/images/mascots/BeigeGuy.png";
+import BlueGuy from "@/assets/images/mascots/BlueGuy.png";
+import GreenGuy from "@/assets/images/mascots/GreenGuy.png";
+import OrangeGuy from "@/assets/images/mascots/OrangeGuy.png";
+import PinkGuy from "@/assets/images/mascots/PinkGuy.png";
+import PurpleGuy from "@/assets/images/mascots/PurpleGuy.png";
+import YellowGuy from "@/assets/images/mascots/YellowGuy.png";
+import Navbar from "@/components/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="404 | Socratica" hideFooter>
+  <div class="flex flex-col h-screen justify-center bg-primary">
+    <Navbar />
+
+    <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
+      <a href="/">
+        <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+      </a>
+    </div>
+
+    <div
+      class="flex flex-col items-center absolute w-full z-10"
+      style="top: 40%;"
+    >
+      <h2
+        class="text-[23px] mt-5 sm:text-4xl md:text-5xl font-tiempos-headline"
+      >
+        Stiiiiill building this. (maybe)
+      </h2>
+      <p class="text-md md:text-xl font-tiempos-headline mt-4 md:mt-8">
+        The page you're looking for doesn't exist.
+      </p>
+      <a
+        href="/"
+        class="text-xs md:text-base bg-[#2A2928] mt-12 md:mt-16 py-4 px-8 rounded-full border border-cool-grey hover:bg-[#706F6B] font-mono inline-flex items-center space-x-2 min-w-[150px] text-white transition-colors duration-500 ease-in-out"
+        style="font-family: 'SF Mono', monospace;"
+      >
+        <img src={House.src} alt="" class="w-4 h-4 md:w-6 md:h-6" />
+        <span>BACK TO HOME</span>
+      </a>
+    </div>
+
+    <img
+      src={GreenGuy.src}
+      alt=""
+      class="mascot absolute top-[5%] right-[50%] lg:left-[15%]"
+      style="width: 287px; height: 275px; transform: scale(0.27);"
+    />
+    <img
+      src={OrangeGuy.src}
+      alt=""
+      class="absolute top-[5%] left-[10%] lg:left-[43%]"
+      style="width: 356px; height: 354px; transform: scale(0.4);"
+    />
+    <img
+      src={YellowGuy.src}
+      alt=""
+      class="absolute top-[16%] left-[60%] md:top-[14%] lg:left-[66%]"
+      style="width: 172px; height: 267px; transform: scale(0.4);"
+    />
+    <img
+      src={BlueGuy.src}
+      alt=""
+      class="absolute top-[47%] right-[63%] md:top-[45%] md:left-[15%]"
+      style="width: 193px; height: 194px; transform: scale(0.4);"
+    />
+    <img
+      src={PurpleGuy.src}
+      alt=""
+      class="absolute top-[60%] right-[40%] md:top-[52%] md:left-[23%]"
+      style="width: 285px; height: 279px; transform: scale(0.27);"
+    />
+    <img
+      src={PinkGuy.src}
+      alt=""
+      class="absolute top-[65%] left-[30%] md:top-[61%] md:left-[54%]"
+      style="width: 326px; height: 192px; transform: scale(0.4);"
+    />
+    <img
+      src={BeigeGuy.src}
+      alt=""
+      class="absolute top-[40.5%] left-[52%] md:top-[41.5%] md:left-[67.5%]"
+      style="width: 219px; height: 265px; transform: scale(0.27);"
+    />
+  </div>
+</Layout>

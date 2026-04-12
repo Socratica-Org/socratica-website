@@ -1,0 +1,360 @@
+---
+import Alien from "@/assets/images/Alien.png";
+import ArrowDownRight from "@/assets/images/ArrowDownRight.png";
+import BackgroundLines from "@/assets/images/BackgroundLines.png";
+import BackgroundLines2 from "@/assets/images/BackgroundLines2.png";
+import GreenCircle from "@/assets/images/green-circle.png";
+import HandWaving from "@/assets/images/HandWaving.png";
+import JoinUs from "@/assets/images/JoinUs.png";
+import Polaroid from "@/assets/images/Polaroid.webp";
+import RedCircle from "@/assets/images/red-circle.png";
+import Scroll from "@/assets/images/Scroll.png";
+import Smiley from "@/assets/images/Smiley.png";
+import people from "@/assets/images/socratica-people.webp";
+import Spiral from "@/assets/images/Spiral.png";
+import WhoCanCome from "@/assets/images/WhoCanCome.webp";
+import YellowCircle from "@/assets/images/yellow-circle.png";
+import DoodleSwitcher from "@/components/index/DoodleSwitcher";
+import Navbar from "@/components/Navbar.astro";
+import Picture from "@/components/Picture.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="block">
+    <div class="flex flex-col h-[670px] sm:h-[800px] justify-center bg-primary">
+      <Navbar />
+
+      <div class="absolute top-5 left-4 transform">
+        <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+      </div>
+
+      <div class="container mx-auto max-w-screen-xl px-6 md:px-8">
+        <DoodleSwitcher client:load>
+          <div class="w-4/6 md:w-1/2">
+            <p
+              class="text-md sm:text-xl lg:text-3xl font-tiempos-headline font-light text-[#41403F]"
+            >
+              We host weekly <span
+                class="border-dashed border-b-2"
+                style="border-color: #41403F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #41403F, #41403F 5px, transparent 5px, transparent 10px) 1/1 0 round"
+                >co-working sessions</span
+              >
+              for you to work on your <span class="italic"
+                >passion projects</span
+              >
+              with likeminded people.
+            </p>
+            <div class="mt-4">
+              <a
+                href="https://map.socratica.info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  class="bg-black px-4 py-2 md:px-6 md:py-3 mb-1 rounded-full border border-gray-300 text-[12px] text-xs lg:text-sm text-white font-mono hover:bg-[#706F6B] transition-colors duration-500 ease-in-out"
+                >
+                  <img
+                    src={ArrowDownRight.src}
+                    alt=""
+                    class="w-3 h-3 md:w-6 md:h-6 inline-block"
+                  />
+                  ATTEND A SESSION
+                </button>
+              </a>
+              <button
+                id="dive-deeper-btn"
+                class="bg-primary px-4 py-2 md:px-6 md:py-3 rounded-full text-[12px] text-xs lg:text-sm font-mono border border-gray-300 hover:bg-cool-grey transition-colors duration-500 ease-in-out"
+              >
+                <img
+                  src={Spiral.src}
+                  alt=""
+                  class="w-3 h-3 md:w-6 md:h-6 inline-block"
+                />
+                DIVE DEEPER
+              </button>
+            </div>
+          </div>
+        </DoodleSwitcher>
+      </div>
+    </div>
+    <div class="-mt-28">
+      <Picture
+        src={people}
+        alt="People at Socratica"
+        class="w-full"
+        widths={[640, 1024, 1440]}
+      />
+    </div>
+  </section>
+
+  <section id="what-we-are">
+    <div
+      class="bg-primary bg-cover bg-center bg-no-repeat px-2"
+      style={`background-image: url(${BackgroundLines.src})`}
+    >
+      <div class="flex justify-center items-center pt-40 pb-10">
+        <span
+          class="px-4 py-2 md:px-6 md:py-3 rounded-full border-2 text-[12px] text-xs md:text-sm font-mono inline-block p-2"
+          style="border-color: #C6482C; color: #C6482C"
+        >
+          <img
+            src={HandWaving.src}
+            alt=""
+            class="w-4 h-4 md:w-6 md:h-6 inline-block"
+          />
+          WHAT WE ARE
+        </span>
+      </div>
+
+      <div
+        class="flex flex-col justify-center items-center text-[16px] sm:text-[20px] md:text-4xl font-tiempos-headline md:pt-8"
+        style="font-weight: 300;"
+      >
+        <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
+          <img
+            src={RedCircle.src}
+            alt=""
+            class="w-10 md:w-16 pr-2 pl-2 md:pr-4 md:pl-4"
+          />
+          <div class="inline-block pb-2">
+            An open collective <span class="italic">of</span> makers, artists,
+          </div>
+        </div>
+        <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
+          <div class="inline-block pb-1">
+            engineers, designers, writers, poets,
+          </div>
+          <img
+            src={GreenCircle.src}
+            alt=""
+            class="w-10 md:w-16 pr-2 pl-2 md:pr-4 md:pl-4"
+          />
+        </div>
+        <div class="flex items-center whitespace-nowrap sm:whitespace-normal">
+          <div class="inline-block">
+            and <span
+              class="border-dashed border-b-2"
+              style="border-color: #CDC19F; border-width: 0 0 2px; border-image: repeating-linear-gradient(to right, #CDC19F, #CDC19F 5px, transparent 5px, transparent 10px) 1/1 0 round"
+              >everything</span
+            >
+          </div>
+          <img
+            src={YellowCircle.src}
+            alt=""
+            class="w-10 md:w-16 pr-2 pl-2 md:pr-4 md:pl-4"
+          />
+          <div class="inline-block font-tiempos-headline">
+            <span
+              style="background: linear-gradient(to right, #899248, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+              ><span class="italic">in</span>-between.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-zinc-800 pt-5 md:pt-8 pb-40 px-12"
+      >
+        <div class="text-center text-[12px] md:text-sm">
+          <span class="block md:hidden"
+            >Socratica is a live, IRL co-working session hosted every Sunday in
+            Waterloo bringing together people who want to <span class="italic"
+              >make</span
+            >
+            stuff, and
+            <a
+              href="https://luma.com/socratica"
+              target="_blank"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B;">you're invited</a
+            >.</span
+          >
+          <div class="hidden md:block">
+            Socratica is a live, IRL co-working session hosted every Sunday in
+            Waterloo bringing together people who want to
+          </div>
+          <div class="hidden md:block mx-auto">
+            <span class="italic">make</span> stuff, and
+            <a
+              href="https://map.socratica.info"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B;">you're invited</a
+            >.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="bg-primary pt-24 md:pt-40">
+      <div class="pl-8 md:pl-20 lg:pl-44">
+        <span
+          class="px-4 py-2 md:px-6 md:py-3 rounded-full border-2 text-[12px] text-xs md:text-sm font-mono inline-block p-2"
+          style="border-color: #854F6F; color: #854F6F"
+        >
+          <img
+            src={Alien.src}
+            alt=""
+            class="w-4 h-4 md:w-6 md:h-6 inline-block"
+          />
+          WHO CAN COME
+        </span>
+      </div>
+
+      <div class="pt-6 pl-8 md:pl-20 lg:pl-44 w-11/12 md:w-full">
+        <div
+          class="text-[20px] text-xl xs:text-3xl sm:text-3xl md:text-4xl font-tiempos-headline font-light"
+        >
+          Whether you're just starting out or far along,
+          <br class="hidden md:block" />this is a place for <i>you</i> to make things.
+        </div>
+        <div class="pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md">
+          We know it can be intimidating to start (we've been there),
+          <br /> but you'll be surrounded by others doing the same.
+        </div>
+      </div>
+      <Picture
+        src={WhoCanCome}
+        alt="Who Can Come"
+        class="-mt-18 sm:-mt-32 md:-mt-36 lg:-mt-80"
+        widths={[640, 1024, 1440]}
+      />
+    </div>
+  </section>
+
+  <section class="bg-primary">
+    <div class="flex bg-primary pt-12 md:pt-40 md:pb-40">
+      <div class="md:pl-16 lg:pl-20 flex flex-col justify-start">
+        <Picture
+          src={JoinUs}
+          alt="Join Us"
+          class="w-200 h-400 md:w-[792px] md:h-[476px] hidden md:inline-block"
+          widths={[400, 792]}
+        />
+      </div>
+      <div class="flex-grow pl-6 sm:pl-10 md:pl-20">
+        <div class="pl-4 pt-12">
+          <span
+            class="px-4 py-2 md:px-6 md:py-3 border-2 rounded-full text-[12px] text-xs md:text-sm font-mono inline-block p-2"
+            style="border-color: #758F2A; color: #758F2A;"
+          >
+            <img
+              src={Scroll.src}
+              alt=""
+              class="w-4 h-4 md:w-6 md:h-6 inline-block"
+            />
+            HOW IT WORKS
+          </span>
+        </div>
+
+        <div class="p-5 pr-6 md:pr-10 lg:pr-40 text-zinc-800">
+          <div
+            class="text-xl sm:text-3xl lg:text-4xl font-tiempos-headline lg:pt-9"
+            style="font-weight: 300;"
+          >
+            Introductions,
+            <br />
+            <span class="md:hidden"
+              >two 50-min work blocks, ending with casual open <span
+                class="italic">demos</span
+              ></span
+            >
+            <span class="hidden md:inline">two 50-min work blocks,</span>
+            <span class="hidden md:inline"
+              >ending with casual open <span class="italic">demos</span></span
+            >
+            <br />
+            <span class="italic" style="color: #CFCCC4"
+              >+ snacks along the way.</span
+            >
+          </div>
+          <div class="pt-5 text-[11px] md:text-[14px] text-zinc-800">
+            The real magic is in the demos - whether you've got 3 bullet points
+            on a Google Docs or a full-blown prototype, we want to see it. It's
+            a chance to share your work, get feedback, and celebrate your
+            progress. And of course, make new friends.
+          </div>
+        </div>
+      </div>
+    </div>
+    <Picture
+      src={Polaroid}
+      alt="Polaroid"
+      class="mx-auto"
+      style="width: 1200px; height: 1000;"
+      widths={[640, 1200]}
+    />
+  </section>
+
+  <section>
+    <div
+      class="flex bg-primary pb-40 pl-8 md:pl-16 lg:pl-20 bg-cover bg-center bg-no-repeat"
+      style={`background-image: url(${BackgroundLines2.src})`}
+    >
+      <div class="flex-grow md:pl-16 lg:pl-20">
+        <div class="pt-14">
+          <span
+            class="px-6 py-3 border-2 rounded-full text-[10.5px] text-xs md:text-sm font-mono inline-block p-2"
+            style="border-color: #2C64B7; color: #2C64B7;"
+          >
+            <img
+              src={Smiley.src}
+              alt=""
+              class="w-4 h-4 md:w-6 md:h-6 inline-block"
+            />
+            WHY WE DO WHAT WE DO
+          </span>
+        </div>
+        <div class="py-5 md:pr-24 lg:pr-40">
+          <div
+            class="text-xl xs:text-3xl sm:text-3xl md:text-4xl text-zinc-800 font-light font-tiempos-headline pt-4"
+            style="font-weight: 300;"
+          >
+            We like helping great people <br class="sm:hidden" /> do great things.
+            <div>
+              Got an extra minute?
+              <br class="sm:hidden md:hidden" />
+              <a
+                href="/about"
+                class="border-b-2"
+                style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+              >
+                We have more to say.
+              </a>
+            </div>
+          </div>
+          <div class="pt-2 md:pt-6 text-[11px] sm:text-[14px] sm:text-md">
+            We're united by the love of making things, and we want to help you
+            make your thing.
+            <br /> Not in Waterloo? There's a good chance
+            <a
+              href="https://map.socratica.info"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+            >
+              a node exists near you.
+            </a>
+            If not,
+            <a
+              href="/get-involved"
+              class="border-b-2"
+              style="border-color: #706F6B; color: #706F6B; text-decoration: none;"
+            >
+              you can start a new one.
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.getElementById("dive-deeper-btn")?.addEventListener("click", () => {
+    document
+      .getElementById("what-we-are")
+      ?.scrollIntoView({ behavior: "smooth" });
+  });
+</script>

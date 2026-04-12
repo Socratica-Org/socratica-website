@@ -1,0 +1,190 @@
+---
+import ArrowDownRight from "@/assets/images/ArrowDownRight.png";
+import noiseImg from "@/assets/images/noise.png";
+import footerLogo from "@/assets/images/socratica_logo_footer.svg";
+import Picture from "@/components/Picture.astro";
+import locationsData from "@/data/locations.json";
+import "@/styles/fonts.css";
+import "@/styles/global.css";
+
+const { locations } = locationsData;
+
+interface Props {
+  title?: string;
+  description?: string;
+  hideFooter?: boolean;
+}
+
+const {
+  title = "Socratica",
+  description = "We host weekly co-working sessions for you to work on your passion projects with likeminded people.",
+  hideFooter = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:url" content="https://socratica.info" />
+    <meta property="og:title" content={title} />
+    <meta property="og:image" content="https://socratica.info/ogimage.png" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://socratica.info/ogimage.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:site" content="@socraticainfo" />
+  </head>
+  <body>
+    <div class="site-container">
+      <div class="app">
+        <main class="main-content">
+          <slot />
+        </main>
+
+        {
+          !hideFooter && (
+            <footer class="relative min-h-fit w-full bg-[#2A2928]">
+              <Picture
+                src={noiseImg}
+                alt=""
+                class="absolute inset-0 w-full h-full object-cover"
+                aria-hidden="true"
+                widths={[640, 800, 1280, 1600, 2000]}
+              />
+              <div class="relative z-10 w-full grid xs:grid-cols-3 md:grid-cols-4 px-10 sm:px-14">
+                <div class="pt-16">
+                  <h3 class="text-[#FBF8EF] font-base text-sm -tracking-[0.48px] leading-[20px] pb-4 font-mono">
+                    FRIENDS OF SOCRATICA
+                  </h3>
+                  <div class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] text-xs sm:text-xs md:text-xs lg:text-sm">
+                    {locations.map((location) => (
+                      <p class="leading-[26px]">
+                        <a
+                          href={`https://map.socratica.info/?location=${location.id}`}
+                          target="_blank"
+                        >
+                          {location.location}
+                          <img
+                            src={ArrowDownRight.src}
+                            alt=""
+                            class="w-3 h-3 inline-block opacity-80"
+                          />
+                        </a>
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="pt-16">
+                  <h3 class="text-[#FBF8EF] font-base text-sm -tracking-[0.48px] leading-[20px] pb-4 font-mono">
+                    MORE LINKS
+                  </h3>
+                  <div class="text-[#FBF8EF] opacity-80 font-light -tracking-[0.48px] leading-[33px] text-xs sm:text-xs md:text-xs lg:text-sm">
+                    <p class="leading-[26px]">
+                      <a href="/">Back to Top</a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a href="/about">About</a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a href="/map">Map</a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a href="/get-involved">Get Involved</a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a
+                        href="https://github.com/Socratica-Org/"
+                        target="_blank"
+                      >
+                        GitHub
+                      </a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a
+                        href="https://www.youtube.com/watch?v=ydYDqZQpim8"
+                        target="_blank"
+                      >
+                        Easter Egg
+                      </a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a
+                        href="https://socratica.notion.site/Code-of-Conduct-52fb005f7e3a452096e235995a2f92e5"
+                        target="_blank"
+                      >
+                        Code of Conduct
+                      </a>
+                    </p>
+                    <p class="leading-[26px]">
+                      <a
+                        href="https://donate.stripe.com/5kA6qZcondXE8Te008"
+                        target="_blank"
+                      >
+                        Donate
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="pt-16 col-span-2">
+                  <h3 class="text-[#FBF8EF] font-base text-sm -tracking-[0.48px] leading-[20px] pb-4 font-mono">
+                    NEWSLETTER
+                  </h3>
+                  <div class="min-w-4/5 max-w-[400px] bg-[#2A2928] py-[8px] px-[10px] rounded-full flex justify-between">
+                    <input
+                      id="newsletter-email"
+                      placeholder="email@gmail.com"
+                      class="bg-[#2A2928] text-[12px] md:text-base -tracking-[0.48px] w-full outline-none pl-4 rounded-full text-[#FFFFFF]"
+                    />
+                    <button
+                      id="newsletter-submit"
+                      type="button"
+                      class="text-black py-[7px] px-[20px] bg-[#FBF8EF] rounded-[100px] text-[12px] md:text-base font-semibold hover:opacity-95 transition-colors duration-500 ease-in-out"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                  <p id="newsletter-message" class="text-red-500 mt-2" />
+                </div>
+              </div>
+              <img
+                src={footerLogo.src}
+                alt="Socratica"
+                class="relative z-10 px-8 pt-[23px] pb-5"
+              />
+            </footer>
+          )
+        }
+      </div>
+    </div>
+  </body>
+</html>
+
+<style lang="scss" is:global>
+  .site-container {
+    min-height: 100vh;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    position: relative;
+    width: 100%;
+    flex: 1;
+  }
+</style>

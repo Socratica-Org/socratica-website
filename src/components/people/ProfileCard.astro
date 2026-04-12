@@ -1,0 +1,79 @@
+---
+/**
+ * Hidden profile card template, shown via JS when a node is clicked.
+ * Rendered once in the DOM and populated dynamically.
+ */
+---
+
+<div
+  id="profile-card"
+  class="fixed bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.15)] z-50 max-w-[90%] w-[480px] hidden opacity-0"
+  style="transition: opacity 0.2s ease; will-change: transform, opacity;"
+>
+  <div class="flex flex-col items-center text-center mb-4">
+    <img
+      id="profile-photo"
+      src=""
+      alt=""
+      class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-[#FBF8EF] hidden"
+      width="128"
+      height="128"
+    />
+    <div
+      id="profile-placeholder-avatar"
+      class="w-32 h-32 rounded-full mb-4 bg-[#404040] items-center justify-center border-2 border-[#FBF8EF] hidden"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-12 h-12 text-[#CCCCCC]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        ></path>
+      </svg>
+    </div>
+    <div>
+      <h3
+        id="profile-name"
+        class="font-tiempos-headline text-2xl font-bold mb-1"
+      >
+      </h3>
+      <p id="profile-location" class="text-base text-gray-600 font-mono"></p>
+      <p id="profile-role" class="text-sm text-gray-500 mt-1 font-mono"></p>
+    </div>
+  </div>
+  <div id="profile-facts" class="mt-2">
+    <ul
+      class="list-disc pl-6 space-y-2"
+      style="font-family: 'Untitled Sans', sans-serif;"
+    >
+    </ul>
+  </div>
+  <button
+    id="profile-close"
+    class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+    aria-label="Close profile"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+</div>
+<div id="profile-backdrop" class="fixed inset-0 z-40 hidden"></div>

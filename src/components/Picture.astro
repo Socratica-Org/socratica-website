@@ -1,0 +1,94 @@
+---
+import type { ImageInputFormat } from "astro";
+import type { LocalImageProps, RemoteImageProps } from "astro:assets";
+import { getImage } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+
+export type Props = (LocalImageProps | RemoteImageProps) & {
+  pictureAttributes?: HTMLAttributes<"picture">;
+};
+
+const { src, class: attrClassName, widths, ...attrs } = Astro.props;
+
+interface Format {
+  format: ImageInputFormat;
+  type: string;
+  [key: string]: any;
+}
+
+interface Width {
+  queryWidth: number;
+  actualWidth: number;
+}
+
+const widthObjs = widths?.map(
+  (width) =>
+    ({
+      queryWidth: width,
+      actualWidth: Math.round(width),
+    }) satisfies Width,
+);
+
+const formats: Format[] = [{ format: "avif", type: "image/avif", quality: 50 }];
+const imagesPromise = Promise.all(
+  formats.map(async (format) => {
+    const originalWidth =
+      (src as ImageMetadata).width ??
+      (
+        await (src as Promise<{
+          default: ImageMetadata;
+        }>)
+      ).default.width;
+    const widthsToTry = [
+      ...(widthObjs ?? []),
+      { queryWidth: originalWidth, actualWidth: originalWidth },
+    ];
+    const availableWidths = widthsToTry.filter(
+      (size) => size.actualWidth <= originalWidth,
+    );
+
+    const image = await getImage({
+      src,
+      ...format,
+      widths: availableWidths.map((w) => w.actualWidth),
+    });
+
+    return { widths: availableWidths, image };
+  }),
+);
+const fallbackImagePromise = getImage({
+  src,
+  format: "png",
+  type: "image/png",
+  quality: 80,
+});
+
+const [images, fallbackImage] = await Promise.all([
+  imagesPromise,
+  fallbackImagePromise,
+]);
+
+const { class: fallbackImageClassName, ...fallbackImageAttributes } =
+  fallbackImage.attributes;
+---
+
+<picture>
+  {
+    images.map((formatImages) => {
+      const srcSet = formatImages.image.srcSet.attribute;
+
+      return (
+        <source srcset={srcSet} type={formatImages.image.attributes.type} />
+      );
+    })
+  }
+  <img
+    class:list={[attrClassName, fallbackImageClassName]}
+    src={fallbackImage.src}
+    loading="lazy"
+    decoding="async"
+    sizes="auto"
+    {...fallbackImageAttributes}
+    {...attrs}
+  />
+</picture>

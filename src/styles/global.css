@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fbf8ef;
+  --color-cool-grey: #cfccc4;
+  --color-soft-grey: #706f6b;
+  --color-dark-grey: #1f1f1f;
+
+  --font-geist: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-tiempos-headline: "Tiempos Headline", serif;
+  --font-fivebyseven: "FiveBySeven", monospace;
+  --font-conte: "Conte", sans-serif;
+  --font-sf-mono: "SF Mono", "Menlo", monospace;
+
+  --breakpoint-banner: 1035px;
+}
+
+body {
+  font-family:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}

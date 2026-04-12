@@ -1,0 +1,6 @@
+pre-commit:
+  jobs:
+    - name: "Run Prettier to format code"
+      glob: "*.{js,jsx,ts,tsx,json,jsonc,css,md,mdx,astro,vue,scss,sass,cjs,mjs,cts,mts,yml,yaml}"
+      run: npx prettier --write {staged_files}
+      stage_fixed: true

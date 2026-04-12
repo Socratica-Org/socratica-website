@@ -1,0 +1,19 @@
+{
+  "compatibility_date": "2026-04-09",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "name": "website",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "routes": [
+    {
+      "pattern": "socratica.info",
+      "custom_domain": true,
+    },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+  },
+}

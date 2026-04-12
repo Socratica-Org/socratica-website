@@ -1,0 +1,115 @@
+---
+import Picture from "@/components/Picture.astro";
+import type { AsterismBounds, GridNode, Person } from "./grid";
+
+interface Props {
+  nodes: GridNode[];
+  bounds: AsterismBounds;
+  nodeSize?: number;
+}
+
+const { nodes, bounds, nodeSize = 32 } = Astro.props;
+
+// Eagerly import all people images
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  "./assets/*.{jpeg,jpg,png,JPG}",
+  { eager: true },
+);
+
+// Build a lookup from filename to ImageMetadata
+const imageMap = new Map<string, ImageMetadata>();
+for (const [path, mod] of Object.entries(imageModules)) {
+  const filename = path.split("/").pop()!;
+  imageMap.set(filename, mod.default);
+}
+
+// Placeholder images
+const placeholderModules = import.meta.glob<{ default: ImageMetadata }>(
+  "./assets/placeholder_*.png",
+  { eager: true },
+);
+const placeholders: ImageMetadata[] = [];
+for (const [, mod] of Object.entries(placeholderModules)) {
+  placeholders.push(mod.default);
+}
+
+function getImageForPerson(person: Person): ImageMetadata | null {
+  if (!person.photo || person.photo.includes("placeholder")) return null;
+  const filename = person.photo.split("/").pop()!;
+  return imageMap.get(filename) ?? null;
+}
+
+function getPlaceholder(index: number): ImageMetadata {
+  return placeholders[index % placeholders.length];
+}
+---
+
+<div
+  class="relative"
+  style={`width: ${bounds.width}px; height: ${bounds.height}px;`}
+>
+  {
+    nodes.map((node) => {
+      const image = node.person ? getImageForPerson(node.person) : null;
+      const placeholder = getPlaceholder(node.placeholderIndex);
+
+      return (
+        <div
+          class:list={[
+            "node absolute rounded-full overflow-hidden border-2",
+            node.isPlaceholder
+              ? "border-[#e0e0e0] bg-[#f5f5f5]"
+              : "border-[#FBF8EF] cursor-pointer",
+          ]}
+          style={`width: ${nodeSize}px; height: ${nodeSize}px; left: ${node.x - nodeSize / 2}px; top: ${node.y - nodeSize / 2}px; transition: scale 0.2s ease;`}
+          data-person-id={node.person?.id}
+          role={node.person ? "button" : "presentation"}
+          aria-label={
+            node.person ? `View profile for ${node.person.name}` : undefined
+          }
+          tabindex={node.person ? 0 : -1}
+        >
+          {node.person && image ? (
+            <Picture
+              src={image}
+              alt={node.person.name}
+              class="w-full h-full object-cover"
+              widths={[32, 64]}
+            />
+          ) : node.person ? (
+            <div class="w-full h-full bg-[#404040] flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-[#CCCCCC]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+          ) : (
+            <Picture
+              src={placeholder}
+              alt=""
+              class="w-full h-full object-cover"
+              widths={[32]}
+            />
+          )}
+        </div>
+      );
+    })
+  }
+</div>
+
+<style is:global>
+  .node[data-person-id]:hover {
+    scale: 1.1;
+    z-index: 20;
+  }
+</style>

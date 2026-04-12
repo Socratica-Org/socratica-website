@@ -1,0 +1,157 @@
+/* Geist */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+/* Tiempos Headline */
+@font-face {
+  font-family: "Tiempos Headline";
+  src:
+    url("../assets/fonts/tiempos-headline/tiempos-headline-light.woff2")
+      format("woff2"),
+    url("../assets/fonts/tiempos-headline/tiempos-headline-light.otf")
+      format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src:
+    url("../assets/fonts/tiempos-headline/tiempos-headline-light-italic.woff2")
+      format("woff2"),
+    url("../assets/fonts/tiempos-headline/tiempos-headline-light-italic.otf")
+      format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-regular-italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-medium-italic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-semibold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-semibold-italic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src:
+    url("../assets/fonts/tiempos-headline/tiempos-headline-bold.woff2")
+      format("woff2"),
+    url("../assets/fonts/tiempos-headline/tiempos-headline-bold.otf")
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-bold-italic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-black.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("../assets/fonts/tiempos-headline/tiempos-headline-black-italic.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* FiveBySeven */
+@font-face {
+  font-family: "FiveBySeven";
+  src: url("../assets/fonts/fivebyseven/FiveBySeven.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FiveBySeven";
+  src: url("../assets/fonts/fivebyseven/FiveBySevenBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Conte */
+@font-face {
+  font-family: "Conte";
+  src: url("../assets/fonts/conte/Conte.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Untitled Sans */
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("../assets/fonts/untitled-sans/untitled-sans-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

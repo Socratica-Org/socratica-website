@@ -1,0 +1,406 @@
+---
+import { getImage } from "astro:assets";
+import Navbar from "@/components/Navbar.astro";
+import Asterism from "@/components/people/Asterism.astro";
+import { generateAsterisms, NODE_SIZE } from "@/components/people/grid";
+import peopleData from "@/components/people/people.json";
+import ProfileCard from "@/components/people/ProfileCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
+// Build a map from original photo filename to a processed image URL for the profile card
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  "../components/people/assets/*.{jpeg,jpg,png,JPG}",
+  { eager: true },
+);
+
+const photoUrlMap: Record<string, string> = {};
+for (const [path, mod] of Object.entries(imageModules)) {
+  const filename = path.split("/").pop()!;
+  // Generate a 256w version for the profile card
+  const processed = await getImage({
+    src: mod.default,
+    width: 256,
+    format: "avif",
+    quality: 60,
+  });
+  photoUrlMap[filename] = processed.src;
+}
+
+const { top, left, right, bounds } = generateAsterisms(peopleData as any);
+---
+
+<Layout title="People | Socratica">
+  <div class="block min-h-screen bg-primary">
+    <Navbar />
+
+    <div class="absolute top-5 left-4 transform">
+      <a href="/">
+        <h1 class="text-2xl font-tiempos-headline">Socratica</h1>
+      </a>
+    </div>
+
+    <div class="pt-32 px-8 md:px-16 lg:px-24">
+      <div class="mb-10">
+        <h2
+          class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline mb-6"
+        >
+          The <i>people</i> behind it all.
+        </h2>
+      </div>
+
+      <div class="mb-8 max-w-4xl">
+        <p
+          class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed"
+          style="font-family: 'Untitled Sans', sans-serif;"
+        >
+          Socratica is built by a diverse community of creators, thinkers, and
+          makers.<br />Click to learn more about the individuals.
+        </p>
+      </div>
+
+      <!-- Search -->
+      <div class="mb-8 max-w-lg">
+        <div class="relative">
+          <input
+            id="people-search"
+            type="text"
+            placeholder="Search team members..."
+            class="w-full px-4 py-2 rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] focus:ring-2 focus:ring-[#333] focus:outline-none transition-all"
+          />
+          <div
+            id="search-results"
+            class="absolute z-30 mt-1 w-full bg-white rounded-lg shadow-lg border border-[#e0e0e0] max-h-60 overflow-y-auto hidden"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Asterism grids -->
+      <div
+        class="relative w-full flex flex-col items-center pb-24 overflow-hidden"
+      >
+        <Asterism nodes={top} bounds={bounds} nodeSize={NODE_SIZE} />
+
+        <div class="flex flex-col sm:flex-row gap-8 sm:gap-24 mt-8">
+          <Asterism nodes={left} bounds={bounds} nodeSize={NODE_SIZE} />
+          <Asterism nodes={right} bounds={bounds} nodeSize={NODE_SIZE} />
+        </div>
+      </div>
+    </div>
+
+    <ProfileCard />
+  </div>
+</Layout>
+
+<script
+  is:inline
+  id="people-data"
+  type="application/json"
+  set:html={JSON.stringify(
+    (peopleData as any[])
+      .filter(
+        (p: any) =>
+          !p.name.includes("Future") &&
+          !p.name.includes("Community") &&
+          !p.name.includes("Team") &&
+          !p.name.includes("Collaborators"),
+      )
+      .map((p: any) => {
+        const filename = p.photo?.split("/").pop();
+        return {
+          id: p.id,
+          name: p.name,
+          role: p.role,
+          location: p.location,
+          facts: p.facts,
+          photo:
+            filename && photoUrlMap[filename] ? photoUrlMap[filename] : p.photo,
+        };
+      }),
+  )}
+/>
+
+<script>
+  type Person = {
+    id: number;
+    name: string;
+    role: string;
+    location: string;
+    facts: string[];
+    photo: string;
+  };
+
+  const people: Person[] = JSON.parse(
+    document.getElementById("people-data")!.textContent!,
+  );
+
+  // Profile card elements
+  const card = document.getElementById("profile-card")!;
+  const backdrop = document.getElementById("profile-backdrop")!;
+  const photoEl = document.getElementById("profile-photo") as HTMLImageElement;
+  const placeholderAvatar = document.getElementById(
+    "profile-placeholder-avatar",
+  )!;
+  const nameEl = document.getElementById("profile-name")!;
+  const locationEl = document.getElementById("profile-location")!;
+  const roleEl = document.getElementById("profile-role")!;
+  const factsEl = document.getElementById("profile-facts")!;
+  const closeBtn = document.getElementById("profile-close")!;
+
+  // Mouse tracking for cursor-relative card positioning
+  let mouseX = 0;
+  let mouseY = 0;
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  const CARD_WIDTH = 480;
+  const CARD_HEIGHT = 350;
+
+  function positionCard() {
+    const sw = window.innerWidth;
+    const sh = window.innerHeight;
+
+    // Place card to the right of cursor by default
+    let left = mouseX + 20;
+    let top = mouseY - 40;
+
+    // Check available space and flip if needed
+    if (sw - mouseX - 20 < CARD_WIDTH) {
+      // Not enough space right, try left
+      if (mouseX - 20 >= CARD_WIDTH) {
+        left = mouseX - CARD_WIDTH - 20;
+      } else {
+        left = Math.max(20, (sw - CARD_WIDTH) / 2);
+      }
+    }
+
+    if (sh - mouseY - 20 < CARD_HEIGHT) {
+      if (mouseY - 20 >= CARD_HEIGHT) {
+        top = mouseY - CARD_HEIGHT - 20;
+      } else {
+        top = Math.max(20, (sh - CARD_HEIGHT) / 2);
+      }
+    }
+
+    // Clamp to viewport
+    left = Math.max(20, Math.min(sw - CARD_WIDTH - 20, left));
+    top = Math.max(20, Math.min(sh - CARD_HEIGHT - 20, top));
+
+    card.style.left = `${left}px`;
+    card.style.top = `${top}px`;
+  }
+
+  function showProfile(person: Person) {
+    nameEl.textContent = person.name;
+    locationEl.textContent = person.location || "";
+    roleEl.textContent = person.role || "";
+
+    if (person.photo && !person.photo.includes("placeholder")) {
+      photoEl.src = person.photo;
+      photoEl.alt = person.name;
+      photoEl.classList.remove("hidden");
+      placeholderAvatar.classList.add("hidden");
+    } else {
+      photoEl.classList.add("hidden");
+      placeholderAvatar.classList.remove("hidden");
+      placeholderAvatar.classList.add("flex");
+    }
+
+    const ul = factsEl.querySelector("ul")!;
+    ul.innerHTML = "";
+    if (person.facts?.length) {
+      factsEl.classList.remove("hidden");
+      for (const fact of person.facts) {
+        const li = document.createElement("li");
+        li.className = "text-[15px] leading-relaxed text-gray-700 text-left";
+        li.textContent = fact;
+        ul.appendChild(li);
+      }
+    } else {
+      factsEl.classList.add("hidden");
+    }
+
+    positionCard();
+    card.classList.remove("hidden");
+    // Trigger fade-in on next frame
+    requestAnimationFrame(() => {
+      card.classList.remove("opacity-0");
+      card.classList.add("opacity-100");
+    });
+  }
+
+  let isSelected = false;
+  let hoverTimer: ReturnType<typeof setTimeout> | null = null;
+  let hideTimer: ReturnType<typeof setTimeout> | null = null;
+  let isOverNode = false;
+
+  function hideProfile() {
+    // Fade out
+    card.classList.remove("opacity-100");
+    card.classList.add("opacity-0");
+    setTimeout(() => {
+      card.classList.add("hidden");
+      backdrop.classList.add("hidden");
+    }, 200);
+    isSelected = false;
+  }
+
+  function isMouseOverCard() {
+    const rect = card.getBoundingClientRect();
+    return (
+      mouseX >= rect.left &&
+      mouseX <= rect.right &&
+      mouseY >= rect.top &&
+      mouseY <= rect.bottom
+    );
+  }
+
+  function scheduleHide() {
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      if (!isSelected && !isOverNode && !isMouseOverCard()) {
+        hideProfile();
+      }
+    }, 300);
+  }
+
+  closeBtn.addEventListener("click", hideProfile);
+  backdrop.addEventListener("click", hideProfile);
+
+  // Keep card visible when mouse is over it
+  card.addEventListener("mouseenter", () => {
+    if (hideTimer) clearTimeout(hideTimer);
+  });
+  card.addEventListener("mouseleave", () => {
+    if (!isSelected) scheduleHide();
+  });
+
+  // Node click + hover handlers
+  document
+    .querySelectorAll<HTMLElement>(".node[data-person-id]")
+    .forEach((el) => {
+      const personId = Number(el.dataset.personId);
+      if (!personId) return;
+      const person = people.find((p) => p.id === personId);
+      if (!person) return;
+
+      // Click pins the card open
+      el.addEventListener("click", () => {
+        isSelected = true;
+        showProfile(person);
+        backdrop.classList.remove("hidden");
+      });
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          isSelected = true;
+          showProfile(person);
+        }
+      });
+
+      // Hover shows after 300ms delay
+      el.addEventListener("mouseenter", () => {
+        isOverNode = true;
+        if (hideTimer) clearTimeout(hideTimer);
+        if (isSelected) return;
+        hoverTimer = setTimeout(() => {
+          showProfile(person);
+        }, 300);
+      });
+
+      el.addEventListener("mouseleave", () => {
+        isOverNode = false;
+        if (hoverTimer) {
+          clearTimeout(hoverTimer);
+          hoverTimer = null;
+        }
+        if (!isSelected) scheduleHide();
+      });
+    });
+
+  // Search
+  const searchInput = document.getElementById(
+    "people-search",
+  ) as HTMLInputElement;
+  const searchResults = document.getElementById("search-results")!;
+  let searchTimeout: ReturnType<typeof setTimeout>;
+
+  searchInput.addEventListener("input", () => {
+    clearTimeout(searchTimeout);
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (query.length < 2) {
+      searchResults.classList.add("hidden");
+      searchResults.innerHTML = "";
+      return;
+    }
+
+    searchTimeout = setTimeout(() => {
+      const matches = people
+        .filter(
+          (p) =>
+            p.name.toLowerCase().includes(query) ||
+            p.role?.toLowerCase().includes(query) ||
+            p.location?.toLowerCase().includes(query),
+        )
+        .slice(0, 5);
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = `<div class="p-3 text-gray-500">No matching team members found</div>`;
+        searchResults.classList.remove("hidden");
+        return;
+      }
+
+      searchResults.innerHTML = matches
+        .map(
+          (p) => `
+          <div class="search-result px-4 py-2 hover:bg-[#f5f5f5] cursor-pointer transition-colors" data-person-id="${p.id}">
+            <div class="flex items-center">
+              <div class="w-8 h-8 rounded-full bg-gray-200 mr-2 overflow-hidden flex-shrink-0">
+                ${p.photo && !p.photo.includes("placeholder") ? `<img src="${p.photo}" alt="" class="w-full h-full object-cover" />` : ""}
+              </div>
+              <div>
+                <div class="font-medium">${p.name}</div>
+                ${p.role ? `<div class="text-xs text-gray-500">${p.role}</div>` : ""}
+              </div>
+            </div>
+          </div>
+        `,
+        )
+        .join("");
+
+      searchResults.classList.remove("hidden");
+
+      // Attach click handlers to results
+      searchResults
+        .querySelectorAll<HTMLElement>(".search-result")
+        .forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = Number(el.dataset.personId);
+            const person = people.find((p) => p.id === id);
+            if (person) {
+              showProfile(person);
+              searchInput.value = "";
+              searchResults.classList.add("hidden");
+            }
+          });
+        });
+    }, 300);
+  });
+
+  // Close search results when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !searchInput.contains(e.target as Node) &&
+      !searchResults.contains(e.target as Node)
+    ) {
+      searchResults.classList.add("hidden");
+    }
+  });
+
+  // Escape key closes profile
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hideProfile();
+  });
+</script>

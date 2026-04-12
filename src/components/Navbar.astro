@@ -1,0 +1,176 @@
+---
+import darkEye from "@/assets/images/dark-eye.svg";
+import darkHeartStraight from "@/assets/images/dark-heart-straight.svg";
+import darkHouse from "@/assets/images/dark-house.svg";
+import darkMapTrifold from "@/assets/images/dark-map-trifold.svg";
+import darkToolbox from "@/assets/images/dark-toolbox.svg";
+import darkUsersThree from "@/assets/images/dark-users-three.svg";
+import eye from "@/assets/images/eye.svg";
+import heartStraight from "@/assets/images/heart-straight.svg";
+import house from "@/assets/images/house.svg";
+import mapTrifold from "@/assets/images/map-trifold.svg";
+import SocraticaWhite from "@/assets/images/SocraticaWhite.svg";
+import toolbox from "@/assets/images/toolbox.svg";
+import usersThree from "@/assets/images/users-three.svg";
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  {
+    href: "/",
+    label: "HOME",
+    icon: house.src,
+    darkIcon: darkHouse.src,
+    isExternal: false,
+  },
+  {
+    href: "/about",
+    label: "ABOUT",
+    icon: usersThree.src,
+    darkIcon: darkUsersThree.src,
+    isExternal: false,
+  },
+  {
+    href: "/map",
+    label: "MAP",
+    icon: mapTrifold.src,
+    darkIcon: darkMapTrifold.src,
+    isExternal: false,
+  },
+  {
+    href: "https://toolbox.socratica.info/",
+    label: "TOOLBOX",
+    icon: toolbox.src,
+    darkIcon: darkToolbox.src,
+    isExternal: true,
+  },
+  {
+    href: "/get-involved",
+    label: "GET INVOLVED",
+    icon: eye.src,
+    darkIcon: darkEye.src,
+    isExternal: false,
+  },
+  {
+    href: "https://donate.stripe.com/5kA6qZcondXE8Te008",
+    label: "DONATE",
+    icon: heartStraight.src,
+    darkIcon: darkHeartStraight.src,
+    isExternal: true,
+  },
+];
+---
+
+<div class="absolute top-4 right-3 z-30">
+  <button
+    id="nav-toggle"
+    class="w-10 h-10 bg-black rounded-full flex flex-col justify-center items-center"
+    aria-label="Open navigation"
+  >
+    <div class="w-3 h-0.5 bg-white mb-1"></div>
+    <div class="w-3 h-0.5 bg-white"></div>
+  </button>
+</div>
+
+<div
+  id="nav-overlay"
+  class="fixed inset-0 bg-black z-40 hidden"
+  style="opacity: 0;"
+>
+  <button
+    id="nav-close"
+    class="absolute top-3 right-3 md:top-6 md:right-6 text-white text-2xl leading-none"
+    aria-label="Close navigation"
+  >
+    &times;
+  </button>
+  <div class="absolute z-50 top-10 left-3 md:left-10">
+    <img src={SocraticaWhite.src} alt="Socratica" />
+  </div>
+  <div
+    class="absolute top-40 left-5 md:left-10 flex flex-col space-y-4 items-start z-40"
+  >
+    {
+      navLinks.map((link) => {
+        const isActive =
+          !link.isExternal &&
+          (link.href === "/"
+            ? currentPath === "/"
+            : currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            target={link.isExternal ? "_blank" : undefined}
+            class:list={[
+              "nav-link z-40 bg-black text-primary py-2 px-2.5 text-xs md:text-sm rounded-full border border-primary hover:bg-primary hover:text-black font-mono inline-flex items-center space-x-2 transition-colors duration-500 ease-in-out",
+              { "opacity-50 cursor-not-allowed bg-primary": isActive },
+            ]}
+            data-icon={link.icon}
+            data-dark-icon={link.darkIcon}
+            data-active={isActive ? "true" : "false"}
+          >
+            <img
+              src={isActive ? link.darkIcon : link.icon}
+              alt={link.label}
+              class="nav-icon w-4 h-4 md:w-6 md:h-6"
+            />
+            <span class:list={[{ "text-black": isActive }]}>{link.label}</span>
+          </a>
+        );
+      })
+    }
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const overlay = document.getElementById("nav-overlay");
+  const close = document.getElementById("nav-close");
+
+  function openNav() {
+    if (!overlay) return;
+    overlay.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      overlay.style.opacity = "1";
+      overlay.style.transition = "opacity 0.5s ease";
+    });
+  }
+
+  function closeNav() {
+    if (!overlay) return;
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.classList.add("hidden");
+    }, 500);
+  }
+
+  toggle?.addEventListener("click", openNav);
+  close?.addEventListener("click", closeNav);
+
+  // Handle hover states for nav icons
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    const el = link as HTMLElement;
+    const icon = el.dataset.icon;
+    const darkIcon = el.dataset.darkIcon;
+    const isActive = el.dataset.active === "true";
+    const img = el.querySelector(".nav-icon") as HTMLImageElement;
+    if (!img || isActive) return;
+
+    el.addEventListener("mouseenter", () => {
+      img.src = darkIcon!;
+    });
+    el.addEventListener("mouseleave", () => {
+      img.src = icon!;
+    });
+  });
+
+  // Close overlay on internal nav link click
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    const el = link as HTMLElement;
+    if (el.dataset.active === "true") {
+      el.addEventListener("click", (e) => e.preventDefault());
+    } else if (!link.getAttribute("target")) {
+      link.addEventListener("click", () => closeNav());
+    }
+  });
+</script>

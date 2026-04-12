@@ -1,0 +1,70 @@
+---
+import MapComponent from "@/components/map/MapComponent";
+import locationsData from "@/data/locations.json";
+import Layout from "@/layouts/Layout.astro";
+
+const mapboxToken = import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN ?? "";
+const locations = locationsData.locations.reverse();
+---
+
+<Layout
+  title="Socratica Lattice"
+  description="A worldwide collective of makers, artists, engineers, designers, poets, and everything in-between"
+  hideFooter
+>
+  <MapComponent
+    client:only="react"
+    locations={locations}
+    mapboxToken={mapboxToken}
+  />
+</Layout>
+
+<style is:global>
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  /* Staggered list item fade-in */
+  @keyframes fade-in-item {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-item {
+    opacity: 0;
+    animation: fade-in-item 0.3s ease-out forwards;
+  }
+
+  /* Hide scrollbar but keep scrolling */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Thin custom scrollbar for the location list */
+  .scrollbar-thin {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 116, 139, 0.3);
+    border-radius: 9999px;
+  }
+</style>

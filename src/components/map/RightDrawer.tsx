@@ -1,4 +1,5 @@
 import { ArrowUpRight, Calendar, Globe, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { InstagramIcon, TwitterIcon, YoutubeIcon } from "./SocialIcons";
 import type { NodeType } from "./types";
 
@@ -9,12 +10,25 @@ interface Props {
 }
 
 export default function RightDrawer({ location, open, onOpenChange }: Props) {
-  if (!location || !open) return null;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (open && location) {
+      requestAnimationFrame(() => setVisible(true));
+    } else {
+      setVisible(false);
+    }
+  }, [open, location]);
+
+  if (!location) return null;
 
   return (
     <div
-      className="fixed inset-y-0 right-0 z-30 w-full md:w-xs shadow-xl bg-white border-l border-gray-200 hidden md:block transition-transform duration-300"
+      className={`fixed inset-y-0 right-0 z-30 w-full md:w-xs shadow-xl bg-white border-l border-gray-200 hidden md:block transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${visible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"}`}
       onMouseDown={(e) => e.stopPropagation()}
+      onTouchStart={(e) => e.stopPropagation()}
+      onWheel={(e) => e.stopPropagation()}
+      style={{ touchAction: "pan-y" }}
     >
       <div className="h-full flex flex-col overflow-y-auto">
         <button

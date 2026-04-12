@@ -1,5 +1,6 @@
 ---
 import MapComponent from "@/components/map/MapComponent";
+import Navbar from "@/components/Navbar/Navbar.astro";
 import locationsData from "@/data/locations.json";
 import Layout from "@/layouts/Layout.astro";
 
@@ -12,6 +13,7 @@ const locations = locationsData.locations.reverse();
   description="A worldwide collective of makers, artists, engineers, designers, poets, and everything in-between"
   hideFooter
 >
+  <Navbar />
   <MapComponent
     client:only="react"
     locations={locations}

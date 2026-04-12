@@ -1,4 +1,5 @@
 import { ArrowUpRight, Calendar, Globe, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { InstagramIcon, TwitterIcon, YoutubeIcon } from "./SocialIcons";
 import type { NodeType } from "./types";
 
@@ -13,13 +14,24 @@ export function BottomSheet({
   onOpenChange,
   location,
 }: BottomSheetProps) {
-  if (!location || !open) return null;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (open && location) {
+      requestAnimationFrame(() => setVisible(true));
+    } else {
+      setVisible(false);
+    }
+  }, [open, location]);
+
+  if (!location) return null;
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-30 w-full bg-white border-t border-gray-200 md:hidden h-3/4 transition-transform duration-300"
+      className={`fixed inset-x-0 bottom-0 z-30 w-full bg-white border-t border-gray-200 md:hidden h-3/4 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}`}
       onMouseDown={(e) => e.stopPropagation()}
       onTouchStart={(e) => e.stopPropagation()}
+      onWheel={(e) => e.stopPropagation()}
       style={{ touchAction: "pan-y" }}
     >
       <div className="h-full flex flex-col overflow-y-auto">

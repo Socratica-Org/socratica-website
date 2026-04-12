@@ -112,14 +112,13 @@ export default function MapComponent({ locations, mapboxToken }: Props) {
       </button>
 
       {/* Sidebar */}
-      {listOpen && (
-        <LeftDrawer
-          locations={locations}
-          selectedLocationId={popupInfo?.id || null}
-          onLocationClick={(loc) => selectLocation(loc)}
-          onClose={() => setListOpen(false)}
-        />
-      )}
+      <LeftDrawer
+        locations={locations}
+        selectedLocationId={popupInfo?.id || null}
+        onLocationClick={(loc) => selectLocation(loc)}
+        onClose={() => setListOpen(false)}
+        open={listOpen}
+      />
 
       <Map
         ref={mapRef}

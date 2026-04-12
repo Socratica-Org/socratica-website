@@ -9,6 +9,7 @@ interface Props {
   selectedLocationId: string | null;
   onLocationClick: (location: NodeType) => void;
   onClose: () => void;
+  open: boolean;
 }
 
 export default function LeftDrawer({
@@ -16,14 +17,20 @@ export default function LeftDrawer({
   selectedLocationId,
   onLocationClick,
   onClose,
+  open,
 }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger slide-in on mount
-    requestAnimationFrame(() => setMounted(true));
-  }, []);
+    if (open) {
+      // Force a reflow before enabling the transition so the browser
+      // sees the starting position (-translate-x-full) first.
+      requestAnimationFrame(() => setVisible(true));
+    } else {
+      setVisible(false);
+    }
+  }, [open]);
 
   const filteredLocations = useMemo(() => {
     if (!searchQuery.trim()) return locations;
@@ -73,8 +80,10 @@ export default function LeftDrawer({
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 h-screen w-full md:w-80 bg-white border-r border-gray-200 shadow-lg z-20 flex flex-col transition-transform duration-300 ease-out",
-        mounted ? "translate-x-0" : "-translate-x-full",
+        "fixed left-0 top-0 h-screen w-full md:w-80 bg-white border-r border-gray-200 shadow-lg z-20 flex flex-col transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+        visible
+          ? "translate-x-0 opacity-100"
+          : "-translate-x-full opacity-0 pointer-events-none",
       )}
     >
       <div className="p-4 border-b border-gray-100 relative">

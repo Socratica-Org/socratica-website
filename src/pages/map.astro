@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar/Navbar.astro";
 import locationsData from "@/data/locations.json";
 import Layout from "@/layouts/Layout.astro";
 
+export const prerender = true;
+
 const mapboxToken = import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN ?? "";
 const locations = locationsData.locations.reverse();
 ---

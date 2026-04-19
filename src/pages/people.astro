@@ -7,6 +7,8 @@ import peopleData from "@/components/people/people.json";
 import ProfileCard from "@/components/people/ProfileCard.astro";
 import Layout from "@/layouts/Layout.astro";
 
+export const prerender = true;
+
 // Build a map from original photo filename to a processed image URL for the profile card
 const imageModules = import.meta.glob<{ default: ImageMetadata }>(
   "../components/people/assets/*.{jpeg,jpg,png,JPG}",

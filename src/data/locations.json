@@ -14,18 +14,6 @@
       "websiteLink": "https://socratica.info/"
     },
     {
-      "id": "vancouver",
-      "name": "Atelier",
-      "date": "September 2023",
-      "location": "Vancouver, BC",
-      "coordinates": [49.264813, -123.253812],
-      "joinLink": "https://luma.com/atelier.place?utm_source=map",
-      "lumaLink": "https://luma.com/embed/calendar/cal-CvuDnsONPxinxqk/events",
-      "instagramLink": "https://instagram.com/atelier.place",
-      "twitterLink": "https://x.com/atelier_place",
-      "websiteLink": "https://atelier.place/"
-    },
-    {
       "id": "cambridge-uk",
       "name": "[scale down]",
       "date": "October 2023",

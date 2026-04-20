@@ -76,7 +76,11 @@ export function BottomSheet({
             {location.lumaLink ? (
               <iframe
                 title={location.name}
-                src={location.lumaLink}
+                src={(() => {
+                  const url = new URL(location.lumaLink);
+                  url.searchParams.set("lt", "light");
+                  return url.toString();
+                })()}
                 className="w-full flex-grow min-h-0 rounded-lg bg-[#F4F5F6] border-none"
               />
             ) : location.imageSrc ? (

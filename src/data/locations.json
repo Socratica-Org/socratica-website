@@ -19,8 +19,8 @@
       "date": "September 2023",
       "location": "Vancouver, BC",
       "coordinates": [49.264813, -123.253812],
+      "joinLink": "https://luma.com/atelier.place?utm_source=map",
       "lumaLink": "https://luma.com/embed/calendar/cal-CvuDnsONPxinxqk/events",
-      "joinLink": "https://luma.com/atelier.place",
       "instagramLink": "https://instagram.com/atelier.place",
       "twitterLink": "https://x.com/atelier_place",
       "websiteLink": "https://atelier.place/"
@@ -80,7 +80,7 @@
     },
     {
       "id": "montreal",
-      "name": "Douze \u00e0 Deux",
+      "name": "Douze à Deux",
       "date": "September 2023",
       "location": "Montreal, QC",
       "coordinates": [45.5017, -73.5673],
@@ -188,8 +188,8 @@
       "websiteLink": "http://collecthalifax.org/"
     },
     {
-      "id": "paris-Parenth\u00e8se",
-      "name": "Parenth\u00e8se",
+      "id": "paris-Parenthèse",
+      "name": "Parenthèse",
       "date": "March 2025",
       "location": "Paris, France",
       "coordinates": [48.8534951, 2.3483915],

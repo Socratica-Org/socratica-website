@@ -443,6 +443,16 @@
       "instagramLink": "https://instagram.com/ethicahq",
       "twitterLink": "https://x.com/ethicahq",
       "websiteLink": "https://ethicahq.space"
+    },
+    {
+      "id": "dublin-Dockyard",
+      "name": "Dockyard",
+      "date": "January 2026",
+      "location": "Dublin, Ireland",
+      "coordinates": [53.342812, -6.277488],
+      "joinLink": "https://www.dockyard.info/",
+      "lumaLink": "https://luma.com/embed/calendar/cal-wPxyCQ5rJPSJVN8/events",
+      "websiteLink": "https://www.dockyard.info/"
     }
   ]
 }

@@ -26,15 +26,6 @@
       "websiteLink": "https://atelier.place/"
     },
     {
-      "id": "cambridge-uk",
-      "name": "[scale down]",
-      "date": "October 2023",
-      "location": "Cambridge, UK",
-      "coordinates": [52.205338, 0.121817],
-      "lumaLink": "https://luma.com/embed/calendar/cal-vHCyjMqqjpdduOt/events",
-      "joinLink": "https://luma.com/scaledown"
-    },
-    {
       "id": "kingston",
       "name": "id8",
       "date": "October 2023",
@@ -90,27 +81,6 @@
       "twitterLink": "https://x.com/douzeadeux"
     },
     {
-      "id": "washington",
-      "name": "Saturdays",
-      "date": "November 2023",
-      "location": "Seattle, WA",
-      "coordinates": [47.6062, -122.3321],
-      "lumaLink": "https://luma.com/embed/calendar/cal-SD9FoHuZW6pQn6D/events",
-      "joinLink": "https://luma.com/uwsaturdays",
-      "instagramLink": "https://instagram.com/saturdays.rsvp"
-    },
-    {
-      "id": "imperial",
-      "name": "craft!",
-      "date": "January 2024",
-      "location": "London, UK",
-      "coordinates": [51.4988, -0.1749],
-      "lumaLink": "https://luma.com/embed/calendar/cal-qFfyVkBdmPJ7yBv/events",
-      "joinLink": "https://luma.com/craft_",
-      "instagramLink": "https://instagram.com/craft_ldn",
-      "websiteLink": "https://craftedu.org/"
-    },
-    {
       "id": "ny",
       "name": "New York Nodes",
       "date": "March 2024",
@@ -130,17 +100,6 @@
       "joinLink": "https://luma.com/making-umn",
       "instagramLink": "https://instagram.com/makingatumn/",
       "websiteLink": "https://making.mn/"
-    },
-    {
-      "id": "mcmaster",
-      "name": "Agora",
-      "date": "October 2024",
-      "location": "Hamilton, ON",
-      "lumaLink": "https://luma.com/embed/calendar/cal-ImDNuyKTF00fOYK/events",
-      "joinLink": "https://luma.com/agora",
-      "coordinates": [43.26211519287825, -79.91705655784756],
-      "instagramLink": "https://instagram.com/agora.meet",
-      "twitterLink": "https://x.com/agorameet"
     },
     {
       "id": "ottawa",
@@ -188,34 +147,6 @@
       "websiteLink": "http://collecthalifax.org/"
     },
     {
-      "id": "paris-Parenthèse",
-      "name": "Parenthèse",
-      "date": "March 2025",
-      "location": "Paris, France",
-      "coordinates": [48.8534951, 2.3483915],
-      "lumaLink": "https://luma.com/embed/calendar/cal-r8uTLIB0w2weDz5/events",
-      "joinLink": "https://luma.com/parenthese"
-    },
-    {
-      "id": "swarthmore-Synthesis",
-      "name": "Synthesis",
-      "date": "December 2024",
-      "location": "Swarthmore, PA",
-      "coordinates": [39.906539195171526, -75.35479324973382],
-      "lumaLink": "https://luma.com/embed/calendar/cal-qZE3lPYa5OqZwBF/events",
-      "joinLink": "https://luma.com/user/usr-aiYrdVuNM5JJXB9",
-      "websiteLink": "https://swatsynthesis.info"
-    },
-    {
-      "id": "pittsburgh-Apricity",
-      "name": "apricity",
-      "date": "October 2024",
-      "location": "Pittsburgh, PA",
-      "coordinates": [40.43580089149957, -79.92900425295927],
-      "lumaLink": "https://luma.com/embed/calendar/cal-02sNXkLBpjqtZSm/events",
-      "joinLink": "https://luma.com/apricity-pgh"
-    },
-    {
       "id": "philadelphia-Code & Coffee",
       "name": "Code & Coffee",
       "date": "August 2024",
@@ -259,15 +190,6 @@
       "websiteLink": "https://orchard.day"
     },
     {
-      "id": "nairobi-Eden",
-      "name": "EDEN",
-      "date": "January 2025",
-      "location": "Nairobi, Kenya",
-      "coordinates": [-1.345868, 36.765037],
-      "lumaLink": "https://luma.com/embed/calendar/cal-w6zPQfuWF26fyfc/events",
-      "joinLink": "https://luma.com/calendar/cal-w6zPQfuWF26fyfc"
-    },
-    {
       "id": "calgary-Ascend",
       "name": "Ascend",
       "date": "January 2025",
@@ -295,29 +217,9 @@
       "location": "Markham, ON",
       "coordinates": [43.8543237, -79.3110445],
       "lumaLink": "https://luma.com/embed/calendar/cal-NqrihWVSnqZvtGG/events",
-      "joinLink": "https://luma.com/gtaplaymor",
+      "joinLink": "https://luma.com/playmor",
       "instagramLink": "https://instagram.com/playmor__/",
-      "websiteLink": "https://linktr.ee/gtaplaymor"
-    },
-    {
-      "id": "warwick-meadow",
-      "name": "[meadow]",
-      "date": "January 2025",
-      "location": "Warwick, UK",
-      "coordinates": [52.379312, -1.561438],
-      "lumaLink": "https://luma.com/embed/calendar/cal-LNJroTBMKAMCJDv/events",
-      "joinLink": "https://luma.com/meadow"
-    },
-    {
-      "id": "liverpool-Daisy",
-      "name": "Daisy",
-      "date": "January 2025",
-      "location": "Liverpool, UK",
-      "coordinates": [53.410562, -2.970562],
-      "lumaLink": "https://luma.com/embed/calendar/cal-6flGZ5OxOBVKQA7/events",
-      "joinLink": "https://instagram.com/daisy.sun.life",
-      "instagramLink": "https://instagram.com/daisy.sun.life",
-      "websiteLink": "https://daisy.sundown.life/"
+      "websiteLink": "https://linktr.ee/playmor"
     },
     {
       "id": "sf-sundays",
@@ -340,26 +242,6 @@
       "lumaLink": "https://luma.com/embed/calendar/cal-ChvmXj1B1x2n23o/events",
       "joinLink": "https://luma.com/tenfold",
       "websiteLink": "https://tenfoldvictoria.com/"
-    },
-    {
-      "id": "ashoka-scenes",
-      "name": "scenes",
-      "date": "January 2024",
-      "location": "NCR, India",
-      "coordinates": [28.946937, 77.101438],
-      "lumaLink": "https://luma.com/embed/calendar/cal-byxD36XQslHqCKc/events",
-      "joinLink": "https://luma.com/scenes.ashoka",
-      "instagramLink": "https://instagram.com/scenes.ashoka",
-      "twitterLink": "https://x.com/scenesatashoka"
-    },
-    {
-      "id": "amsterdam-ankerplaats",
-      "name": "ankerplaats",
-      "date": "June 2025",
-      "location": "Amsterdam, Netherlands",
-      "coordinates": [52.3637925, 4.9067331],
-      "lumaLink": "https://luma.com/embed/calendar/cal-016LhHDMBXEfKJP/events",
-      "joinLink": "https://luma.com/ankerplaats"
     },
     {
       "id": "tokyo-Shinobuyume",

@@ -335,6 +335,16 @@
       "joinLink": "https://www.dockyard.info/",
       "lumaLink": "https://luma.com/embed/calendar/cal-wPxyCQ5rJPSJVN8/events",
       "websiteLink": "https://www.dockyard.info/"
+    },
+    {
+      "id": "auckland-PIXEL",
+      "name": "PIXEL",
+      "date": "January 2026",
+      "location": "Auckland, New Zealand",
+      "coordinates": [-36.84376817040982, 174.7664993325546],
+      "joinLink": "https://luma.com/areyouapixel",
+      "lumaLink": "https://luma.com/embed/calendar/cal-K7WrAXnvVx6ax2R/events",
+      "instagramLink": "https://instagram.com/areyouapixel"
     }
   ]
 }

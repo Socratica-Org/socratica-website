@@ -1,0 +1,62 @@
+---
+import Navbar from "@/components/Navbar/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+
+export const prerender = true;
+---
+
+<Layout title="Host Pledge | Socratica">
+  <div class="block">
+    <div class="flex flex-col min-h-screen bg-primary">
+      <Navbar />
+
+      <div class="absolute top-5 left-4 transform">
+        <a href="/">
+          <h1 class="text-2xl font-tiempos-headline font-light">Socratica</h1>
+        </a>
+      </div>
+
+      <div
+        class="w-full px-6 sm:px-10 md:px-0 md:w-9/10 lg:w-3/5 mx-auto mt-32 md:mt-32 pb-20 md:pb-32"
+      >
+        <h2
+          class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-tiempos-headline"
+        >
+          Host <i>Pledge</i>.
+        </h2>
+
+        <div
+          class="mt-8 md:mt-16"
+          style="font-family: 'Untitled Sans', sans-serif;"
+        >
+          <p
+            class="text-[11px] md:text-[17px] lg:text-lg leading-relaxed mb-6 text-soft-grey"
+          >
+            The host pledge we start every session with:
+          </p>
+
+          <blockquote
+            class="bg-[#2A2928] text-primary rounded-3xl px-7 py-9 md:px-12 md:py-12"
+          >
+            <p
+              class="text-xl font-tiempos-headline italic leading-relaxed mb-6"
+            >
+              Please put your hand on your heart and repeat after me: I,
+              <span class="not-italic opacity-90">[insert name here]</span>,
+              solemnly swear to adopt a host mindset for the duration of this
+              event.
+            </p>
+            <p class="text-xl font-tiempos-headline italic leading-relaxed">
+              I will not be a menace.<br />
+              I will clean up my own garbage,<br />
+              and the occasional additional cup.<br />
+              But most importantly, if I see someone standing alone in a corner,<br
+              />
+              I will go be their friend.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

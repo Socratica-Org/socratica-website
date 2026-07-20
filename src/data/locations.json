@@ -255,12 +255,12 @@
     },
     {
       "id": "st. john's-10am",
-      "name": "10am",
+      "name": "make",
       "date": "July 2025",
       "location": "St. John's, NL",
-      "lumaLink": "https://luma.com/embed/calendar/cal-YKNiHwabR8OGuve/events",
-      "joinLink": "https://luma.com/calendar/cal-YKNiHwabR8OGuve",
       "coordinates": [47.57322344479589, -52.73557899964588],
+      "joinLink": "https://luma.com/calendar/cal-YKNiHwabR8OGuve",
+      "lumaLink": "https://luma.com/embed/calendar/cal-YKNiHwabR8OGuve/events",
       "instagramLink": "https://instagram.com/10am_mun/",
       "websiteLink": "https://linkedin.com/company/10am-mun/"
     },

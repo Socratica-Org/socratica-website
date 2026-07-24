@@ -345,6 +345,16 @@
       "joinLink": "https://luma.com/areyouapixel",
       "lumaLink": "https://luma.com/embed/calendar/cal-K7WrAXnvVx6ax2R/events",
       "instagramLink": "https://instagram.com/areyouapixel"
+    },
+    {
+      "id": "los baños-Tagpuan",
+      "name": "Tagpuan",
+      "date": "June 2026",
+      "location": "Los Baños, Philippines",
+      "coordinates": [14.169902, 121.244019],
+      "joinLink": "https://luma.com/tagpuancommunity",
+      "lumaLink": "https://luma.com/embed/calendar/cal-rB8Sf2wrO6Q2nMv/events",
+      "instagramLink": "https://instagram.com/tagpuan.community/"
     }
   ]
 }

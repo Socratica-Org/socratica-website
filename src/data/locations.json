@@ -355,6 +355,14 @@
       "joinLink": "https://luma.com/tagpuancommunity",
       "lumaLink": "https://luma.com/embed/calendar/cal-rB8Sf2wrO6Q2nMv/events",
       "instagramLink": "https://instagram.com/tagpuan.community/"
+    },
+    {
+      "id": "cambridge-Quack",
+      "name": "Quack",
+      "date": "January 2026",
+      "location": "Cambridge, UK",
+      "coordinates": [52.20451924206736, 0.10449888571201557],
+      "joinLink": "https://www.camquack.com/"
     }
   ]
 }

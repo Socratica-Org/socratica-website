@@ -363,6 +363,16 @@
       "location": "Cambridge, UK",
       "coordinates": [52.20451924206736, 0.10449888571201557],
       "joinLink": "https://www.camquack.com/"
+    },
+    {
+      "id": "melbourne-Agora",
+      "name": "Agora",
+      "date": "July 2025",
+      "location": "Melbourne, Australia",
+      "coordinates": [-37.80173, 144.958797],
+      "joinLink": "https://luma.com/agora.melbourne",
+      "lumaLink": "https://luma.com/embed/calendar/cal-UM7FS2Xv1CRogtq/events",
+      "instagramLink": "https://instagram.com/agora.melbourne/"
     }
   ]
 }

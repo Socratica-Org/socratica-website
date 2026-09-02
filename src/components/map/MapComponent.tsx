@@ -49,10 +49,20 @@ interface Props {
   mapboxToken: string;
 }
 
+function getInitialLocation(locations: NodeType[]): NodeType | undefined {
+  const locationId = new URLSearchParams(window.location.search).get(
+    "location",
+  );
+  return locations.find((location) => location.id === locationId);
+}
+
 export default function MapComponent({ locations, mapboxToken }: Props) {
-  const [popupInfo, setPopupInfo] = useState<NodeType | null>(null);
+  const [initialLocation] = useState(() => getInitialLocation(locations));
+  const [popupInfo, setPopupInfo] = useState<NodeType | null>(
+    initialLocation ?? null,
+  );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(Boolean(initialLocation));
   const [listOpen, setListOpen] = useState(false);
   const mapRef = useRef<MapRef>(null);
 
@@ -123,7 +133,15 @@ export default function MapComponent({ locations, mapboxToken }: Props) {
       <Map
         ref={mapRef}
         mapboxAccessToken={mapboxToken}
-        initialViewState={{ longitude: -100, latitude: 40, zoom: 2 }}
+        initialViewState={
+          initialLocation
+            ? {
+                longitude: initialLocation.coordinates[1],
+                latitude: initialLocation.coordinates[0],
+                zoom: 7,
+              }
+            : { longitude: -100, latitude: 40, zoom: 2 }
+        }
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
         style={{ width: "100%", height: "100%" }}
         onClick={handleMapClick}

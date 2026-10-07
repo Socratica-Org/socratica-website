@@ -373,6 +373,15 @@
       "joinLink": "https://luma.com/agora.melbourne",
       "lumaLink": "https://luma.com/embed/calendar/cal-UM7FS2Xv1CRogtq/events",
       "instagramLink": "https://instagram.com/agora.melbourne/"
+    },
+    {
+      "id": "st andrews-local group",
+      "name": "local group",
+      "date": "September 2026",
+      "location": "St Andrews, UK",
+      "coordinates": [56.3403678, -2.795044],
+      "joinLink": "https://www.instagram.com/localgroup.sta/",
+      "instagramLink": "https://instagram.com/localgroup.sta/"
     }
   ]
 }

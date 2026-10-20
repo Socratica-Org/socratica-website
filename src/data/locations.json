@@ -382,6 +382,16 @@
       "coordinates": [56.3403678, -2.795044],
       "joinLink": "https://www.instagram.com/localgroup.sta/",
       "instagramLink": "https://instagram.com/localgroup.sta/"
+    },
+    {
+      "id": "taichung-cre8",
+      "name": "cre8",
+      "date": "August 2026",
+      "location": "Taichung, Taiwan",
+      "coordinates": [24.163162, 120.6478282],
+      "joinLink": "https://luma.com/wearecre8?period=past",
+      "lumaLink": "https://luma.com/embed/calendar/cal-FdnzyS3eUrLb7aS/events",
+      "instagramLink": "https://instagram.com/wearecre8__?xtok=MWl0MzAybHZldXpmNw%3D%3D&utm_source=qr"
     }
   ]
 }

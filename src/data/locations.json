@@ -392,6 +392,16 @@
       "joinLink": "https://luma.com/wearecre8?period=past",
       "lumaLink": "https://luma.com/embed/calendar/cal-FdnzyS3eUrLb7aS/events",
       "instagramLink": "https://instagram.com/wearecre8__?xtok=MWl0MzAybHZldXpmNw%3D%3D&utm_source=qr"
+    },
+    {
+      "id": "pittsburgh-ringworld",
+      "name": "ringworld",
+      "date": "September 2026",
+      "location": "Pittsburgh, PA",
+      "coordinates": [40.44319152832031, -79.94251251220703],
+      "joinLink": "https://luma.com/ringworld",
+      "lumaLink": "https://luma.com/embed/calendar/cal-GdJdDLxKxs9JAPH/events",
+      "websiteLink": "https://ring-world.github.io/"
     }
   ]
 }

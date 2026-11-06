@@ -402,6 +402,16 @@
       "joinLink": "https://luma.com/ringworld",
       "lumaLink": "https://luma.com/embed/calendar/cal-GdJdDLxKxs9JAPH/events",
       "websiteLink": "https://ring-world.github.io/"
+    },
+    {
+      "id": "regina-The Hang",
+      "name": "The Hang",
+      "date": "July 2026",
+      "location": "Regina, SK",
+      "coordinates": [50.4479733, -104.6158764],
+      "joinLink": "https://luma.com/calendar/cal-1K3J16UOWwSVh3h",
+      "lumaLink": "https://luma.com/embed/calendar/cal-1K3J16UOWwSVh3h/events",
+      "instagramLink": "https://instagram.com/thehangyqr/?hl=en"
     }
   ]
 }
